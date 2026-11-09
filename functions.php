@@ -14,6 +14,7 @@ require_once get_theme_file_path('inc/sections.php');
 require_once get_theme_file_path('inc/contact-form.php');
 require_once get_theme_file_path('inc/landing.php');
 require_once get_theme_file_path('inc/blog.php');
+require_once get_theme_file_path('inc/shop.php');
 
 function abf_accounting_setup(): void
 {
@@ -194,12 +195,16 @@ function abf_accounting_audiences(): array
 }
 
 /**
- * Where "Buy now / Get started" goes for a package. WooCommerce is not set up yet, so every
- * package goes to Contact for now; this becomes the add-to-cart / checkout URL later.
+ * Where "Buy now / Get started / File now" goes for a package: the checkout with that package
+ * in the cart. Services without a package (and any package while WooCommerce is off) go to
+ * Contact.
  *
- * @param string $package Package key (company-accounts, llp, cic, self-assessment, dormant, confirmation-statement).
+ * @param string $package Package key (company-accounts, llp, cic, self-assessment, dormant,
+ *                        confirmation-statement) or a service / audience page slug.
  */
-function abf_accounting_buy_url(string $package = ''): string // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
+function abf_accounting_buy_url(string $package = ''): string
 {
-    return home_url('/contact/');
+    $product = abf_accounting_package_product($package);
+
+    return $product ? add_query_arg('add-to-cart', $product, wc_get_checkout_url()) : home_url('/contact/');
 }
