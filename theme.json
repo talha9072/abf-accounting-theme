@@ -91,7 +91,8 @@
     }
   },
   "customTemplates": [
-    { "name": "page-thank-you", "title": "Thank You (no footer)", "postTypes": ["page"] }
+    { "name": "page-thank-you", "title": "Thank You (no footer)", "postTypes": ["page"] },
+    { "name": "single-narrow", "title": "Article — Narrow (no sidebar)", "postTypes": ["post"] }
   ],
   "templateParts": [
     { "name": "header", "title": "Header", "area": "header" },

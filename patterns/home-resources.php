@@ -36,7 +36,7 @@ $abf_accounting_inner = abf_accounting_heading(
         . abf_accounting_block_group(
             'abf-explore',
             abf_accounting_block_p('abf-explore__heading', __('Explore more', 'abf-accounting'))
-            . $abf_accounting_row(__('FAQ', 'abf-accounting'), __('Frequently Asked Questions', 'abf-accounting'), __('Limited Company, Sole Trader, Partnership, LLP and Individual questions in one place.', 'abf-accounting'), home_url('/resources/#faq'))
+            . $abf_accounting_row(__('FAQ', 'abf-accounting'), __('Frequently Asked Questions', 'abf-accounting'), __('Limited Company, Sole Trader, Partnership, LLP and Individual questions in one place.', 'abf-accounting'), home_url('/#faq'))
             . $abf_accounting_row(__('Pricing', 'abf-accounting'), __('Find the support that fits', 'abf-accounting'), __('Clear, fixed prices for every service.', 'abf-accounting'), home_url('/pricing/'))
         )
     );

@@ -13,12 +13,13 @@ require_once get_theme_file_path('inc/blocks.php');
 require_once get_theme_file_path('inc/sections.php');
 require_once get_theme_file_path('inc/contact-form.php');
 require_once get_theme_file_path('inc/landing.php');
+require_once get_theme_file_path('inc/blog.php');
 
 function abf_accounting_setup(): void
 {
     add_theme_support('wp-block-styles');
     add_theme_support('editor-styles');
-    add_editor_style(array('assets/css/frontend.css', 'assets/css/home.css', 'assets/css/pages.css', 'assets/css/editor.css'));
+    add_editor_style(array('assets/css/frontend.css', 'assets/css/home.css', 'assets/css/pages.css', 'assets/css/blog.css', 'assets/css/editor.css'));
 
     register_block_pattern_category(
         'abf-sections',
@@ -36,6 +37,7 @@ function abf_accounting_enqueue_assets(): void
     wp_enqueue_style('abf-accounting-frontend', get_theme_file_uri('assets/css/frontend.css'), array(), $version);
     wp_enqueue_style('abf-accounting-home', get_theme_file_uri('assets/css/home.css'), array('abf-accounting-frontend'), $version);
     wp_enqueue_style('abf-accounting-pages', get_theme_file_uri('assets/css/pages.css'), array('abf-accounting-frontend'), $version);
+    wp_enqueue_style('abf-accounting-blog', get_theme_file_uri('assets/css/blog.css'), array('abf-accounting-frontend'), $version);
 
     wp_enqueue_script(
         'abf-accounting-site',
