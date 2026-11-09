@@ -1,0 +1,94 @@
+{
+ "_note": "Answers 2–6 of each landing-page FAQ. Figma only has the first answer; these are drafted from the agreed prices and standard UK rules (Nov 2026) and need the client's check.",
+ "annual-accounts-tax-return": [
+  "Yes. We file your statutory accounts with Companies House and your CT600 with HMRC once you have approved them.",
+  "Yes. We contact your previous accountant for the handover information and make sure nothing is missed.",
+  "Yes. The £299 service can be a one-off year-end filing, with ongoing support only if you want it.",
+  "For most small companies, Corporation Tax is due 9 months and 1 day after the end of the accounting period. The CT600 itself is due 12 months after the period ends.",
+  "Yes. Get in touch as soon as possible. We prioritise the filing and explain any penalties and how to limit them."
+ ],
+ "confirmation-statement": [
+  "At least once every 12 months. You have 14 days after your review date to file it.",
+  "You still need to file. We confirm your company details are correct and submit the statement.",
+  "Changes such as appointing or removing a director are filed separately with Companies House. We can file those changes for you as well.",
+  "Yes. Companies House charges its own filing fee, which is separate from our £75 fee. We confirm the current fee when you order.",
+  "Filing late is an offence and Companies House can start to strike the company off the register. If your statement is overdue, contact us and we will file it quickly."
+ ],
+ "self-assessment-tax-return": [
+  "Your income details for the tax year, such as payslips or P60s, self-employed or rental figures, and records of any expenses. We send you a clear checklist when you sign up.",
+  "Yes. Contact us as soon as possible and we will prepare and file your return quickly. HMRC normally charges a £100 penalty once an online return is late.",
+  "Company directors who need a personal return can add Self Assessment for £150 each. Some limited company packages include returns for directors.",
+  "A Self Assessment return is £150. Additional fees may apply for complex returns, foreign income or capital gains.",
+  "The online deadline is 31 January after the end of the tax year (5 April). Any tax owed is usually due on the same day."
+ ],
+ "dormant-company-accounts": [
+  "Yes. Dormant companies must still file annual accounts with Companies House each year.",
+  "Yes. Every company, including a dormant one, must file a Confirmation Statement at least once every 12 months. We can file it for £75.",
+  "If HMRC has asked the company to file a Company Tax Return, you need to tell HMRC the company is dormant. We can check this for you.",
+  "Tell HMRC within 3 months of starting to trade. Your accounts will then need to be full accounts rather than dormant accounts, and we can move you onto the right service.",
+  "Usually 1–3 business days once we have the company details we need."
+ ],
+ "bookkeeping-services": [
+  "Access to your bank feeds or statements, plus sales invoices, receipts and bills. We agree the simplest way to share them before we start.",
+  "We work with common cloud accounting software and will recommend the right option for your business.",
+  "Yes. We can bring overdue records up to date before your next filing deadline.",
+  "We agree a schedule with you, such as monthly or quarterly, depending on your business and filing deadlines.",
+  "Yes. VAT returns and payroll can be added whenever your business needs them."
+ ],
+ "vat-return": [
+  "You must register if your VAT-taxable turnover goes over the VAT threshold (£90,000 from April 2024) in any 12-month period. You can also choose to register voluntarily.",
+  "Making Tax Digital (MTD) means VAT-registered businesses must keep digital records and submit VAT returns through compatible software.",
+  "Yes. We can check whether you need to register and handle the VAT registration for you.",
+  "Most businesses file every quarter. The return and payment are usually due 1 month and 7 days after the end of the VAT period.",
+  "Yes. Contact us as soon as possible and we will prepare and submit the return, and explain any penalty."
+ ],
+ "payroll-and-pension": [
+  "Yes. We help with workplace pension auto-enrolment and the regular pension contributions for your staff.",
+  "The Construction Industry Scheme (CIS) means contractors in construction deduct money from subcontractors’ payments and pass it to HMRC. We can file monthly CIS returns for you.",
+  "Yes. Many directors run a small payroll for themselves, and we can set it up and run it for you.",
+  "As often as you pay your staff, for example weekly or monthly. Each payroll is reported to HMRC through Real Time Information.",
+  "HMRC can charge penalties for late payroll submissions. Contact us and we will get your submissions back on track."
+ ],
+ "tax-planning-advice": [
+  "Yes. Tax planning means using the allowances and reliefs that HMRC provides, within the rules. We do not offer aggressive tax avoidance schemes.",
+  "Tax planning is quoted around your situation. Speak to our team and we will confirm the price before any work starts.",
+  "At least once a year, and whenever something changes, such as a big rise in profit, a property sale or a change in how you take income.",
+  "Yes. We can work out the gain, the reliefs that may apply and how to report it to HMRC.",
+  "Talk to us about your project. We can review whether your work may qualify and point you to the right support."
+ ],
+ "limited-companies": [
+  "Yes. We contact your previous accountant for the handover information and make sure nothing is missed.",
+  "Company accounts and tax return start from £299. The Confirmation Statement is £75 and dormant accounts are £80. See the Pricing page for every service.",
+  "Yes. VAT returns start from £50 per return and payroll from £30 per month.",
+  "Directors usually need a personal Self Assessment return and must keep the company’s details at Companies House up to date. We remind you what is due.",
+  "For a private company, accounts are due at Companies House 9 months after the year end. Corporation Tax is usually due 9 months and 1 day after the year end, and the CT600 within 12 months."
+ ],
+ "sole-traders": [
+  "A Self Assessment tax return is £150. Additional fees may apply for complex returns, foreign income or capital gains.",
+  "Yes. We prepare and file your Self Assessment return and explain what you owe and when.",
+  "You must register if your VAT-taxable turnover goes over the VAT threshold (£90,000 from April 2024). We can register you and file your VAT returns.",
+  "It depends on your profit and plans. We can compare the two set-ups with you so you can decide.",
+  "Costs you have only for your business, such as equipment, travel, phone and software. We check your expenses when we prepare your return."
+ ],
+ "contractors": [
+  "We can look after your company accounts, Corporation Tax, Confirmation Statement and your own Self Assessment return.",
+  "Yes. We can file monthly CIS returns and help you claim back CIS deductions.",
+  "Yes. We can check whether you need to register and file your VAT returns for you.",
+  "Yes. Tell us what is changing and we will explain how it affects your tax and what needs updating.",
+  "Keep your contracts, invoices, payslips or statements, and records of business expenses. We send you a checklist."
+ ],
+ "self-employed-freelancers": [
+  "Yes. We can keep your books up to date through the year and prepare your Self Assessment return from them.",
+  "You charge VAT on your sales and file VAT returns, usually every quarter, through Making Tax Digital software. We can do this for you.",
+  "Yes. You can add bookkeeping, VAT or payroll, or move to a limited company, as your work grows.",
+  "Costs you have only for your work, such as equipment, software, travel and some home-working costs. We check them when we prepare your return.",
+  "Yes. You need to register for Self Assessment by 5 October after the end of the tax year in which you started."
+ ],
+ "landlords": [
+  "Yes. We can bring together the figures for all your properties in one return.",
+  "Keep rent received, tenancy agreements, letting agent statements, mortgage interest statements and receipts for repairs and other costs.",
+  "Yes. You can choose a one-off Self Assessment return or ongoing support through the year.",
+  "Costs such as letting agent fees, repairs and maintenance, insurance and some finance costs. We check them when we prepare your return.",
+  "Yes. If you need to file a return for your rental income, register for Self Assessment by 5 October after the end of the tax year."
+ ]
+}

@@ -1,0 +1,2121 @@
+{
+ "annual-accounts-tax-return": {
+  "kind": "svc",
+  "hero": {
+   "crumb": "Services",
+   "current": "Annual Accounts & Tax Return",
+   "title": "Annual accounts and your <br>Corporation Tax return, filed together.",
+   "price": "Company accounts and tax return from £299",
+   "lead": "Your year-end accounts and CT600 Corporation Tax return are prepared from the same approved figures and filed with Companies House and HMRC.",
+   "buttons": [
+    "Speak to our team",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Company accounts & CT600",
+    "from": "from",
+    "amount": "£299",
+    "cadence": "",
+    "who": "For micro and small limited companies needing annual accounts and Corporation Tax filing.",
+    "items": [
+     "Year-end accounts prepared",
+     "CT600 Corporation Tax return",
+     "Filed with Companies House and HMRC",
+     "Typically 2–5 business days",
+     "Dedicated accountant"
+    ],
+    "button": "Speak to our team",
+    "small": "Timescale starts once we have all required information, subject to complexity and review."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Company Tax Return (CT600)",
+   "cardSub": "Prepared from your year-end accounts",
+   "chip": "Ready for review",
+   "rows": [
+    "Turnover",
+    "Allowable expenses",
+    "Capital allowances",
+    "Taxable profit"
+   ],
+   "eyebrow": "Corporation Tax explained",
+   "title": "What is Corporation Tax?",
+   "body": [
+    "Corporation Tax is the tax a UK limited company pays on its taxable profits. Each year the company files a Company Tax Return (CT600) with HMRC, alongside statutory accounts filed with Companies House.",
+    "Both filings come from the same year-end figures. We prepare the accounts, calculate the tax, take you through the numbers and file both once you approve them."
+   ]
+  },
+  "included": {
+   "eyebrow": "What is included",
+   "title": "Everything your company <br>year-end needs.",
+   "intro": "The core filings for your company year-end, prepared and filed together.",
+   "cards": [
+    [
+     "Company Tax Return prepared and filed",
+     "Your CT600 is prepared from your approved year-end figures and submitted to HMRC."
+    ],
+    [
+     "Year-end accounts",
+     "Statutory accounts prepared from your records and filed with Companies House."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant who knows your company and is your point of contact all year round."
+    ],
+    [
+     "Add your Confirmation Statement",
+     "Available separately for £75."
+    ],
+    [
+     "Directors’ Self Assessment",
+     "Directors’ personal tax returns available separately for £150 each."
+    ],
+    [
+     "Optional add-ons",
+     "Add VAT returns, payroll and pension, or bookkeeping when you need them."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "How it works",
+   "title": "From your records to both filings in four steps.",
+   "steps": [
+    [
+     "Share your records",
+     "Choose a service and send your bookkeeping records and bank statements online."
+    ],
+    [
+     "We prepare accounts and tax",
+     "Your accountant prepares the year-end accounts and calculates Corporation Tax."
+    ],
+    [
+     "You review and approve",
+     "We take you through the figures and answer your questions before anything is filed."
+    ],
+    [
+     "Filed with Companies House and HMRC",
+     "Accounts and CT600 are submitted, and we confirm once both are accepted."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Who it is for",
+   "title": "Corporation Tax support for every kind of company.",
+   "cards": [
+    {
+     "title": "Limited companies",
+     "text": "Accounts, Corporation Tax and Companies House filings handled by one team.",
+     "link": "View limited company support"
+    },
+    {
+     "title": "Contractors",
+     "text": "Run your contracting through a limited company with the filings kept on track.",
+     "link": "View contractor support"
+    },
+    {
+     "title": "New companies",
+     "text": "Starting out? Get your first year set up properly from day one.",
+     "link": "View First-Year Accounts offer"
+    },
+    {
+     "title": "Company directors",
+     "text": "Directors’ personal tax returns can be filed alongside your company accounts.",
+     "link": "View limited company support"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Corporation Tax questions, answered.",
+   "intro": "Straight answers on what is included, how filing works and what we need from you.",
+   "items": [
+    [
+     "What is included in the £299 service?",
+     "Preparation of your year-end accounts and CT600 Corporation Tax return, with filing at Companies House and HMRC, typically within 2–5 business days of receiving all your information."
+    ],
+    [
+     "Do you file the accounts with Companies House too?",
+     ""
+    ],
+    [
+     "Can you take over from my current accountant?",
+     ""
+    ],
+    [
+     "Can I get a one-off accounts and tax return filing?",
+     ""
+    ],
+    [
+     "When does Corporation Tax need to be paid?",
+     ""
+    ],
+    [
+     "Can you help if my filing is late?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Service / Corporation Tax / Two Filing Routes"
+ },
+ "confirmation-statement": {
+  "kind": "svc",
+  "hero": {
+   "crumb": "Services",
+   "current": "Confirmation Statement",
+   "title": "File your Confirmation <br>Statement online.",
+   "price": "Confirmation Statement filing for £75",
+   "lead": "We make Confirmation Statement filing straightforward. Our service helps you stay organised, meet your filing obligations and spend less time worrying about company administration.",
+   "buttons": [
+    "File your Confirmation Statement – £75",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Confirmation Statement",
+    "from": "only",
+    "amount": "£75",
+    "cadence": "",
+    "who": "For UK limited companies filing their annual CS01, whether or not details have changed.",
+    "items": [
+     "Review of your company information",
+     "Guidance on any necessary updates",
+     "Preparation and submission of your CS01",
+     "Typically 1–3 business days",
+     "Filed with Companies House"
+    ],
+    "button": "File now",
+    "small": "Timescale starts once we have all required information."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Confirmation Statement",
+   "cardSub": "Annual company check",
+   "chip": "Ready to confirm",
+   "rows": [
+    "Directors and secretary",
+    "People with significant control",
+    "Shareholders and capital",
+    "Registered office and SIC code"
+   ],
+   "eyebrow": "Confirmation Statement explained",
+   "title": "What is a Confirmation <br>Statement?",
+   "body": [
+    "A Confirmation Statement, also known as a CS01, is an annual Companies House filing that confirms the key information held about your company is accurate and up to date.",
+    "It helps ensure your company’s public record reflects its current details, including its registered office address, company officers, shareholders and people with significant control (PSCs), where applicable."
+   ]
+  },
+  "included": {
+   "eyebrow": "Why choose ABF Accounting",
+   "title": "Stay compliant without <br>the stress.",
+   "intro": "Keep your company records in order with support from ABF Accounting Services Ltd.",
+   "cards": [
+    [
+     "Simple and convenient",
+     "Let us take care of the filing process for you."
+    ],
+    [
+     "Accuracy-focused",
+     "We help check that the information being submitted is correct."
+    ],
+    [
+     "Statement filed with Companies House",
+     "Your Confirmation Statement submitted once you have approved it."
+    ],
+    [
+     "Deadline awareness",
+     "We help you keep track of your annual filing obligation."
+    ],
+    [
+     "Support when details change",
+     "We can advise on related Companies House updates where required."
+    ],
+    [
+     "Priced up front",
+     "Included with your accounts, Company Tax Return and directors’ returns."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "How it works",
+   "title": "Your annual check in four steps.",
+   "steps": [
+    [
+     "Review your record",
+     "We check directors, PSCs, shareholders and company details."
+    ],
+    [
+     "Make required changes",
+     "Any updates are filed in the right place before you confirm."
+    ],
+    [
+     "You approve",
+     "We take you through the statement before anything is submitted."
+    ],
+    [
+     "Filed with Companies House",
+     "Your statement is filed and your company record is up to date."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Who it is for",
+   "title": "Confirmation Statement support for every company.",
+   "cards": [
+    {
+     "title": "Limited companies",
+     "text": "Your annual statement filed alongside your accounts and tax return.",
+     "link": "View limited company support"
+    },
+    {
+     "title": "Contractors",
+     "text": "Keep your contracting company’s record accurate and current.",
+     "link": "View contractor support"
+    },
+    {
+     "title": "New companies",
+     "text": "Your first Confirmation Statement handled properly after formation.",
+     "link": "View First-Year Accounts offer"
+    },
+    {
+     "title": "Company directors",
+     "text": "Director and PSC changes made in the right place before filing.",
+     "link": "View limited company support"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Confirmation Statement questions, answered.",
+   "intro": "Straight answers on what the statement covers, when it is due and what we need from you.",
+   "items": [
+    [
+     "How much does Confirmation Statement filing cost?",
+     "Confirmation Statement filing is £75, typically completed within 1–3 business days of receiving all the information we need."
+    ],
+    [
+     "How often do I need to file one?",
+     ""
+    ],
+    [
+     "What if nothing has changed?",
+     ""
+    ],
+    [
+     "Can I change directors in the Confirmation Statement?",
+     ""
+    ],
+    [
+     "Is there a Companies House fee?",
+     ""
+    ],
+    [
+     "What happens if I file late?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Service / Confirmation Statement / When To File"
+ },
+ "self-assessment-tax-return": {
+  "kind": "svc",
+  "hero": {
+   "crumb": "Services",
+   "current": "Self Assessment Tax Return",
+   "title": "Self Assessment tax returns, <br>prepared and filed for you.",
+   "price": "Self Assessment tax return for £150",
+   "lead": "At ABF Accounting Services Ltd, we help individuals and business owners manage their Self Assessment tax obligations with confidence.",
+   "buttons": [
+    "File now – £150",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Self Assessment (SA100)",
+    "from": "only",
+    "amount": "£150",
+    "cadence": "",
+    "who": "For the self-employed, landlords, company directors and others who must file a personal tax return.",
+    "items": [
+     "Preparation and submission of your SA100",
+     "Income, expenses and reliefs reviewed",
+     "Tax liability calculated",
+     "Deadlines and payments explained",
+     "Typically 2–5 business days"
+    ],
+    "button": "File now",
+    "small": "Additional fees may apply for complex returns, foreign income or capital gains."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Self Assessment return",
+   "cardSub": "Prepared by your accountant",
+   "chip": "Ready for review",
+   "rows": [
+    "Income",
+    "Allowable expenses",
+    "Tax reliefs and allowances",
+    "Your tax position"
+   ],
+   "eyebrow": "Self Assessment explained",
+   "title": "What is Self Assessment?",
+   "body": [
+    "Self Assessment is the system HM Revenue & Customs (HMRC) uses to collect Income Tax from individuals and businesses whose tax is not fully deducted automatically, such as through PAYE.",
+    "If you are required to complete a Self Assessment tax return, you must report your income, certain expenses and other relevant financial information to HMRC so that your tax liability can be calculated."
+   ]
+  },
+  "included": {
+   "eyebrow": "How ABF Accounting can help",
+   "title": "Make tax season <br>less stressful.",
+   "intro": "Let ABF Accounting help you organise your tax affairs and submit your Self Assessment tax return accurately and on time.",
+   "cards": [
+    [
+     "Prepare and submit your return",
+     "Preparing and submitting Self Assessment tax returns."
+    ],
+    [
+     "Review income, expenses and reliefs",
+     "Reviewing income, allowable expenses and relevant tax reliefs."
+    ],
+    [
+     "Calculate your tax",
+     "Calculating tax liabilities based on the information provided."
+    ],
+    [
+     "Find tax-saving opportunities",
+     "Identifying potential tax-saving opportunities within the rules."
+    ],
+    [
+     "Deadlines and payments",
+     "Advising on filing deadlines and payment obligations."
+    ],
+    [
+     "Help with HMRC queries",
+     "Helping you respond to HMRC queries relating to your tax return, where agreed."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "How it works",
+   "title": "From your records to HMRC in four steps.",
+   "steps": [
+    [
+     "Tell us about your income",
+     "Choose a service and share your records online."
+    ],
+    [
+     "We prepare your return",
+     "Your accountant works through your income, expenses and allowances."
+    ],
+    [
+     "You review and approve",
+     "We explain the figures and answer your questions before anything is filed."
+    ],
+    [
+     "Filed with HMRC",
+     "We submit your return and let you know once HMRC has accepted it."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Who it is for",
+   "title": "Self Assessment support for the way you earn.",
+   "cards": [
+    {
+     "title": "Sole traders",
+     "text": "Your trading income, expenses, accounts and return handled together.",
+     "link": "View sole trader support"
+    },
+    {
+     "title": "Freelancers and self-employed",
+     "text": "Stay on top of irregular income and claim the expenses you are entitled to.",
+     "link": "View freelancer support"
+    },
+    {
+     "title": "Landlords",
+     "text": "Rental income, allowable costs and your return prepared in one place.",
+     "link": "View landlord support"
+    },
+    {
+     "title": "Company directors",
+     "text": "Directors’ personal tax returns can be filed alongside your company accounts.",
+     "link": "View limited company support"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Self Assessment questions, answered.",
+   "intro": "Straight answers on who needs to file, what we need from you and how the process works.",
+   "items": [
+    [
+     "Do I need to file a Self Assessment tax return?",
+     "You usually need to file if you have income that is not taxed through PAYE, such as self-employment, rental or partnership income. If you are not sure, we will check your situation with you before you sign up."
+    ],
+    [
+     "What do I need to send you?",
+     ""
+    ],
+    [
+     "Can you help if my return is late?",
+     ""
+    ],
+    [
+     "Is Self Assessment included for company directors?",
+     ""
+    ],
+    [
+     "How much does a Self Assessment return cost?",
+     ""
+    ],
+    [
+     "When is the Self Assessment deadline?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Service / Self Assessment / Who Needs To File"
+ },
+ "dormant-company-accounts": {
+  "kind": "svc",
+  "hero": {
+   "crumb": "Services",
+   "current": "Dormant Company Accounts",
+   "title": "Dormant company accounts <br>filing, made simple.",
+   "price": "For just £80",
+   "lead": "Even if your limited company has not traded, you may still need to file annual accounts with Companies House. We prepare and submit your dormant company accounts, helping you meet your annual filing obligations.",
+   "buttons": [
+    "File now – £80",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Dormant company accounts",
+    "from": "only",
+    "amount": "£80",
+    "cadence": "",
+    "who": "For companies that qualify to file dormant accounts.",
+    "items": [
+     "Preparation of dormant company accounts",
+     "Electronic filing with Companies House",
+     "Support with annual filing deadlines",
+     "Clear, transparent pricing",
+     "Typically 1–3 business days"
+    ],
+    "button": "File now",
+    "small": "Timescale confirmed after receiving the necessary company details."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Dormant company accounts",
+   "cardSub": "Annual filing checklist",
+   "chip": "Ready to confirm",
+   "rows": [
+    "Dormant status confirmed",
+    "Dormant accounts prepared",
+    "Filed with Companies House",
+    "Next deadline in view"
+   ],
+   "eyebrow": "Dormant companies explained",
+   "title": "What is a dormant <br>company?",
+   "body": [
+    "A company is usually dormant when it is not trading and has had no significant transactions during its financial year.",
+    "Dormant companies still need to keep their Companies House record up to date and file annual accounts."
+   ]
+  },
+  "included": {
+   "eyebrow": "Our service includes",
+   "title": "Keep your company <br>compliant.",
+   "intro": "Avoid unnecessary stress and let us handle your dormant accounts filing.",
+   "cards": [
+    [
+     "Dormant accounts prepared",
+     "Preparation of your dormant company accounts."
+    ],
+    [
+     "Filed electronically",
+     "Electronic filing with Companies House."
+    ],
+    [
+     "Statement filed with Companies House",
+     "Your Confirmation Statement submitted once you have approved it."
+    ],
+    [
+     "Deadline support",
+     "Support with your annual filing deadlines."
+    ],
+    [
+     "Clear, transparent pricing",
+     "£80, with no surprises."
+    ],
+    [
+     "Priced up front",
+     "Included with your accounts, Company Tax Return and directors’ returns."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "How it works",
+   "title": "Your dormant accounts, filed in four steps.",
+   "steps": [
+    [
+     "Confirm dormant status",
+     "We check your company qualifies to file dormant accounts."
+    ],
+    [
+     "We prepare the accounts",
+     "Your dormant accounts are prepared from your company details."
+    ],
+    [
+     "You review and approve",
+     "We take you through the accounts before anything is filed."
+    ],
+    [
+     "Filed with Companies House",
+     "Submitted electronically, with confirmation sent to you."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Who it is for",
+   "title": "Dormant accounts support for every company.",
+   "cards": [
+    {
+     "title": "New companies",
+     "text": "Registered but not trading yet? Your dormant accounts still need filing.",
+     "link": "View First-Year Accounts offer"
+    },
+    {
+     "title": "Holding companies",
+     "text": "Companies that hold assets but do not trade.",
+     "link": "View limited company support"
+    },
+    {
+     "title": "Paused businesses",
+     "text": "Companies that have stopped trading for now.",
+     "link": "View limited company support"
+    },
+    {
+     "title": "Company directors",
+     "text": "Keep your company record and filings in order.",
+     "link": "View Confirmation Statement"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Dormant company questions, answered.",
+   "intro": "Straight answers on dormant accounts and what your company still needs to file.",
+   "items": [
+    [
+     "What is a dormant company?",
+     "A company is usually dormant when it has not traded and has had no significant transactions in its financial year. Dormant companies still need to file annual accounts with Companies House."
+    ],
+    [
+     "Do dormant companies need to file accounts?",
+     ""
+    ],
+    [
+     "Do I still need a Confirmation Statement?",
+     ""
+    ],
+    [
+     "Do I need to tell HMRC?",
+     ""
+    ],
+    [
+     "What if my company starts trading?",
+     ""
+    ],
+    [
+     "How long does filing take?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Service / Dormant / Still Required"
+ },
+ "bookkeeping-services": {
+  "kind": "svc",
+  "hero": {
+   "crumb": "Services",
+   "current": "Bookkeeping Services",
+   "title": "Bookkeeping that keeps your records ready, all year.",
+   "price": "Bookkeeping <span class=\"abf-text-green\">tailored</span> to your business",
+   "lead": "Your income, expenses and bank transactions are recorded and kept up to date by your accountant, so year-end accounts and tax returns are quicker and calmer.",
+   "buttons": [
+    "Speak to our team",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Bookkeeping services",
+    "from": "price",
+    "amount": "Quote",
+    "cadence": "tailored to you",
+    "who": "For sole traders, freelancers, contractors and limited companies.",
+    "items": [
+     "Bookkeeping kept up to date",
+     "Year-end accounts",
+     "Accounting software subscription",
+     "Dedicated accountant",
+     "Deadline reminders"
+    ],
+    "button": "Speak to our team",
+    "small": "Speak to our team for a price based on your transaction volume."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Monthly bookkeeping",
+   "cardSub": "Kept up to date by your accountant",
+   "chip": "Up to date",
+   "rows": [
+    "Sales and income",
+    "Purchases and expenses",
+    "Bank reconciliation",
+    "Ready for year-end"
+   ],
+   "eyebrow": "Bookkeeping explained",
+   "title": "What does bookkeeping <br>cover?",
+   "body": [
+    "Bookkeeping is the day-to-day recording of your income, expenses and bank transactions, so your figures stay accurate and up to date.",
+    "Good records make everything else easier. Your year-end accounts, tax returns and VAT are quicker to prepare and less likely to bring surprises."
+   ]
+  },
+  "included": {
+   "eyebrow": "What is included",
+   "title": "Organised records, <br>without the admin.",
+   "intro": "Bookkeeping support tailored to your business, alongside the support below.",
+   "cards": [
+    [
+     "Bookkeeping kept up to date",
+     "Income, expenses and bank transactions recorded and reconciled through the year."
+    ],
+    [
+     "Accounting software included",
+     "Your records are kept in accounting software, so everything lives in one place."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant who knows your business and is your point of contact all year round."
+    ],
+    [
+     "Year-end accounts",
+     "Accounts prepared from records that are already organised, not rebuilt in a rush."
+    ],
+    [
+     "Deadline reminders",
+     "We let you know what is needed and when, so nothing is left to the last minute."
+    ],
+    [
+     "Annual business health check",
+     "A yearly look at how your business is doing, based on your up-to-date figures."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "How it works",
+   "title": "From receipts to clear figures in four steps.",
+   "steps": [
+    [
+     "Share your records",
+     "Send receipts, invoices and bank statements online."
+    ],
+    [
+     "We record and reconcile",
+     "Your accountant keeps your books up to date and checks them against the bank."
+    ],
+    [
+     "See where you stand",
+     "Ask questions any time by phone or email and get clear answers."
+    ],
+    [
+     "Ready for year-end",
+     "Your records feed straight into your accounts and tax returns."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Who it is for",
+   "title": "Bookkeeping support for every type of business.",
+   "cards": [
+    {
+     "title": "Sole traders",
+     "text": "Keep your income and expenses organised without spending evenings on admin.",
+     "link": "View sole trader support"
+    },
+    {
+     "title": "Limited companies",
+     "text": "Company records kept ready for accounts, Corporation Tax and VAT.",
+     "link": "View limited company support"
+    },
+    {
+     "title": "Contractors",
+     "text": "Invoices, expenses and CIS records kept in order through the year.",
+     "link": "View contractor support"
+    },
+    {
+     "title": "Landlords",
+     "text": "Rental income and property costs recorded in one place.",
+     "link": "View landlord support"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Bookkeeping questions, answered.",
+   "intro": "Straight answers on what is included, what we need from you and how often your books are updated.",
+   "items": [
+    [
+     "How is bookkeeping priced?",
+     "Bookkeeping is priced around your business, based on things like your transaction volume. Speak to our team for a quote."
+    ],
+    [
+     "What do I need to send you?",
+     ""
+    ],
+    [
+     "Which accounting software do you use?",
+     ""
+    ],
+    [
+     "Can you catch up on bookkeeping that is behind?",
+     ""
+    ],
+    [
+     "How often are my books updated?",
+     ""
+    ],
+    [
+     "Can I add VAT and payroll later?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Service / Bookkeeping / What Clean Books Unlock"
+ },
+ "vat-return": {
+  "kind": "svc",
+  "hero": {
+   "crumb": "Services",
+   "current": "VAT Return",
+   "title": "VAT returns, prepared and <br>filed under Making Tax Digital.",
+   "price": "VAT returns starting from just £50 per return",
+   "lead": "Your VAT returns are prepared from your digital records, checked with you and submitted to HMRC through MTD-compatible software.",
+   "buttons": [
+    "Speak to our team",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "VAT Return service",
+    "from": "from",
+    "amount": "£50",
+    "cadence": "per return",
+    "who": "For VAT-registered businesses filing under Making Tax Digital.",
+    "items": [
+     "VAT returns prepared and filed",
+     "Making Tax Digital compatible submissions",
+     "Bookkeeping and year-end accounts",
+     "Dedicated accountant",
+     "Deadline reminders"
+    ],
+    "button": "Speak to our team",
+    "small": "Final price depends on your VAT scheme and transaction volume."
+   }
+  },
+  "explainer": {
+   "cardTitle": "VAT return",
+   "cardSub": "Prepared for your VAT period",
+   "chip": "Ready to submit",
+   "rows": [
+    "Sales and output VAT",
+    "Purchases and input VAT",
+    "Adjustments",
+    "VAT to pay or reclaim"
+   ],
+   "eyebrow": "Making Tax Digital explained",
+   "title": "What is Making Tax Digital <br>for VAT?",
+   "body": [
+    "Making Tax Digital (MTD) is HMRC’s requirement for VAT-registered businesses to keep digital records and submit VAT returns using compatible software.",
+    "We prepare your VAT returns from your digital records, check them with you and submit them through MTD-compatible software, so you stay compliant."
+   ]
+  },
+  "included": {
+   "eyebrow": "What is included",
+   "title": "VAT handled properly, <br>every quarter.",
+   "intro": "VAT returns prepared and filed for VAT-registered businesses, from £50 per return.",
+   "cards": [
+    [
+     "VAT returns prepared and filed",
+     "Each return prepared from your records and submitted to HMRC once you approve it."
+    ],
+    [
+     "MTD-compatible submissions",
+     "Returns submitted through software that meets HMRC’s Making Tax Digital rules."
+    ],
+    [
+     "Digital records included",
+     "Your VAT records are kept digitally, as Making Tax Digital requires."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant who knows your business and can answer your VAT questions."
+    ],
+    [
+     "Deadline reminders",
+     "We let you know what is needed before each VAT period closes."
+    ],
+    [
+     "Joined up with your bookkeeping",
+     "VAT returns are prepared from the same records used for your accounts."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "How it works",
+   "title": "From your records to HMRC in four steps.",
+   "steps": [
+    [
+     "Share your records",
+     "Your sales and purchase records are kept digitally through the period."
+    ],
+    [
+     "We prepare your return",
+     "Your accountant calculates the VAT due or reclaimable."
+    ],
+    [
+     "You review and approve",
+     "We explain the figures and answer your questions before anything is filed."
+    ],
+    [
+     "Submitted through MTD",
+     "Your return is filed with HMRC and we confirm once it is accepted."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Who it is for",
+   "title": "VAT support for VAT-registered businesses.",
+   "cards": [
+    {
+     "title": "Limited companies",
+     "text": "VAT returns prepared alongside your company accounts and Corporation Tax.",
+     "link": "View limited company support"
+    },
+    {
+     "title": "Sole traders",
+     "text": "VAT handled with your bookkeeping and Self Assessment.",
+     "link": "View sole trader support"
+    },
+    {
+     "title": "Contractors",
+     "text": "Keep VAT on your invoices and returns accurate.",
+     "link": "View contractor support"
+    },
+    {
+     "title": "Ecommerce sellers",
+     "text": "VAT support for Amazon, Shopify and Etsy sellers.",
+     "link": "View ecommerce support"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "VAT and MTD questions, answered.",
+   "intro": "Straight answers on VAT filing, Making Tax Digital and what we need from you.",
+   "items": [
+    [
+     "How much does a VAT return cost?",
+     "VAT returns start from £50 per return. Your accountant will confirm the price based on your VAT scheme and transaction volume."
+    ],
+    [
+     "Do I need to register for VAT?",
+     ""
+    ],
+    [
+     "What is Making Tax Digital?",
+     ""
+    ],
+    [
+     "Can you help me register for VAT?",
+     ""
+    ],
+    [
+     "How often are VAT returns due?",
+     ""
+    ],
+    [
+     "Can you help if a VAT return is late?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Service / VAT & MTD / Quarterly Cycle"
+ },
+ "payroll-and-pension": {
+  "kind": "svc",
+  "hero": {
+   "crumb": "Services",
+   "current": "Payroll and Pension",
+   "title": "Payroll and pensions, <br>handled for you.",
+   "price": "Payroll starting from just <span class=\"abf-text-green\">£30</span>/month",
+   "lead": "Payslips, PAYE, National Insurance and workplace pension contributions calculated, checked and reported to HMRC, so your team is paid correctly and on time.",
+   "buttons": [
+    "Speak to our team",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Payroll & pension",
+    "from": "from",
+    "amount": "£30",
+    "cadence": "/month",
+    "who": "For employers running payroll for directors or staff.",
+    "items": [
+     "Payslips produced each pay period",
+     "PAYE and National Insurance calculated",
+     "Real Time Information submissions to HMRC",
+     "Workplace pension contributions",
+     "Dedicated accountant"
+    ],
+    "button": "Speak to our team",
+    "small": "Final price depends on the number of employees and pay frequency."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Payroll and CIS",
+   "cardSub": "Prepared each pay period",
+   "chip": "Ready to submit",
+   "rows": [
+    "Gross pay",
+    "Tax and National Insurance",
+    "Pension contributions",
+    "CIS deductions"
+   ],
+   "eyebrow": "Payroll and CIS explained",
+   "title": "How do payroll and CIS <br>work?",
+   "body": [
+    "If you employ staff, payroll means running PAYE, issuing payslips and reporting pay to HMRC in real time, alongside workplace pension duties.",
+    "Employers also have workplace pension duties, including auto-enrolment and regular contributions. We handle both alongside your payroll."
+   ]
+  },
+  "included": {
+   "eyebrow": "What is included",
+   "title": "Pay and deductions, done right.",
+   "intro": "Payroll and pension support, priced from £30/month.",
+   "cards": [
+    [
+     "Workplace pensions",
+     "Auto-enrolment and pension contributions handled each pay run."
+    ],
+    [
+     "Payroll runs",
+     "Payslips, PAYE and National Insurance calculated every pay run."
+    ],
+    [
+     "Bookkeeping and accounts",
+     "Your records and year-end accounts kept in step with your payroll."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant who knows your business and your pay schedule."
+    ],
+    [
+     "Deadline reminders",
+     "We let you know what is needed before each submission is due."
+    ],
+    [
+     "Optional add-ons",
+     "Add VAT filing or an additional director’s tax return when you need them."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "How it works",
+   "title": "From pay details to HMRC in four steps.",
+   "steps": [
+    [
+     "Share pay details",
+     "Send hours, pay and subcontractor details for the period."
+    ],
+    [
+     "We calculate pay and deductions",
+     "Tax, National Insurance, pension and CIS deductions worked out for you."
+    ],
+    [
+     "You review and approve",
+     "We check the figures with you before anything is submitted."
+    ],
+    [
+     "Submitted to HMRC",
+     "Returns are filed and we confirm once HMRC has received them."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Who it is for",
+   "title": "Payroll and CIS support for the way you work.",
+   "cards": [
+    {
+     "title": "Contractors",
+     "text": "CIS returns included, with your bookkeeping and Self Assessment.",
+     "link": "View contractor support"
+    },
+    {
+     "title": "Limited companies",
+     "text": "Director and staff payroll run alongside your company accounts.",
+     "link": "View limited company support"
+    },
+    {
+     "title": "Small businesses",
+     "text": "Payroll and pensions handled as your team grows.",
+     "link": "View small business support"
+    },
+    {
+     "title": "Sole traders",
+     "text": "Add payroll when you take on your first employee.",
+     "link": "View sole trader support"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Payroll and CIS questions, answered.",
+   "intro": "Straight answers on payroll, pensions and the Construction Industry Scheme.",
+   "items": [
+    [
+     "How much does payroll cost?",
+     "Payroll starts from £30/month. The final price depends on the number of employees and how often you run payroll."
+    ],
+    [
+     "Do you handle workplace pensions?",
+     ""
+    ],
+    [
+     "What is the Construction Industry Scheme?",
+     ""
+    ],
+    [
+     "Can you run payroll for just one director?",
+     ""
+    ],
+    [
+     "How often do you run payroll?",
+     ""
+    ],
+    [
+     "What happens if a submission is late?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Service / Payroll & Pension / Two Workflows"
+ },
+ "tax-planning-advice": {
+  "kind": "svc",
+  "hero": {
+   "crumb": "Services",
+   "current": "Tax Planning Advice",
+   "title": "Tax planning advice, so you <br>pay the right amount of tax.",
+   "price": "<span class=\"abf-text-green\">Tailored</span> advice for business and personal tax",
+   "lead": "Your accountant reviews your position and explains practical, legitimate ways to plan ahead, always within HMRC rules.",
+   "buttons": [
+    "Speak to our team",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Tax planning advice",
+    "from": "price",
+    "amount": "Quote",
+    "cadence": "tailored to you",
+    "who": "For business owners, directors, landlords and individuals.",
+    "items": [
+     "Personal tax planning",
+     "Company tax planning",
+     "Capital gains planning",
+     "R&D tax credits",
+     "VAT scheme review"
+    ],
+    "button": "Speak to our team",
+    "small": "Speak to our team for a quote based on your situation."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Your tax plan",
+   "cardSub": "Reviewed with your accountant",
+   "chip": "Up to date",
+   "rows": [
+    "Income and profits",
+    "Allowances and reliefs",
+    "Planned changes",
+    "Recommended actions"
+   ],
+   "eyebrow": "Tax planning explained",
+   "title": "What is tax planning?",
+   "body": [
+    "Tax planning means arranging your affairs so you pay the right amount of tax, using the allowances, reliefs and options available within the rules.",
+    "We look at your income, profits and plans, then explain the options in plain English so you can make informed decisions."
+   ]
+  },
+  "included": {
+   "eyebrow": "What our advice covers",
+   "title": "Practical advice, <br>explained clearly.",
+   "intro": "Tax planning advice is available alongside your filings or as a separate service.",
+   "cards": [
+    [
+     "Annual tax review",
+     "A yearly look at your position and the options available to you."
+    ],
+    [
+     "Salary and dividend planning",
+     "A sensible mix of income for company directors."
+    ],
+    [
+     "Capital gains advice",
+     "Planning before you sell property, shares or other assets."
+    ],
+    [
+     "R&D tax credits",
+     "Help identifying and claiming for qualifying projects."
+    ],
+    [
+     "VAT scheme review",
+     "Checking the VAT scheme that suits your business."
+    ],
+    [
+     "Ongoing support",
+     "Your accountant on hand as your plans change."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "How it works",
+   "title": "From first conversation to a clear plan.",
+   "steps": [
+    [
+     "Tell us about your situation",
+     "Share your income, business details and upcoming plans."
+    ],
+    [
+     "We review your position",
+     "Your accountant looks at the allowances and options available."
+    ],
+    [
+     "We explain your options",
+     "Clear recommendations in plain English."
+    ],
+    [
+     "Put the plan in place",
+     "We help you act on the plan and review it each year."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Who it is for",
+   "title": "Tax planning for the way you earn.",
+   "cards": [
+    {
+     "title": "Company directors",
+     "text": "Plan how you take income from your company.",
+     "link": "View limited company support"
+    },
+    {
+     "title": "Sole traders",
+     "text": "Make the most of allowances and expenses.",
+     "link": "View sole trader support"
+    },
+    {
+     "title": "Landlords",
+     "text": "Plan for rental income and property sales.",
+     "link": "View landlord support"
+    },
+    {
+     "title": "Contractors",
+     "text": "Plan around how you contract and get paid.",
+     "link": "View contractor support"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Tax planning questions, answered.",
+   "intro": "Straight answers on what tax planning covers and how we work.",
+   "items": [
+    [
+     "What does tax planning cover?",
+     "It covers how you take income, use allowances and reliefs, plan for capital gains and choose the right options for your business, always within HMRC rules."
+    ],
+    [
+     "Is tax planning legal?",
+     ""
+    ],
+    [
+     "How is tax planning advice priced?",
+     ""
+    ],
+    [
+     "How often should I review my plan?",
+     ""
+    ],
+    [
+     "Can you help with capital gains?",
+     ""
+    ],
+    [
+     "Do you help with R&D tax credits?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Service / Tax Planning / Areas We Cover"
+ },
+ "limited-companies": {
+  "kind": "who",
+  "hero": {
+   "crumb": "Who we help",
+   "current": "Limited companies",
+   "title": "Limited company accounting, <br>without the admin drag.",
+   "price": "Company accounts and tax return from £299",
+   "lead": "Bookkeeping, year-end accounts, Corporation Tax, Companies House filings and directors’ returns, handled by one dedicated accountant.",
+   "buttons": [
+    "Buy now",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Company accounts & CT600",
+    "from": "from",
+    "amount": "£299",
+    "cadence": "",
+    "who": "For limited companies and their directors.",
+    "items": [
+     "Year-end accounts prepared",
+     "CT600 Corporation Tax return",
+     "Filed with Companies House and HMRC",
+     "Typically 2–5 business days",
+     "Dedicated accountant"
+    ],
+    "button": "Get started",
+    "small": "Confirmation Statement £75. Dormant accounts £80."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Your company year",
+   "cardSub": "Handled by one team",
+   "chip": "Handled by ABF",
+   "rows": [
+    "Year-end accounts",
+    "Company Tax Return",
+    "Confirmation Statement",
+    "Directors’ Self Assessment"
+   ],
+   "eyebrow": "What your company needs",
+   "title": "What a limited company <br>files each year.",
+   "body": [
+    "Running a limited company comes with recurring obligations to both Companies House and HMRC, alongside the personal tax returns of its directors.",
+    "We bring them together in one place, so you can see what is due, what we are handling and what needs your input."
+   ]
+  },
+  "included": {
+   "eyebrow": "What ABF handles",
+   "title": "What ABF handles <br>for company.",
+   "intro": "Each service is priced up front on our pricing page.",
+   "cards": [
+    [
+     "Bookkeeping and year-end accounts",
+     "Records kept up to date, with statutory accounts prepared and filed."
+    ],
+    [
+     "Company Tax Return",
+     "Your CT600 prepared from the approved year-end figures."
+    ],
+    [
+     "Confirmation Statement",
+     "Your company record reviewed and the statement filed each year."
+    ],
+    [
+     "Directors’ Self Assessment",
+     "Directors’ personal tax returns filed for £150 each."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant with unlimited phone and email support."
+    ],
+    [
+     "Optional add-ons",
+     "Add VAT filing, payroll and pension, or extra directors’ returns."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "Getting started",
+   "title": "From first call to fully set up in four steps.",
+   "steps": [
+    [
+     "Choose your service",
+     "Pick the service you need, or request a quote."
+    ],
+    [
+     "Meet your accountant",
+     "Your dedicated accountant gets to know your business and deadlines."
+    ],
+    [
+     "Share your records online",
+     "Send documents digitally, with accounting software included."
+    ],
+    [
+     "We keep you on track",
+     "Your filings are prepared, approved by you and submitted on time."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Related services",
+   "title": "Services limited <br>companies use most.",
+   "cards": [
+    {
+     "title": "Annual Accounts & Tax Return",
+     "text": "Accounts and CT600 prepared from the same approved figures.",
+     "link": "View Annual Accounts & Tax Return"
+    },
+    {
+     "title": "Bookkeeping Services",
+     "text": "Records kept current, ready for every filing.",
+     "link": "View Bookkeeping Services"
+    },
+    {
+     "title": "VAT Return",
+     "text": "VAT returns filed under Making Tax Digital.",
+     "link": "View VAT Return"
+    },
+    {
+     "title": "Payroll and Pension",
+     "text": "Director and staff payroll and pensions.",
+     "link": "View Payroll and Pension"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Limited company questions, answered.",
+   "intro": "Straight answers on what is included, how filing works and what directors need to do.",
+   "items": [
+    [
+     "What is included in limited company support?",
+     "Bookkeeping, year-end accounts, your Company Tax Return, the Confirmation Statement and Self Assessment returns for two directors, with a dedicated accountant, deadline reminders and unlimited phone and email support."
+    ],
+    [
+     "Can you take over from my current accountant?",
+     ""
+    ],
+    [
+     "How much do your services cost?",
+     ""
+    ],
+    [
+     "Do you handle VAT and payroll?",
+     ""
+    ],
+    [
+     "What do directors need to do?",
+     ""
+    ],
+    [
+     "When are company accounts and tax due?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Audience / Limited Companies / Your Company Year"
+ },
+ "sole-traders": {
+  "kind": "who",
+  "hero": {
+   "crumb": "Who we help",
+   "current": "Sole traders",
+   "title": "Accounting support that fits <br>around the way you work.",
+   "price": "Self Assessment tax return from £150",
+   "lead": "Keep your records, year-end accounts and Self Assessment organised, without giving up your evenings to admin.",
+   "buttons": [
+    "Buy now",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Self Assessment (SA100)",
+    "from": "only",
+    "amount": "£150",
+    "cadence": "",
+    "who": "For sole traders and the self-employed.",
+    "items": [
+     "Self Assessment return prepared",
+     "Submitted to HMRC for you",
+     "Income, expenses and reliefs reviewed",
+     "Typically 2–5 business days",
+     "Dedicated accountant"
+    ],
+    "button": "Get started",
+    "small": "Additional fees may apply for complex returns."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Your sole trader year",
+   "cardSub": "Handled by one team",
+   "chip": "Handled by ABF",
+   "rows": [
+    "Bookkeeping",
+    "Year-end accounts",
+    "Self Assessment return",
+    "VAT, if registered"
+   ],
+   "eyebrow": "What you need to stay on top of",
+   "title": "What a sole trader <br>needs each year.",
+   "body": [
+    "As a sole trader, your business income is reported through Self Assessment, so organised records through the year make all the difference.",
+    "We keep your books in order, prepare your year-end accounts and file your return, with VAT available if you are registered."
+   ]
+  },
+  "included": {
+   "eyebrow": "What ABF handles",
+   "title": "What ABF handles <br>for sole traders.",
+   "intro": "Each service is priced up front on our pricing page.",
+   "cards": [
+    [
+     "Bookkeeping",
+     "Income and expenses kept organised through the year."
+    ],
+    [
+     "Year-end accounts",
+     "Accounts prepared from your records, ready for your return."
+    ],
+    [
+     "Self Assessment return",
+     "Your return prepared and filed with HMRC once you approve it."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant with unlimited phone and email support."
+    ],
+    [
+     "Annual tax efficiency recommendations",
+     "A yearly review so you pay the right amount of tax."
+    ],
+    [
+     "Optional add-ons",
+     "Add VAT filing or payroll and pension when you need them."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "Getting started",
+   "title": "From first call to fully set up in four steps.",
+   "steps": [
+    [
+     "Choose your service",
+     "Pick the service you need, or request a quote."
+    ],
+    [
+     "Meet your accountant",
+     "Your dedicated accountant gets to know your business and deadlines."
+    ],
+    [
+     "Share your records online",
+     "Send documents digitally, with accounting software included."
+    ],
+    [
+     "We keep you on track",
+     "Your filings are prepared, approved by you and submitted on time."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Related services",
+   "title": "Services sole traders use most.",
+   "cards": [
+    {
+     "title": "Self Assessment Tax Return",
+     "text": "Your return prepared, checked with you and filed.",
+     "link": "View Self Assessment Tax Return"
+    },
+    {
+     "title": "Bookkeeping Services",
+     "text": "Records kept current without the evening admin.",
+     "link": "View Bookkeeping Services"
+    },
+    {
+     "title": "VAT Return",
+     "text": "VAT returns filed under Making Tax Digital.",
+     "link": "View VAT Return"
+    },
+    {
+     "title": "Annual Accounts & Tax Return",
+     "text": "Year-end accounts that feed your tax return.",
+     "link": "View Annual Accounts & Tax Return"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Sole trader questions, answered.",
+   "intro": "Straight answers on records, Self Assessment and choosing the right support.",
+   "items": [
+    [
+     "What records should I keep through the year?",
+     "Keep clear records of your income, business expenses and supporting documents such as invoices, receipts and bank statements. Organised records make your year-end accounts and Self Assessment quicker and more accurate."
+    ],
+    [
+     "How much does a Self Assessment return cost?",
+     ""
+    ],
+    [
+     "Can you help with my Self Assessment?",
+     ""
+    ],
+    [
+     "Do I need to register for VAT?",
+     ""
+    ],
+    [
+     "Should I become a limited company?",
+     ""
+    ],
+    [
+     "What expenses can I claim?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Audience / Sole Traders / Three Habits"
+ },
+ "contractors": {
+  "kind": "who",
+  "hero": {
+   "crumb": "Who we help",
+   "current": "Contractors",
+   "title": "Contractor accounting that keeps <br>pace with how you get paid.",
+   "price": "Self Assessment tax return from £150",
+   "lead": "Support for contractors working through PAYE, umbrella or limited company setups, with CIS, VAT and Self Assessment handled where they apply.",
+   "buttons": [
+    "Buy now",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Self Assessment (SA100)",
+    "from": "only",
+    "amount": "£150",
+    "cadence": "",
+    "who": "For contractors on PAYE, umbrella or limited company setups.",
+    "items": [
+     "Self Assessment return prepared",
+     "Submitted to HMRC for you",
+     "Income, expenses and reliefs reviewed",
+     "Typically 2–5 business days",
+     "Dedicated accountant"
+    ],
+    "button": "Get started",
+    "small": "Contracting through a limited company? Accounts and tax return from £299."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Your contractor year",
+   "cardSub": "Handled by one team",
+   "chip": "Handled by ABF",
+   "rows": [
+    "Income and contract records",
+    "Self Assessment return",
+    "CIS returns",
+    "VAT, if registered"
+   ],
+   "eyebrow": "What you need to stay on top of",
+   "title": "What a contractor <br>needs each year.",
+   "body": [
+    "Your obligations depend on how you contract. PAYE and umbrella workers often need a Self Assessment return, while limited company contractors also have company filings.",
+    "In construction, CIS deductions need recording and reporting. We keep the right records together, whatever your setup."
+   ]
+  },
+  "included": {
+   "eyebrow": "What ABF handles",
+   "title": "What ABF handles <br>for contractors.",
+   "intro": "Each service is priced up front on our pricing page.",
+   "cards": [
+    [
+     "Bookkeeping and year-end accounts",
+     "Invoices, expenses and records kept in order through the year."
+    ],
+    [
+     "Self Assessment return",
+     "Your return prepared and filed with HMRC once you approve it."
+    ],
+    [
+     "CIS returns",
+     "CIS returns calculated and submitted where they apply."
+    ],
+    [
+     "Confirmation Statement",
+     "Filed for contractors working through a limited company."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant with unlimited phone and email support."
+    ],
+    [
+     "Optional add-ons",
+     "Add VAT filing, payroll and pension, or an extra director’s return."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "Getting started",
+   "title": "From first call to fully set up in four steps.",
+   "steps": [
+    [
+     "Choose your service",
+     "Pick the service you need, or request a quote."
+    ],
+    [
+     "Meet your accountant",
+     "Your dedicated accountant gets to know your business and deadlines."
+    ],
+    [
+     "Share your records online",
+     "Send documents digitally, with accounting software included."
+    ],
+    [
+     "We keep you on track",
+     "Your filings are prepared, approved by you and submitted on time."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Related services",
+   "title": "Services contractors use most.",
+   "cards": [
+    {
+     "title": "Self Assessment Tax Return",
+     "text": "Your return prepared, checked with you and filed.",
+     "link": "View Self Assessment Tax Return"
+    },
+    {
+     "title": "Payroll and Pension",
+     "text": "Payroll and pensions handled for you.",
+     "link": "View Payroll and Pension"
+    },
+    {
+     "title": "Annual Accounts & Tax Return",
+     "text": "For contractors with their own limited company.",
+     "link": "View Annual Accounts & Tax Return"
+    },
+    {
+     "title": "VAT Return",
+     "text": "VAT returns filed under Making Tax Digital.",
+     "link": "View VAT Return"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Contractor questions, answered.",
+   "intro": "Straight answers on the way you contract and what we handle for you.",
+   "items": [
+    [
+     "Do you support PAYE and umbrella contractors?",
+     "Yes. We help organise the records and annual tax information that sit around PAYE and umbrella work, and prepare your Self Assessment return where you need one."
+    ],
+    [
+     "What if I contract through my own limited company?",
+     ""
+    ],
+    [
+     "Do you handle CIS returns?",
+     ""
+    ],
+    [
+     "Can you help with VAT?",
+     ""
+    ],
+    [
+     "Can you help when my contract changes?",
+     ""
+    ],
+    [
+     "What records should I keep?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Audience / Contractors / Contracting Routes"
+ },
+ "self-employed-freelancers": {
+  "kind": "who",
+  "hero": {
+   "crumb": "Who we help",
+   "current": "Self-employed & freelancers",
+   "title": "Accounting for freelancers <br>and the self-employed.",
+   "price": "Self Assessment tax return from £150",
+   "lead": "Keep your income, expenses and Self Assessment organised, whether you invoice one client or many, with support that grows as your work does.",
+   "buttons": [
+    "Buy now",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Self Assessment (SA100)",
+    "from": "only",
+    "amount": "£150",
+    "cadence": "",
+    "who": "For freelancers, individuals and the self-employed.",
+    "items": [
+     "Self Assessment return prepared",
+     "Submitted to HMRC for you",
+     "Income, expenses and reliefs reviewed",
+     "Typically 2–5 business days",
+     "Dedicated accountant"
+    ],
+    "button": "Get started",
+    "small": "Additional fees may apply for complex returns."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Your freelance year",
+   "cardSub": "Handled by one team",
+   "chip": "Handled by ABF",
+   "rows": [
+    "Income by client",
+    "Business expenses",
+    "Self Assessment return",
+    "VAT, if registered"
+   ],
+   "eyebrow": "What you need to stay on top of",
+   "title": "What freelancers need <br>each year.",
+   "body": [
+    "Freelance and self-employed income is reported through Self Assessment, so it pays to keep income, expenses and records organised as you go.",
+    "We keep your books in order and prepare your return, with VAT and payroll ready to add if your work grows."
+   ]
+  },
+  "included": {
+   "eyebrow": "What ABF handles",
+   "title": "What ABF handles <br>for freelancers.",
+   "intro": "Each service is priced up front on our pricing page.",
+   "cards": [
+    [
+     "Bookkeeping",
+     "Income and expenses kept organised through the year."
+    ],
+    [
+     "Year-end accounts",
+     "Accounts prepared from your records, ready for your return."
+    ],
+    [
+     "Self Assessment return",
+     "Your return prepared and filed with HMRC once you approve it."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant with unlimited phone and email support."
+    ],
+    [
+     "Annual tax efficiency recommendations",
+     "A yearly review so you pay the right amount of tax."
+    ],
+    [
+     "Optional add-ons",
+     "Add VAT filing or payroll and pension as your work grows."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "Getting started",
+   "title": "From first call to fully set up in four steps.",
+   "steps": [
+    [
+     "Choose your service",
+     "Pick the service you need, or request a quote."
+    ],
+    [
+     "Meet your accountant",
+     "Your dedicated accountant gets to know your business and deadlines."
+    ],
+    [
+     "Share your records online",
+     "Send documents digitally, with accounting software included."
+    ],
+    [
+     "We keep you on track",
+     "Your filings are prepared, approved by you and submitted on time."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Related services",
+   "title": "Services freelancers use most.",
+   "cards": [
+    {
+     "title": "Self Assessment Tax Return",
+     "text": "Your return prepared, checked with you and filed.",
+     "link": "View Self Assessment Tax Return"
+    },
+    {
+     "title": "Bookkeeping Services",
+     "text": "Income and expenses kept organised by client.",
+     "link": "View Bookkeeping Services"
+    },
+    {
+     "title": "VAT Return",
+     "text": "VAT returns filed once you are VAT registered.",
+     "link": "View VAT Return"
+    },
+    {
+     "title": "Payroll and Pension",
+     "text": "Payroll support if you start employing people.",
+     "link": "View Payroll and Pension"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Freelancer questions, answered.",
+   "intro": "Straight answers on flexible support, Self Assessment and what changes as your work grows.",
+   "items": [
+    [
+     "How much does a Self Assessment return cost?",
+     "A Self Assessment tax return is £150. Additional fees may apply for complex returns, foreign income or capital gains."
+    ],
+    [
+     "Can you do my bookkeeping and Self Assessment together?",
+     ""
+    ],
+    [
+     "What happens if I register for VAT?",
+     ""
+    ],
+    [
+     "Can my support change as my work grows?",
+     ""
+    ],
+    [
+     "What expenses can I claim?",
+     ""
+    ],
+    [
+     "Do I need to tell HMRC I am self-employed?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Audience / Freelancers / Moving Parts"
+ },
+ "landlords": {
+  "kind": "who",
+  "hero": {
+   "crumb": "Who we help",
+   "current": "Landlords",
+   "title": "Landlord accounting for one <br>property or a portfolio.",
+   "price": "Self Assessment tax return from £150",
+   "lead": "Rental income, property costs, rental accounts and your Self Assessment brought together in one routine, however many properties you own.",
+   "buttons": [
+    "Buy now",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Unlimited support"
+   ],
+   "card": {
+    "label": "Self Assessment (SA100)",
+    "from": "only",
+    "amount": "£150",
+    "cadence": "",
+    "who": "For landlords with one property or a portfolio.",
+    "items": [
+     "Self Assessment return prepared",
+     "Submitted to HMRC for you",
+     "Income, expenses and reliefs reviewed",
+     "Typically 2–5 business days",
+     "Dedicated accountant"
+    ],
+    "button": "Get started",
+    "small": "Additional fees may apply for complex returns or capital gains."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Your landlord year",
+   "cardSub": "Handled by one team",
+   "chip": "Handled by ABF",
+   "rows": [
+    "Rent received",
+    "Allowable property costs",
+    "Rental accounts",
+    "Self Assessment return"
+   ],
+   "eyebrow": "What you need to stay on top of",
+   "title": "What landlords need <br>each year.",
+   "body": [
+    "Rental income is reported through Self Assessment, so landlords need clear records of rent received and the costs they can claim.",
+    "We prepare rental accounts from your property records and use them to complete your return, property by property."
+   ]
+  },
+  "included": {
+   "eyebrow": "What ABF handles",
+   "title": "What ABF handles <br>for landlords.",
+   "intro": "Each service is priced up front on our pricing page.",
+   "cards": [
+    [
+     "Rental accounts",
+     "Rental income and costs brought into one year-end summary."
+    ],
+    [
+     "Bookkeeping",
+     "Rent, agent statements and property costs recorded through the year."
+    ],
+    [
+     "Self Assessment return",
+     "Your return prepared and filed with HMRC once you approve it."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant with unlimited phone and email support."
+    ],
+    [
+     "Annual tax efficiency recommendations",
+     "A yearly review so you pay the right amount of tax."
+    ],
+    [
+     "Optional add-ons",
+     "Add VAT filing or payroll and pension if you need them."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "Getting started",
+   "title": "From first call to fully set up in four steps.",
+   "steps": [
+    [
+     "Choose your service",
+     "Pick the service you need, or request a quote."
+    ],
+    [
+     "Meet your accountant",
+     "Your dedicated accountant gets to know your business and deadlines."
+    ],
+    [
+     "Share your records online",
+     "Send documents digitally, with accounting software included."
+    ],
+    [
+     "We keep you on track",
+     "Your filings are prepared, approved by you and submitted on time."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Related services",
+   "title": "Services landlords use most.",
+   "cards": [
+    {
+     "title": "Self Assessment Tax Return",
+     "text": "Property income included in your return.",
+     "link": "View Self Assessment Tax Return"
+    },
+    {
+     "title": "Bookkeeping Services",
+     "text": "Rent and costs recorded property by property.",
+     "link": "View Bookkeeping Services"
+    },
+    {
+     "title": "Annual Accounts & Tax Return",
+     "text": "Rental accounts prepared from your records.",
+     "link": "View Annual Accounts & Tax Return"
+    },
+    {
+     "title": "Company Formation",
+     "text": "Thinking about a property company? Start properly.",
+     "link": "View Company Formation"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Landlord questions, answered.",
+   "intro": "Straight answers on rental records, Self Assessment and choosing the right support.",
+   "items": [
+    [
+     "Can you help with rental income and Self Assessment?",
+     "Yes. We organise your rental figures, prepare your rental accounts and complete the property pages of your Self Assessment return."
+    ],
+    [
+     "Can you support landlords with more than one property?",
+     ""
+    ],
+    [
+     "What property records should I keep?",
+     ""
+    ],
+    [
+     "Can I choose one-off help or ongoing support?",
+     ""
+    ],
+    [
+     "What costs can I claim against rent?",
+     ""
+    ],
+    [
+     "Do I need to tell HMRC about rental income?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Audience / Landlords / Rent To Return"
+ }
+}

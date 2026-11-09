@@ -1,0 +1,51 @@
+<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_1041_1160)">
+<use xlink:href="#stroke0_1041_1160" fill="url(#paint0_linear_1041_1160)"/>
+<mask id="stroke1_1041_1160" fill="white">
+<use xlink:href="#stroke0_1041_1160"/>
+</mask>
+<path d="M13.0002 4.33333H26.0002C30.7866 4.33333 34.6668 8.21353 34.6668 13V27.4444C34.6668 32.2309 30.7866 36.1111 26.0002 36.1111H13.0002C8.21369 36.1111 4.3335 32.2309 4.3335 27.4444V13C4.3335 8.21353 8.21369 4.33333 13.0002 4.33333Z" stroke-width="1.44444" stroke="white" stroke-opacity="0.4" mask="url(#stroke1_1041_1160)"/>
+<foreignObject x="5.77767" y="8.66667" width="46.2223" height="49.1111"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2.17px);clip-path:url(#bgblur_1_1041_1160_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_d_1041_1160)" data-figma-bg-blur-radius="4.33333">
+<path d="M37.1946 13.3611H23.4723C18.6859 13.3611 14.8057 17.2413 14.8057 22.0278V38.6389C14.8057 43.4254 18.6859 47.3056 23.4723 47.3056H37.1946C41.981 47.3056 45.8612 43.4254 45.8612 38.6389V22.0278C45.8612 17.2413 41.981 13.3611 37.1946 13.3611Z" fill="url(#paint1_linear_1041_1160)" stroke-width="0.722222" stroke="url(#paint2_linear_1041_1160)"/>
+</g>
+<path d="M14.8057 22.0278H45.8612" stroke-width="1.08333" stroke="#3BD85E" stroke-opacity="0.3"/>
+<path d="M23.1113 10.4722V16.25M37.5558 10.4722V16.25" stroke-width="2.6" stroke-linecap="round" stroke="url(#paint3_linear_1041_1160)"/>
+<path d="M23.8335 33.9444L28.1668 38.2778L37.1946 28.8889" stroke-width="2.74444" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint4_linear_1041_1160)"/>
+</g>
+<defs>
+<filter id="filter0_d_1041_1160" x="5.77767" y="8.66667" width="46.2223" height="49.1111" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-1.44444" dy="2.88889"/>
+<feGaussianBlur stdDeviation="3.61111"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.0509804 0 0 0 0 0.2 0 0 0 0 0.247059 0 0 0 0.35 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1041_1160"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1041_1160" result="shape"/>
+</filter>
+<clipPath id="bgblur_1_1041_1160_clip_path" transform="translate(-5.77767 -8.66667)"><path d="M37.1946 13.3611H23.4723C18.6859 13.3611 14.8057 17.2413 14.8057 22.0278V38.6389C14.8057 43.4254 18.6859 47.3056 23.4723 47.3056H37.1946C41.981 47.3056 45.8612 43.4254 45.8612 38.6389V22.0278C45.8612 17.2413 41.981 13.3611 37.1946 13.3611Z"/>
+</clipPath><linearGradient id="paint0_linear_1041_1160" x1="4.3335" y1="4.33333" x2="36.0769" y2="34.6339" gradientUnits="userSpaceOnUse">
+<stop stop-color="#EEE9FF"/>
+<stop offset="1" stop-color="#EEE9FF" stop-opacity="0.85"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1041_1160" x1="14.8057" y1="13.3611" x2="48.6163" y2="44.2942" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.97"/>
+<stop offset="1" stop-color="#F3FBF5" stop-opacity="0.9"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1041_1160" x1="14.8057" y1="13.3611" x2="48.6163" y2="44.2942" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0.5"/>
+</linearGradient>
+<linearGradient id="paint3_linear_1041_1160" x1="23.1113" y1="10.4722" x2="23.1113" y2="16.25" gradientUnits="userSpaceOnUse">
+<stop stop-color="#03A84E"/>
+<stop offset="1" stop-color="#3BD85E"/>
+</linearGradient>
+<linearGradient id="paint4_linear_1041_1160" x1="23.8335" y1="28.8889" x2="23.8335" y2="38.2778" gradientUnits="userSpaceOnUse">
+<stop stop-color="#03A84E"/>
+<stop offset="1" stop-color="#3BD85E"/>
+</linearGradient>
+<clipPath id="clip0_1041_1160">
+<rect width="52" height="52" fill="white"/>
+</clipPath>
+<path id="stroke0_1041_1160" d="M26.0002 4.33333H13.0002C8.21369 4.33333 4.3335 8.21353 4.3335 13V27.4444C4.3335 32.2309 8.21369 36.1111 13.0002 36.1111H26.0002C30.7866 36.1111 34.6668 32.2309 34.6668 27.4444V13C34.6668 8.21353 30.7866 4.33333 26.0002 4.33333Z"/>
+</defs>
+</svg>

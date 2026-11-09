@@ -1,0 +1,55 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_1044_1228)">
+<use xlink:href="#stroke0_1044_1228" fill="url(#paint0_linear_1044_1228)"/>
+<mask id="stroke1_1044_1228" fill="white">
+<use xlink:href="#stroke0_1044_1228"/>
+</mask>
+<path d="M27.083 12.5C27.083 17.3325 23.1655 21.25 18.333 21.25C13.5005 21.25 9.58301 17.3325 9.58301 12.5C9.58301 7.66751 13.5005 3.75 18.333 3.75C23.1655 3.75 27.083 7.66751 27.083 12.5Z" stroke-width="1.66667" stroke="white" stroke-opacity="0.4" mask="url(#stroke1_1044_1228)"/>
+<use xlink:href="#stroke2_1044_1228" fill="url(#paint1_linear_1044_1228)"/>
+<mask id="stroke3_1044_1228" fill="white">
+<use xlink:href="#stroke2_1044_1228"/>
+</mask>
+<path d="M2.5 40.8334C2.5 30.8334 9.58333 23.3334 18.3333 23.3334C27.0833 23.3334 34.1667 30.8334 34.1667 40.8334C34.1667 42.6667 32.6667 44.1667 30.8333 44.1667H5.83333C4 44.1667 2.5 42.6667 2.5 40.8334Z" stroke-width="1.66667" stroke="white" stroke-opacity="0.4" mask="url(#stroke3_1044_1228)"/>
+<foreignObject x="7.5" y="10.8334" width="52.5007" height="55.8333"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2.5px);clip-path:url(#bgblur_1_1044_1228_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_d_1044_1228)" data-figma-bg-blur-radius="5">
+<path d="M42.917 16.25H27.917C22.3941 16.25 17.917 20.7272 17.917 26.25V44.5833C17.917 50.1062 22.3941 54.5833 27.917 54.5833H42.917C48.4398 54.5833 52.917 50.1062 52.917 44.5833V26.25C52.917 20.7272 48.4398 16.25 42.917 16.25Z" fill="url(#paint2_linear_1044_1228)" stroke-width="0.833333" stroke="url(#paint3_linear_1044_1228)"/>
+</g>
+<path d="M25 30.4167L27.3333 32.75L31.3333 28.3334M35 30.4167H45M25 41.25L27.3333 43.5834L31.3333 39.1667M35 41.25H42.5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke="url(#paint4_linear_1044_1228)"/>
+</g>
+<defs>
+<filter id="filter0_d_1044_1228" x="7.5" y="10.8334" width="52.5007" height="55.8333" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-1.66667" dy="3.33333"/>
+<feGaussianBlur stdDeviation="4.16667"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.0509804 0 0 0 0 0.2 0 0 0 0 0.247059 0 0 0 0.35 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1044_1228"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1044_1228" result="shape"/>
+</filter>
+<clipPath id="bgblur_1_1044_1228_clip_path" transform="translate(-7.5 -10.8334)"><path d="M42.917 16.25H27.917C22.3941 16.25 17.917 20.7272 17.917 26.25V44.5833C17.917 50.1062 22.3941 54.5833 27.917 54.5833H42.917C48.4398 54.5833 52.917 50.1062 52.917 44.5833V26.25C52.917 20.7272 48.4398 16.25 42.917 16.25Z"/>
+</clipPath><linearGradient id="paint0_linear_1044_1228" x1="9.58301" y1="3.75" x2="27.083" y2="21.25" gradientUnits="userSpaceOnUse">
+<stop stop-color="#27C67A"/>
+<stop offset="1" stop-color="#27C67A" stop-opacity="0.85"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1044_1228" x1="2.5" y1="23.3334" x2="21.6316" y2="52.4134" gradientUnits="userSpaceOnUse">
+<stop stop-color="#27C67A"/>
+<stop offset="1" stop-color="#27C67A" stop-opacity="0.85"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1044_1228" x1="17.917" y1="16.25" x2="56.0922" y2="51.1057" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.97"/>
+<stop offset="1" stop-color="#F3FBF5" stop-opacity="0.9"/>
+</linearGradient>
+<linearGradient id="paint3_linear_1044_1228" x1="17.917" y1="16.25" x2="56.0922" y2="51.1057" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0.5"/>
+</linearGradient>
+<linearGradient id="paint4_linear_1044_1228" x1="25" y1="28.3334" x2="25" y2="43.5834" gradientUnits="userSpaceOnUse">
+<stop stop-color="#03A84E"/>
+<stop offset="1" stop-color="#3BD85E"/>
+</linearGradient>
+<clipPath id="clip0_1044_1228">
+<rect width="60" height="60" fill="white"/>
+</clipPath>
+<path id="stroke0_1044_1228" d="M18.333 21.25C23.1655 21.25 27.083 17.3325 27.083 12.5C27.083 7.66751 23.1655 3.75 18.333 3.75C13.5005 3.75 9.58301 7.66751 9.58301 12.5C9.58301 17.3325 13.5005 21.25 18.333 21.25Z"/>
+<path id="stroke2_1044_1228" d="M2.5 40.8334C2.5 30.8334 9.58333 23.3334 18.3333 23.3334C27.0833 23.3334 34.1667 30.8334 34.1667 40.8334C34.1667 42.6667 32.6667 44.1667 30.8333 44.1667H5.83333C4 44.1667 2.5 42.6667 2.5 40.8334Z"/>
+</defs>
+</svg>

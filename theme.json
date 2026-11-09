@@ -1,0 +1,100 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+    "layout": {
+      "contentSize": "1060px",
+      "wideSize": "1580px"
+    },
+    "color": {
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "defaultDuotone": false,
+      "palette": [
+        { "slug": "green", "color": "#03A84E", "name": "ABF Green" },
+        { "slug": "bright", "color": "#3BD85E", "name": "Bright Green" },
+        { "slug": "teal", "color": "#0D333F", "name": "Dark Teal" },
+        { "slug": "ink", "color": "#09242D", "name": "Ink" },
+        { "slug": "mint", "color": "#EBFBEF", "name": "Mint" },
+        { "slug": "ice", "color": "#F3FBF5", "name": "Ice" },
+        { "slug": "muted", "color": "#64748B", "name": "Muted Text" },
+        { "slug": "line", "color": "#DEEBE2", "name": "Line" },
+        { "slug": "white", "color": "#FFFFFF", "name": "White" }
+      ]
+    },
+    "spacing": {
+      "defaultSpacingSizes": false,
+      "units": ["px", "rem", "%", "vh", "vw"]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "fluid": false,
+      "fontFamilies": [
+        {
+          "slug": "manrope",
+          "name": "Manrope",
+          "fontFamily": "Manrope, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Manrope",
+              "fontStyle": "normal",
+              "fontWeight": "400 800",
+              "fontDisplay": "swap",
+              "src": ["file:./assets/fonts/manrope-latin-variable.woff2"]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        { "slug": "small", "size": "13px", "name": "Small · 13" },
+        { "slug": "body", "size": "16px", "name": "Body · 16" },
+        { "slug": "lead", "size": "18px", "name": "Lead · 18" },
+        { "slug": "h3", "size": "22px", "name": "H3 · 22" },
+        { "slug": "h2", "size": "46px", "name": "H2 · 46" },
+        { "slug": "h1", "size": "68px", "name": "H1 · 68" }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var:preset|color|white",
+      "text": "var:preset|color|ink"
+    },
+    "spacing": {
+      "blockGap": "0px",
+      "padding": { "left": "0px", "right": "0px" }
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|manrope",
+      "fontSize": "var:preset|font-size|body",
+      "fontWeight": "400",
+      "lineHeight": "1.5",
+      "letterSpacing": "0"
+    },
+    "elements": {
+      "heading": {
+        "color": { "text": "var:preset|color|teal" },
+        "typography": { "fontWeight": "700", "letterSpacing": "0", "lineHeight": "1.15" }
+      },
+      "link": {
+        "color": { "text": "var:preset|color|green" },
+        "typography": { "textDecoration": "none" }
+      },
+      "button": {
+        "color": { "background": "var:preset|color|green", "text": "var:preset|color|white" },
+        "border": { "radius": "14px", "width": "0px", "style": "none" },
+        "spacing": { "padding": { "top": "14px", "right": "28px", "bottom": "14px", "left": "28px" } },
+        "typography": { "fontSize": "14px", "fontWeight": "600", "lineHeight": "22px", "letterSpacing": "0" }
+      }
+    }
+  },
+  "customTemplates": [
+    { "name": "page-thank-you", "title": "Thank You (no footer)", "postTypes": ["page"] }
+  ],
+  "templateParts": [
+    { "name": "header", "title": "Header", "area": "header" },
+    { "name": "footer", "title": "Footer", "area": "footer" }
+  ]
+}

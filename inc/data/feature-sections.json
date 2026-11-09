@@ -1,0 +1,120 @@
+{
+ "_note": "The one section that differs per service / audience page (Figma section 5 of each page). type: tree | cards | columns | lanes | route | checklist. Icons live in assets/icons/pages/.",
+ "annual-accounts-tax-return": {
+  "type": "tree", "dark": true,
+  "eyebrow": "One set of approved figures",
+  "title": "The same year-end numbers feed two filings.",
+  "intro": "Your annual accounts and Corporation Tax return are connected, but they go to different places. We prepare both from one agreed set of figures.",
+  "root": { "icon": "annual-accounts-tax-return-u-1", "title": "Approved year-end figures", "sub": "One accounting period. One agreed set of numbers." },
+  "items": [
+   { "icon": "annual-accounts-tax-return-u-2", "kicker": "Companies House", "title": "Statutory accounts", "ticks": ["Prepared for your accounting period", "Approved by you before filing", "Filed on the public record"] },
+   { "icon": "annual-accounts-tax-return-u-3", "kicker": "HMRC", "title": "Company Tax Return (CT600)", "ticks": ["Corporation Tax calculated from approved figures", "Tax computations prepared with the return", "Submitted once you approve"] }
+  ]
+ },
+ "bookkeeping-services": {
+  "type": "tree",
+  "eyebrow": "What clean books unlock",
+  "title": "Clean books make everything else easier.",
+  "intro": "Bookkeeping is the base layer for the rest of your accounting. When your records stay current, every other task starts from a clearer position.",
+  "root": { "icon": "bookkeeping-services-u-1", "title": "Clean, up-to-date books", "sub": "One reliable set of records underneath everything else." },
+  "items": [
+   { "title": "VAT returns", "text": "Returns prepared from records that already add up." },
+   { "title": "Year-end accounts", "text": "Accounts built from organised records, not a rush." },
+   { "title": "Tax returns", "text": "Self Assessment or CT600 prepared from the same figures." },
+   { "title": "Clearer decisions", "text": "Know where your business stands through the year." }
+  ]
+ },
+ "tax-planning-advice": {
+  "type": "tree",
+  "eyebrow": "Where we can help",
+  "title": "Planning across personal and business tax.",
+  "intro": "A good plan looks at the whole picture, so decisions in one area do not create surprises in another.",
+  "root": { "icon": "tax-planning-advice-u-1", "title": "Your tax plan", "sub": "One joined-up view of your tax position." },
+  "items": [
+   { "title": "Personal tax", "text": "Allowances, pension contributions and how you take income." },
+   { "title": "Company tax", "text": "Profit extraction, salary and dividends, and timing." },
+   { "title": "Capital gains", "text": "Planning ahead when selling property, shares or assets." },
+   { "title": "R&D tax credits", "text": "Claiming for qualifying innovation where it applies." }
+  ]
+ },
+ "confirmation-statement": {
+  "type": "cards",
+  "title": "When do you need to file?",
+  "items": [
+   { "icon": "confirmation-statement-u-1", "title": "Every year", "text": "Most UK limited companies must file a Confirmation Statement at least once every 12 months, even if the company is dormant or no details have changed." },
+   { "icon": "confirmation-statement-u-2", "title": "14-day filing deadline", "text": "You generally have 14 days after the end of your review period to file your Confirmation Statement with Companies House." },
+   { "icon": "confirmation-statement-u-3", "title": "Keep your company details up to date", "text": "If certain details change during the year, you may need to notify Companies House separately rather than waiting until your next Confirmation Statement." }
+  ]
+ },
+ "dormant-company-accounts": {
+  "type": "cards",
+  "title": "What a dormant company still needs to do",
+  "items": [
+   { "icon": "dormant-company-accounts-u-1", "title": "Annual accounts", "text": "Dormant accounts must still be prepared and filed with Companies House each year." },
+   { "icon": "dormant-company-accounts-u-2", "title": "Confirmation Statement", "text": "A Confirmation Statement is still due at least once every 12 months." },
+   { "icon": "dormant-company-accounts-u-3", "title": "Tell HMRC where needed", "text": "You may need to tell HMRC the company is dormant for Corporation Tax." }
+  ]
+ },
+ "sole-traders": {
+  "type": "cards", "numbered": true,
+  "eyebrow": "Built around how you work",
+  "title": "You run the business. We keep the accounting in the background.",
+  "intro": "Whether you sell your time, products or specialist services, three simple habits keep your accounting under control.",
+  "items": [
+   { "icon": "sole-traders-u-1", "title": "Get paid", "text": "Keep your income records clear and separate from everyday admin." },
+   { "icon": "sole-traders-u-2", "title": "Keep the evidence", "text": "Capture expenses and receipts while they are still easy to find." },
+   { "icon": "sole-traders-u-3", "title": "File with confidence", "text": "Use organised records to support your Self Assessment and other filings." }
+  ]
+ },
+ "contractors": {
+  "type": "columns", "dark": true,
+  "eyebrow": "Different contracts, one routine",
+  "title": "Different ways of working. One accounting routine.",
+  "intro": "Your engagement may change, but the core job stays the same: keep the right records together and stay ahead of your filings.",
+  "items": [
+   { "icon": "contractors-u-1", "title": "PAYE or umbrella", "text": "Keep payslips, P60s and contract records together so your annual tax position is clear.", "ticks": ["Payslips and P60s in one place", "Self Assessment where needed", "Expenses recorded properly"] },
+   { "icon": "contractors-u-2", "title": "Limited company contractor", "text": "Company accounts, Corporation Tax and the Confirmation Statement handled alongside your own return.", "ticks": ["Year-end accounts and CT600", "Confirmation Statement", "Director’s Self Assessment"] },
+   { "icon": "contractors-u-3", "title": "CIS contractor", "text": "Track contract income, CIS deductions and expenses, with records ready for your return.", "ticks": ["CIS returns calculated and submitted", "Deductions kept on record", "Self Assessment prepared"] }
+  ]
+ },
+ "payroll-and-pension": {
+  "type": "lanes", "dark": true,
+  "eyebrow": "Two recurring workflows",
+  "title": "Payroll and pensions run side by side.",
+  "intro": "Both depend on accurate monthly admin. We keep each one moving, so your team and your subcontractors are paid and reported correctly.",
+  "items": [
+   { "icon": "payroll-and-pension-u-1", "kicker": "Payroll", "title": "Pay your team accurately and on time", "points": [["Employee changes", "New starters, leavers and pay changes captured before each run."], ["Payroll run", "Payslips produced with tax and National Insurance calculated."], ["Real Time Information", "Pay reported to HMRC on or before each payday."], ["Workplace pensions", "Pension contributions calculated and reported."]] },
+   { "icon": "payroll-and-pension-u-2", "kicker": "Pensions", "title": "Keep workplace pension duties on track", "points": [["Auto-enrolment", "Eligible staff enrolled into a workplace pension scheme."], ["Contributions", "Employer and employee contributions calculated each pay run."], ["Re-enrolment", "Re-enrolment duties handled when they fall due."], ["Declaration of compliance", "Declarations prepared for The Pensions Regulator."]] }
+  ]
+ },
+ "vat-return": {
+  "type": "route", "dark": true,
+  "eyebrow": "A regular rhythm",
+  "title": "VAT works best as a cycle, not a last-minute task.",
+  "intro": "Each VAT period follows the same steps, so returns are ready on time and the figures are easy to check.",
+  "items": [["Capture", "Sales and purchase records kept digitally through the period."], ["Reconcile", "Records matched to your bank so the figures add up."], ["Review", "Your accountant checks the VAT position with you."], ["Submit", "Your return is filed through MTD-compatible software."]],
+  "footnote": "Then the next VAT period begins"
+ },
+ "self-employed-freelancers": {
+  "type": "route", "dark": true,
+  "eyebrow": "One person, many moving parts",
+  "title": "Simple on the surface. Busy behind the scenes.",
+  "intro": "We turn the moving parts of independent work into one clear routine, whether you invoice one client or many.",
+  "items": [["Money in", "Keep income visible by client or source."], ["Money out", "Keep expenses and supporting records together."], ["Tax return", "Prepare your Self Assessment from organised information."], ["What is next", "Keep the next filing or deadline in view."]]
+ },
+ "landlords": {
+  "type": "route",
+  "eyebrow": "From rent received to tax return",
+  "title": "A simple route from property records to your return.",
+  "intro": "Keep the routine clear through the year, instead of rebuilding the rental picture every January.",
+  "items": [["Rent received", "Track rental income as it arrives."], ["Property costs", "Keep supporting expense records together."], ["Rental accounts", "Bring the year into one summary."], ["Self Assessment", "Use the rental figures in your return."]]
+ },
+ "self-assessment-tax-return": {
+  "type": "checklist",
+  "title": "Who needs to file a Self Assessment tax return?",
+  "intro": "You may need to submit a Self Assessment tax return if you:",
+  "items": [["Are self-employed", "A sole trader or individual whose gross self-employment income exceeds £1,000 in a tax year, before expenses, or a business partner."], ["Receive rental income", "Earn income from letting property or land."], ["Work as a CIS subcontractor", "Receive income from construction work as a self-employed subcontractor."], ["Earn a high income", "Your income is above the level where HMRC requires a return."], ["Receive Child Benefit", "You or your partner’s adjusted net income exceeds £60,000 and the High Income Child Benefit Charge applies."], ["Receive investment income", "Have taxable savings interest, dividends or other investment income."], ["Have income from overseas", "Receive foreign income that is taxable in the UK."], ["Claim tax reliefs", "Need to claim eligible tax reliefs through Self Assessment."], ["Report capital gains", "Have taxable gains from selling assets, such as property or shares, that must be reported to HMRC."], ["Receive a notice from HMRC", "HMRC has instructed you to submit a tax return."]],
+  "cta": { "title": "Not sure whether you need to file?", "text": "Not everyone in these categories automatically needs to file; it depends on your circumstances and the tax rules. ABF can help you understand your obligations and next steps.", "buttons": ["File now – £150", "Speak to our team"] }
+ },
+ "limited-companies": { "type": "pattern", "pattern": "home-company-year" }
+}
