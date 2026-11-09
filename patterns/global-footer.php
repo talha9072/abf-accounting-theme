@@ -29,8 +29,12 @@ $abf_accounting_pairs = static fn (array $items): array => array_map(static fn (
 
 $abf_accounting_social = '';
 foreach (array('instagram' => 'Instagram', 'linkedin' => 'LinkedIn', 'facebook' => 'Facebook', 'youtube' => 'YouTube', 'x' => 'X') as $abf_accounting_key => $abf_accounting_name) {
-    // Not linked yet: the client has not sent the profile URLs (Figma handoff, section 4).
-    $abf_accounting_social .= '<span class="abf-footer__social-icon abf-footer__social-icon--' . esc_attr($abf_accounting_key) . '" role="img" aria-label="' . esc_attr($abf_accounting_name) . '"></span>';
+    // Links come from Appearance → ABF settings; an icon without a URL stays a plain icon.
+    $abf_accounting_url    = function_exists('abf_accounting_setting') ? abf_accounting_setting('social_' . $abf_accounting_key) : '';
+    $abf_accounting_class  = 'abf-footer__social-icon abf-footer__social-icon--' . esc_attr($abf_accounting_key);
+    $abf_accounting_social .= $abf_accounting_url
+        ? '<a class="' . $abf_accounting_class . '" href="' . esc_url($abf_accounting_url) . '" target="_blank" rel="noopener" aria-label="' . esc_attr(sprintf(/* translators: %s: network name. */ __('ABF Accounting on %s', 'abf-accounting'), $abf_accounting_name)) . '"></a>'
+        : '<span class="' . $abf_accounting_class . '" role="img" aria-label="' . esc_attr($abf_accounting_name) . '"></span>';
 }
 
 $abf_accounting_brand = abf_accounting_block_image('abf-footer__logo', abf_accounting_img('abf-logo.svg'), __('ABF Accounting', 'abf-accounting'))

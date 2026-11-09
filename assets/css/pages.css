@@ -1394,9 +1394,18 @@
 	border-top: 1px solid rgba(13, 51, 63, 0.06);
 }
 
+.abf-contact-detail__icon {
+	flex: none;
+}
+
 .abf-contact-detail__icon img {
 	width: 52px;
 	height: 52px;
+}
+
+.abf-contact-detail__copy {
+	min-width: 0;
+	overflow-wrap: anywhere;
 }
 
 .abf-contact-detail__label {

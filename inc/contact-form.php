@@ -4,7 +4,7 @@
  *
  * Posts to admin-post.php, is checked against a nonce and a honeypot, emailed to the site
  * admin (filter `abf_accounting_contact_recipient`), then the visitor goes to the Thank You page.
- * Figma mentions reCAPTCHA; that needs the client's site keys, so the honeypot guards it for now.
+ * reCAPTCHA v3 switches on once its keys are saved in Appearance → ABF settings (inc/settings.php).
  *
  * @package ABF_Accounting
  */
@@ -28,9 +28,14 @@ function abf_accounting_callback_form_shortcode(): string
         array('phone', __('Phone number', 'abf-accounting'), 'tel', __('Enter your phone number', 'abf-accounting'), 'tel-national', true),
     );
 
+    $recaptcha = abf_accounting_recaptcha_enabled();
+    if ($recaptcha) {
+        abf_accounting_recaptcha_assets();
+    }
+
     ob_start();
     ?>
-    <form class="abf-form" id="callback-form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+    <form class="abf-form" id="callback-form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>"<?php echo $recaptcha ? ' data-recaptcha="' . esc_attr(abf_accounting_setting('recaptcha_site')) . '"' : ''; ?>>
         <?php if ('invalid' === $status) : ?>
             <p class="abf-form__notice" role="alert"><?php esc_html_e('Please fill in your name, a valid email address and your phone number.', 'abf-accounting'); ?></p>
         <?php elseif ('failed' === $status) : ?>
@@ -39,6 +44,9 @@ function abf_accounting_callback_form_shortcode(): string
         <input type="hidden" name="action" value="<?php echo esc_attr(ABF_ACCOUNTING_CONTACT_ACTION); ?>">
         <input type="hidden" name="redirect_to" value="<?php echo esc_url(get_permalink()); ?>">
         <?php wp_nonce_field(ABF_ACCOUNTING_CONTACT_ACTION, 'abf_contact_nonce'); ?>
+        <?php if ($recaptcha) : ?>
+            <input type="hidden" name="g-recaptcha-response" value="">
+        <?php endif; ?>
         <div class="abf-form__hp" aria-hidden="true">
             <label for="abf-company-website"><?php esc_html_e('Leave this empty', 'abf-accounting'); ?></label>
             <input type="text" id="abf-company-website" name="company_website" tabindex="-1" autocomplete="off">
@@ -68,7 +76,18 @@ function abf_accounting_callback_form_shortcode(): string
                 </div>
             </div>
         </div>
-        <p class="abf-form__consent"><?php esc_html_e('We use your details only to respond to your enquiry.', 'abf-accounting'); ?> <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php esc_html_e('Privacy Policy', 'abf-accounting'); ?></a></p>
+        <p class="abf-form__consent">
+            <?php if ($recaptcha) : ?>
+                <?php
+                printf(
+                    /* translators: 1: Google Privacy Policy link, 2: Google Terms link. */
+                    esc_html__('Protected by reCAPTCHA. Google %1$s and %2$s apply.', 'abf-accounting'),
+                    '<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">' . esc_html__('Privacy Policy', 'abf-accounting') . '</a>',
+                    '<a href="https://policies.google.com/terms" target="_blank" rel="noopener">' . esc_html__('Terms of Service', 'abf-accounting') . '</a>'
+                );
+                ?>
+            <?php endif; ?>
+            <?php esc_html_e('We use your details only to respond to your enquiry.', 'abf-accounting'); ?> <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php esc_html_e('Privacy Policy', 'abf-accounting'); ?></a></p>
         <button type="submit" class="wp-element-button abf-form__submit"><?php esc_html_e('Request a callback', 'abf-accounting'); ?></button>
     </form>
     <?php
@@ -93,6 +112,12 @@ function abf_accounting_handle_callback_form(): void
     // Honeypot filled in: pretend success so bots learn nothing.
     if (! empty($_POST['company_website'])) {
         wp_safe_redirect(home_url('/thank-you/'));
+        exit;
+    }
+
+    $token = isset($_POST['g-recaptcha-response']) ? sanitize_text_field(wp_unslash($_POST['g-recaptcha-response'])) : '';
+    if (! abf_accounting_recaptcha_passes($token)) {
+        wp_safe_redirect(add_query_arg('contact', 'failed', $back) . '#callback-form');
         exit;
     }
 

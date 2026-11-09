@@ -10,6 +10,7 @@ if (! defined('ABSPATH')) {
 }
 
 require_once get_theme_file_path('inc/blocks.php');
+require_once get_theme_file_path('inc/settings.php');
 require_once get_theme_file_path('inc/sections.php');
 require_once get_theme_file_path('inc/contact-form.php');
 require_once get_theme_file_path('inc/landing.php');

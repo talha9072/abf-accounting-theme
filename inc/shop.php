@@ -684,3 +684,82 @@ add_action(
     },
     20
 );
+
+/* ---------- Order emails in ABF colours ---------- */
+
+/**
+ * WooCommerce email design (WooCommerce → Settings → Emails) set from the theme, so staging
+ * and live get the same look: ABF logo, green buttons and links, mint page, ink text, and the
+ * company details in the footer.
+ */
+function abf_accounting_email_design(): array
+{
+    $contact = abf_accounting_contact();
+
+    return array(
+        'woocommerce_email_auto_sync_with_theme'  => 'no',
+        'woocommerce_email_header_image'          => get_theme_file_uri('assets/img/abf-logo-email.png'),
+        'woocommerce_email_header_image_width'    => 187,
+        'woocommerce_email_header_alignment'      => 'left',
+        'woocommerce_email_base_color'            => '#03A84E',
+        'woocommerce_email_background_color'      => '#F3FBF5',
+        'woocommerce_email_body_background_color' => '#FFFFFF',
+        'woocommerce_email_text_color'            => '#09242D',
+        'woocommerce_email_footer_text_color'     => '#64748B',
+        'woocommerce_email_footer_text'           => sprintf(
+            /* translators: 1: phone, 2: email, 3: address, 4: company number. */
+            __('Questions? Call %1$s or email %2$s.<br>ABF Accounting Services Ltd · %3$s · Company no. %4$s', 'abf-accounting'),
+            $contact['phone'],
+            $contact['email'],
+            implode(', ', $contact['address']),
+            $contact['company_no']
+        ),
+    );
+}
+
+/**
+ * Serves the design values in place of the saved WooCommerce options.
+ *
+ * @param mixed  $value  Pre-option value (false = not short-circuited).
+ * @param string $option Option name.
+ */
+function abf_accounting_email_option($value, string $option)
+{
+    return abf_accounting_email_design()[$option] ?? $value;
+}
+
+foreach (array('woocommerce_email_auto_sync_with_theme', 'woocommerce_email_header_image', 'woocommerce_email_header_image_width', 'woocommerce_email_header_alignment', 'woocommerce_email_base_color', 'woocommerce_email_background_color', 'woocommerce_email_body_background_color', 'woocommerce_email_text_color', 'woocommerce_email_footer_text_color', 'woocommerce_email_footer_text') as $abf_accounting_option) {
+    add_filter('pre_option_' . $abf_accounting_option, 'abf_accounting_email_option', 10, 2);
+}
+unset($abf_accounting_option);
+
+add_filter('woocommerce_email_from_name', static fn () => 'ABF Accounting');
+
+/**
+ * Manrope is not available in most mail apps; keep a clean sans-serif and ABF's rounded buttons.
+ */
+function abf_accounting_email_styles(string $css): string
+{
+    return $css . '
+        body, table, td, p, h1, h2, h3, a, #template_container, #body_content_inner { font-family: "Manrope", "Segoe UI", Helvetica, Arial, sans-serif !important; }
+        #template_header { background-color: #0D333F !important; border-radius: 0 !important; }
+        #template_header h1 { color: #FFFFFF !important; font-weight: 800 !important; letter-spacing: -0.02em; }
+        #template_container { border: 1px solid #DEEBE2 !important; border-radius: 16px !important; overflow: hidden; box-shadow: none !important; }
+        #template_header_image { padding: 24px 0 8px !important; }
+        h2 { color: #09242D !important; font-weight: 700 !important; }
+        a { color: #03A84E !important; }
+        #template_header_image img { width: 187px !important; max-width: 187px !important; height: auto !important; }
+        .td { border-color: #DEEBE2 !important; }
+    ';
+}
+add_filter('woocommerce_email_styles', 'abf_accounting_email_styles', 20);
+
+/**
+ * WooCommerce adds a mini-cart and an account icon to block-theme headers automatically.
+ * The ABF header (Figma) has neither, so those hooked blocks are switched off.
+ */
+function abf_accounting_no_hooked_shop_blocks(array $hooked_blocks): array
+{
+    return array_values(array_diff($hooked_blocks, array('woocommerce/mini-cart', 'woocommerce/customer-account')));
+}
+add_filter('hooked_block_types', 'abf_accounting_no_hooked_shop_blocks', 20);
