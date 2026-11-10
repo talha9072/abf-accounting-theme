@@ -111,6 +111,13 @@ function abf_accounting_checkout_fields(array $fields): array
 {
     $billing = $fields['billing'];
 
+    // Store settings can hide the phone or company field (new installs hide company); the design
+    // always shows both, so they are added back when missing.
+    $billing += array(
+        'billing_phone'   => array('type' => 'tel', 'validate' => array('phone'), 'autocomplete' => 'tel'),
+        'billing_company' => array('type' => 'text', 'required' => false, 'autocomplete' => 'organization'),
+    );
+
     $billing['billing_first_name'] = array_merge(
         $billing['billing_first_name'],
         array(

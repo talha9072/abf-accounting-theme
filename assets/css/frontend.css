@@ -407,7 +407,8 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 }
 
 /* 1440–1599px: the full nav only fits with tighter dividers and without the phone number (it stays in the menu and the Callback button). */
-@media (max-width: 1599px) {
+/* Compact header: the full header (nav, phone, Callback, Buy now) needs about 1740px. */
+@media (max-width: 1759px) {
 	nav.abf-header__nav .wp-block-navigation__container > .wp-block-navigation-item + .wp-block-navigation-item::before {
 		margin-inline: 8px;
 	}
@@ -1384,4 +1385,13 @@ a.abf-footer__social-icon:focus-visible {
 /* reCAPTCHA v3: the form shows Google's notice in words, so the floating badge is hidden. */
 .grecaptcha-badge {
 	visibility: hidden;
+}
+
+/* Icon images never squash inside flex rows (they keep their square shape). */
+.wp-block-image[class*="icon"] {
+	flex-shrink: 0;
+}
+
+.wp-block-image[class*="icon"] img {
+	object-fit: contain;
 }

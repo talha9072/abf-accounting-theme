@@ -598,3 +598,22 @@ function abf_accounting_nav_current(string $html, array $block): string
     return $html;
 }
 add_filter('render_block', 'abf_accounting_nav_current', 10, 2);
+
+/**
+ * Category chip order ("abf_order", lowest first), editable through the REST API.
+ */
+function abf_accounting_register_category_order(): void
+{
+    register_term_meta(
+        'category',
+        'abf_order',
+        array(
+            'type'              => 'integer',
+            'single'            => true,
+            'show_in_rest'      => true,
+            'sanitize_callback' => 'absint',
+            'auth_callback'     => static fn (): bool => current_user_can('manage_categories'),
+        )
+    );
+}
+add_action('init', 'abf_accounting_register_category_order');
