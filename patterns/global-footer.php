@@ -57,6 +57,8 @@ $abf_accounting_nav = $abf_accounting_links(
         array(__('First-year accounts FREE', 'abf-accounting'), home_url('/first-year-accounts-free/')),
         array(__('Resources', 'abf-accounting'), home_url('/resources/')),
         array(__('Contact', 'abf-accounting'), home_url('/contact/')),
+        array(__('Basket', 'abf-accounting'), abf_accounting_shop_url('cart')),
+        array(__('My account', 'abf-accounting'), abf_accounting_shop_url('myaccount')),
     ),
     'abf-footer__col--company'
 )

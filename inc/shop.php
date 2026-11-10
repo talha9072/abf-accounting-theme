@@ -48,9 +48,80 @@ function abf_accounting_package_product(string $package): int
     return $id && 'publish' === get_post_status($id) ? $id : 0;
 }
 
+/**
+ * Cart or My Account page URL (falls back to /cart/ and /my-account/ without WooCommerce).
+ *
+ * @param string $page 'cart' or 'myaccount'.
+ */
+function abf_accounting_shop_url(string $page): string
+{
+    if (function_exists('wc_get_page_permalink')) {
+        return 'cart' === $page ? wc_get_cart_url() : wc_get_page_permalink('myaccount');
+    }
+
+    return home_url('cart' === $page ? '/cart/' : '/my-account/');
+}
+
+/**
+ * Number of packages in the basket (0 without WooCommerce or outside a request with a cart).
+ */
+function abf_accounting_basket_count(): int
+{
+    return function_exists('WC') && WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0;
+}
+
+/**
+ * Basket count badge. Hidden while the basket is empty; WooCommerce swaps this element for a
+ * fresh copy after any cart change (see abf_accounting_basket_fragment()).
+ */
+function abf_accounting_basket_badge(): string
+{
+    $count = abf_accounting_basket_count();
+
+    /* translators: %d: number of packages (read after the word Basket). */
+    $items = sprintf(_n('%d item', '%d items', $count, 'abf-accounting'), $count);
+
+    return '<span class="abf-basket-count"' . ($count ? '' : ' hidden') . '><span aria-hidden="true">' . esc_html((string) $count) . '</span><span class="screen-reader-text">' . esc_html($items) . '</span></span>';
+}
+
+/**
+ * Header basket and My account buttons (Figma "Button / Basket", "Button / My account").
+ */
+function abf_accounting_header_icons(): string
+{
+    $basket  = '<svg viewBox="0 0 20 20" width="20" height="20" fill="none" aria-hidden="true" focusable="false"><path d="M4.167 6.667h11.666l-1 9.333a1.667 1.667 0 0 1-1.666 1.5H6.833a1.667 1.667 0 0 1-1.666-1.5l-1-9.333Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7.5 8.333v-2.5a2.5 2.5 0 0 1 5 0v2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+    $account = '<svg viewBox="0 0 20 20" width="20" height="20" fill="none" aria-hidden="true" focusable="false"><path d="M13.167 7.083a3.167 3.167 0 1 1-6.334 0 3.167 3.167 0 0 1 6.334 0Z" stroke="currentColor" stroke-width="1.5"/><path d="M3.75 16.667C4.833 13.667 7.25 12.167 10 12.167s5.167 1.5 6.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+
+    $on_cart    = function_exists('is_cart') && is_cart();
+    $on_account = function_exists('is_account_page') && is_account_page();
+
+    return '<div class="abf-header__icons">'
+        . '<a class="abf-header__icon abf-header__basket" href="' . esc_url(abf_accounting_shop_url('cart')) . '"' . ($on_cart ? ' aria-current="page"' : '') . '>' . $basket . '<span class="screen-reader-text">' . esc_html__('Basket', 'abf-accounting') . '</span>' . abf_accounting_basket_badge() . '</a>'
+        . '<a class="abf-header__icon abf-header__account" href="' . esc_url(abf_accounting_shop_url('myaccount')) . '"' . ($on_account ? ' aria-current="page"' : '') . ' aria-label="' . esc_attr__('My account', 'abf-accounting') . '">' . $account . '</a>'
+        . '</div>';
+}
+
 if (! class_exists('WooCommerce')) {
     return;
 }
+
+/**
+ * Keeps the header count right on cached pages: WooCommerce's cart-fragments script replaces
+ * the badge (and the basket label) after the page loads and after every cart change.
+ */
+function abf_accounting_basket_fragment(array $fragments): array
+{
+    $fragments['span.abf-basket-count'] = abf_accounting_basket_badge();
+
+    return $fragments;
+}
+add_filter('woocommerce_add_to_cart_fragments', 'abf_accounting_basket_fragment');
+
+function abf_accounting_cart_fragments_script(): void
+{
+    wp_enqueue_script('wc-cart-fragments');
+}
+add_action('wp_enqueue_scripts', 'abf_accounting_cart_fragments_script', 30);
 
 /* ---------- Buying a package ---------- */
 
@@ -687,6 +758,10 @@ add_filter('gettext', 'abf_accounting_account_strings', 10, 3);
 add_action(
     'woocommerce_cart_is_empty',
     static function (): void {
+        // WooCommerce prints its own (already relabelled) button when a shop page is set.
+        if (wc_get_page_id('shop') > 0) {
+            return;
+        }
         echo '<p class="abf-empty-cart"><a class="button" href="' . esc_url(home_url('/pricing/')) . '">' . esc_html__('View pricing', 'abf-accounting') . '</a></p>';
     },
     20

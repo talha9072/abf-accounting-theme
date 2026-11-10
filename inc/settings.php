@@ -217,29 +217,43 @@ function abf_accounting_recaptcha_passes(string $token): bool
 /* ---------- Live chat (Figma "Live chat / tawk.to widget") ---------- */
 
 /**
- * The tawk.to script with its own bubble hidden, plus the "Chat with us" button that opens it.
+ * Sticky "Chat with us" button on every page. With a tawk.to property saved it opens the chat
+ * (tawk.to's own bubble stays hidden); without one it links to the callback form.
  */
 function abf_accounting_live_chat(): void
 {
     $property = abf_accounting_setting('tawk_property');
     $widget   = abf_accounting_setting('tawk_widget') ?: 'default';
-    if ('' === $property || is_admin()) {
+    if (is_admin()) {
+        return;
+    }
+    ?>
+    <a class="abf-chat" id="abf-chat" href="<?php echo esc_url(home_url('/contact/#callback-form')); ?>">
+        <span class="abf-chat__label"><?php esc_html_e('Chat with us', 'abf-accounting'); ?></span>
+        <span class="abf-chat__bubble" aria-hidden="true"></span>
+    </a>
+    <?php
+    // Until a tawk.to property is saved the button goes to the callback form on Contact.
+    if ('' === $property) {
         return;
     }
     $src = 'https://embed.tawk.to/' . rawurlencode($property) . '/' . rawurlencode($widget);
     ?>
-    <button type="button" class="abf-chat" id="abf-chat" hidden aria-label="<?php esc_attr_e('Chat with us', 'abf-accounting'); ?>">
-        <span class="abf-chat__label"><?php esc_html_e('Chat with us', 'abf-accounting'); ?></span>
-        <span class="abf-chat__bubble" aria-hidden="true"></span>
-    </button>
     <script>
     (function () {
         var button = document.getElementById('abf-chat');
+        var ready = false;
         window.Tawk_API = window.Tawk_API || {};
         window.Tawk_LoadStart = new Date();
-        Tawk_API.onLoad = function () { Tawk_API.hideWidget(); button.hidden = false; };
+        Tawk_API.onLoad = function () { ready = true; Tawk_API.hideWidget(); };
         Tawk_API.onChatMinimized = function () { Tawk_API.hideWidget(); button.hidden = false; };
-        button.addEventListener('click', function () { button.hidden = true; Tawk_API.showWidget(); Tawk_API.maximize(); });
+        button.addEventListener('click', function (event) {
+            if (!ready) { return; } // chat not loaded yet: the link opens the callback form
+            event.preventDefault();
+            button.hidden = true;
+            Tawk_API.showWidget();
+            Tawk_API.maximize();
+        });
         var s = document.createElement('script');
         s.async = true; s.src = <?php echo wp_json_encode($src); ?>; s.charset = 'UTF-8'; s.setAttribute('crossorigin', '*');
         document.body.appendChild(s);

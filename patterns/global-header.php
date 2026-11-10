@@ -77,6 +77,10 @@ echo $abf_accounting_link(__('Contact', 'abf-accounting'), home_url('/contact/')
 <!-- wp:button {"className":"abf-button--buy"} -->
 <div class="wp-block-button abf-button--buy"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url(home_url('/pricing/')); ?>"><?php esc_html_e('Buy now', 'abf-accounting'); ?></a></div>
 <!-- /wp:button --></div>
-<!-- /wp:buttons --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:html -->
+<?php echo abf_accounting_header_icons(); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+<!-- /wp:html --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

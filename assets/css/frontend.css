@@ -281,11 +281,16 @@ img {
 	top: var(--wp-admin--admin-bar--height, 32px);
 }
 
+/* The header row is wider than the page container in Figma: 1696px (logo at 112px on 1920). */
 .abf-header__inner {
 	display: flex;
 	align-items: center;
-	gap: 24px;
+	gap: 16px;
 	height: 89px;
+}
+
+.abf-header__inner.abf-container {
+	width: min(1696px, 100% - 2 * var(--abf-gutter));
 }
 
 .abf-header__logo {
@@ -315,7 +320,7 @@ nav.abf-header__nav .wp-block-navigation__container > .wp-block-navigation-item 
 	content: "/";
 	color: rgba(13, 51, 63, 0.5);
 	font-weight: 400;
-	margin-inline: 14px;
+	margin-inline: 10px;
 }
 
 nav.abf-header__nav .wp-block-navigation-item__content {
@@ -372,7 +377,8 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 
 .abf-header__phone {
 	flex: none;
-	margin: 0 0 0 26px;
+	min-width: 128px;
+	margin: 0 0 0 25px;
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 22px;
@@ -385,7 +391,7 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 
 .abf-header__actions {
 	flex: none;
-	gap: 16px;
+	gap: 12px;
 	flex-wrap: nowrap;
 }
 
@@ -402,8 +408,68 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 }
 
 .abf-header__actions .abf-button--buy .wp-block-button__link {
-	min-width: 182px;
+	min-width: 148px;
+	padding-inline: 28px;
 	justify-content: center;
+}
+
+/* Basket and My account (Figma "Button / Basket", "Button / My account"). */
+.abf-header .wp-block-html {
+	display: contents;
+}
+
+.abf-header__icons {
+	display: flex;
+	flex: none;
+	gap: 8px;
+}
+
+.abf-header__icon {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: var(--abf-ice);
+	color: var(--abf-teal);
+	transition: background-color var(--abf-transition), color var(--abf-transition);
+}
+
+.abf-header__icon:hover,
+.abf-header__icon:focus-visible,
+.abf-header__icon[aria-current] {
+	background: var(--abf-mint);
+	color: var(--abf-green);
+}
+
+.abf-header__icon svg {
+	width: 20px;
+	height: 20px;
+}
+
+.abf-basket-count {
+	position: absolute;
+	left: 28px;
+	top: -3px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 18px;
+	height: 18px;
+	padding: 0 4px;
+	border-radius: 9px;
+	background: var(--abf-green);
+	color: #fff;
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	box-sizing: border-box;
+}
+
+.abf-basket-count[hidden] {
+	display: none;
 }
 
 /* 1440–1599px: the full nav only fits with tighter dividers and without the phone number (it stays in the menu and the Callback button). */
@@ -420,6 +486,14 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 	.abf-header__actions .abf-button--buy .wp-block-button__link {
 		min-width: 0;
 		padding-inline: 28px;
+	}
+}
+
+/* 1440–1561px: with the basket and account icons the nav only fits without the Callback button
+ * (Callback stays in the hero, the CTAs and the footer). */
+@media (max-width: 1561px) and (min-width: 1440px) {
+	.abf-header__actions .abf-button--callback {
+		display: none;
 	}
 }
 
@@ -484,9 +558,29 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 	}
 }
 
+@media (max-width: 899px) and (min-width: 768px) {
+	.abf-header__phone {
+		display: none !important;
+	}
+
+	.abf-header__actions {
+		margin-left: auto;
+	}
+}
+
 @media (max-width: 767px) {
 	:root {
 		--abf-header-height: 72px;
+	}
+
+	.abf-header__icon {
+		width: 40px;
+		height: 40px;
+	}
+
+	.abf-basket-count {
+		left: 25px;
+		top: -4px;
 	}
 
 	.abf-header__inner {
@@ -515,7 +609,23 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 	}
 }
 
-/* ---------- FAQ (shared) ---------- */
+/* Small phones: My account moves to the footer link, then Buy now to the hero. */
+@media (max-width: 479px) {
+	.abf-header__account {
+		display: none;
+	}
+}
+
+@media (max-width: 374px) {
+	.abf-header .abf-header__actions {
+		display: none !important;
+	}
+
+	.abf-header__icons {
+		margin-left: auto;
+	}
+}
+
 
 .abf-faq > .abf-container {
 	display: grid;
@@ -1310,6 +1420,8 @@ a.abf-footer__social-icon:focus-visible {
 /* ---------- Live chat button (Figma "Live chat / tawk.to widget") ---------- */
 
 .abf-chat {
+	box-sizing: border-box;
+	text-decoration: none;
 	position: fixed;
 	right: 40px;
 	bottom: 40px;
@@ -1394,4 +1506,9 @@ a.abf-footer__social-icon:focus-visible {
 
 .wp-block-image[class*="icon"] img {
 	object-fit: contain;
+}
+
+/* The basket badge holds a visually hidden "n items" label for screen readers. */
+.abf-basket-count .screen-reader-text {
+	position: absolute !important;
 }
