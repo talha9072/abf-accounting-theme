@@ -1,416 +1,1414 @@
 {
+ "_note": "Client text copied from abfaccounting.com/terms/* (Web Archive copies, Feb–Jul 2026) for the Nov 2026 fix list. Blocks: h2, h3, p, ul/ol (items may have sub), table, box-start/box-end.",
  "privacy-policy": {
   "title": "Privacy Policy",
-  "updated": "Last updated: June 2025",
-  "sections": [
-   [
-    "1. Introduction",
-    [
-     "ABF Accounting Services Ltd explains how it collects, uses, shares, stores and protects personal data when people use the website or engage accounting, tax, payroll, bookkeeping, company-formation or related services. The policy operates alongside engagement terms and service-specific notices."
+  "updated": "",
+  "source": "Privacy Policy",
+  "blocks": [
+   {
+    "t": "h2",
+    "html": "1. Introduction"
+   },
+   {
+    "t": "p",
+    "html": "At ABF Accounting Services Ltd (\"ABF\", \"we\", \"us\", or \"our\"), we take your privacy seriously. This Privacy Policy outlines how we collect, use, disclose, and protect your personal data, in accordance with the UK General Data Protection Regulation (UK GDPR), the Data Protection Act 2018, and other applicable laws."
+   },
+   {
+    "t": "p",
+    "html": "By using our services and accessing our website, you agree to the terms of this Privacy Policy."
+   },
+   {
+    "t": "h2",
+    "html": "2. Key Definitions"
+   },
+   {
+    "t": "table",
+    "head": [
+     "Term",
+     "Definition"
+    ],
+    "rows": [
+     [
+      "Personal Data",
+      "Any information relating to an identified or identifiable natural person."
+     ],
+     [
+      "Data Controller",
+      "ABF Accounting Services Ltd, which determines the purposes and means of processing your personal data."
+     ],
+     [
+      "Data Processor",
+      "A third party that processes personal data on behalf of ABF Accounting Services Ltd."
+     ],
+     [
+      "Processing",
+      "Any operation or set of operations performed on personal data."
+     ],
+     [
+      "You / Data Subject",
+      "Any individual whose personal data is being collected or processed."
+     ]
     ]
-   ],
-   [
-    "2. Key Definitions",
-    [
-     "Personal data is information relating to an identified or identifiable person. ABF acts as data controller where it decides why and how personal data is processed; suppliers may act as processors when they handle information on ABF’s instructions. Processing includes collection, use, storage, disclosure, alteration and deletion."
+   },
+   {
+    "t": "h2",
+    "html": "3. About ABF Accounting Services Ltd"
+   },
+   {
+    "t": "p",
+    "html": "ABF Accounting Services Ltd is a private limited company registered in England and Wales. We offer professional accounting, tax advisory, payroll, bookkeeping, company formation, and related business consultancy services. Our registered office is located at 18 Thrickenlls Close, Luton, LU3 3RP."
+   },
+   {
+    "t": "h2",
+    "html": "4. Scope of This Policy"
+   },
+   {
+    "t": "p",
+    "html": "This policy applies to personal data collected via our website, email communications, phone interactions, in-person meetings, or any other method of engagement. It does not cover third-party websites linked to our website. We encourage you to review the privacy policies of any third-party sites before submitting personal data."
+   },
+   {
+    "t": "h2",
+    "html": "5. Our Data Protection Principles"
+   },
+   {
+    "t": "p",
+    "html": "We commit to the following principles when processing your data:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Lawfulness, fairness, and transparency",
+     "Purpose limitation",
+     "Data minimisation",
+     "Accuracy",
+     "Storage limitation",
+     "Integrity and confidentiality",
+     "Accountability"
     ]
-   ],
-   [
-    "3. About ABF Accounting Services Ltd",
-    [
-     "ABF Accounting Services Ltd is a private company registered in England and Wales providing accounting, tax, payroll, bookkeeping, company-formation and related business support. The current website lists the registered office as 18 Thricknells Close, Luton, LU3 3RP."
+   },
+   {
+    "t": "h2",
+    "html": "6. Types of Personal Data We Collect"
+   },
+   {
+    "t": "p",
+    "html": "We may collect the following categories of personal data:"
+   },
+   {
+    "t": "h3",
+    "html": "A. Information You Provide"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Full name, title, and contact details (address, phone number, email)",
+     "Company name, registration number, and address (if applicable)",
+     "Director and shareholder information (e.g. DOB, nationality, home address)",
+     "Payment and billing information",
+     "Financial records and documentation",
+     "Any communication you send to us"
     ]
-   ],
-   [
-    "4. Scope of This Policy",
-    [
-     "The policy covers personal data collected through the ABF website, email, telephone, forms, meetings and professional-service delivery. Third-party websites or platforms linked from ABF may apply their own privacy terms and should be reviewed separately."
+   },
+   {
+    "t": "h3",
+    "html": "B. Information Collected Automatically"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "IP address and browser type",
+     "Device and location data",
+     "Website usage statistics through cookies and analytics tools"
     ]
-   ],
-   [
-    "5. Our Data Protection Principles",
-    [
-     "ABF’s handling of personal data is based on lawfulness, fairness and transparency; purpose limitation; data minimisation; accuracy; storage limitation; integrity, confidentiality and accountability. Information should only be kept for a defined purpose and for no longer than reasonably required."
+   },
+   {
+    "t": "h3",
+    "html": "C. Information from Third Parties"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Credit reference agencies",
+     "Companies House",
+     "HMRC",
+     "Identity verification services"
     ]
-   ],
-   [
-    "6. Types of Personal Data We Collect",
-    [
-     "Depending on the service, ABF may process contact details, company and director information, billing details, financial and tax records, correspondence, identity documents and information supplied during onboarding. Website use can also generate technical data such as IP address, browser, device and analytics information."
+   },
+   {
+    "t": "h3",
+    "html": "D. KYC/AML Checks"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Photographic ID (e.g. passport or driving licence)",
+     "Proof of address (e.g. utility bills, bank statements)",
+     "Source of funds (in some cases)",
+     "Biometric ID verification (where necessary)"
     ]
-   ],
-   [
-    "7. Legal Basis for Processing Personal Data",
-    [
-     "Processing may be necessary to perform a contract, meet legal or regulatory duties, pursue legitimate interests, or act on valid consent where consent is the appropriate basis. The lawful basis depends on the purpose and the nature of the information involved."
+   },
+   {
+    "t": "h2",
+    "html": "7. Legal Basis for Processing Personal Data"
+   },
+   {
+    "t": "p",
+    "html": "We process your data under one or more of the following lawful bases:"
+   },
+   {
+    "t": "table",
+    "head": [
+     "Lawful Basis",
+     "Example"
+    ],
+    "rows": [
+     [
+      "Contractual",
+      "When you engage our services, we need your personal data to perform the agreed services."
+     ],
+     [
+      "Legal obligation",
+      "For AML checks, tax compliance, or responding to lawful requests from authorities."
+     ],
+     [
+      "Consent",
+      "When you subscribe to marketing communications."
+     ],
+     [
+      "Legitimate interest",
+      "To improve our services, conduct internal analytics, and maintain client relationships."
+     ]
     ]
-   ],
-   [
-    "8. How We Use Your Personal Data",
-    [
-     "ABF may use personal data to deliver accounting and tax services, prepare filings, register companies, maintain records, answer enquiries, communicate service updates, meet regulatory obligations and improve operations. Marketing should only be sent where the applicable legal basis and user preferences allow."
+   },
+   {
+    "t": "h2",
+    "html": "8. How We Use Your Personal Data"
+   },
+   {
+    "t": "p",
+    "html": "We use your personal data to:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Deliver the services you request (e.g. accounting, tax filings)",
+     "Register companies with Companies House",
+     "Fulfil our legal and regulatory obligations",
+     "Respond to inquiries and requests",
+     "Maintain accurate records",
+     "Communicate with you about updates or service changes",
+     "Send you relevant marketing (only with your consent)"
     ]
-   ],
-   [
-    "9. Sharing Your Personal Data",
-    [
-     "Information may be shared with HMRC, Companies House, professional advisers, secure technology providers, payment or banking providers, identity-verification services and suppliers needed to deliver the agreed service. Sharing should be limited to what is necessary and supported by suitable confidentiality and data-protection controls."
+   },
+   {
+    "t": "h2",
+    "html": "9. Sharing Your Personal Data"
+   },
+   {
+    "t": "p",
+    "html": "We may share your data with:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Regulatory bodies (e.g. HMRC, Companies House)",
+     "Third-party service providers (e.g. IT support, cloud storage, ID verification)",
+     "Banking and financial institutions, with your permission",
+     "Our professional advisors (e.g. legal counsel, auditors)",
+     "Affiliated partners for outsourced services, where applicable"
     ]
-   ],
-   [
-    "10. International Transfers",
-    [
-     "ABF does not routinely need to transfer data outside the UK or EEA. Where a provider causes an international transfer, appropriate safeguards should be used, such as an adequacy arrangement, recognised contractual safeguards and suitable processing terms."
+   },
+   {
+    "t": "p",
+    "html": "All third parties are required to handle your data securely and only for the specified purpose, under a Data Processing Agreement."
+   },
+   {
+    "t": "h2",
+    "html": "10. International Transfers"
+   },
+   {
+    "t": "p",
+    "html": "We do not routinely transfer your data outside the UK or EEA. Where it becomes necessary (e.g. using cloud providers), we ensure appropriate safeguards are in place, such as:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Standard Contractual Clauses (SCCs)",
+     "Data processing agreements",
+     "UK adequacy decisions"
     ]
-   ],
-   [
-    "11. Data Retention",
-    [
-     "Retention depends on tax, accounting, AML, contractual and legal requirements. The current ABF policy refers to six years for certain financial records and five years after the business relationship for AML documentation, while marketing preferences are generally retained until a person opts out or the record is no longer needed."
+   },
+   {
+    "t": "h2",
+    "html": "11. Data Retention"
+   },
+   {
+    "t": "p",
+    "html": "We retain personal data only as long as necessary to:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Fulfil our service obligations",
+     "Meet legal and regulatory requirements",
+     "Defend or establish legal claims"
     ]
-   ],
-   [
-    "12. Data Security",
-    [
-     "ABF states that it uses measures such as access controls, password protection, encrypted storage, supplier controls, monitoring and staff training. If a personal-data breach occurs, the impact should be assessed and affected individuals or regulators notified where required by law."
+   },
+   {
+    "t": "p",
+    "html": "Retention periods include:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "<strong>Financial records:</strong> 6 years from the end of the relevant financial year",
+     "<strong>AML documentation:</strong> 5 years from end of the business relationship",
+     "<strong>Marketing preferences:</strong> until you opt out"
     ]
-   ],
-   [
-    "13. Your Rights",
-    [
-     "Depending on the circumstances, individuals may have rights to be informed, access data, correct inaccuracies, request deletion, restrict processing, receive certain data in a portable format, object to processing and challenge certain automated decisions. Requests can be made using ABF’s published contact details."
+   },
+   {
+    "t": "h2",
+    "html": "12. Data Security"
+   },
+   {
+    "t": "p",
+    "html": "We implement robust security measures to protect your personal data including:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Firewalls and encrypted storage",
+     "Access controls and password protection",
+     "Regular security audits and staff training"
     ]
-   ],
-   [
-    "14. Cookies and Analytics",
-    [
-     "The website may use cookies and similar technologies for essential operation, user preferences and analytics. Non-essential technologies should be managed in line with applicable consent requirements, with more detail provided in the Cookie Policy."
+   },
+   {
+    "t": "p",
+    "html": "In the event of a data breach, we will notify affected individuals and relevant regulators as required by law."
+   },
+   {
+    "t": "h2",
+    "html": "13. Your Rights"
+   },
+   {
+    "t": "p",
+    "html": "You have the following rights regarding your personal data:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Right to be informed",
+     "Right of access – request a copy of your data",
+     "Right to rectification – correct inaccurate or incomplete data",
+     "Right to erasure (right to be forgotten)",
+     "Right to restrict processing",
+     "Right to data portability",
+     "Right to object – to direct marketing or data processing",
+     "Rights related to automated decision-making (ABF does not use such methods)"
     ]
-   ],
-   [
-    "15. Contact Us",
-    [
-     "Privacy questions and rights requests can be sent to support@abfaccounting.com or through ABF’s published telephone details. Requests should contain enough information for ABF to identify the person and understand what right is being exercised."
-    ]
-   ],
-   [
-    "16. Complaints",
-    [
-     "Individuals can raise concerns directly with ABF and can also complain to the Information Commissioner’s Office if they believe their data-protection rights have not been handled appropriately."
-    ]
-   ],
-   [
-    "17. Policy Updates",
-    [
-     "ABF may update the policy when law, technology, services or internal processes change. The website should display the latest approved version and an updated date so visitors can identify the current policy."
-    ]
-   ]
+   },
+   {
+    "t": "p",
+    "html": "To exercise your rights, contact our Data Protection Officer using the details below."
+   },
+   {
+    "t": "h2",
+    "html": "14. Cookies and Analytics"
+   },
+   {
+    "t": "p",
+    "html": "Our website uses cookies to enhance your browsing experience and collect usage statistics. You can control cookie preferences via your browser settings. For more details, refer to our Cookie Policy."
+   },
+   {
+    "t": "h2",
+    "html": "15. Contact Us"
+   },
+   {
+    "t": "p",
+    "html": "If you have any questions about this Privacy Policy or wish to exercise your rights:"
+   },
+   {
+    "t": "box-start"
+   },
+   {
+    "t": "p",
+    "html": "Data Protection Officer"
+   },
+   {
+    "t": "p",
+    "html": "ABF Accounting Services Ltd"
+   },
+   {
+    "t": "p",
+    "html": "Email: support@abfaccounting.com"
+   },
+   {
+    "t": "p",
+    "html": "Phone: +44 7405141694"
+   },
+   {
+    "t": "p",
+    "html": "Registered Address: 18 Thrickenlls Close, Luton, LU3 3RP"
+   },
+   {
+    "t": "box-end"
+   },
+   {
+    "t": "h2",
+    "html": "16. Complaints"
+   },
+   {
+    "t": "p",
+    "html": "If you believe your data protection rights have been breached, you can file a complaint with:"
+   },
+   {
+    "t": "box-start"
+   },
+   {
+    "t": "p",
+    "html": "Information Commissioner's Office (ICO)"
+   },
+   {
+    "t": "p",
+    "html": "Website: www.ico.org.uk"
+   },
+   {
+    "t": "p",
+    "html": "Helpline: 0303 123 1113"
+   },
+   {
+    "t": "box-end"
+   },
+   {
+    "t": "h2",
+    "html": "17. Policy Updates"
+   },
+   {
+    "t": "p",
+    "html": "We may update this Privacy Policy to reflect legal, regulatory, or operational changes. The latest version will always be available on our website. We encourage you to check back regularly."
+   },
+   {
+    "t": "box-start"
+   },
+   {
+    "t": "p",
+    "html": "Last Updated: June 2025"
+   },
+   {
+    "t": "box-end"
+   }
   ]
  },
  "terms-and-conditions-of-engagement": {
   "title": "Terms & Conditions of Engagement",
   "updated": "",
-  "sections": [
-   [
-    "1. Definitions",
-    [
-     "These terms define ABF Accounting Services Ltd, the client, the agreement, the services and the engagement letter. The engagement letter or proposal sets the client-specific scope while these general terms provide the wider contractual framework for the professional relationship."
+  "source": "Terms and Conditions of Engagement",
+  "blocks": [
+   {
+    "t": "h2",
+    "html": "1. Definitions"
+   },
+   {
+    "t": "p",
+    "html": "<strong>\"ABF Accounting Services Ltd\" / \"we\" / \"our\" / \"us\":</strong> Refers to ABF Accounting Services Ltd."
+   },
+   {
+    "t": "p",
+    "html": "<strong>\"Client\" / \"you\" / \"your\":</strong> Any individual, partnership, company or other legal entity engaging our services."
+   },
+   {
+    "t": "p",
+    "html": "<strong>\"Agreement\":</strong> These Terms and Conditions together with any Engagement Letter or written Proposal."
+   },
+   {
+    "t": "p",
+    "html": "<strong>\"Services\":</strong> All professional accountancy, tax, consultancy, payroll, bookkeeping and related services provided."
+   },
+   {
+    "t": "p",
+    "html": "<strong>\"Engagement Letter\":</strong> The document confirming the scope, terms and fees for specific services."
+   },
+   {
+    "t": "h2",
+    "html": "2. Commencement and Acceptance"
+   },
+   {
+    "t": "p",
+    "html": "<strong>2.1.</strong> By signing an Engagement Letter or continuing to use our services, you confirm acceptance of these Terms and Conditions."
+   },
+   {
+    "t": "p",
+    "html": "<strong>2.2.</strong> This Agreement commences on the date of acceptance or first provision of services and remains in effect until terminated in accordance with section 15."
+   },
+   {
+    "t": "p",
+    "html": "<strong>2.3.</strong> Any variations to these terms must be confirmed in writing and signed by both parties."
+   },
+   {
+    "t": "h2",
+    "html": "3. Scope of Services"
+   },
+   {
+    "t": "p",
+    "html": "<strong>3.1.</strong> We offer the following services, among others:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Preparation of annual accounts and management accounts",
+     "Corporation Tax and Self-Assessment Tax Returns",
+     "VAT registration, advisory and returns",
+     "Payroll &amp; RTI submissions",
+     "CIS returns",
+     "Bookkeeping",
+     "Business start-up and advisory",
+     "IR35 contractor support",
+     "Registered Office Address provision"
     ]
-   ],
-   [
-    "2. Commencement and Acceptance",
-    [
-     "The engagement begins when the client accepts the engagement letter, proposal or otherwise proceeds with the agreed services. Material changes to scope, fees or responsibilities should be recorded in writing so both parties have a clear and current record of the agreement."
+   },
+   {
+    "t": "p",
+    "html": "<strong>3.2.</strong> The exact scope of work will be set out in a specific Engagement Letter or Proposal. Any additional work requested will require a separate agreement and may incur extra charges."
+   },
+   {
+    "t": "h2",
+    "html": "4. Our Responsibilities"
+   },
+   {
+    "t": "p",
+    "html": "<strong>4.1.</strong> We shall carry out services with reasonable skill and care, in accordance with relevant UK laws and applicable accounting standards."
+   },
+   {
+    "t": "p",
+    "html": "<strong>4.2.</strong> We are not responsible for any losses or penalties due to incomplete, late, misleading or inaccurate information provided by you."
+   },
+   {
+    "t": "p",
+    "html": "<strong>4.3.</strong> We reserve the right to contact your previous accountant to obtain prior records. If they are not forthcoming, we may quote for time spent recreating such information."
+   },
+   {
+    "t": "h2",
+    "html": "5. Your Responsibilities"
+   },
+   {
+    "t": "p",
+    "html": "You agree to:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Provide full, timely, and accurate financial records and supporting documentation.",
+     "Disclose all income, expenses, liabilities, and relevant transactions.",
+     "Approve all draft filings and ensure compliance with tax and legal deadlines.",
+     "Retain legal responsibility for your financial records, statutory compliance, and tax obligations.",
+     "Notify us of changes to your business structure, address, staff, or contact information."
     ]
-   ],
-   [
-    "3. Scope of Services",
-    [
-     "ABF may provide annual accounts, Corporation Tax, Self Assessment, VAT, payroll, CIS, bookkeeping, business-start-up support, contractor services, registered-office support and other professional work. The exact deliverables for an individual client are those stated in the applicable engagement letter or proposal."
+   },
+   {
+    "t": "p",
+    "html": "Failure to meet these obligations may result in suspension or termination of services."
+   },
+   {
+    "t": "h2",
+    "html": "6. Fees, Billing and Payment"
+   },
+   {
+    "t": "p",
+    "html": "<strong>6.1.</strong> Fees are agreed in advance and outlined in the Engagement Letter. These may be fixed, monthly, hourly or transaction-based."
+   },
+   {
+    "t": "p",
+    "html": "<strong>6.2.</strong> Invoices are issued monthly or as otherwise agreed and are payable via Direct Debit or bank transfer within 7 days of issue."
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Annually in line with inflation or increased operating costs.",
+     "If your business changes in size, complexity, or service scope."
     ]
-   ],
-   [
-    "4. Our Responsibilities",
-    [
-     "ABF agrees to carry out the agreed work with reasonable skill and care and in accordance with relevant UK law and applicable accounting requirements. Where authorised, ABF may contact a previous accountant for records and may quote separately for reconstruction work if information is unavailable or incomplete."
+   },
+   {
+    "t": "p",
+    "html": "<strong>6.4.</strong> We reserve the right to suspend or terminate services for non-payment or persistent late payment."
+   },
+   {
+    "t": "p",
+    "html": "<strong>6.5.</strong> Any work carried out outside the agreed scope may be charged separately and quoted beforehand."
+   },
+   {
+    "t": "h2",
+    "html": "7. Cancellations and Refunds"
+   },
+   {
+    "t": "p",
+    "html": "<strong>7.1.</strong> You may cancel our services at any time by giving us 30 days' written notice."
+   },
+   {
+    "t": "p",
+    "html": "<strong>7.2.</strong> A £30 admin charge applies if cancelled before the first Direct Debit is collected."
+   },
+   {
+    "t": "p",
+    "html": "<strong>7.3.</strong> No refunds will be issued for services already rendered or monthly payments already collected."
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Continue monthly payments until year-end, or",
+     "Pay a one-off lump sum covering the outstanding period."
     ]
-   ],
-   [
-    "5. Your Responsibilities",
-    [
-     "Clients must provide complete and accurate records on time, disclose relevant transactions and liabilities, review and approve drafts where required, remain aware of statutory responsibilities and notify ABF about material changes to the business, ownership, address, employees or contact details."
+   },
+   {
+    "t": "h2",
+    "html": "8. Late Payments and Debt Recovery"
+   },
+   {
+    "t": "p",
+    "html": "<strong>8.1.</strong> Invoices unpaid after 90 days will incur interest at 8% above the Bank of England base rate."
+   },
+   {
+    "t": "p",
+    "html": "<strong>8.2.</strong> We reserve the right to suspend services and initiate recovery proceedings, including legal action or referral to a debt collection agency."
+   },
+   {
+    "t": "p",
+    "html": "<strong>8.3.</strong> For sole traders and partnerships, the business owners are jointly and severally liable for outstanding payments."
+   },
+   {
+    "t": "p",
+    "html": "<strong>8.4.</strong> For limited companies, the directors signing the Engagement Letter are personally liable for unpaid fees if the company cannot pay."
+   },
+   {
+    "t": "h2",
+    "html": "9. Confidentiality and Data Protection"
+   },
+   {
+    "t": "p",
+    "html": "<strong>9.1.</strong> All information you provide will be kept confidential unless disclosure is required by law or regulatory authorities."
+   },
+   {
+    "t": "p",
+    "html": "<strong>9.2.</strong> We comply fully with the UK GDPR and Data Protection Act 2018. We may store data in secure cloud systems or trusted third-party software."
+   },
+   {
+    "t": "p",
+    "html": "<strong>9.3.</strong> We are the Data Controller of your personal data. Our full privacy notice is available upon request or via our website."
+   },
+   {
+    "t": "p",
+    "html": "<strong>9.4.</strong> You may authorise third parties to access your data in writing."
+   },
+   {
+    "t": "h2",
+    "html": "10. Compliance, Authorisation and AML"
+   },
+   {
+    "t": "p",
+    "html": "<strong>10.1.</strong> You must promptly provide HMRC authorisation codes to allow us to act on your behalf."
+   },
+   {
+    "t": "p",
+    "html": "<strong>10.2.</strong> All clients must undergo identity checks in compliance with UK Anti-Money Laundering (AML) regulations."
+   },
+   {
+    "t": "p",
+    "html": "<strong>10.3.</strong> We may conduct a soft credit check for AML purposes, which will not affect your credit score."
+   },
+   {
+    "t": "p",
+    "html": "<strong>10.4.</strong> We reserve the right to decline or terminate engagement if we suspect unlawful activity or non-compliance."
+   },
+   {
+    "t": "h2",
+    "html": "11. Communication and Recordkeeping"
+   },
+   {
+    "t": "p",
+    "html": "<strong>11.1.</strong> All communication may be recorded for quality, legal, or training purposes."
+   },
+   {
+    "t": "p",
+    "html": "<strong>11.2.</strong> Client files are retained for 7 years after the end of our engagement, unless a longer retention period is required by law."
+   },
+   {
+    "t": "p",
+    "html": "<strong>11.3.</strong> On request, your documents will be returned to you in a secure format."
+   },
+   {
+    "t": "h2",
+    "html": "12. Service-Specific Provisions"
+   },
+   {
+    "t": "h3",
+    "html": "12.1 VAT Services"
+   },
+   {
+    "t": "p",
+    "html": "You must:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Provide complete, timely records for accurate VAT filing.",
+     "Approve returns before submission.",
+     "Note that delays or inaccuracies may result in HMRC penalties for which you are liable."
     ]
-   ],
-   [
-    "6. Fees, Billing and Payment",
-    [
-     "Fees may be fixed, monthly, hourly or transaction-based depending on the engagement. Invoices are payable using the agreed method and within the stated period. Fees may be reviewed where costs increase or where the client’s size, complexity or required scope changes materially. Work outside the agreed scope can require a separate quotation."
+   },
+   {
+    "t": "p",
+    "html": "We do not offer support on complex VAT areas (e.g., TOMS, Opt to Tax) unless explicitly agreed."
+   },
+   {
+    "t": "h3",
+    "html": "12.2 Payroll Services"
+   },
+   {
+    "t": "p",
+    "html": "You must supply complete payroll details including:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Employee pay, hours, starters/leavers",
+     "Statutory leave information",
+     "Tax code notices and casual labour data"
     ]
-   ],
-   [
-    "7. Cancellations and Refunds",
-    [
-     "Cancellation or refund rights depend on the service, the work already completed and the contractual terms accepted by the client. Where notice, administrative charges or minimum service periods apply, those requirements should be retained exactly in the approved engagement documentation."
+   },
+   {
+    "t": "p",
+    "html": "RTI returns must be submitted on or before payday—late submission may result in fines, which you will be responsible for."
+   },
+   {
+    "t": "h3",
+    "html": "12.3 Bookkeeping Services"
+   },
+   {
+    "t": "p",
+    "html": "You must supply all invoices, receipts, and statements."
+   },
+   {
+    "t": "p",
+    "html": "For clients using our bookkeeping services, we will:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Record transactions with supporting documentation",
+     "Return physical documents securely post year-end"
     ]
-   ],
-   [
-    "8. Late Payments and Debt Recovery",
-    [
-     "Overdue fees can affect ABF’s ability to continue work. The approved terms may allow interest, suspension of services or recovery action where invoices remain unpaid. Any director or personal-liability provision should be retained exactly where it legally applies."
+   },
+   {
+    "t": "p",
+    "html": "For self-managed bookkeeping, reconciled records are expected. Errors may attract a correction fee. Quotes are based on estimated volumes; excess activity may lead to revised fees."
+   },
+   {
+    "t": "h3",
+    "html": "12.4 IR35 and Contractor Services"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "You are responsible for determining your IR35 status. We provide general guidance but not legal opinions.",
+     "You must provide relevant documentation (contracts, determinations).",
+     "We may operate umbrella or inside-IR35 payroll, based on accurate hours/rates submitted by you."
     ]
-   ],
-   [
-    "9. Confidentiality and Data Protection",
-    [
-     "Information received from the client should be kept confidential except where disclosure is authorised or required by law, regulation or a competent authority. ABF processes personal data under UK data-protection law and may use secure cloud systems and approved service providers to deliver the engagement."
+   },
+   {
+    "t": "h2",
+    "html": "13. Registered Office Address (If Applicable)"
+   },
+   {
+    "t": "p",
+    "html": "<strong>13.1.</strong> This service is limited to receiving mail from HMRC and Companies House. Any other mail is outside the scope and may be returned."
+   },
+   {
+    "t": "p",
+    "html": "<strong>13.2.</strong> Misuse may result in additional charges or service withdrawal."
+   },
+   {
+    "t": "h2",
+    "html": "14. Referrals and Promotions"
+   },
+   {
+    "t": "p",
+    "html": "<strong>14.1.</strong> We may recommend third-party services. We may receive commission or referral fees which you agree belong to us."
+   },
+   {
+    "t": "p",
+    "html": "<strong>14.2.</strong> Promotions (e.g., free company formation) require you to remain a paying client for at least 12 months. Otherwise, standard service charges will apply."
+   },
+   {
+    "t": "p",
+    "html": "<strong>14.3.</strong> Promotions exclude third-party software, registered office services, and regulatory fees."
+   },
+   {
+    "t": "h2",
+    "html": "15. Termination of Services"
+   },
+   {
+    "t": "p",
+    "html": "<strong>15.1.</strong> Either party may terminate with 30 days' written notice."
+   },
+   {
+    "t": "ul",
+    "items": [
+     "All outstanding fees become immediately due.",
+     "We will reasonably cooperate with handover to a new advisor subject to payment of all outstanding balances.",
+     "Any files or documents requested will be provided in a mutually agreed format."
     ]
-   ],
-   [
-    "10. Compliance, Authorisation and AML",
-    [
-     "Clients must provide information needed for identity verification and anti-money-laundering checks and should supply HMRC authorisation codes promptly where ABF is to act as agent. ABF may decline, suspend or end an engagement where legal or regulatory compliance requirements cannot be satisfied."
+   },
+   {
+    "t": "h2",
+    "html": "16. Liability and Indemnity"
+   },
+   {
+    "t": "p",
+    "html": "<strong>16.1.</strong> Our total liability for any claim, however arising, is limited to the total fees paid for the specific service giving rise to the claim."
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Consequential or indirect losses",
+     "Penalties from incorrect or late data from your side",
+     "Your failure to follow our advice"
     ]
-   ],
-   [
-    "11. Communication and Recordkeeping",
-    [
-     "ABF may communicate through email, telephone, client portals and other agreed channels. Records can be retained for the period required by law, regulation, insurance or professional obligations. Where appropriate and authorised, documents can be transferred securely to a successor adviser."
-    ]
-   ],
-   [
-    "12. Service-Specific Provisions",
-    [
-     "Service-specific requirements apply to work such as VAT, payroll, bookkeeping and contractor support. VAT clients must provide complete records and approve returns before submission; payroll clients must provide accurate starter, leaver, pay, tax-code and statutory-leave information in time for RTI reporting. Complex or specialist matters fall outside standard scope unless specifically agreed."
-    ]
-   ],
-   [
-    "13. Registered Office Address (If Applicable)",
-    [
-     "Where registered-office services are included, the service should be limited to the statutory-mail and address scope stated in the engagement. Clients remain responsible for maintaining accurate company information and for responding promptly to official correspondence forwarded by ABF."
-    ]
-   ],
-   [
-    "14. Referrals and Promotions",
-    [
-     "ABF may recommend third-party services and may receive referral or commission income where permitted. Promotions can be subject to qualifying conditions, minimum service periods and exclusions for third-party software, regulatory fees or other external charges."
-    ]
-   ],
-   [
-    "15. Termination of Services",
-    [
-     "Either party may terminate in accordance with the notice period stated in the approved terms. On termination, outstanding fees become due and ABF should reasonably cooperate with an authorised handover to a new adviser, subject to legal, regulatory and payment requirements."
-    ]
-   ],
-   [
-    "16. Liability and Indemnity",
-    [
-     "The approved terms limit ABF’s liability for claims connected with the relevant service and exclude certain indirect or consequential losses where legally permitted. Clients remain responsible for losses caused by incorrect, incomplete or late information or by failing to act on agreed advice."
-    ]
-   ],
-   [
-    "17. Insurance",
-    [
-     "ABF states that it maintains professional indemnity insurance appropriate to its work. Evidence of cover may be made available where required and subject to the terms and limits of the policy."
-    ]
-   ],
-   [
-    "18. Governing Law and Jurisdiction",
-    [
-     "The engagement is governed by the laws of England and Wales. Disputes relating to the agreement are subject to the jurisdiction stated in the approved contractual terms."
-    ]
-   ],
-   [
-    "19. Variation and Updates",
-    [
-     "ABF may update its standard engagement terms from time to time. Material changes affecting an existing client relationship should be communicated appropriately, while the website should display the most recent approved general terms."
-    ]
-   ]
+   },
+   {
+    "t": "p",
+    "html": "<strong>16.3.</strong> You agree to indemnify us against any third-party claims arising from your misuse of our services."
+   },
+   {
+    "t": "h2",
+    "html": "17. Insurance"
+   },
+   {
+    "t": "p",
+    "html": "We maintain adequate professional indemnity insurance. Proof of cover can be provided on request."
+   },
+   {
+    "t": "h2",
+    "html": "18. Governing Law and Jurisdiction"
+   },
+   {
+    "t": "p",
+    "html": "<strong>18.1.</strong> This Agreement is governed by the laws of England and Wales."
+   },
+   {
+    "t": "p",
+    "html": "<strong>18.2.</strong> Any disputes arising shall be resolved exclusively in the courts of England and Wales."
+   },
+   {
+    "t": "h2",
+    "html": "19. Variation and Updates"
+   },
+   {
+    "t": "p",
+    "html": "We may update these Terms from time to time. Continued use of our services constitutes acceptance of the most recent version. The latest version is always available at <a href=\"https://www.abfaccounting.com\">www.abfaccounting.com</a>."
+   },
+   {
+    "t": "p",
+    "html": "ABF Accounting Services Ltd"
+   },
+   {
+    "t": "p",
+    "html": "Terms and Conditions of Engagement"
+   }
   ]
  },
  "terms-and-conditions-for-one-off-services": {
   "title": "Terms & Conditions for One-Off Services",
   "updated": "",
-  "sections": [
-   [
-    "1. Introduction",
-    [
-     "These terms apply when a client buys a one-off accounting or tax service from ABF Accounting Services Ltd, whether through the website or by direct agreement. One-off services are transactional rather than an ongoing advisory engagement, so the client should confirm the service is suitable before purchase."
+  "source": "T&C for One-Off Services",
+  "blocks": [
+   {
+    "t": "h2",
+    "html": "1. Introduction"
+   },
+   {
+    "t": "p",
+    "html": "These Terms and Conditions (\"Terms\") apply to all one-off accounting and tax services (\"Services\") provided by ABF Accounting Services Ltd (\"we\", \"us\", or \"our\") to clients (\"you\" or \"your\"). By purchasing a one-off service through our website or via direct agreement, you confirm that you have read, understood, and agree to be bound by these Terms in addition to our general terms and conditions."
+   },
+   {
+    "t": "p",
+    "html": "<strong>PLEASE NOTE:</strong> One-off services are offered as \"off-the-shelf\" products and are not bespoke or advisory in nature. They are intended for clients with straightforward accounting and tax affairs. If you are unsure whether our services are appropriate for your situation, please contact us before making a purchase, as no refunds will be issued once payment is made."
+   },
+   {
+    "t": "h2",
+    "html": "2. Scope of One-Off Services"
+   },
+   {
+    "t": "p",
+    "html": "We offer one-off services in the following categories:"
+   },
+   {
+    "t": "h3",
+    "html": "A. Personal Tax Returns &amp; Self-Employed Accounts"
+   },
+   {
+    "t": "p",
+    "html": "This includes:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "One Self Assessment Tax Return (SA100) for a specified tax year",
+     {
+      "html": "Reporting income and expenses via relevant supplementary pages:",
+      "sub": [
+       "Employment (SA102)",
+       "Self-Employment (SA103S/SA103F)",
+       "Property income (SA105)",
+       "Interest and dividends (SA100 pages)"
+      ]
+     }
     ]
-   ],
-   [
-    "2. Scope of One-Off Services",
-    [
-     "The service includes only the deliverables described at the point of purchase or in ABF’s written confirmation. One-off work can include defined accounting, tax or filing tasks; additional or more complex work falls outside scope unless separately agreed. Some packages may involve trusted third parties where this is disclosed and necessary to fulfil the service."
+   },
+   {
+    "t": "p",
+    "html": "Exclusions:"
+   },
+   {
+    "t": "p",
+    "html": "This service is not suitable for clients with complex tax affairs, including (but not limited to): Capital Gains Tax (except where included in specific CGT packages), Foreign income, Income from trusts or estates, Non-UK residency, Pension income (non-state or non-UK based), EIS/SEIS/VCT claims."
+   },
+   {
+    "t": "p",
+    "html": "If such complexities arise after purchase, additional fees may apply, or we reserve the right to decline the engagement without refund."
+   },
+   {
+    "t": "h3",
+    "html": "B. Capital Gains Tax (CGT) Package"
+   },
+   {
+    "t": "p",
+    "html": "This includes:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Reporting capital gains on listed shares, cryptoassets (with tax summary provided), and personal possessions.",
+     "Completion of the CGT section on your Self Assessment return for one tax year."
     ]
-   ],
-   [
-    "3. Client Obligations",
-    [
-     "Clients must provide complete, accurate and timely records, respond to reasonable information requests and review drafts or filings that require approval. Delays, penalties or additional costs caused by late, incomplete or inaccurate client information remain the client’s responsibility."
+   },
+   {
+    "t": "p",
+    "html": "Exclusions:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Does not cover 60-day residential property CGT reporting.",
+     "Does not include preparation of cryptoasset gain summaries — these must be supplied by you.",
+     "Complex CGT reliefs (entrepreneurs' relief, rollover relief, etc.) are not included."
     ]
-   ],
-   [
-    "4. Service Delivery and Timeframes",
-    [
-     "ABF recommends engaging well before statutory deadlines so there is time to obtain records, complete the work and secure approval. Late engagements may attract additional charges, may be refused, or may not be guaranteed before the deadline. The current terms specifically warn about late Self Assessment engagements close to 31 January."
+   },
+   {
+    "t": "h3",
+    "html": "C. Dormant Company Accounts (\"Dormant Done\")"
+   },
+   {
+    "t": "p",
+    "html": "This includes:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Preparation and electronic filing of one set of dormant company accounts with Companies House for a specified accounting period."
     ]
-   ],
-   [
-    "5. Fees, Payments, and Refund Policy",
-    [
-     "Full payment is normally required before work starts and the quoted fee applies to the specified scope. The current terms state that one-off purchases are generally non-refundable after purchase unless ABF is unable to deliver for reasons within its control. Unused services or missed deadlines caused by the client may result in the fee being forfeited."
+   },
+   {
+    "t": "box-start"
+   },
+   {
+    "t": "p",
+    "html": "Limitations:"
+   },
+   {
+    "t": "p",
+    "html": "We do not act as your agent with HMRC or Companies House beyond submitting the dormant accounts. Revisions due to client errors may incur additional charges."
+   },
+   {
+    "t": "box-end"
+   },
+   {
+    "t": "h3",
+    "html": "D. Limited Company Accounts and CT600"
+   },
+   {
+    "t": "p",
+    "html": "This includes:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Preparation of statutory accounts",
+     "Preparation of abbreviated accounts for Companies House",
+     "Corporation Tax Return (CT600) for one accounting period",
+     "(Optional) basic bookkeeping where agreed"
     ]
-   ],
-   [
-    "6. Limitations of Liability",
-    [
-     "ABF is not responsible for penalties, interest or losses caused by inaccurate, incomplete or late information supplied by the client, or by events outside ABF’s reasonable control. The current one-off terms cap liability to the fee paid for the specific service, subject to any legal rights that cannot be excluded."
+   },
+   {
+    "t": "p",
+    "html": "Exclusions &amp; Additional Charges:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Based on correct and complete information provided by you",
+     "Trial Balance must be in a usable format; otherwise, a £100+VAT fee may apply for corrections",
+     "Additional advisory or support services are not included"
     ]
-   ],
-   [
-    "7. Confidentiality and Data Protection",
-    [
-     "Client information is handled confidentially and in line with the Privacy Policy and applicable data-protection law. Where an approved external partner is involved in delivery, only information reasonably needed to provide that part of the service should be shared."
+   },
+   {
+    "t": "h3",
+    "html": "E. Business in a Basket &amp; Ad-hoc Services"
+   },
+   {
+    "t": "p",
+    "html": "These bundled or customised packages include specific deliverables as described at the time of purchase. We will contact you within 5 working days of purchase to schedule delivery."
+   },
+   {
+    "t": "box-start"
+   },
+   {
+    "t": "p",
+    "html": "Third-Party Services:"
+   },
+   {
+    "t": "p",
+    "html": "Some services may be delivered by external partners. By purchasing the package, you consent to your details being shared with these providers solely for the purpose of fulfilling the services."
+   },
+   {
+    "t": "box-end"
+   },
+   {
+    "t": "h2",
+    "html": "3. Client Obligations"
+   },
+   {
+    "t": "p",
+    "html": "By engaging us for any one-off service, you agree to:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Provide complete, accurate, and timely information and documentation required to fulfil the service",
+     "Acknowledge that we are not liable for delays or penalties due to inaccurate or late information",
+     "Understand that this is a single-use, transactional service with no ongoing advisory, support, or representation rights unless otherwise agreed in writing"
     ]
-   ],
-   [
-    "8. Governing Law and Jurisdiction",
-    [
-     "These terms are governed by the laws of England and Wales. Disputes arising from the one-off service are subject to the jurisdiction of the courts of England and Wales, subject to any rights that cannot legally be excluded."
+   },
+   {
+    "t": "h2",
+    "html": "4. Service Delivery and Timeframes"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "We recommend engaging us well in advance of any statutory deadline (e.g., Self Assessment filing deadline: 31 January).",
+     "Services requested after 31 October (for 31 January tax deadlines) may incur a late engagement surcharge.",
+     "Services requested after 31 December may be refused or not guaranteed, and no refunds will be issued.",
+     "Late submission penalties from HMRC or Companies House due to delays on your part are your sole responsibility."
     ]
-   ],
-   [
-    "9. Changes to Terms",
-    [
-     "ABF may update the published terms from time to time to reflect service, legal or operational changes. The latest approved version should be available on the website and should apply in accordance with the effective date stated in that version."
+   },
+   {
+    "t": "h2",
+    "html": "5. Fees, Payments, and Refund Policy"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Full payment is required in advance before service commencement.",
+     "Fees quoted are fixed for the services listed at the time of purchase.",
+     "No refunds will be issued once the service has been purchased unless we are unable to deliver due to circumstances within our control.",
+     "If you fail to provide necessary documentation, use the service, or miss a submission deadline, you forfeit your payment."
     ]
-   ],
-   [
-    "10. Contact Us",
-    [
-     "Questions about a one-off service can be directed to support@abfaccounting.com or ABF’s published telephone number before purchase, particularly where the client is unsure whether the selected service is appropriate for their circumstances."
+   },
+   {
+    "t": "h2",
+    "html": "6. Limitations of Liability"
+   },
+   {
+    "t": "p",
+    "html": "We shall not be liable for:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Penalties or interest levied by HMRC or Companies House due to late, inaccurate, or incomplete filings caused by you",
+     "Any indirect, consequential, or financial losses",
+     "Failure to perform obligations due to events beyond our control (force majeure)"
     ]
-   ]
+   },
+   {
+    "t": "p",
+    "html": "Our liability is capped to the fee paid for the specific one-off service."
+   },
+   {
+    "t": "h2",
+    "html": "7. Confidentiality and Data Protection"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "All client information is held securely and treated confidentially in accordance with our Privacy Policy.",
+     "In purchasing a service involving third-party collaboration (e.g., \"Business in a Basket\"), you consent to us sharing relevant information with trusted partners for fulfilment purposes."
+    ]
+   },
+   {
+    "t": "h2",
+    "html": "8. Governing Law and Jurisdiction"
+   },
+   {
+    "t": "p",
+    "html": "These Terms shall be governed by and construed in accordance with the laws of England and Wales. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales."
+   },
+   {
+    "t": "h2",
+    "html": "9. Changes to Terms"
+   },
+   {
+    "t": "p",
+    "html": "ABF Accounting Services Ltd reserves the right to modify these Terms at any time without notice. Updated versions will be published on our website. Continued use of our services after changes are made indicates your acceptance of the revised terms."
+   },
+   {
+    "t": "h2",
+    "html": "Contact Us"
+   },
+   {
+    "t": "p",
+    "html": "For questions regarding our one-off services or these Terms, please contact us:"
+   },
+   {
+    "t": "box-start"
+   },
+   {
+    "t": "p",
+    "html": "📧 <strong>Email:</strong> support@abfaccounting.com"
+   },
+   {
+    "t": "p",
+    "html": "📞 <strong>Phone:</strong> 07405141694"
+   },
+   {
+    "t": "p",
+    "html": "🌐 <strong>Website:</strong> www.abfaccounting.com"
+   },
+   {
+    "t": "box-end"
+   },
+   {
+    "t": "p",
+    "html": "ABF Accounting Services Ltd"
+   },
+   {
+    "t": "p",
+    "html": "Terms &amp; Conditions for One-Off Services"
+   }
   ]
  },
  "cookie-policy": {
   "title": "Cookie Policy",
-  "updated": "",
-  "sections": [
-   [
-    "Approved Cookie Policy content",
-    [
-     "This Cookie Policy explains how ABF Accounting Services Ltd may use cookies and similar storage or access technologies on its website. It should be read together with the Privacy Policy, which explains how personal data is handled more broadly and how individuals can exercise their data-protection rights."
+  "updated": "Effective Date: 1st June 2025",
+  "source": "Cookie Policy",
+  "blocks": [
+   {
+    "t": "p",
+    "html": "Welcome to ABF Accounting Services Ltd, trading as Claim PAYE Refunds's Cookie Policy. This policy outlines how we use cookies and similar technologies on our website, www.claimpayerefunds.co.uk. By continuing to use our website, you consent to our use of cookies as described in this policy."
+   },
+   {
+    "t": "p",
+    "html": "We may update this Cookie Policy periodically to keep you informed of our latest practices regarding cookies and similar technologies. Please check this policy each time you visit our website to stay informed of any changes."
+   },
+   {
+    "t": "p",
+    "html": "We recommend saving a copy of this Cookie Policy for your records."
+   },
+   {
+    "t": "h2",
+    "html": "Contents"
+   },
+   {
+    "t": "box-start"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "About Cookies",
+     {
+      "html": "Types of Cookies Used",
+      "sub": [
+       "Essential Cookies",
+       "Functional Cookies",
+       "Analytical or Performance Cookies",
+       "Targeting Cookies"
+      ]
+     },
+     "Third-Party Cookies",
+     "How to Accept or Reject Cookies",
+     "Copyright, Credit, and Logo"
     ]
-   ],
-   [
-    "Current cookie-policy introduction",
-    [
-     "Cookies are small files or identifiers stored on or accessed from a user’s device. Similar technologies can include local storage, tracking pixels, scripts, tags and other methods that remember information, support website functions or measure how people use an online service. Some technologies may be strictly necessary for security, session management, forms or remembering a privacy choice."
+   },
+   {
+    "t": "box-end"
+   },
+   {
+    "t": "h2",
+    "html": "About Cookies"
+   },
+   {
+    "t": "p",
+    "html": "Cookies are data files sent between web servers and web browsers, memory, or hard drives to recognize a user's device when accessing a website. They serve various purposes, such as customizing a website, facilitating navigation, improving the user experience, and storing preferences and login information."
+   },
+   {
+    "t": "p",
+    "html": "Cookies can be classified as 'session' or 'persistent.' Session cookies are temporary and expire when you close your browser, while persistent cookies remain on your computer until a fixed expiration date or manual deletion."
+   },
+   {
+    "t": "p",
+    "html": "Cookies can be 'first-party' (set by our website server) or 'third-party' (set by third-party domains). They typically do not contain personal information but may be used in combination with other data to identify you."
+   },
+   {
+    "t": "p",
+    "html": "For more information about cookies, visit <a href=\"https://www.allaboutcookies.org\">www.allaboutcookies.org</a>."
+   },
+   {
+    "t": "h2",
+    "html": "Types of Cookies Used"
+   },
+   {
+    "t": "p",
+    "html": "We use the following types of cookies on our website:"
+   },
+   {
+    "t": "h3",
+    "html": "Essential Cookies:"
+   },
+   {
+    "t": "p",
+    "html": "Necessary for the website's core functionality, including administering the website and ensuring proper operation when you interact with it. They also remember information you enter on our website forms."
+   },
+   {
+    "t": "h3",
+    "html": "Functional Cookies:"
+   },
+   {
+    "t": "p",
+    "html": "Store preferences and recognize you when you return to our website, enhancing your experience. They identify your browser and settings and support our contact form and blog comments."
+   },
+   {
+    "t": "h3",
+    "html": "Analytical or Performance Cookies:"
+   },
+   {
+    "t": "p",
+    "html": "Gather data on user interactions with our website to improve its usability, functionality, content, and user experience. Information collected is anonymized."
+   },
+   {
+    "t": "h3",
+    "html": "Targeting Cookies:"
+   },
+   {
+    "t": "p",
+    "html": "We do not use targeting cookies on our website."
+   },
+   {
+    "t": "h2",
+    "html": "Third-Party Cookies"
+   },
+   {
+    "t": "p",
+    "html": "Third parties may use cookies to analyze your use of our website, such as Google Analytics cookies. These cookies collect and process data anonymously. For more information on how Google uses data, visit Google's privacy policy."
+   },
+   {
+    "t": "p",
+    "html": "We cannot control how third parties use information gathered from cookies."
+   },
+   {
+    "t": "h2",
+    "html": "How to Accept or Reject Cookies"
+   },
+   {
+    "t": "p",
+    "html": "Managing cookies can be done through your browser settings. If you're unsure how to do this, you can find instructions for commonly used browsers here:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Google Chrome",
+     "Mozilla Firefox",
+     "Microsoft Internet Explorer",
+     "Apple Safari"
     ]
-   ],
-   [
-    "Cookie categories and purposes",
-    [
-     "ABF may use different categories of technologies for essential operation, preferences, functionality and analytics. Non-essential analytics or performance technologies should only operate in accordance with the applicable consent rules. The final production policy should maintain a current inventory showing the technology name, provider, purpose, category and duration where relevant."
-    ]
-   ],
-   [
-    "Consent and preference controls",
-    [
-     "Where consent is required, users should receive clear information before non-essential technologies are used and should be able to make an active choice. Rejecting non-essential technologies should be straightforward, and consent should not be inferred merely from continued browsing. Visitors should also be able to revisit or withdraw their choices through the site’s privacy or cookie settings."
-    ]
-   ],
-   [
-    "Third-party / analytics information",
-    [
-     "Embedded tools, analytics services, social features, maps, video, payment services or other external platforms may place or access their own technologies when used. The final live policy should identify any relevant third parties and link to their privacy or cookie information where appropriate. Where these technologies process personal data, the Privacy Policy and UK data-protection requirements also apply."
-    ]
-   ],
-   [
-    "Retention and updates",
-    [
-     "Cookie and storage-access information should be reviewed whenever ABF adds or removes technologies, changes providers, changes analytics or advertising configuration, or when relevant law or regulatory guidance changes. Browser controls can also block, delete or restrict cookies, although disabling some technologies may affect website functions."
-    ]
-   ],
-   [
-    "Contact information",
-    [
-     "Questions about cookies, privacy settings or how ABF uses website data can be directed to support@abfaccounting.com or the other contact details published on the ABF website. The implemented site should provide a simple route for users to change non-essential cookie preferences at any time."
-    ]
-   ]
+   },
+   {
+    "t": "p",
+    "html": "Some browsers offer 'incognito' mode to limit data storage. You can also use third-party applications to block or manage cookies."
+   },
+   {
+    "t": "p",
+    "html": "Opt-out of Google Analytics tracking here."
+   },
+   {
+    "t": "p",
+    "html": "Feel free to block some or all of our cookies, but note that this may affect website functionality."
+   },
+   {
+    "t": "p",
+    "html": "For more details on cookies and adjusting settings, visit <a href=\"https://www.allaboutcookies.org\">www.allaboutcookies.org</a>."
+   },
+   {
+    "t": "h2",
+    "html": "Copyright, Credit, and Logo"
+   },
+   {
+    "t": "p",
+    "html": "This Cookie Policy is based on a General Data Protection Regulation (GDPR) compliant template provided by GDPR Privacy Policy. The copyright for this Cookie Policy is either owned by or licensed to us, protected by copyright laws worldwide and copyright protection software. All intellectual property rights are reserved."
+   },
+   {
+    "t": "p",
+    "html": "ABF Accounting Services Ltd, trading as Claim PAYE Refunds"
+   },
+   {
+    "t": "p",
+    "html": "Cookie Policy - June 2025"
+   }
   ]
  },
  "modern-slavery-statement": {
   "title": "Modern Slavery Statement",
-  "updated": "",
-  "sections": [
-   [
-    "1. Introduction",
-    [
-     "ABF’s statement explains the steps the organisation takes to reduce the risk of modern slavery and human trafficking in its operations and supply chain. The current statement is presented as a section 54 transparency statement and was approved on 1 September 2024."
+  "updated": "Approved on 01 September 2024",
+  "source": "Modern Slavery and Human Trafficking Statement",
+  "blocks": [
+   {
+    "t": "h2",
+    "html": "Introduction"
+   },
+   {
+    "t": "p",
+    "html": "This statement, made pursuant to section 54(1) of the Modern Slavery Act 2015, outlines ABF Accounting's, trading as Claim PAYE Refunds, commitment to preventing modern slavery and human trafficking within our business and supply chain."
+   },
+   {
+    "t": "h2",
+    "html": "Business Description"
+   },
+   {
+    "t": "p",
+    "html": "We are a payroll and accounting outsourcing business operating globally."
+   },
+   {
+    "t": "h2",
+    "html": "Core Values and Governance"
+   },
+   {
+    "t": "p",
+    "html": "Our core values are listening, simplicity, and doing it right. We maintain transparent relationships with stakeholders, fostering diversity in our management team. We adhere to market and regulatory frameworks and regularly review conflicts of interest."
+   },
+   {
+    "t": "h2",
+    "html": "Supply Chains"
+   },
+   {
+    "t": "p",
+    "html": "Our commitment to ethical standards includes:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Thorough assessment of new outsourcing providers and vendors.",
+     "Explicit anti-slavery clauses in supplier agreements.",
+     "A risk-based approach to identify and mitigate modern slavery risks.",
+     "Due diligence and oversight, guided by our Supplier &amp; Outsourcing Policy.",
+     "Periodic sharing of supply chain guidelines and policies."
     ]
-   ],
-   [
-    "2. Business Description",
-    [
-     "ABF describes itself as a payroll and accounting outsourcing business. Relevant risks may arise through employment practices, outsourced service arrangements, vendors, technology suppliers and other third parties used to support operations."
+   },
+   {
+    "t": "p",
+    "html": "The Board of Directors and Audit and Risk Committees establish the control environment."
+   },
+   {
+    "t": "h2",
+    "html": "People"
+   },
+   {
+    "t": "p",
+    "html": "We foster a workplace culture based on fairness, equity, inclusivity, and transparency. Our Whistleblowing Policy ensures a secure mechanism for reporting concerns. Employee engagement surveys are conducted annually. We conduct pre-employment background checks and offer regular training on various topics, including modern slavery and human trafficking."
+   },
+   {
+    "t": "h2",
+    "html": "Customers and Partners"
+   },
+   {
+    "t": "p",
+    "html": "We conduct comprehensive due diligence on customers and set high standards for partners, requesting modern slavery statements during onboarding."
+   },
+   {
+    "t": "h2",
+    "html": "Training"
+   },
+   {
+    "t": "p",
+    "html": "Regular training, including induction and refresher programs, is provided to all employees. Specialized teams receive additional training, and refresher training is conducted annually. Management ensures comprehensive training on modern slavery and human trafficking within supply chains."
+   },
+   {
+    "t": "h2",
+    "html": "Compliance"
+   },
+   {
+    "t": "p",
+    "html": "Regular internal audits and external audits ensure compliance with our policies and procedures."
+   },
+   {
+    "t": "h2",
+    "html": "Test of Adequacy"
+   },
+   {
+    "t": "p",
+    "html": "Zero reports indicate modern slavery practices within our organization."
+   },
+   {
+    "t": "h2",
+    "html": "Policies"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "<strong>Modern Slavery Policy:</strong> Outlines our strategy for recognizing and addressing modern slavery and human trafficking risks.",
+     "<strong>Supplier and Outsourcing Policy:</strong> Ensures supplier alignment with our standards.",
+     "<strong>Staff Handbook and Code of Conduct:</strong> Guides employee behavior.",
+     "<strong>Recruitment Policy:</strong> Ensures eligibility checks.",
+     "<strong>Whistleblowing Policy:</strong> Fosters an environment for reporting concerns."
     ]
-   ],
-   [
-    "3. Core Values and Governance",
-    [
-     "ABF describes values centred on listening, simplicity and doing things correctly. Governance responsibilities include maintaining appropriate controls, reviewing conflicts of interest and ensuring management oversight of ethical and supplier-related risks."
-    ]
-   ],
-   [
-    "4. Supply Chains",
-    [
-     "The current statement refers to assessment of new suppliers and outsourcing providers, anti-slavery expectations in supplier agreements, a risk-based review process and due diligence under a Supplier & Outsourcing Policy. Higher-risk relationships should receive proportionate additional review and oversight."
-    ]
-   ],
-   [
-    "5. People",
-    [
-     "ABF aims to maintain fair, inclusive and transparent employment practices. Controls can include eligibility and background checks where appropriate, clear employment terms, staff policies, engagement surveys and confidential routes for employees to raise concerns without retaliation."
-    ]
-   ],
-   [
-    "6. Customers and Partners",
-    [
-     "ABF also applies due diligence to customers and business partners. Where relevant, partner onboarding may include asking for evidence of policies, statements or controls that demonstrate a comparable commitment to preventing forced labour and trafficking."
-    ]
-   ],
-   [
-    "7. Training",
-    [
-     "Staff should receive modern-slavery awareness training, with additional training for people involved in supplier management, recruitment, compliance or risk. Refresher training helps keep warning signs, escalation routes and organisational expectations visible."
-    ]
-   ],
-   [
-    "8. Compliance",
-    [
-     "The statement refers to internal and external audit activity supporting compliance with relevant policies and procedures. Monitoring should consider both the effectiveness of controls and whether risks have changed as suppliers, markets or operating arrangements evolve."
-    ]
-   ],
-   [
-    "9. Test of Adequacy",
-    [
-     "The current statement records zero reports indicating modern-slavery practices within the organisation at the time of publication. The absence of reports should not replace ongoing monitoring, staff awareness or appropriate investigation of future concerns."
-    ]
-   ],
-   [
-    "10. Policies",
-    [
-     "The statement references a Modern Slavery Policy, Supplier and Outsourcing Policy, Staff Handbook and Code of Conduct, Recruitment Policy and Whistleblowing Policy. Together these documents support prevention, due diligence, reporting and response."
-    ]
-   ],
-   [
-    "11. Moving Forward",
-    [
-     "ABF commits to reviewing the statement and related procedures regularly, improving staff awareness and monitoring modern-slavery issues through governance channels. Future statements should summarise progress, material risks identified and actions taken during the reporting period. The approved website version should retain the appropriate signatory and approval date."
-    ]
-   ]
+   },
+   {
+    "t": "h2",
+    "html": "Moving Forward"
+   },
+   {
+    "t": "p",
+    "html": "We commit to enhancing our Modern Slavery Statement annually, updating policies and procedures, and improving employee awareness. The Board Ethics and Sustainability Committee will monitor modern slavery matters quarterly and escalate issues as needed."
+   },
+   {
+    "t": "box-start"
+   },
+   {
+    "t": "p",
+    "html": "Lekana Balogun"
+   },
+   {
+    "t": "p",
+    "html": "Managing Director"
+   },
+   {
+    "t": "box-end"
+   },
+   {
+    "t": "p",
+    "html": "ABF Accounting, trading as Claim PAYE Refunds"
+   },
+   {
+    "t": "p",
+    "html": "Modern Slavery and Human Trafficking Statement - September 2024"
+   }
   ]
  }
 }

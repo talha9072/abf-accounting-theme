@@ -35,7 +35,7 @@ do_action('woocommerce_before_account_navigation');
 		<p class="abf-account-help__text">
 			<?php
 			/* translators: %s: phone number. */
-			printf(esc_html__('Call %s, Monday to Friday, 9am to 6pm.', 'abf-accounting'), '<a href="' . esc_attr($abf_accounting_contact['phone_uri']) . '">' . esc_html(str_replace(' 141 ', ' 141', $abf_accounting_contact['phone'])) . '</a>');
+			printf(esc_html__('Call %s or request a callback.', 'abf-accounting'), '<a href="' . esc_attr($abf_accounting_contact['phone_uri']) . '">' . esc_html(str_replace(' 141 ', ' 141', $abf_accounting_contact['phone'])) . '</a>');
 			?>
 		</p>
 		<a class="abf-account-help__button" href="<?php echo esc_url(home_url('/contact/#callback-form')); ?>"><?php esc_html_e('Request a callback', 'abf-accounting'); ?></a>

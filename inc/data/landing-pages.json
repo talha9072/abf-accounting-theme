@@ -14,7 +14,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Company accounts & CT600",
@@ -177,7 +177,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Confirmation Statement",
@@ -227,20 +227,12 @@
      "We help check that the information being submitted is correct."
     ],
     [
-     "Statement filed with Companies House",
-     "Your Confirmation Statement submitted once you have approved it."
-    ],
-    [
      "Deadline awareness",
      "We help you keep track of your annual filing obligation."
     ],
     [
      "Support when details change",
      "We can advise on related Companies House updates where required."
-    ],
-    [
-     "Priced up front",
-     "Included with your accounts, Company Tax Return and directors’ returns."
     ]
    ]
   },
@@ -340,7 +332,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Self Assessment (SA100)",
@@ -503,7 +495,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Dormant company accounts",
@@ -553,20 +545,12 @@
      "Electronic filing with Companies House."
     ],
     [
-     "Statement filed with Companies House",
-     "Your Confirmation Statement submitted once you have approved it."
-    ],
-    [
      "Deadline support",
      "Support with your annual filing deadlines."
     ],
     [
      "Clear, transparent pricing",
      "£80, with no surprises."
-    ],
-    [
-     "Priced up front",
-     "Included with your accounts, Company Tax Return and directors’ returns."
     ]
    ]
   },
@@ -666,7 +650,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Bookkeeping services",
@@ -677,7 +661,7 @@
     "items": [
      "Bookkeeping kept up to date",
      "Year-end accounts",
-     "Accounting software subscription",
+     "Records kept in one place",
      "Dedicated accountant",
      "Deadline reminders"
     ],
@@ -686,7 +670,7 @@
    }
   },
   "explainer": {
-   "cardTitle": "Monthly bookkeeping",
+   "cardTitle": "Bookkeeping, kept up to date",
    "cardSub": "Kept up to date by your accountant",
    "chip": "Up to date",
    "rows": [
@@ -712,7 +696,7 @@
      "Income, expenses and bank transactions recorded and reconciled through the year."
     ],
     [
-     "Accounting software included",
+     "Records kept in one place",
      "Your records are kept in accounting software, so everything lives in one place."
     ],
     [
@@ -728,8 +712,8 @@
      "We let you know what is needed and when, so nothing is left to the last minute."
     ],
     [
-     "Annual business health check",
-     "A yearly look at how your business is doing, based on your up-to-date figures."
+     "A clearer view of your numbers",
+     "Know where your business stands through the year, with records that are always up to date."
     ]
    ]
   },
@@ -829,7 +813,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "VAT Return service",
@@ -938,9 +922,9 @@
      "link": "View contractor support"
     },
     {
-     "title": "Ecommerce sellers",
-     "text": "VAT support for Amazon, Shopify and Etsy sellers.",
-     "link": "View ecommerce support"
+     "title": "Self-employed & freelancers",
+     "text": "VAT returns once you are VAT registered.",
+     "link": "View freelancer support"
     }
    ]
   },
@@ -992,7 +976,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Payroll & pension",
@@ -1012,17 +996,17 @@
    }
   },
   "explainer": {
-   "cardTitle": "Payroll and CIS",
+   "cardTitle": "Payroll and pensions",
    "cardSub": "Prepared each pay period",
    "chip": "Ready to submit",
    "rows": [
     "Gross pay",
     "Tax and National Insurance",
     "Pension contributions",
-    "CIS deductions"
+    "Take-home pay"
    ],
-   "eyebrow": "Payroll and CIS explained",
-   "title": "How do payroll and CIS <br>work?",
+   "eyebrow": "Payroll and pensions explained",
+   "title": "How do payroll and pensions <br>work?",
    "body": [
     "If you employ staff, payroll means running PAYE, issuing payslips and reporting pay to HMRC in real time, alongside workplace pension duties.",
     "Employers also have workplace pension duties, including auto-enrolment and regular contributions. We handle both alongside your payroll."
@@ -1065,11 +1049,11 @@
    "steps": [
     [
      "Share pay details",
-     "Send hours, pay and subcontractor details for the period."
+     "Send hours, pay and any staff changes for the period."
     ],
     [
      "We calculate pay and deductions",
-     "Tax, National Insurance, pension and CIS deductions worked out for you."
+     "Tax, National Insurance and pension contributions worked out for you."
     ],
     [
      "You review and approve",
@@ -1083,11 +1067,11 @@
   },
   "audience": {
    "eyebrow": "Who it is for",
-   "title": "Payroll and CIS support for the way you work.",
+   "title": "Payroll and pension support for the way you work.",
    "cards": [
     {
      "title": "Contractors",
-     "text": "CIS returns included, with your bookkeeping and Self Assessment.",
+     "text": "Run payroll for yourself as a company director.",
      "link": "View contractor support"
     },
     {
@@ -1096,9 +1080,9 @@
      "link": "View limited company support"
     },
     {
-     "title": "Small businesses",
-     "text": "Payroll and pensions handled as your team grows.",
-     "link": "View small business support"
+     "title": "Self-employed & freelancers",
+     "text": "Add payroll if you start employing people.",
+     "link": "View freelancer support"
     },
     {
      "title": "Sole traders",
@@ -1109,8 +1093,8 @@
   },
   "faq": {
    "eyebrow": "Common questions",
-   "title": "Payroll and CIS questions, answered.",
-   "intro": "Straight answers on payroll, pensions and the Construction Industry Scheme.",
+   "title": "Payroll and pension questions, answered.",
+   "intro": "Straight answers on payroll and workplace pensions.",
    "items": [
     [
      "How much does payroll cost?",
@@ -1121,7 +1105,7 @@
      ""
     ],
     [
-     "What is the Construction Industry Scheme?",
+     "Can you set up a new payroll for me?",
      ""
     ],
     [
@@ -1155,7 +1139,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Tax planning advice",
@@ -1318,7 +1302,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Company accounts & CT600",
@@ -1356,7 +1340,7 @@
   },
   "included": {
    "eyebrow": "What ABF handles",
-   "title": "What ABF handles <br>for company.",
+   "title": "What ABF handles <br>for your company.",
    "intro": "Each service is priced up front on our pricing page.",
    "cards": [
     [
@@ -1377,7 +1361,7 @@
     ],
     [
      "A dedicated accountant",
-     "One accountant with unlimited phone and email support."
+     "One accountant, with support by phone and email."
     ],
     [
      "Optional add-ons",
@@ -1399,7 +1383,7 @@
     ],
     [
      "Share your records online",
-     "Send documents digitally, with accounting software included."
+     "Send your documents securely online."
     ],
     [
      "We keep you on track",
@@ -1440,7 +1424,7 @@
    "items": [
     [
      "What is included in limited company support?",
-     "Bookkeeping, year-end accounts, your Company Tax Return, the Confirmation Statement and Self Assessment returns for two directors, with a dedicated accountant, deadline reminders and unlimited phone and email support."
+     "Year-end accounts and your Company Tax Return (CT600) from £299. The Confirmation Statement (£75) and directors’ Self Assessment returns (£150 each) are available separately. You also get a dedicated accountant and support by phone and email."
     ],
     [
      "Can you take over from my current accountant?",
@@ -1481,7 +1465,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Self Assessment (SA100)",
@@ -1536,11 +1520,11 @@
     ],
     [
      "A dedicated accountant",
-     "One accountant with unlimited phone and email support."
+     "One accountant, with support by phone and email."
     ],
     [
-     "Annual tax efficiency recommendations",
-     "A yearly review so you pay the right amount of tax."
+     "Deadline reminders",
+     "We let you know what is needed and when, so nothing is left to the last minute."
     ],
     [
      "Optional add-ons",
@@ -1562,7 +1546,7 @@
     ],
     [
      "Share your records online",
-     "Send documents digitally, with accounting software included."
+     "Send your documents securely online."
     ],
     [
      "We keep you on track",
@@ -1634,7 +1618,7 @@
   "hero": {
    "crumb": "Who we help",
    "current": "Contractors",
-   "title": "Contractor accounting that keeps <br>pace with how you get paid.",
+   "title": "Contractor accounting that keeps pace with how you get paid.",
    "price": "Self Assessment tax return from £150",
    "lead": "Support for contractors working through PAYE, umbrella or limited company setups, with CIS, VAT and Self Assessment handled where they apply.",
    "buttons": [
@@ -1644,7 +1628,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Self Assessment (SA100)",
@@ -1703,7 +1687,7 @@
     ],
     [
      "A dedicated accountant",
-     "One accountant with unlimited phone and email support."
+     "One accountant, with support by phone and email."
     ],
     [
      "Optional add-ons",
@@ -1725,7 +1709,7 @@
     ],
     [
      "Share your records online",
-     "Send documents digitally, with accounting software included."
+     "Send your documents securely online."
     ],
     [
      "We keep you on track",
@@ -1807,7 +1791,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Self Assessment (SA100)",
@@ -1862,11 +1846,11 @@
     ],
     [
      "A dedicated accountant",
-     "One accountant with unlimited phone and email support."
+     "One accountant, with support by phone and email."
     ],
     [
-     "Annual tax efficiency recommendations",
-     "A yearly review so you pay the right amount of tax."
+     "Deadline reminders",
+     "We let you know what is needed and when, so nothing is left to the last minute."
     ],
     [
      "Optional add-ons",
@@ -1888,7 +1872,7 @@
     ],
     [
      "Share your records online",
-     "Send documents digitally, with accounting software included."
+     "Send your documents securely online."
     ],
     [
      "We keep you on track",
@@ -1970,7 +1954,7 @@
    "assurances": [
     "Dedicated accountant",
     "Deadline reminders",
-    "Unlimited support"
+    "Support by phone and email"
    ],
    "card": {
     "label": "Self Assessment (SA100)",
@@ -2025,11 +2009,11 @@
     ],
     [
      "A dedicated accountant",
-     "One accountant with unlimited phone and email support."
+     "One accountant, with support by phone and email."
     ],
     [
-     "Annual tax efficiency recommendations",
-     "A yearly review so you pay the right amount of tax."
+     "Deadline reminders",
+     "We let you know what is needed and when, so nothing is left to the last minute."
     ],
     [
      "Optional add-ons",
@@ -2051,7 +2035,7 @@
     ],
     [
      "Share your records online",
-     "Send documents digitally, with accounting software included."
+     "Send your documents securely online."
     ],
     [
      "We keep you on track",
@@ -2079,9 +2063,9 @@
      "link": "View Annual Accounts & Tax Return"
     },
     {
-     "title": "Company Formation",
-     "text": "Thinking about a property company? Start properly.",
-     "link": "View Company Formation"
+     "title": "Tax Planning Advice",
+     "text": "Plan for rental income and property sales.",
+     "link": "View Tax Planning Advice"
     }
    ]
   },

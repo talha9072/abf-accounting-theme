@@ -21,5 +21,7 @@ echo abf_accounting_faq( // phpcs:ignore WordPress.Security.EscapeOutput
         'eyebrow' => __('Common questions', 'abf-accounting'),
         'title'   => __('Before you get in touch.', 'abf-accounting'),
         'intro'   => __('A few things people often ask before sending an enquiry.', 'abf-accounting'),
+        // Already on Contact, so no "Contact us" link under these questions.
+        'contact_link' => false,
     )
 );

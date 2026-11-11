@@ -60,7 +60,14 @@ echo $abf_accounting_submenu(__('Who we help', 'abf-accounting'), home_url('/who
 echo $abf_accounting_submenu(__('Services', 'abf-accounting'), home_url('/services/annual-accounts-tax-return/'), abf_accounting_services()); // phpcs:ignore WordPress.Security.EscapeOutput
 echo $abf_accounting_link(__('Pricing', 'abf-accounting'), home_url('/pricing/')); // phpcs:ignore WordPress.Security.EscapeOutput
 echo $abf_accounting_link(__('First-Year Accounts & Tax Return FREE', 'abf-accounting'), home_url('/first-year-accounts-free/')); // phpcs:ignore WordPress.Security.EscapeOutput
-echo $abf_accounting_link(__('Resources', 'abf-accounting'), home_url('/resources/')); // phpcs:ignore WordPress.Security.EscapeOutput
+echo $abf_accounting_submenu( // phpcs:ignore WordPress.Security.EscapeOutput
+    __('Resources', 'abf-accounting'),
+    home_url('/resources/'),
+    array(
+        array('name' => __('Articles & guides', 'abf-accounting'), 'url' => home_url('/resources/')),
+        array('name' => __('About', 'abf-accounting'), 'url' => home_url('/about/')),
+    )
+);
 echo $abf_accounting_link(__('Contact', 'abf-accounting'), home_url('/contact/')); // phpcs:ignore WordPress.Security.EscapeOutput
 ?>
 <!-- /wp:navigation -->

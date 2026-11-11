@@ -23,6 +23,10 @@
 	letter-spacing: -0.01em;
 }
 
+.abf-chips li {
+	flex-shrink: 0;
+}
+
 .abf-chips ul {
 	display: flex;
 	flex-wrap: wrap;
@@ -32,11 +36,15 @@
 	list-style: none;
 }
 
+/* Category pills: 40px tall, 20px side padding, never wrapping (client fix list). */
 .abf-chip {
+	box-sizing: border-box;
 	display: inline-flex;
 	align-items: center;
-	min-height: 43px;
-	padding: 10px 18px;
+	justify-content: center;
+	flex-shrink: 0;
+	height: 40px;
+	padding: 0 20px;
 	border: 1px solid rgba(13, 51, 63, 0.1);
 	border-radius: 999px;
 	background: #fff;
@@ -1812,5 +1820,140 @@
 
 	.abf-legal__text + .abf-legal__heading {
 		margin-top: 24px !important;
+	}
+}
+
+/* ---------- Legal text from the client's site: sub-headings, lists, tables, boxes ---------- */
+
+.abf-legal__article > * + .abf-legal__heading {
+	margin-top: 36px !important;
+}
+
+.abf-legal__subheading {
+	margin-top: 10px !important;
+	color: var(--abf-ink);
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 27px;
+	letter-spacing: -0.01em;
+}
+
+.abf-legal__list,
+.abf-legal__list ul {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: 0;
+	padding-left: 22px;
+	color: var(--abf-muted);
+	font-size: 16px;
+	line-height: 27px;
+	letter-spacing: -0.01em;
+}
+
+.abf-legal__list ul {
+	margin-top: 8px;
+}
+
+.abf-legal__list li::marker {
+	color: var(--abf-green);
+}
+
+.abf-legal__list strong,
+.abf-legal__text strong {
+	color: var(--abf-ink);
+}
+
+.abf-legal a {
+	color: var(--abf-green);
+	font-weight: 600;
+	overflow-wrap: anywhere;
+}
+
+.abf-legal__table {
+	margin: 4px 0;
+	overflow-x: auto;
+	border: 1px solid var(--abf-line);
+	border-radius: 14px;
+}
+
+.abf-legal__table table {
+	width: 100%;
+	min-width: 520px;
+	border-collapse: collapse;
+	font-size: 15px;
+	line-height: 24px;
+	letter-spacing: -0.01em;
+}
+
+.abf-legal__table th,
+.abf-legal__table td {
+	padding: 12px 16px;
+	border: 0;
+	border-bottom: 1px solid var(--abf-line);
+	text-align: left;
+	vertical-align: top;
+}
+
+.abf-legal__table th {
+	background: var(--abf-ice);
+	color: var(--abf-ink);
+	font-weight: 700;
+}
+
+.abf-legal__table td {
+	color: var(--abf-muted);
+}
+
+.abf-legal__table tr:last-child td {
+	border-bottom: 0;
+}
+
+.abf-legal__table td:first-child {
+	color: var(--abf-ink);
+	font-weight: 600;
+}
+
+.abf-legal__box {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px 24px;
+	border-radius: 16px;
+	background: var(--abf-ice);
+}
+
+.abf-legal__box > .abf-legal__heading,
+.abf-legal__box > .abf-legal__subheading {
+	margin-top: 0 !important;
+}
+
+@media (max-width: 767px) {
+	.abf-legal__subheading {
+		font-size: 17px;
+		line-height: 25px;
+	}
+
+	.abf-legal__box {
+		padding: 16px 18px;
+	}
+}
+
+.abf-legal__table thead,
+.abf-legal__table tfoot {
+	border: 0;
+}
+
+@media (max-width: 767px) {
+	.abf-legal__table table {
+		min-width: 0;
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	.abf-legal__table th,
+	.abf-legal__table td {
+		padding: 10px 12px;
+		overflow-wrap: anywhere;
 	}
 }

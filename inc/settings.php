@@ -32,6 +32,7 @@ function abf_accounting_setting_fields(): array
         'social_facebook'  => array(__('Facebook', 'abf-accounting'), 'url', 'social', ''),
         'social_youtube'   => array(__('YouTube', 'abf-accounting'), 'url', 'social', ''),
         'social_x'         => array(__('X (Twitter)', 'abf-accounting'), 'url', 'social', ''),
+        'social_tiktok'    => array(__('TikTok', 'abf-accounting'), 'url', 'social', ''),
     );
 }
 
@@ -41,8 +42,24 @@ function abf_accounting_setting_fields(): array
 function abf_accounting_setting(string $key): string
 {
     $settings = get_option(ABF_ACCOUNTING_SETTINGS, array());
+    $value    = is_array($settings) && isset($settings[$key]) ? (string) $settings[$key] : '';
 
-    return is_array($settings) && isset($settings[$key]) ? (string) $settings[$key] : '';
+    return '' !== $value ? $value : (abf_accounting_setting_defaults()[$key] ?? '');
+}
+
+/**
+ * ABF's own profiles (client fix list, Nov 2026). A URL saved in ABF settings replaces these.
+ */
+function abf_accounting_setting_defaults(): array
+{
+    return array(
+        'social_instagram' => 'https://www.instagram.com/abfaccounting',
+        'social_linkedin'  => 'https://www.linkedin.com/company/105183786',
+        'social_facebook'  => 'https://www.facebook.com/profile.php?id=61566396171123',
+        'social_youtube'   => 'https://www.youtube.com/@ABFAccounting',
+        'social_x'         => 'https://x.com/ABFAccounting',
+        'social_tiktok'    => 'https://www.tiktok.com/@abfaccounting',
+    );
 }
 
 function abf_accounting_sanitize_settings($input): array

@@ -22,7 +22,8 @@ $abf_accounting_links = array(
 	<h2 class="abf-shop-card__title">
 		<?php
 		/* translators: %s: first name. */
-		printf(esc_html__('Hello %s', 'abf-accounting'), esc_html($current_user->first_name ?: $current_user->display_name));
+		$abf_accounting_name = abf_accounting_customer_first_name();
+		echo $abf_accounting_name ? esc_html(sprintf(__('Hello %s', 'abf-accounting'), $abf_accounting_name)) : esc_html__('Hello', 'abf-accounting');
 		?>
 	</h2>
 	<p class="abf-shop-card__text"><?php esc_html_e('From your account dashboard you can view your recent orders, manage your billing address, and change your password and account details.', 'abf-accounting'); ?></p>

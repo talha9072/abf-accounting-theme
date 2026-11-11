@@ -10,7 +10,7 @@
 
 $abf_accounting_proofs = array(
     array('01', __('One dedicated accountant', 'abf-accounting'), __('A consistent point of contact who understands your business and what is due next.', 'abf-accounting')),
-    array('02', __('Clear pricing', 'abf-accounting'), __('Monthly and one-off options with the scope explained before work starts.', 'abf-accounting')),
+    array('02', __('Clear pricing', 'abf-accounting'), __('Fixed prices for each service, with the scope explained before work starts.', 'abf-accounting')),
     array('03', __('Deadline-focused support', 'abf-accounting'), __('Support around HMRC and Companies House obligations, without last-minute panic.', 'abf-accounting')),
 );
 

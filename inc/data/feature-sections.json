@@ -81,7 +81,7 @@
   "type": "lanes", "dark": true,
   "eyebrow": "Two recurring workflows",
   "title": "Payroll and pensions run side by side.",
-  "intro": "Both depend on accurate monthly admin. We keep each one moving, so your team and your subcontractors are paid and reported correctly.",
+  "intro": "Both depend on accurate monthly admin. We keep each one moving, so your team is paid correctly and your pension duties are met.",
   "items": [
    { "icon": "payroll-and-pension-u-1", "kicker": "Payroll", "title": "Pay your team accurately and on time", "points": [["Employee changes", "New starters, leavers and pay changes captured before each run."], ["Payroll run", "Payslips produced with tax and National Insurance calculated."], ["Real Time Information", "Pay reported to HMRC on or before each payday."], ["Workplace pensions", "Pension contributions calculated and reported."]] },
    { "icon": "payroll-and-pension-u-2", "kicker": "Pensions", "title": "Keep workplace pension duties on track", "points": [["Auto-enrolment", "Eligible staff enrolled into a workplace pension scheme."], ["Contributions", "Employer and employee contributions calculated each pay run."], ["Re-enrolment", "Re-enrolment duties handled when they fall due."], ["Declaration of compliance", "Declarations prepared for The Pensions Regulator."]] }

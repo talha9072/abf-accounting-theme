@@ -575,6 +575,10 @@
 	gap: 24px;
 }
 
+.abf-icon-cards--two {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .abf-icon-card {
 	display: flex;
 	flex-direction: column;

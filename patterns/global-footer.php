@@ -28,7 +28,7 @@ $abf_accounting_links = static function (string $title, array $items, string $cl
 $abf_accounting_pairs = static fn (array $items): array => array_map(static fn ($i) => array($i['name'], $i['url']), array_values($items));
 
 $abf_accounting_social = '';
-foreach (array('instagram' => 'Instagram', 'linkedin' => 'LinkedIn', 'facebook' => 'Facebook', 'youtube' => 'YouTube', 'x' => 'X') as $abf_accounting_key => $abf_accounting_name) {
+foreach (array('instagram' => 'Instagram', 'linkedin' => 'LinkedIn', 'facebook' => 'Facebook', 'youtube' => 'YouTube', 'x' => 'X', 'tiktok' => 'TikTok') as $abf_accounting_key => $abf_accounting_name) {
     // Links come from Appearance → ABF settings; an icon without a URL stays a plain icon.
     $abf_accounting_url    = function_exists('abf_accounting_setting') ? abf_accounting_setting('social_' . $abf_accounting_key) : '';
     $abf_accounting_class  = 'abf-footer__social-icon abf-footer__social-icon--' . esc_attr($abf_accounting_key);
@@ -53,6 +53,7 @@ $abf_accounting_brand = abf_accounting_block_image('abf-footer__logo', abf_accou
 $abf_accounting_nav = $abf_accounting_links(
     __('Company', 'abf-accounting'),
     array(
+        array(__('About', 'abf-accounting'), home_url('/about/')),
         array(__('Pricing', 'abf-accounting'), home_url('/pricing/')),
         array(__('First-year accounts FREE', 'abf-accounting'), home_url('/first-year-accounts-free/')),
         array(__('Resources', 'abf-accounting'), home_url('/resources/')),
@@ -117,14 +118,18 @@ echo abf_accounting_block_group( // phpcs:ignore WordPress.Security.EscapeOutput
             )
             . abf_accounting_block_p('abf-footer__legal-links', implode('<span class="abf-footer__sep" aria-hidden="true">|</span>', $abf_accounting_legal))
         )
-        . abf_accounting_block_p(
-            'abf-footer__copyright',
-            sprintf(
-                /* translators: 1: year, 2: company name */
-                esc_html__('© Copyright %1$s %2$s — All Rights Reserved', 'abf-accounting'),
-                $abf_accounting_year,
-                esc_html($abf_accounting_c['company'])
+        . abf_accounting_block_group(
+            'abf-footer__bottom',
+            abf_accounting_block_p(
+                'abf-footer__copyright',
+                sprintf(
+                    /* translators: 1: year, 2: company name */
+                    esc_html__('© Copyright %1$s %2$s — All Rights Reserved', 'abf-accounting'),
+                    $abf_accounting_year,
+                    esc_html($abf_accounting_c['company'])
+                )
             )
+            . abf_accounting_block_p('abf-footer__credit', '<a href="https://webhostingguru.io/" target="_blank" rel="noopener">' . esc_html__('Website by Web Hosting Guru', 'abf-accounting') . '</a>')
         )
     ),
     'div',

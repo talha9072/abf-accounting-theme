@@ -347,12 +347,89 @@ function abf_accounting_post_sidebar(): string
 }
 
 /**
- * Legal pages: hero + numbered sections, copy from inc/data/legal-pages.json.
+ * Turns plain email addresses, UK phone numbers and web addresses into links. Text that is
+ * already inside a link is left alone.
+ *
+ * @param string $html Trusted HTML (theme copy or the client's legal text).
+ */
+function abf_accounting_linkify(string $html): string
+{
+    $parts = preg_split('#(<a\b[^>]*>.*?</a>)#is', $html, -1, PREG_SPLIT_DELIM_CAPTURE);
+    foreach ($parts as $i => $part) {
+        if (str_starts_with(strtolower($part), '<a')) {
+            continue;
+        }
+        $part = preg_replace_callback(
+            '/(?<![\w@\/.])((?:https?:\/\/|www\.)[^\s<]+[^\s<.,;:)\]])|([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})|((?:\+44\s?|0)(?:\d\s?){9,10}\d?)/',
+            static function (array $m): string {
+                if (! empty($m[1])) {
+                    $url = str_starts_with($m[1], 'www.') ? 'https://' . $m[1] : $m[1];
+
+                    return '<a href="' . esc_url($url) . '" target="_blank" rel="noopener">' . $m[1] . '</a>';
+                }
+                if (! empty($m[2])) {
+                    return '<a href="mailto:' . esc_attr($m[2]) . '">' . $m[2] . '</a>';
+                }
+                $digits = preg_replace('/\D/', '', $m[3]);
+                $digits = str_starts_with($digits, '44') ? $digits : '44' . ltrim($digits, '0');
+                $number = rtrim($m[3]);
+
+                return '<a href="tel:+' . esc_attr($digits) . '">' . $number . '</a>' . substr($m[3], strlen($number));
+            },
+            $part
+        );
+        $parts[$i] = $part;
+    }
+
+    return implode('', $parts);
+}
+
+/**
+ * List block with optional nested lists. Items are strings or array('html' => …, 'sub' => …).
+ */
+function abf_accounting_legal_list(array $items, bool $ordered, string $class = ''): string
+{
+    $inner = '';
+    foreach ($items as $item) {
+        $text = is_array($item) ? $item['html'] : $item;
+        $sub  = is_array($item) && ! empty($item['sub']) ? abf_accounting_legal_list($item['sub'], false) : '';
+        $inner .= "<!-- wp:list-item -->\n<li>" . abf_accounting_linkify($text) . $sub . "</li>\n<!-- /wp:list-item -->";
+    }
+    $attrs = array_filter(array('ordered' => $ordered ?: null, 'className' => $class ?: null));
+    $tag   = $ordered ? 'ol' : 'ul';
+
+    return sprintf(
+        "<!-- wp:list%s -->\n<%s class=\"wp-block-list%s\">%s</%s>\n<!-- /wp:list -->",
+        abf_accounting_block_attrs($attrs),
+        $tag,
+        $class ? ' ' . esc_attr($class) : '',
+        $inner,
+        $tag
+    );
+}
+
+/**
+ * Table block (fixed layout, the core default).
+ */
+function abf_accounting_legal_table(array $head, array $rows): string
+{
+    $thead = $head ? '<thead><tr>' . implode('', array_map(static fn ($c) => '<th>' . abf_accounting_linkify($c) . '</th>', $head)) . '</tr></thead>' : '';
+    $tbody = '';
+    foreach ($rows as $row) {
+        $tbody .= '<tr>' . implode('', array_map(static fn ($c) => '<td>' . abf_accounting_linkify($c) . '</td>', $row)) . '</tr>';
+    }
+
+    return "<!-- wp:table {\"className\":\"abf-legal__table\"} -->\n<figure class=\"wp-block-table abf-legal__table\"><table class=\"has-fixed-layout\">" . $thead . '<tbody>' . $tbody . "</tbody></table></figure>\n<!-- /wp:table -->";
+}
+
+/**
+ * Legal pages: hero plus the client's own text (inc/data/legal-pages.json, copied from
+ * abfaccounting.com/terms/*): headings, paragraphs, lists, tables and highlighted boxes.
  */
 function abf_accounting_legal_page(string $slug): string
 {
     $data = abf_accounting_data('legal-pages')[$slug] ?? null;
-    if (! $data) {
+    if (! is_array($data)) {
         return '';
     }
 
@@ -362,11 +439,40 @@ function abf_accounting_legal_page(string $slug): string
         $hero .= abf_accounting_block_p('abf-legal-hero__updated', esc_html($data['updated']));
     }
 
-    $body = '';
-    foreach ($data['sections'] as [$heading, $paragraphs]) {
-        $body .= abf_accounting_block_h(2, 'abf-legal__heading', esc_html($heading));
-        foreach ($paragraphs as $paragraph) {
-            $body .= abf_accounting_block_p('abf-legal__text', make_clickable(esc_html($paragraph)));
+    $body  = '';
+    $box   = null;
+    $emit  = static function (string $markup) use (&$body, &$box): void {
+        if (null === $box) {
+            $body .= $markup;
+        } else {
+            $box .= $markup;
+        }
+    };
+    foreach ($data['blocks'] as $block) {
+        switch ($block['t']) {
+            case 'box-start':
+                $box = '';
+                break;
+            case 'box-end':
+                $body .= abf_accounting_block_group('abf-legal__box', (string) $box);
+                $box   = null;
+                break;
+            case 'h2':
+                $emit(abf_accounting_block_h(2, 'abf-legal__heading', $block['html']));
+                break;
+            case 'h3':
+                $emit(abf_accounting_block_h(3, 'abf-legal__subheading', $block['html']));
+                break;
+            case 'p':
+                $emit(abf_accounting_block_p('abf-legal__text', abf_accounting_linkify($block['html'])));
+                break;
+            case 'ul':
+            case 'ol':
+                $emit(abf_accounting_legal_list($block['items'], 'ol' === $block['t'], 'abf-legal__list'));
+                break;
+            case 'table':
+                $emit(abf_accounting_legal_table($block['head'], $block['rows']));
+                break;
         }
     }
 
@@ -377,6 +483,9 @@ function abf_accounting_legal_page(string $slug): string
 function abf_accounting_register_legal_patterns(): void
 {
     foreach (abf_accounting_data('legal-pages') as $slug => $data) {
+        if (! is_array($data)) {
+            continue; // "_note"
+        }
         register_block_pattern(
             'abf-accounting/legal-' . $slug,
             array(
@@ -500,6 +609,13 @@ function abf_accounting_blog_featured(): string
  */
 function abf_accounting_blog_grid(): string
 {
+    global $wp_query;
+
+    // Resources and category pages: nothing after the featured article, so no "More in …" grid.
+    if ((is_home() || is_category()) && ! is_search() && 0 === (int) $wp_query->post_count) {
+        return '';
+    }
+
     $empty = '<!-- wp:query-no-results -->' . "\n"
         . abf_accounting_block_group(
             'abf-empty',
@@ -617,3 +733,20 @@ function abf_accounting_register_category_order(): void
     );
 }
 add_action('init', 'abf_accounting_register_category_order');
+
+/**
+ * Articles are signed by the company, not by the WordPress user who published them: the author
+ * name reads "ABF Accounting" and the avatar is the ABF mark.
+ */
+function abf_accounting_company_byline(string $html, array $block): string
+{
+    if ('core/post-author-name' === $block['blockName'] && '' !== trim($html)) {
+        return preg_replace('#(<div[^>]*>)(.*)(</div>)#s', '$1' . esc_html__('ABF Accounting', 'abf-accounting') . '$3', $html, 1);
+    }
+    if ('core/avatar' === $block['blockName'] && '' !== trim($html)) {
+        return preg_replace('#<img[^>]*>#', '<img src="' . esc_url(get_theme_file_uri('assets/favicon/icon-192.png')) . '" alt="" width="40" height="40" class="avatar wp-block-avatar__image">', $html, 1);
+    }
+
+    return $html;
+}
+add_filter('render_block', 'abf_accounting_company_byline', 10, 2);

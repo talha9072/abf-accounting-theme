@@ -21,13 +21,12 @@ echo abf_accounting_timeline( // phpcs:ignore WordPress.Security.EscapeOutput
     )
 );
 
-// "View Company Formation" has no page yet (client decision pending), so that card has no link.
 echo abf_accounting_audience_cards( // phpcs:ignore WordPress.Security.EscapeOutput
     __('Who it is for', 'abf-accounting'),
     __('Starter support for new businesses.', 'abf-accounting'),
     array(
         array(__('New limited companies', 'abf-accounting'), __('Your first Confirmation Statement, accounts and tax return covered.', 'abf-accounting'), __('View limited company support', 'abf-accounting'), $abf_accounting_audiences['limited-companies']['url']),
-        array(__('Company formation', 'abf-accounting'), __('Not registered yet? Start with company formation.', 'abf-accounting'), '', ''),
+        array(__('Sole traders', 'abf-accounting'), __('Thinking of going limited? See how we support sole traders.', 'abf-accounting'), __('View sole trader support', 'abf-accounting'), home_url('/who-we-help/sole-traders/')),
         array(__('Contractors', 'abf-accounting'), __('Setting up a company for your contracting work.', 'abf-accounting'), __('View contractor support', 'abf-accounting'), $abf_accounting_audiences['contractors']['url']),
         array(__('Growing businesses', 'abf-accounting'), __('Compare our services and prices.', 'abf-accounting'), __('View pricing', 'abf-accounting'), home_url('/pricing/')),
     )

@@ -1196,6 +1196,7 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 .abf-footer__social-icon--facebook { --abf-social: url("../icons/social-facebook.svg"); }
 .abf-footer__social-icon--youtube { --abf-social: url("../icons/social-youtube.svg"); }
 .abf-footer__social-icon--x { --abf-social: url("../icons/social-x.svg"); }
+.abf-footer__social-icon--tiktok { --abf-social: url("../icons/social-tiktok.svg"); }
 
 .abf-footer__legal {
 	display: flex;
@@ -1225,10 +1226,34 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 	color: var(--abf-ink);
 }
 
-.abf-footer__copyright {
-	text-align: center;
+/* Last line: copyright left, Web Hosting Guru credit right (Figma "Row / Copyright + credit"). */
+.abf-footer__bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px 24px;
+}
+
+.abf-footer__copyright,
+.abf-footer__credit {
 	font-size: 16px;
 	line-height: 24px;
+}
+
+.abf-footer__credit a {
+	color: var(--abf-ink);
+	text-decoration: none;
+}
+
+.abf-footer__credit a:hover {
+	color: var(--abf-green);
+}
+
+@media (max-width: 767px) {
+	.abf-footer__bottom {
+		flex-direction: column;
+		text-align: center;
+	}
 }
 
 /* ---------- Tablet ---------- */
@@ -1511,4 +1536,46 @@ a.abf-footer__social-icon:focus-visible {
 /* The basket badge holds a visually hidden "n items" label for screen readers. */
 .abf-basket-count .screen-reader-text {
 	position: absolute !important;
+}
+
+/* Six social icons stay on one row (Figma "social-icons", no wrap): each shrinks from 50px when the column is narrower. */
+.abf-footer__social {
+	flex-wrap: nowrap;
+}
+
+.abf-footer__social > * {
+	flex: 0 1 50px;
+	min-width: 0;
+}
+
+.abf-footer__social-icon,
+.abf-footer__social > * > .abf-footer__social-icon {
+	width: 100%;
+	max-width: 50px;
+	height: auto;
+	aspect-ratio: 1;
+}
+
+@media (max-width: 1599px) {
+	.abf-footer__social > * {
+		flex-basis: 42px;
+	}
+}
+
+.abf-footer__social-icon::before {
+	-webkit-mask-size: 44%;
+	mask-size: 44%;
+}
+
+/* 1200–1439px: the column is too narrow for six on one row, so three per row at 44px. */
+@media (min-width: 1200px) and (max-width: 1439px) {
+	.abf-footer__social {
+		display: grid;
+		grid-template-columns: repeat(3, 44px);
+		gap: 8px;
+	}
+}
+
+.abf-footer__social-icon {
+	box-sizing: border-box;
 }

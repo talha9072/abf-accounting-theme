@@ -10,8 +10,8 @@
 
 $abf_accounting_features = array(
     array('clock', __('Quick <br>turnaround', 'abf-accounting'), array(__('No last-minute panic', 'abf-accounting'), __('Deadline reminders included', 'abf-accounting'), __('Filings kept on track', 'abf-accounting'))),
-    array('laptop', __('Digital-first <br>service', 'abf-accounting'), array(__('Share documents online', 'abf-accounting'), __('Accounting software included', 'abf-accounting'), __('Approve drafts digitally', 'abf-accounting'))),
-    array('user', __('Dedicated <br>accountant', 'abf-accounting'), array(__('One consistent point of contact', 'abf-accounting'), __('Unlimited phone and email support', 'abf-accounting'), __('Annual tax efficiency review', 'abf-accounting'))),
+    array('laptop', __('Digital-first <br>service', 'abf-accounting'), array(__('Share documents online', 'abf-accounting'), __('Records kept in one place', 'abf-accounting'), __('Approve drafts digitally', 'abf-accounting'))),
+    array('user', __('Dedicated <br>accountant', 'abf-accounting'), array(__('One consistent point of contact', 'abf-accounting'), __('Support by phone and email', 'abf-accounting'), __('Knows your business and deadlines', 'abf-accounting'))),
     array('flex', __('Fixed, <br>transparent prices', 'abf-accounting'), array(__('Prices shown up front', 'abf-accounting'), __('No hidden fees', 'abf-accounting'), __('Scope agreed before work starts', 'abf-accounting'))),
 );
 

@@ -452,6 +452,21 @@ function abf_accounting_order_status_badge(WC_Order $order): string
     return '<span class="abf-badge abf-badge--' . esc_attr($status) . '">' . esc_html(wc_get_order_status_name($status)) . '</span>';
 }
 
+/**
+ * The signed-in customer's first name: the account first name, else the billing first name,
+ * else '' (never the username or email).
+ */
+function abf_accounting_customer_first_name(): string
+{
+    $user = wp_get_current_user();
+    if (! $user->exists()) {
+        return '';
+    }
+    $name = trim((string) $user->first_name) ?: trim((string) get_user_meta($user->ID, 'billing_first_name', true));
+
+    return (string) strtok($name, ' ');
+}
+
 /* ---------- Page hero (Figma "Section / Shop / Hero" and "Section / Account / Hero") ---------- */
 
 /**
@@ -513,10 +528,16 @@ function abf_accounting_shop_hero_copy(): array
         }
     }
 
-    $name = wp_get_current_user()->first_name ?: wp_get_current_user()->display_name;
+    $name = abf_accounting_customer_first_name();
 
-    /* translators: %s: first name. */
-    return array($kicker, __('Dashboard', 'abf-accounting'), sprintf(__('Hello %s. Manage your orders and details here.', 'abf-accounting'), $name));
+    return array(
+        $kicker,
+        __('Dashboard', 'abf-accounting'),
+        $name
+            /* translators: %s: first name. */
+            ? sprintf(__('Hello %s. Manage your orders and details here.', 'abf-accounting'), $name)
+            : __('Manage your orders and details here.', 'abf-accounting')
+    );
 }
 
 function abf_accounting_shop_hero(): string

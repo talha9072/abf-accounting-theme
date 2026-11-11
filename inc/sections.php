@@ -68,7 +68,7 @@ function abf_accounting_faq(array $items, array $args): string
         . abf_accounting_block_group(
             'abf-faq__list',
             $list
-            . abf_accounting_block_p('abf-faq__more', '<a href="' . esc_url(home_url('/resources/#faq')) . '">' . esc_html__('See all questions', 'abf-accounting') . '</a>')
+            . (false === ($args['contact_link'] ?? true) ? '' : abf_accounting_block_p('abf-faq__more', '<a href="' . esc_url(home_url('/contact/')) . '">' . esc_html__('Still have a question? Contact us', 'abf-accounting') . '</a>'))
         );
 
     return abf_accounting_block_section('abf-faq', $inner, array('anchor' => 'faq'));
@@ -82,7 +82,7 @@ function abf_accounting_final_cta(): string
     $contact = abf_accounting_contact();
     $steps   = array(
         array(__('Tell us about your business', 'abf-accounting'), __('A short quote form covering your business type and the support you need.', 'abf-accounting')),
-        array(__('Get a clear recommendation', 'abf-accounting'), __('We confirm the scope and monthly price before any work starts.', 'abf-accounting')),
+        array(__('Get a clear recommendation', 'abf-accounting'), __('We confirm the scope and price before any work starts.', 'abf-accounting')),
         array(__('Meet your accountant', 'abf-accounting'), __('Your dedicated accountant gets everything set up and on track.', 'abf-accounting')),
     );
     $list    = '';
@@ -245,7 +245,8 @@ function abf_accounting_icon_cards(array $cards): string
         );
     }
 
-    return abf_accounting_block_group('abf-icon-cards', $list);
+    // Four cards sit two per row (Figma Confirmation Statement and Dormant pages).
+    return abf_accounting_block_group('abf-icon-cards' . (4 === count($cards) ? ' abf-icon-cards--two' : ''), $list);
 }
 
 /**
