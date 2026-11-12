@@ -1938,3 +1938,9 @@ a.abf-footer__social-icon:focus-visible {
 		line-height: 25px;
 	}
 }
+
+/* Photo bands (mid CTA, status pages, shop/account hero): WordPress paints .has-background-dim solid black under our
+   gradient, which hid the photo completely. Figma shows the photo through the gradient, so the dim layer is clear. */
+.wp-block-cover[class*="abf-"] > .wp-block-cover__background.has-background-dim {
+	background-color: transparent;
+}

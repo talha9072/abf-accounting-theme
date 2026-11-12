@@ -3836,3 +3836,27 @@
 		box-sizing: border-box;
 	}
 }
+
+/* Trustpilot reviews, tablet: real 2x2 grid so cards in a row share a height (Figma rows 266 / 286). */
+@media (min-width: 768px) and (max-width: 1199px) {
+	.abf-stream__cols {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+	}
+
+	.abf-stream__col,
+	.abf-stream__col--right,
+	.abf-stream__track {
+		display: contents;
+	}
+
+	.abf-stream__col--left .abf-stream-card:nth-child(1) { order: 1; }
+	.abf-stream__col--right .abf-stream-card:nth-child(1) { order: 2; }
+	.abf-stream__col--left .abf-stream-card:nth-child(2) { order: 3; }
+	.abf-stream__col--right .abf-stream-card:nth-child(2) { order: 4; }
+
+	.abf-stream__track > .abf-stream-card:nth-child(n + 3) {
+		display: none;
+	}
+}

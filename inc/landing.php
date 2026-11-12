@@ -198,7 +198,7 @@ function abf_accounting_explainer(array $d, string $icon): string
     $widths = array(77, 56, 42, 63);
     $rows   = '';
     foreach (array_values($d['rows']) as $i => $label) {
-        $rows .= abf_accounting_block_p('abf-checklist__row', esc_html($label) . '<span class="abf-checklist__track" aria-hidden="true"><span style="width:' . (int) $widths[$i % 4] . '%"></span></span>');
+        $rows .= abf_accounting_block_p('abf-checklist__row', esc_html($label) . '<span class="abf-checklist__track" aria-hidden="true"><span style="width:' . (int) round($widths[$i % 4] * 5.04) . 'px"></span></span>');
     }
 
     $visual = abf_accounting_block_group(

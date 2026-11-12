@@ -2195,3 +2195,60 @@
 		line-height: 38px;
 	}
 }
+
+/* ---------- QA fixes ---------- */
+
+/* Featured post card: thin border, no shadow (Figma "Featured post"). */
+.abf-featured {
+	box-shadow: none;
+}
+
+/* Sidebar category arrows are green in Figma. */
+.abf-side-cats a::after {
+	background-image: url("../icons/arrow-right.svg");
+}
+
+/* Resources hero and tax calculator headings, tablet + mobile. */
+@media (max-width: 1199px) {
+	.abf-blog-hero .abf-page-title,
+	.abf-blog-hero__title {
+		font-size: 44px;
+		line-height: 48px;
+	}
+
+	.abf-taxcalc__title {
+		font-size: 36px;
+		line-height: 41px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-blog-hero .abf-page-title,
+	.abf-blog-hero__title {
+		font-size: 34px;
+		line-height: 37px;
+	}
+
+	.abf-taxcalc__title {
+		font-size: 30px;
+		line-height: 34px;
+	}
+
+	/* Post meta stays on one line (Figma "Meta"). */
+	.abf-post-meta {
+		flex-wrap: nowrap;
+		white-space: nowrap;
+	}
+}
+
+/* Post meta: one line from 375px; on the narrowest phones it may wrap. The byline logo keeps its shape. */
+@media (max-width: 374px) {
+	.abf-post-meta {
+		flex-wrap: wrap;
+		white-space: normal;
+	}
+}
+
+.abf-post-meta__avatar img {
+	object-fit: contain;
+}

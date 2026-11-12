@@ -14,12 +14,12 @@ $abf_accounting_claim = abf_accounting_buy_url('first-year-offer');
 
 $abf_accounting_message = abf_accounting_block_p('abf-breadcrumb', '<a href="' . esc_url(home_url('/first-year-accounts-free/')) . '">' . esc_html__('First-Year Accounts', 'abf-accounting') . '</a><span aria-hidden="true">/</span><span aria-current="page">' . esc_html__('New business welcome offer', 'abf-accounting') . '</span>')
     . abf_accounting_block_h(1, 'abf-page-title', __('Your first year’s accounts <br>&amp; tax return — FREE.', 'abf-accounting'))
-    . abf_accounting_block_p('abf-offer-hero__price', __('You pay only a <span class="abf-text-green">one-off set-up fee of £120</span>', 'abf-accounting'))
+    . abf_accounting_block_p('abf-offer-hero__price', __('You pay only a one-off set-up fee of <span class="abf-text-green">£120</span>', 'abf-accounting'))
     . abf_accounting_block_p('abf-page-lead', __('Recently registered your company? Get your first year’s annual accounts and Corporation Tax return prepared for FREE when you subscribe to ABF Accounting within 30 days of registration.', 'abf-accounting'))
     . abf_accounting_block_buttons(
         'abf-offer-hero__actions',
         array(
-            array(__('Claim your free first-year accounts', 'abf-accounting'), $abf_accounting_claim, 'abf-button--lg'),
+            array(__('Claim your free first-year accounts', 'abf-accounting'), $abf_accounting_claim, 'abf-button--lg abf-button--arrow'),
             array(__('Request a callback', 'abf-accounting'), home_url('/contact/'), 'abf-button--phone abf-button--outline-green'),
         )
     )
@@ -46,7 +46,7 @@ $abf_accounting_card = abf_accounting_block_group(
     )
     . abf_accounting_block_group(
         'abf-price-card__foot',
-        abf_accounting_block_buttons('abf-price-card__actions', array(array(__('Claim your offer', 'abf-accounting'), $abf_accounting_claim, 'abf-button--block')))
+        abf_accounting_block_buttons('abf-price-card__actions', array(array(__('Claim your offer', 'abf-accounting'), $abf_accounting_claim, 'abf-button--block abf-button--arrow')))
         . abf_accounting_block_p('abf-price-card__small', __('Terms and conditions apply. The £120 set-up fee is payable upfront.', 'abf-accounting'))
     );
 

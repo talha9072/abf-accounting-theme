@@ -151,7 +151,7 @@ function abf_accounting_mid_cta(array $args = array()): string
             . abf_accounting_block_p('abf-mid-cta__phone', '<a href="' . esc_attr($contact['phone_uri']) . '">' . esc_html__('Or call', 'abf-accounting') . ' ' . esc_html(str_replace(' 141 ', ' 141', $contact['phone'])) . '</a>')
         );
 
-    return abf_accounting_block_cover('abf-mid-cta', get_theme_file_uri('assets/img/mid-cta-office-team.webp'), abf_accounting_block_group('abf-container', $inner), 388);
+    return abf_accounting_block_cover('abf-mid-cta', get_theme_file_uri('assets/img/home-hero-office-wide.webp'), abf_accounting_block_group('abf-container', $inner), 388);
 }
 
 /**

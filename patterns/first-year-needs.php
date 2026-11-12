@@ -16,7 +16,7 @@ $abf_accounting_rows = array(
 );
 $abf_accounting_list = '';
 foreach ($abf_accounting_rows as [$abf_accounting_label, $abf_accounting_pct]) {
-    $abf_accounting_list .= abf_accounting_block_p('abf-checklist__row', esc_html($abf_accounting_label) . '<span class="abf-checklist__track" aria-hidden="true"><span style="width:' . (int) $abf_accounting_pct . '%"></span></span>');
+    $abf_accounting_list .= abf_accounting_block_p('abf-checklist__row', esc_html($abf_accounting_label) . '<span class="abf-checklist__track" aria-hidden="true"><span style="width:' . (int) round($abf_accounting_pct * 5.04) . 'px"></span></span>');
 }
 
 $abf_accounting_visual = abf_accounting_block_group(

@@ -2366,7 +2366,7 @@
 }
 
 /* Price card for quote-only services. */
-.abf-price-card__price.is-quote strong {
+.abf-price-card__price.is-quote-legacy strong {
 	font-size: 40px;
 	line-height: 48px;
 }
@@ -3573,5 +3573,521 @@
 	.abf-qualify__text {
 		font-size: 16px;
 		line-height: 25px;
+	}
+}
+
+/* ---------- Feature sections, desktop (Figma "01 — ... / Desktop / Client Review", section 4) ----------
+   Full 1580px container, 48/54 headings, and each layout sized as in Figma. */
+@media (min-width: 1200px) {
+	.abf-feature-section > .abf-container {
+		gap: 56px;
+	}
+
+	.abf-feature-section--cards > .abf-container {
+		gap: 48px;
+	}
+
+	.abf-feature-section--checklist > .abf-container {
+		gap: 40px;
+	}
+
+	.abf-feature-section .abf-heading {
+		max-width: 1520px;
+	}
+
+	.abf-feature-section .abf-title {
+		font-size: 48px;
+		line-height: 54px;
+	}
+
+	.abf-feature-section .abf-intro {
+		max-width: 760px;
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	.abf-feature-cards,
+	.abf-lanes,
+	.abf-route,
+	.abf-check-grid,
+	.abf-check-cta {
+		max-width: none;
+	}
+
+	/* Cards (Confirmation Statement, Dormant, Sole traders). */
+	.abf-feature-cards {
+		gap: 24px;
+	}
+
+	.abf-feature-card {
+		gap: 14px;
+		padding: 32px;
+		border-radius: 24px;
+	}
+
+	.abf-feature-card__icon img {
+		width: 56px;
+		height: 56px;
+	}
+
+	.abf-feature-card__num {
+		color: rgba(3, 168, 78, 0.18);
+		font-size: 56px;
+		line-height: 56px;
+	}
+
+	.abf-feature-card__title {
+		font-size: 22px;
+		line-height: 28px;
+	}
+
+	.abf-feature-card__num ~ .abf-feature-card__title,
+	.abf-feature-card__head:has(.abf-feature-card__num) ~ .abf-feature-card__title {
+		font-size: 24px;
+		line-height: 30px;
+	}
+
+	.abf-feature-card:has(.abf-feature-card__num) {
+		padding: 36px;
+	}
+
+	.abf-feature-card__text {
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	/* Two routes (Annual accounts): 1100px diagram, 445px source card, 500px route cards 50px apart,
+	   2px dashed bright-green connectors with a dot where they split. */
+	.abf-tree:not(.abf-tree--wide) .abf-tree__leaves {
+		width: min(1050px, 100%);
+		gap: 50px;
+		margin-top: 104px;
+	}
+
+	.abf-tree__leaves::before {
+		top: -104px;
+		height: 52px;
+		margin-left: -1px;
+		border-left: 2px dashed var(--abf-bright);
+	}
+
+	.abf-tree__leaves::after {
+		top: -52px;
+		left: calc((100% - 50px) / 4);
+		right: calc((100% - 50px) / 4);
+		border-top: 2px dashed var(--abf-bright);
+	}
+
+	.abf-tree__card::before {
+		top: -52px;
+		height: 52px;
+		margin-left: -1px;
+		border-left: 2px dashed var(--abf-bright);
+	}
+
+	.abf-tree__root::after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		bottom: -58px;
+		width: 12px;
+		height: 12px;
+		margin-left: -6px;
+		border-radius: 50%;
+		background: var(--abf-bright);
+	}
+
+	.abf-tree__root {
+		gap: 16px;
+		padding: 22px 28px;
+		border-radius: 20px;
+	}
+
+	.abf-tree__root-icon img {
+		width: 48px;
+		height: 48px;
+	}
+
+	.abf-tree__root-title {
+		font-size: 18px;
+		line-height: 25px;
+	}
+
+	.abf-tree__root-sub {
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	.is-dark .abf-tree__card {
+		gap: 18px;
+		padding: 32px;
+		border-radius: 24px;
+	}
+
+	.is-dark .abf-tree__card-head {
+		gap: 16px;
+		margin-bottom: 0;
+		padding-bottom: 18px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	}
+
+	.is-dark .abf-tree__icon img {
+		width: 56px;
+		height: 56px;
+	}
+
+	.is-dark .abf-tree__kicker {
+		font-size: 13px;
+		line-height: 18px;
+	}
+
+	.is-dark .abf-tree__title {
+		font-size: 24px;
+		line-height: 30px;
+	}
+
+	.is-dark .abf-tree__card .abf-tick-list {
+		gap: 18px;
+	}
+
+	.is-dark .abf-tree__card .abf-tick-list li {
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 25px;
+	}
+
+	/* Four outcomes (Bookkeeping, Tax planning): 1300px wide, 292px cards 44px apart. */
+	.abf-tree--wide .abf-tree__leaves {
+		max-width: 1300px;
+		gap: 44px;
+	}
+
+	.abf-tree--wide .abf-tree__leaves::before,
+	.abf-tree--wide .abf-tree__leaves::after,
+	.abf-tree--wide .abf-tree__card::before {
+		border-color: var(--abf-green);
+	}
+
+	.abf-tree--wide .abf-tree__root::after {
+		background: var(--abf-green);
+	}
+
+	.abf-tree--wide .abf-tree__leaves::after {
+		left: calc((100% - 132px) / 8);
+		right: calc((100% - 132px) / 8);
+	}
+
+	.abf-tree--wide .abf-tree__card {
+		gap: 8px;
+		padding: 24px;
+		border-radius: 20px;
+	}
+
+	.abf-tree--wide .abf-tree__title {
+		font-size: 17px;
+		line-height: 25px;
+	}
+
+	.abf-tree--wide .abf-tree__text {
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	/* Route (VAT cycle, Freelancers, Landlords): numbers on the card tops, joined by a rail through them. */
+	.abf-route {
+		gap: 28px;
+		padding-top: 24px;
+	}
+
+	.abf-route::before {
+		top: 23px;
+		left: calc((100% - 84px) / 8);
+		right: calc((100% - 84px) / 8);
+		height: 2px;
+		background: linear-gradient(90deg, var(--abf-green), #27c67a);
+	}
+
+	.abf-route__step {
+		gap: 10px;
+		min-height: 165px;
+		padding: 56px 28px 28px;
+		border-radius: 22px;
+	}
+
+	.abf-route__num {
+		left: 28px;
+		top: -24px;
+		width: 48px;
+		height: 48px;
+		margin: 0;
+		border: 4px solid var(--abf-teal);
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	.abf-route__title {
+		font-size: 21px;
+		line-height: 27px;
+	}
+
+	/* Lanes (Payroll and pensions: 2 x 774px; Contractors: 3 x 511px). */
+	.abf-lanes:not(.abf-lanes--3) {
+		gap: 32px;
+	}
+
+	.abf-lanes:not(.abf-lanes--3) .abf-lane {
+		gap: 20px;
+		padding: 36px;
+		border-radius: 28px;
+	}
+
+	.abf-lanes:not(.abf-lanes--3) .abf-lane__head {
+		gap: 16px;
+		padding-bottom: 20px;
+	}
+
+	.abf-lanes:not(.abf-lanes--3) .abf-tick-list {
+		gap: 20px;
+	}
+
+	.abf-lane__icon img {
+		width: 56px;
+		height: 56px;
+	}
+
+	.abf-lane__kicker {
+		font-size: 13px;
+		line-height: 18px;
+	}
+
+	.abf-lane__title {
+		font-size: 24px;
+		line-height: 30px;
+	}
+
+	.abf-lanes--3 {
+		gap: 24px;
+	}
+
+	.abf-lanes--3 .abf-lane {
+		gap: 16px;
+		padding: 32px;
+		border-radius: 24px;
+	}
+
+	.abf-lanes--3 .abf-lane__text {
+		padding-bottom: 16px;
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	.abf-lanes--3 .abf-tick-list {
+		gap: 16px;
+	}
+
+	.abf-lanes--3 .abf-tick-list li {
+		font-size: 15px;
+		line-height: 25px;
+	}
+
+	/* Checklist (Self Assessment): 2 x 782px items and a full-width "Not sure" bar. */
+	.abf-check-grid {
+		gap: 16px;
+	}
+
+	.abf-check-grid li {
+		padding: 20px 24px 20px 63px;
+		border-radius: 18px;
+	}
+
+	.abf-check-grid li::before {
+		left: 25px;
+		top: 23px;
+		width: 22px;
+		height: 22px;
+	}
+
+	.abf-check-grid strong {
+		margin-bottom: 4px;
+		font-size: 17px;
+		line-height: 25px;
+	}
+
+	.abf-check-cta {
+		margin-top: 0;
+		padding: 24px 32px;
+		border-radius: 20px;
+	}
+
+	.abf-check-cta__title {
+		font-size: 19px;
+		line-height: 25px;
+	}
+
+	.abf-check-cta__actions {
+		gap: 24px;
+	}
+
+	.abf-check-cta__actions .wp-block-button__link {
+		padding: 15px 24px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.abf-tree--wide .abf-tree__leaves {
+		margin-top: 104px;
+	}
+}
+
+/* Figma: the two-route diagram starts 24px below the intro gap and ends 16px above the section padding. */
+@media (min-width: 1200px) {
+	.abf-tree:not(.abf-tree--wide) {
+		padding-block: 24px 16px;
+	}
+}
+
+/* ---------- QA fixes from the Figma desktop / tablet / mobile review ---------- */
+
+/* Progress bars: Figma fills are fixed widths (390/280/210/320px) clipped by the track. */
+.abf-checklist__track {
+	overflow: hidden;
+}
+
+.abf-checklist__track span {
+	max-width: 100%;
+}
+
+/* Contact form submit: phone icon at every size (Figma "Button / Request a callback"). */
+.abf-form__submit {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.abf-form__submit::before {
+	content: "";
+	width: 16px;
+	height: 16px;
+	background: currentColor;
+	-webkit-mask: var(--abf-mask-phone) center / contain no-repeat;
+	mask: var(--abf-mask-phone) center / contain no-repeat;
+}
+
+/* Trust strip: tablet = items centred and wrapping (28px apart), mobile = one column. */
+@media (max-width: 1199px) {
+	.abf-strip {
+		padding-block: 20px;
+	}
+
+	.abf-strip > .abf-container {
+		justify-content: center;
+		gap: 12px 28px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-strip {
+		padding-block: 18px;
+	}
+
+	.abf-strip > .abf-container {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+	}
+}
+
+/* Tablet hero: price card full width, the two buttons share the row (Figma "Buttons" 688px, grow 1). */
+@media (min-width: 768px) and (max-width: 1199px) {
+	.abf-price-card {
+		max-width: none;
+	}
+
+	.abf-offer-hero__actions {
+		flex-wrap: nowrap;
+	}
+
+	.abf-offer-hero__actions .wp-block-button {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+
+	.abf-offer-hero__actions .wp-block-button__link {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+/* Mobile hero: long labels wrap inside the 224px button (Figma wraps them over 2-3 lines). */
+@media (max-width: 767px) {
+	.abf-offer-hero__actions .wp-block-button__link {
+		white-space: normal;
+		line-height: 25px;
+		padding-block: 17px;
+	}
+
+	.abf-contact-detail__value,
+	.abf-contact-detail__value a {
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	.abf-needs .abf-title br {
+		display: none;
+	}
+
+	.abf-feature-section.is-dark::before {
+		display: none;
+	}
+}
+
+/* Contact: the form card spans the column on tablet and mobile. */
+@media (max-width: 1199px) {
+	.abf-contact > .abf-container > * {
+		width: 100%;
+		max-width: none;
+		align-self: stretch;
+	}
+}
+
+/* First-Year "What's included": the FREE / £120 tag fills the head next to the icon. */
+@media (max-width: 1199px) {
+	.abf-offer-item__head {
+		justify-content: flex-start;
+		gap: 14px;
+	}
+
+	.abf-offer-item__tag {
+		flex: 1;
+	}
+
+	.abf-included__pair {
+		align-items: start;
+	}
+}
+
+/* "Who it is for" cards: link arrow pinned to the right edge on tablet and mobile. */
+@media (max-width: 1199px) {
+	.abf-audience-card__link a {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+/* Figma: button labels that wrap are left-aligned, with the arrow pushed to the right. */
+@media (max-width: 767px) {
+	.abf-offer-hero__actions .wp-block-button__link,
+	.abf-qualify__actions .wp-block-button__link,
+	.abf-check-cta__actions .wp-block-button__link {
+		justify-content: space-between;
+		text-align: left;
+	}
+}
+
+@media (max-width: 1199px) {
+	.abf-qualify__actions .wp-block-button__link {
+		justify-content: space-between;
+		text-align: left;
 	}
 }
