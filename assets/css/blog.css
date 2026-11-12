@@ -1957,3 +1957,241 @@
 		overflow-wrap: anywhere;
 	}
 }
+
+/* ---------- Article grid, tablet + mobile (Figma "Section / Blog / Article Grid") ---------- */
+@media (max-width: 1199px) {
+	.abf-blog-grid > .abf-container,
+	.abf-grid-query {
+		gap: 32px;
+	}
+
+	.abf-cards {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+	}
+
+	.abf-card__image {
+		height: 260px;
+	}
+
+	.abf-card__title {
+		font-size: 20px;
+		line-height: 25px;
+	}
+
+	.abf-card__excerpt {
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	.abf-blog-subtitle {
+		font-size: 24px;
+		line-height: 29px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-blog-grid > .abf-container,
+	.abf-grid-query {
+		gap: 24px;
+	}
+
+	.abf-cards {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.abf-blog-subtitle {
+		font-size: 22px;
+		line-height: 27px;
+	}
+}
+
+/* ---------- Featured article + filters, tablet + mobile (Figma "Section / Blog / Featured Article") ----------
+   Chips, then the search bar (full width), then the card: photo on top, copy below. */
+@media (max-width: 1199px) {
+	.abf-blog-featured {
+		padding-block: 96px;
+	}
+
+	.abf-blog-featured > .abf-container {
+		gap: 32px;
+	}
+
+	.abf-blog-filters {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 16px;
+	}
+
+	.abf-search--filters {
+		width: 100%;
+	}
+
+	.abf-featured {
+		grid-template-columns: 1fr;
+		min-height: 0;
+	}
+
+	.abf-featured__image {
+		height: 425px;
+		min-height: 0;
+	}
+
+	.abf-featured__copy {
+		gap: 18px;
+		padding: 48px 40px;
+	}
+
+	.abf-featured__title {
+		font-size: 30px;
+		line-height: 35px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-blog-featured {
+		padding-block: 96px;
+	}
+
+	.abf-blog-featured > .abf-container {
+		gap: 24px;
+	}
+
+	.abf-featured__image {
+		height: 230px;
+	}
+
+	.abf-featured__copy {
+		gap: 14px;
+		padding: 32px 24px;
+	}
+
+	.abf-featured__title {
+		font-size: 24px;
+		line-height: 29px;
+	}
+
+	.abf-card__image {
+		height: 230px;
+	}
+
+	.abf-card__copy {
+		padding: 24px;
+	}
+}
+
+/* ---------- Post hero, body, sidebar, tablet + mobile (Figma "Section / Post / ...") ---------- */
+@media (max-width: 1199px) {
+	.abf-post-hero__title {
+		font-size: 44px;
+		line-height: 49px;
+	}
+
+	.abf-post-hero__image {
+		height: 427px;
+	}
+
+	.abf-post-hero--narrow .abf-post-hero__image {
+		height: 427px;
+	}
+
+	.abf-post-body {
+		padding-block: 80px 96px;
+	}
+
+	.abf-post-body > .abf-container {
+		gap: 28px;
+	}
+
+	/* Inline CTA: copy, then a full-width button (Figma "Inline CTA / Need accounting support"). */
+	.abf-inline-cta {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 24px;
+	}
+
+	.abf-inline-cta__title {
+		font-size: 20px;
+		line-height: 27px;
+	}
+
+	.abf-inline-cta__actions,
+	.abf-inline-cta__actions .wp-block-button,
+	.abf-inline-cta__actions .wp-block-button__link {
+		width: 100%;
+	}
+
+	/* Sidebar cards stacked at full width. */
+	.abf-post-sidebar {
+		display: flex !important;
+		flex-direction: column;
+		gap: 28px;
+	}
+
+	.abf-post-sidebar .abf-side-card:first-child {
+		grid-column: auto;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-post-hero__title {
+		font-size: 34px;
+		line-height: 38px;
+	}
+
+	.abf-post-hero__lead {
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	.abf-post-hero__image,
+	.abf-post-hero--narrow .abf-post-hero__image {
+		height: 217px;
+	}
+}
+
+@media (max-width: 1199px) {
+	.abf-post-hero--narrow .abf-post-hero__image {
+		height: 298px;
+	}
+
+	.abf-post-related__title {
+		font-size: 36px;
+		line-height: 41px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-post-hero--narrow .abf-post-hero__image {
+		height: 217px;
+	}
+
+	.abf-post-related__title {
+		font-size: 30px;
+		line-height: 34px;
+	}
+}
+
+/* Legal hero, tablet + mobile (Figma "Section / Legal / Hero"): 96/72 padding at every size. */
+@media (max-width: 1199px) {
+	.abf-legal-hero {
+		padding-block: 96px 72px;
+	}
+
+	.abf-legal-hero__title {
+		font-size: 44px;
+		line-height: 49px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-legal-hero {
+		padding-block: 96px 72px;
+	}
+
+	.abf-legal-hero__title {
+		font-size: 34px;
+		line-height: 38px;
+	}
+}

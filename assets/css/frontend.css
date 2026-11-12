@@ -1579,3 +1579,362 @@ a.abf-footer__social-icon:focus-visible {
 .abf-footer__social-icon {
 	box-sizing: border-box;
 }
+
+/* ---------- Tablet and mobile header + footer (Figma pages 01.2 Tablet and 01.3 Mobile, "Client Review") ---------- */
+
+/* Tablet (Figma 768): logo 156x46, Buy now 45px high, Basket, My account and Menu at 44px, 8px apart. No phone or Callback. */
+@media (min-width: 768px) and (max-width: 1199px) {
+	:root {
+		--abf-header-height: 82px;
+	}
+
+	.abf-header__inner {
+		height: 80px;
+		gap: 8px;
+	}
+
+	.abf-header__logo img {
+		width: 156px;
+		height: 46px;
+	}
+
+	.abf-header__phone,
+	.abf-header__actions .abf-button--callback {
+		display: none !important;
+	}
+
+	.abf-header__actions {
+		margin-left: auto;
+	}
+
+	.abf-header__actions .abf-button--buy .wp-block-button__link {
+		height: 45px;
+		min-width: 0;
+		padding-inline: 28px;
+	}
+}
+
+/* Mobile (Figma 390): logo, Basket and Menu only. Buy now and My account live in the menu, hero and footer. */
+@media (max-width: 767px) {
+	:root {
+		--abf-header-height: 70px;
+	}
+
+	.abf-header__inner {
+		height: 68px;
+		gap: 8px;
+	}
+
+	.abf-header .abf-header__actions,
+	.abf-header__account {
+		display: none !important;
+	}
+
+	.abf-header__icons {
+		margin-left: auto;
+	}
+
+	.abf-header__icon {
+		width: 44px;
+		height: 44px;
+	}
+
+	.abf-basket-count {
+		left: 28px;
+		top: -3px;
+	}
+}
+
+/* Footer, tablet: brand and Callback card full width, then the three link columns, then Get in touch;
+   the copyright and credit sit centred on two lines. */
+@media (max-width: 1199px) {
+	.abf-footer {
+		padding-block: 64px 40px;
+	}
+
+	.abf-footer__inner {
+		gap: 36px;
+	}
+
+	.abf-footer__top {
+		display: flex;
+		flex-direction: column;
+		gap: 44px;
+		align-items: stretch;
+	}
+
+	.abf-footer__nav {
+		grid-column: auto;
+		grid-row: auto;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 24px;
+	}
+
+	.abf-footer__hello {
+		font-size: 30px;
+		line-height: 35px;
+	}
+
+	.abf-footer__social {
+		display: flex;
+		gap: 12px;
+	}
+
+	.abf-footer__social > * {
+		flex-basis: 50px;
+	}
+
+	.abf-footer__bottom {
+		flex-direction: column;
+		justify-content: center;
+		gap: 0;
+		text-align: center;
+	}
+}
+
+/* Footer, mobile: one column. */
+@media (max-width: 767px) {
+	.abf-footer {
+		padding-block: 48px 32px;
+	}
+
+	.abf-footer__inner {
+		gap: 32px;
+	}
+
+	.abf-footer__top {
+		gap: 40px;
+	}
+
+	.abf-footer__nav {
+		grid-template-columns: 1fr;
+		gap: 32px;
+	}
+
+	.abf-footer__tagline {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	.abf-footer__hello {
+		font-size: 28px;
+		line-height: 32px;
+	}
+}
+
+/* Figma side margins: 40px on tablet (32px for the header row), 20px on mobile. */
+@media (max-width: 1199px) {
+	:root {
+		--abf-gutter: 40px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+	.abf-header__inner.abf-container {
+		width: calc(100% - 64px);
+	}
+}
+
+@media (max-width: 767px) {
+	:root {
+		--abf-gutter: 20px;
+	}
+}
+
+/* ---------- FAQ, tablet + mobile (Figma "Section / Shared / FAQ") ----------
+   Figma squeezes the toggle into the question line; it stays a 40px circle here but overlaps the row
+   (negative margin) so each item keeps Figma's height. */
+@media (max-width: 1199px) {
+	.abf-faq {
+		padding-block: 72px;
+	}
+
+	.abf-faq > .abf-container {
+		gap: 28px;
+	}
+
+	.abf-faq__intro {
+		gap: 40px;
+	}
+
+	.abf-faq .abf-title {
+		font-size: 36px;
+		line-height: 41px;
+	}
+
+	.abf-faq .abf-intro {
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	.abf-decide {
+		padding: 36px;
+	}
+
+	.abf-decide__title {
+		font-size: 20px;
+		line-height: 25px;
+	}
+
+	.abf-faq__item,
+	.abf-faq__item[open] {
+		padding: 28px 32px;
+	}
+
+	.abf-faq__item[open] {
+		padding-block: 32px;
+	}
+
+	.abf-faq__item summary,
+	.abf-faq__item[open] summary {
+		min-height: 0;
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+	.abf-faq__item[open] summary {
+		line-height: 27px;
+	}
+
+	.abf-faq__item summary::after {
+		margin-block: -6px;
+	}
+
+	.abf-faq__answer {
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	.abf-faq__more {
+		padding: 28px 0 0 32px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-faq {
+		padding-block: 56px;
+	}
+
+	.abf-faq > .abf-container {
+		gap: 20px;
+	}
+
+	.abf-faq .abf-title {
+		font-size: 30px;
+		line-height: 34px;
+	}
+
+	.abf-faq .abf-intro {
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	.abf-decide__title {
+		font-size: 19px;
+		line-height: 24px;
+	}
+
+	.abf-faq__item summary {
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	.abf-faq__item[open] summary {
+		font-size: 19px;
+		line-height: 26px;
+	}
+
+	.abf-faq__answer {
+		font-size: 16px;
+		line-height: 25px;
+	}
+}
+
+/* ---------- Final CTA, tablet + mobile (Figma "Section / Final CTA / Tablet|Mobile") ---------- */
+@media (max-width: 1199px) {
+	.abf-cta {
+		padding-block: 72px;
+	}
+
+	.abf-cta > .abf-container {
+		width: calc(100% - 64px);
+	}
+
+	.abf-cta__stage {
+		gap: 40px;
+		padding: 56px 48px;
+		border-radius: 36px;
+	}
+
+	.abf-cta__title {
+		font-size: 44px;
+		line-height: 49px;
+	}
+
+	.abf-cta__title br {
+		display: none;
+	}
+
+	.abf-cta__text {
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	.abf-next {
+		padding: 32px 28px 12px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-cta {
+		padding-block: 48px;
+	}
+
+	.abf-cta > .abf-container {
+		width: calc(100% - 32px);
+	}
+
+	.abf-cta__stage {
+		gap: 32px;
+		padding: 40px 24px;
+	}
+
+	.abf-cta__chip {
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.abf-cta__title {
+		font-size: 34px;
+		line-height: 38px;
+	}
+
+	.abf-cta__text {
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	.abf-cta__actions {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 12px;
+		width: 100%;
+	}
+
+	.abf-cta__actions .wp-block-button,
+	.abf-cta__actions .wp-block-button__link {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.abf-next {
+		padding: 32px 20px 12px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-next__title {
+		font-size: 16px;
+		line-height: 25px;
+	}
+}

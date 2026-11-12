@@ -1735,3 +1735,78 @@
 		flex-wrap: wrap;
 	}
 }
+
+/* ---------- Shop / account hero + body, tablet + mobile (Figma "Section / Shop|Account / Hero", "Body") ---------- */
+@media (max-width: 1199px) {
+	.wp-block-cover.abf-shop-hero {
+		min-height: 0 !important;
+	}
+
+	.abf-shop-hero__content {
+		gap: 16px;
+		padding-block: 96px 72px;
+	}
+
+	.abf-shop-hero__title {
+		font-size: 44px;
+		line-height: 49px;
+	}
+
+	.abf-shop {
+		padding-block: 80px 96px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-shop-hero__content {
+		gap: 16px;
+		padding-block: 96px 72px;
+	}
+
+	.abf-shop-hero__title {
+		font-size: 34px;
+		line-height: 38px;
+	}
+
+	.abf-shop {
+		padding-block: 80px 96px;
+	}
+}
+
+/* ---------- My Account, tablet + mobile (Figma "My Account / ... / Tablet|Mobile") ----------
+   Sidebar full width: the menu as one column with the Need help card under it; dashboard quick links 3 across
+   on tablet, stacked on mobile. */
+@media (max-width: 1199px) {
+	.woocommerce-account .abf-shop__content > .woocommerce {
+		gap: 28px;
+	}
+
+	.abf-account-sidebar {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.woocommerce-MyAccount-navigation ul {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.abf-account-links {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-account-links {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* Figma keeps 40px inside the account content card on mobile too. */
+@media (max-width: 767px) {
+	.woocommerce-MyAccount-content {
+		padding: 40px;
+	}
+}
