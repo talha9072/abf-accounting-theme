@@ -2252,3 +2252,59 @@
 .abf-post-meta__avatar img {
 	object-fit: contain;
 }
+
+/* Tables inside articles (from the client's blog document). */
+.abf-prose .abf-post-table,
+.abf-prose .wp-block-table {
+	margin-inline: 0;
+	overflow-x: auto;
+	border: 1px solid var(--abf-line);
+	border-radius: 14px;
+}
+
+.abf-prose .wp-block-table table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 16px;
+	line-height: 25px;
+}
+
+.abf-prose .wp-block-table th,
+.abf-prose .wp-block-table td {
+	padding: 12px 16px;
+	border: 0;
+	border-bottom: 1px solid var(--abf-line);
+	text-align: left;
+	vertical-align: top;
+}
+
+.abf-prose .wp-block-table thead {
+	border: 0;
+}
+
+.abf-prose .wp-block-table th {
+	background: var(--abf-ice);
+	color: var(--abf-ink);
+	font-weight: 700;
+}
+
+.abf-prose .wp-block-table tr:last-child td {
+	border-bottom: 0;
+}
+
+.abf-prose .wp-block-table td:first-child {
+	color: var(--abf-ink);
+	font-weight: 600;
+}
+
+@media (max-width: 767px) {
+	.abf-prose .wp-block-table table {
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	.abf-prose .wp-block-table th,
+	.abf-prose .wp-block-table td {
+		padding: 10px 12px;
+	}
+}

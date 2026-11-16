@@ -750,3 +750,87 @@ function abf_accounting_company_byline(string $html, array $block): string
     return $html;
 }
 add_filter('render_block', 'abf_accounting_company_byline', 10, 2);
+
+/*
+ * Blog articles from the client's document: SEO title, meta description and planned publish slot
+ * are stored per post, articles live under /blog/ while categories stay at /category/.
+ */
+function abf_accounting_register_post_seo_meta(): void
+{
+    foreach (array('abf_seo_title', 'abf_seo_description', 'abf_publish_plan') as $key) {
+        register_post_meta(
+            'post',
+            $key,
+            array(
+                'type'          => 'string',
+                'single'        => true,
+                'show_in_rest'  => true,
+                'auth_callback' => static fn (): bool => current_user_can('edit_posts'),
+            )
+        );
+    }
+}
+add_action('init', 'abf_accounting_register_post_seo_meta');
+
+/**
+ * The browser title of an article is its SEO title when one is set.
+ */
+function abf_accounting_post_seo_title(string $title): string
+{
+    if (is_singular('post')) {
+        $seo = trim((string) get_post_meta(get_queried_object_id(), 'abf_seo_title', true));
+        if ('' !== $seo) {
+            return $seo;
+        }
+    }
+
+    return $title;
+}
+add_filter('pre_get_document_title', 'abf_accounting_post_seo_title');
+
+/**
+ * The meta description of an article (also used for the share description).
+ */
+function abf_accounting_post_seo_description(int $post_id): string
+{
+    return trim((string) get_post_meta($post_id, 'abf_seo_description', true));
+}
+
+/**
+ * Category archives stay at /category/name/ when articles use /blog/%postname%/.
+ */
+function abf_accounting_category_without_front(array $args, string $taxonomy): array
+{
+    if ('category' === $taxonomy) {
+        $args['rewrite'] = array_merge((array) ($args['rewrite'] ?? array()), array('with_front' => false));
+    }
+
+    return $args;
+}
+add_filter('register_taxonomy_args', 'abf_accounting_category_without_front', 10, 2);
+
+/**
+ * Links between articles: a link to an article that is not published yet (scheduled or draft)
+ * shows as plain text, so readers never land on a 404. It becomes a link once that article is live.
+ */
+function abf_accounting_unpublished_article_links(string $content): string
+{
+    if (! str_contains($content, '/blog/')) {
+        return $content;
+    }
+
+    return (string) preg_replace_callback(
+        '#<a\s[^>]*href="(?:' . preg_quote(untrailingslashit(home_url()), '#') . ')?/blog/([a-z0-9-]+)/?"[^>]*>(.*?)</a>#i',
+        static function (array $m): string {
+            static $live = array();
+            if (! isset($live[$m[1]])) {
+                $post        = get_page_by_path($m[1], OBJECT, 'post');
+                $live[$m[1]] = $post && 'publish' === $post->post_status;
+            }
+
+            return $live[$m[1]] ? $m[0] : $m[2];
+        },
+        $content
+    );
+}
+add_filter('the_content', 'abf_accounting_unpublished_article_links', 20);

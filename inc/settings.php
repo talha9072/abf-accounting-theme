@@ -300,7 +300,7 @@ function abf_accounting_open_graph(): void
 
     if (is_singular()) {
         $post        = get_queried_object();
-        $excerpt     = has_excerpt($post) ? get_the_excerpt($post) : '';
+        $excerpt     = function_exists('abf_accounting_post_seo_description') && abf_accounting_post_seo_description($post->ID) ? abf_accounting_post_seo_description($post->ID) : (has_excerpt($post) ? get_the_excerpt($post) : '');
         $description = $excerpt ?: $description;
         $url         = get_permalink($post);
         if (is_singular('post')) {
