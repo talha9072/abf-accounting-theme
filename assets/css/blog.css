@@ -2308,3 +2308,19 @@
 		padding: 10px 12px;
 	}
 }
+
+/* "Read article" matches the Search button: 53px high, 14px 24px, 16/25 bold, 12px radius
+   (it was 82px high: min-height without border-box, plus padding). */
+.abf-read-more.wp-block-read-more {
+	box-sizing: border-box;
+	min-height: 53px;
+	padding: 14px 24px;
+	line-height: 25px;
+}
+
+@media (max-width: 767px) {
+	.abf-read-more.wp-block-read-more {
+		min-height: 46px;
+		padding: 10px 16px;
+	}
+}

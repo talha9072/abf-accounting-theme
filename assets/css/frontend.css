@@ -489,13 +489,7 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 	}
 }
 
-/* 1440–1561px: with the basket and account icons the nav only fits without the Callback button
- * (Callback stays in the hero, the CTAs and the footer). */
-@media (max-width: 1561px) and (min-width: 1440px) {
-	.abf-header__actions .abf-button--callback {
-		display: none;
-	}
-}
+/* From 1440px the Contact button always shows: the nav has room since Contact left the menu. */
 
 /* Hamburger below 1440px. */
 .abf-header .wp-block-navigation__responsive-container-open {
@@ -1943,4 +1937,12 @@ a.abf-footer__social-icon:focus-visible {
    gradient, which hid the photo completely. Figma shows the photo through the gradient, so the dim layer is clear. */
 .wp-block-cover[class*="abf-"] > .wp-block-cover__background.has-background-dim {
 	background-color: transparent;
+}
+
+/* Header: "Contact" is the outline button beside Buy now on desktop; the menu item only appears in the
+   hamburger menu (tablet / mobile), where the button is hidden. */
+@media (min-width: 1440px) {
+	nav.abf-header__nav .wp-block-navigation-item.abf-nav-menu-only {
+		display: none;
+	}
 }

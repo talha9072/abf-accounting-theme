@@ -5,7 +5,7 @@
  * Categories: abf-sections
  * Block Types: core/template-part/header
  * Inserter: no
- * Description: White header with the ABF logo, navigation (Who we help and Services dropdowns), phone, Callback and Buy now.
+ * Description: White header with the ABF logo, navigation (Who we help and Services dropdowns), phone, Contact and Buy now.
  *
  * @package ABF_Accounting
  */
@@ -68,7 +68,8 @@ echo $abf_accounting_submenu( // phpcs:ignore WordPress.Security.EscapeOutput
         array('name' => __('About', 'abf-accounting'), 'url' => home_url('/about/')),
     )
 );
-echo $abf_accounting_link(__('Contact', 'abf-accounting'), home_url('/contact/')); // phpcs:ignore WordPress.Security.EscapeOutput
+// Contact sits in the hamburger menu only; on desktop the Contact button beside Buy now covers it.
+echo $abf_accounting_link(__('Contact', 'abf-accounting'), home_url('/contact/'), 'abf-nav-menu-only'); // phpcs:ignore WordPress.Security.EscapeOutput
 ?>
 <!-- /wp:navigation -->
 
@@ -78,7 +79,7 @@ echo $abf_accounting_link(__('Contact', 'abf-accounting'), home_url('/contact/')
 
 <!-- wp:buttons {"className":"abf-header__actions"} -->
 <div class="wp-block-buttons abf-header__actions"><!-- wp:button {"className":"is-style-outline abf-button--callback"} -->
-<div class="wp-block-button is-style-outline abf-button--callback"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url(home_url('/contact/')); ?>"><?php esc_html_e('Callback', 'abf-accounting'); ?></a></div>
+<div class="wp-block-button is-style-outline abf-button--callback"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url(home_url('/contact/')); ?>"><?php esc_html_e('Contact', 'abf-accounting'); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"abf-button--buy"} -->
