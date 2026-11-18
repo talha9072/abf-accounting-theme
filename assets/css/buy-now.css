@@ -1,0 +1,769 @@
+/* Buy now pop-up — Figma "Buy Now / Company" and "Buy Now / Self Assessment" (desktop 600 px
+   modal over a #0D333F 62% overlay; tablet the same; phones full screen). JS: buy-now.js */
+
+html.abf-buy-open {
+	overflow: hidden;
+}
+
+/* The chat button floats above everything; hide it while the pop-up is open. */
+html.abf-buy-open .abf-chat {
+	display: none;
+}
+
+.abf-buy {
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	font-family: inherit;
+	color: #09242d;
+	letter-spacing: -0.01em;
+}
+
+.abf-buy[hidden] {
+	display: none;
+}
+
+.abf-buy__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgb(13 51 63 / 0.62);
+}
+
+.abf-buy__modal {
+	position: relative;
+	width: 600px;
+	max-width: 100%;
+	max-height: calc(100dvh - 48px);
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	background: #fff;
+	border-radius: 28px;
+	box-shadow: 0 40px 80px rgb(0 0 0 / 0.3);
+}
+
+.abf-buy__inner {
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+	padding: 36px 44px 40px;
+}
+
+.abf-buy__inner > *,
+.abf-buy__form > * {
+	margin: 0;
+}
+
+/* Progress chips + close */
+.abf-buy__top {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.abf-buy__progress {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	flex: 1;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.abf-buy__stage {
+	padding: 6px 10px;
+	border-radius: 999px;
+	background: #f3fbf5;
+	color: #64748b;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 16px;
+	white-space: nowrap;
+}
+
+.abf-buy__stage.is-current {
+	background: #0d333f;
+	color: #fff;
+}
+
+.abf-buy__stage.is-done {
+	background: #ebfbef;
+	color: #148c54;
+}
+
+.abf-buy__close {
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	margin-left: auto;
+	padding: 0;
+	border: 0;
+	border-radius: 18px;
+	background: #f3fbf5;
+	color: #0d333f;
+	cursor: pointer;
+}
+
+.abf-buy__close:hover {
+	background: #ebfbef;
+}
+
+/* Text */
+.abf-buy__title {
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 34px;
+	letter-spacing: -0.01em;
+	color: #09242d;
+	outline: none;
+}
+
+.abf-buy__sub {
+	font-size: 16px;
+	line-height: 25px;
+	color: #64748b;
+}
+
+.abf-buy__note {
+	font-size: 14px;
+	line-height: 21px;
+	color: #64748b;
+}
+
+.abf-buy__note--center {
+	text-align: center;
+}
+
+.abf-buy__note a {
+	color: inherit;
+}
+
+.abf-buy__aside {
+	font-size: 15px;
+	line-height: 20px;
+	color: #64748b;
+}
+
+.abf-buy__aside a {
+	margin-left: 6px;
+	color: #03a84e;
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+/* Forms */
+.abf-buy__form {
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+}
+
+.abf-buy__field {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.abf-buy__field label {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 21px;
+	color: #09242d;
+}
+
+.abf-buy__input {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	min-height: 57px;
+	padding: 0 18px;
+	border: 1px solid rgb(13 51 63 / 0.12);
+	border-radius: 12px;
+	background: #f3fbf5;
+	transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.abf-buy__input:focus-within {
+	border-color: #03a84e;
+	box-shadow: 0 0 0 1px #03a84e;
+}
+
+.abf-buy__input.is-invalid {
+	border-color: #d12e2e;
+	box-shadow: 0 0 0 1px #d12e2e;
+}
+
+.abf-buy__input.is-readonly,
+.abf-buy__input.is-filled {
+	background: #fff;
+}
+
+.abf-buy__input input,
+.abf-buy__input select {
+	flex: 1;
+	min-width: 0;
+	height: 55px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #09242d;
+	font: inherit;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 25px;
+	letter-spacing: -0.01em;
+	outline: none;
+	box-shadow: none;
+}
+
+.abf-buy__input input::placeholder {
+	color: #94a3b8;
+	font-weight: 400;
+	opacity: 1;
+}
+
+.abf-buy__input input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+.abf-buy__input > svg {
+	flex: none;
+	color: #64748b;
+}
+
+.abf-buy__select-label {
+	flex: 1;
+	padding: 15px 24px 15px 0;
+	color: #09242d;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 25px;
+}
+
+.abf-buy__input--select select {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.abf-buy__input--select > svg {
+	position: absolute;
+	right: 18px;
+	color: #0d333f;
+	pointer-events: none;
+}
+
+.abf-buy__prefix {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 25px;
+	color: #09242d;
+}
+
+.abf-buy__error {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 19px;
+	color: #d12e2e;
+}
+
+/* Buttons */
+.abf-buy__actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding-top: 6px;
+}
+
+.abf-buy__actions.is-single .abf-buy__btn {
+	flex: 1;
+}
+
+.abf-buy__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 55px;
+	padding: 15px 28px;
+	border: 0;
+	border-radius: 12px;
+	background: #03a84e;
+	color: #fff;
+	font: inherit;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 25px;
+	letter-spacing: -0.01em;
+	cursor: pointer;
+	transition: background-color 0.15s;
+}
+
+.abf-buy__btn:hover {
+	background: #02913f;
+}
+
+.abf-buy__btn:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.abf-buy__btn--ghost {
+	min-height: 58px;
+	padding: 15px 24px;
+	border: 1.5px solid rgb(13 51 63 / 0.18);
+	background: #fff;
+	color: #0d333f;
+}
+
+.abf-buy__btn--ghost:hover {
+	background: #f3fbf5;
+}
+
+.abf-buy__btn:focus-visible,
+.abf-buy__close:focus-visible,
+.abf-buy__result:focus-visible,
+.abf-buy__link:focus-visible {
+	outline: 2px solid #0d333f;
+	outline-offset: 2px;
+}
+
+.abf-buy__spinner {
+	width: 16px;
+	height: 16px;
+	border: 2px solid rgb(255 255 255 / 0.5);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: abf-buy-spin 0.7s linear infinite;
+}
+
+@keyframes abf-buy-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.abf-buy__link {
+	padding: 0;
+	border: 0;
+	background: none;
+	color: #03a84e;
+	font: inherit;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 21px;
+	cursor: pointer;
+}
+
+.abf-buy__link:disabled {
+	color: #64748b;
+	cursor: default;
+}
+
+/* Results */
+.abf-buy__results {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border: 1px solid rgb(13 51 63 / 0.1);
+	border-radius: 14px;
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+.abf-buy__result {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 14px 18px;
+	border: 0;
+	border-bottom: 1px solid rgb(13 51 63 / 0.06);
+	background: #fff;
+	color: #09242d;
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+}
+
+.abf-buy__result:last-child {
+	border-bottom: 0;
+}
+
+.abf-buy__result:hover {
+	background: #f3fbf5;
+}
+
+.abf-buy__result-name {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 21px;
+	text-transform: uppercase;
+}
+
+.abf-buy__result-number {
+	flex: none;
+	font-size: 14px;
+	line-height: 21px;
+	color: #64748b;
+}
+
+.abf-buy__result.is-selected {
+	background: #03a84e;
+	color: #fff;
+}
+
+.abf-buy__result.is-selected .abf-buy__result-number {
+	color: rgb(255 255 255 / 0.75);
+}
+
+.abf-buy__empty {
+	padding: 20px;
+	border-radius: 14px;
+	background: #f3fbf5;
+	color: #64748b;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.abf-buy__empty p {
+	margin: 0;
+}
+
+.abf-buy__empty-title {
+	margin-bottom: 8px !important;
+	color: #09242d;
+	font-size: 17px;
+	font-weight: 700;
+	line-height: 23px;
+}
+
+/* Alerts */
+.abf-buy__alert {
+	padding: 14px 18px;
+	border: 1px solid rgb(217 48 37 / 0.35);
+	border-radius: 12px;
+	background: #fdecec;
+	color: #5f2120;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.abf-buy__alert strong {
+	display: block;
+	margin-bottom: 4px;
+	color: #b3261e;
+}
+
+.abf-buy__alert.is-info {
+	border-color: rgb(3 168 78 / 0.25);
+	background: #ebfbef;
+	color: #0d333f;
+}
+
+.abf-buy__alert.is-warning {
+	border-color: rgb(217 119 6 / 0.35);
+	background: #fff7e8;
+	color: #6b3d00;
+}
+
+/* Verify */
+.abf-buy__code {
+	display: flex;
+	justify-content: center;
+	gap: 14px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.abf-buy__code input {
+	width: 64px;
+	height: 72px;
+	padding: 0;
+	border: 1px solid rgb(13 51 63 / 0.12);
+	border-radius: 14px;
+	background: #f3fbf5;
+	color: #09242d;
+	font: inherit;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 30px;
+	text-align: center;
+	outline: none;
+}
+
+.abf-buy__code input:focus {
+	border-color: #03a84e;
+	box-shadow: 0 0 0 1px #03a84e;
+}
+
+.abf-buy__code.is-invalid input {
+	border-color: #d12e2e;
+}
+
+.abf-buy__code + .abf-buy__error {
+	text-align: center;
+}
+
+.abf-buy__resend {
+	text-align: center;
+}
+
+/* Summary */
+.abf-buy__summary {
+	overflow: hidden;
+	border: 1px solid rgb(13 51 63 / 0.1);
+	border-radius: 16px;
+}
+
+.abf-buy__summary-head {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 14px 20px;
+	background: #f3fbf5;
+	color: #64748b;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.abf-buy__summary-head p {
+	margin: 0;
+}
+
+.abf-buy__summary-name {
+	color: #09242d;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.abf-buy__summary-line,
+.abf-buy__summary-total {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 12px 20px;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.abf-buy__summary-line span {
+	color: #64748b;
+	font-weight: 700;
+}
+
+.abf-buy__summary-line strong {
+	flex: none;
+	font-weight: 600;
+}
+
+.abf-buy__summary-total {
+	padding: 16px 20px;
+	border-top: 1px solid rgb(13 51 63 / 0.08);
+	font-size: 18px;
+	font-weight: 800;
+	line-height: 25px;
+}
+
+.abf-buy__summary-total strong {
+	font-weight: 800;
+}
+
+/* Payment */
+.abf-buy__pay {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 180px;
+	gap: 20px;
+	align-items: start;
+}
+
+.abf-buy__pay-method {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.abf-buy__option {
+	display: flex;
+	gap: 14px;
+	padding: 18px;
+	border: 2px solid #03a84e;
+	border-radius: 12px;
+	background: #f3fbf5;
+	color: #64748b;
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.abf-buy__option p {
+	margin: 0;
+}
+
+.abf-buy__option-title {
+	margin-bottom: 6px !important;
+	color: #09242d;
+	font-size: 17px;
+	font-weight: 700;
+	line-height: 23px;
+}
+
+.abf-buy__radio {
+	box-sizing: border-box;
+	flex: none;
+	width: 20px;
+	height: 20px;
+	border: 6px solid #03a84e;
+	border-radius: 50%;
+	background: #fff;
+}
+
+.abf-buy__secure {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0;
+	color: #64748b;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 18px;
+}
+
+.abf-buy__total {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 18px;
+	border-radius: 16px;
+	background: #f3fbf5;
+}
+
+.abf-buy__total p {
+	margin: 0;
+	color: #64748b;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 21px;
+}
+
+.abf-buy__total .abf-buy__total-amount {
+	color: #09242d;
+	font-size: 26px;
+	line-height: 30px;
+}
+
+.abf-buy__total .abf-buy__total-cur {
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.abf-buy__check {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	color: #64748b;
+	font-size: 14px;
+	line-height: 21px;
+	cursor: pointer;
+}
+
+.abf-buy__check input {
+	flex: none;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	accent-color: #03a84e;
+	cursor: pointer;
+}
+
+.abf-buy__check a {
+	color: #03a84e;
+}
+
+.abf-buy__check.is-invalid input {
+	outline: 2px solid #d12e2e;
+	outline-offset: 1px;
+}
+
+/* Phones: full screen (Figma 01.3 "Buy Now … / Mobile", 390 × 844) */
+@media (max-width: 767px) {
+	.abf-buy {
+		padding: 0;
+		align-items: stretch;
+	}
+
+	.abf-buy__overlay {
+		display: none;
+	}
+
+	.abf-buy__modal {
+		width: 100%;
+		max-height: none;
+		height: 100dvh;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	.abf-buy__inner {
+		padding: 24px 20px 32px;
+	}
+
+	.abf-buy__top {
+		align-items: flex-start;
+	}
+
+	.abf-buy__title {
+		font-size: 24px;
+	}
+
+	.abf-buy__pay {
+		grid-template-columns: 1fr;
+		gap: 14px;
+	}
+
+	.abf-buy__actions .abf-buy__btn:not(.abf-buy__btn--ghost) {
+		flex: 1;
+	}
+
+	.abf-buy__code {
+		gap: 12px;
+	}
+
+	.abf-buy__code input {
+		width: 60px;
+		height: 68px;
+	}
+}
+
+@media (max-width: 359px) {
+	.abf-buy__code input {
+		width: 52px;
+	}
+
+	.abf-buy__btn {
+		padding-inline: 20px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.abf-buy__spinner {
+		animation-duration: 2s;
+	}
+}

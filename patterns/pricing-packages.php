@@ -39,7 +39,7 @@ $abf_accounting_packages = array(
         __('Preparation and electronic submission of dormant company accounts to Companies House.', 'abf-accounting'),
         __('Timescale confirmed after receiving the necessary company details and information.', 'abf-accounting'),
     )),
-    array('confirmation-statement', 'light-confirmation-statement', __('Confirmation Statement Filing', 'abf-accounting'), __('Keep your company information up to date with Companies House.', 'abf-accounting'), '£75', $abf_accounting_13, __('Get a quote', 'abf-accounting'), false, array(
+    array('confirmation-statement', 'light-confirmation-statement', __('Confirmation Statement Filing', 'abf-accounting'), __('Keep your company information up to date with Companies House.', 'abf-accounting'), '£75', $abf_accounting_13, $abf_accounting_go, false, array(
         __('UK limited companies that need to submit their annual Confirmation Statement (CS01), whether or not their company details have changed.', 'abf-accounting'),
         __('Review of your company information, guidance on any necessary updates, and preparation and submission of your Confirmation Statement.', 'abf-accounting'),
         __('Typically 1–3 business days after receiving all required information, subject to complexity and review.', 'abf-accounting'),
@@ -56,7 +56,7 @@ foreach ($abf_accounting_packages as [$abf_accounting_key, $abf_accounting_icon,
             . abf_accounting_block_p('abf-package__a', $abf_accounting_details[$abf_accounting_i])
         );
     }
-    $abf_accounting_url    = 'confirmation-statement' === $abf_accounting_key ? home_url('/contact/') : abf_accounting_buy_url($abf_accounting_key);
+    $abf_accounting_url    = abf_accounting_buy_url($abf_accounting_key);
     $abf_accounting_cards .= abf_accounting_block_group(
         'abf-package' . ($abf_accounting_primary ? ' is-featured' : ''),
         abf_accounting_block_group(

@@ -16,6 +16,7 @@ require_once get_theme_file_path('inc/contact-form.php');
 require_once get_theme_file_path('inc/landing.php');
 require_once get_theme_file_path('inc/blog.php');
 require_once get_theme_file_path('inc/shop.php');
+require_once get_theme_file_path('inc/buy-now.php');
 
 function abf_accounting_setup(): void
 {
@@ -196,16 +197,16 @@ function abf_accounting_audiences(): array
 }
 
 /**
- * Where "Buy now / Get started / File now" goes for a package: the checkout with that package
- * in the cart. Services without a package (and any package while WooCommerce is off) go to
- * Contact.
+ * Where "Buy now / Get started / File now" goes for a package: "?buy=<package>" on the current
+ * page, which opens the Buy now pop-up with that service selected (inc/buy-now.php). Services
+ * not sold online (and any package while WooCommerce is off) go to Contact.
  *
  * @param string $package Package key (company-accounts, llp, cic, self-assessment, dormant,
  *                        confirmation-statement) or a service / audience page slug.
  */
 function abf_accounting_buy_url(string $package = ''): string
 {
-    $product = abf_accounting_package_product($package);
+    $key = abf_accounting_package_for($package);
 
-    return $product ? add_query_arg('add-to-cart', $product, wc_get_checkout_url()) : home_url('/contact/');
+    return function_exists('abf_buy_service') && abf_buy_service($key) ? '?buy=' . rawurlencode($key) : home_url('/contact/');
 }
