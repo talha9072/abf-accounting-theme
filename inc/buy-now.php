@@ -257,7 +257,13 @@ function abf_buy_save_session(string $token, array $s, int $ttl): void
     set_transient(abf_buy_session_key($token), $s, $ttl);
 }
 
-/** Emails and texts the code. Returns which channels went out. */
+/** Text messages are optional: on only when a Twilio account is saved in ABF settings. */
+function abf_buy_sms_ready(): bool
+{
+    return '' !== abf_accounting_setting('twilio_sid') && '' !== abf_accounting_setting('twilio_token') && '' !== abf_accounting_setting('twilio_from');
+}
+
+/** Emails the code, and texts it too when SMS is set up. Returns which channels went out. */
 function abf_buy_send_code(array $s, string $code): array
 {
     $sent = array('email' => false, 'sms' => false);
@@ -275,10 +281,10 @@ function abf_buy_send_code(array $s, string $code): array
         $sent['email'] = wp_mail($s['email'], $subject, wp_strip_all_tags(str_replace('</p>', "\n\n", $body)));
     }
 
-    $sid   = abf_accounting_setting('twilio_sid');
-    $token = abf_accounting_setting('twilio_token');
-    $from  = abf_accounting_setting('twilio_from');
-    if ($sid && $token && $from) {
+    if (abf_buy_sms_ready()) {
+        $sid   = abf_accounting_setting('twilio_sid');
+        $token = abf_accounting_setting('twilio_token');
+        $from  = abf_accounting_setting('twilio_from');
         $response = wp_remote_post(
             'https://api.twilio.com/2010-04-01/Accounts/' . rawurlencode($sid) . '/Messages.json',
             array(
@@ -1173,6 +1179,8 @@ function abf_buy_config(): array
         'terms'    => $terms ? get_permalink($terms) : home_url('/terms-and-conditions-for-one-off-services/'),
         'phone'    => '07405 141694',
         'phoneUri' => 'tel:+447405141694',
+        // Codes go by email only; text messages join in once a Twilio account is added in settings.
+        'sms'      => abf_buy_sms_ready(),
     );
 }
 

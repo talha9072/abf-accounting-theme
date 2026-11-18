@@ -35,7 +35,7 @@ function abf_accounting_setting_fields(): array
         'social_x'         => array(__('X (Twitter)', 'abf-accounting'), 'url', 'social', ''),
         'social_tiktok'    => array(__('TikTok', 'abf-accounting'), 'url', 'social', ''),
         'ch_api_key'       => array(__('Companies House API key', 'abf-accounting'), 'secret', 'buy', __('REST API key from developer.company-information.service.gov.uk (free). Used to find the customer’s company.', 'abf-accounting')),
-        'twilio_sid'       => array(__('Twilio Account SID', 'abf-accounting'), 'text', 'buy', __('From the Twilio console. Text messages switch on when SID, auth token and sender are saved; until then codes go by email only.', 'abf-accounting')),
+        'twilio_sid'       => array(__('Twilio Account SID', 'abf-accounting'), 'text', 'buy', __('Optional — leave empty. Verification codes go by email only. If text messages are wanted later, add the client’s own Twilio account here (SID, auth token and sender) and codes are also sent by text.', 'abf-accounting')),
         'twilio_token'     => array(__('Twilio auth token', 'abf-accounting'), 'secret', 'buy', ''),
         'twilio_from'      => array(__('Twilio sender', 'abf-accounting'), 'phone', 'buy', __('The Twilio phone number (+44…) or an alphanumeric sender ID such as ABF.', 'abf-accounting')),
         'gc_token'         => array(__('GoCardless access token', 'abf-accounting'), 'secret', 'buy', __('GoCardless → Developers → Create access token (read-write). A sandbox_ token uses the GoCardless sandbox; a live_ token takes real payments.', 'abf-accounting')),

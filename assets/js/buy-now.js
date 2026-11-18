@@ -210,7 +210,7 @@
 					: '<p class="abf-buy__note abf-buy__note--center">No more codes can be sent. Go back to start again, or call us.</p>';
 			return `
 				<h2 class="abf-buy__title" id="abf-buy-title">Verify it’s you</h2>
-				<p class="abf-buy__sub">Enter the 4-digit code we sent to your email address and mobile number.</p>
+				<p class="abf-buy__sub">Enter the 4-digit code we sent to your ${cfg.sms ? 'email address and mobile number' : 'email address'}.</p>
 				${banner()}
 				<form class="abf-buy__form" data-submit="verify" novalidate>
 					<fieldset class="abf-buy__code${state.errors.code ? ' is-invalid' : ''}"><legend class="screen-reader-text">4-digit code</legend>${state.code
@@ -629,7 +629,7 @@
 			}
 			state.resendAt = Date.now() + (data.resendIn || 60) * 1000;
 			state.resendsLeft = data.resendsLeft ?? 3;
-			if (data.sent && !data.sent.sms) {
+			if (cfg.sms && data.sent && !data.sent.sms) {
 				state.notice = 'We’ve emailed your code. If a text doesn’t arrive, use the code from the email.';
 			}
 			state.step = 'verify';
