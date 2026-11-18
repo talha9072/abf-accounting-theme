@@ -70,6 +70,38 @@ function abf_accounting_flush_on_switch(): void
 add_action('after_switch_theme', 'abf_accounting_flush_on_switch');
 
 /**
+ * The /tax-calculator/ page (layout in templates/page-tax-calculator.html). Created once on
+ * any site that doesn't have it yet, so a theme update is all a deploy needs.
+ */
+function abf_accounting_ensure_tax_calculator_page(): void
+{
+    if (get_option('abf_tax_calculator_page') || wp_installing()) {
+        return;
+    }
+    $page = get_page_by_path('tax-calculator', OBJECT, 'page');
+    if (! $page) {
+        $id = wp_insert_post(
+            array(
+                'post_type'      => 'page',
+                'post_status'    => 'publish',
+                'post_title'     => __('Tax calculator', 'abf-accounting'),
+                'post_name'      => 'tax-calculator',
+                'post_excerpt'   => __('Free UK take-home pay calculator: enter your salary to see your pay after Income Tax, National Insurance, pension and student loan.', 'abf-accounting'),
+                'post_content'   => '',
+                'comment_status' => 'closed',
+                'ping_status'    => 'closed',
+            ),
+            true
+        );
+        if (is_wp_error($id)) {
+            return;
+        }
+    }
+    update_option('abf_tax_calculator_page', 1, true);
+}
+add_action('init', 'abf_accounting_ensure_tax_calculator_page', 30);
+
+/**
  * Page data from inc/data (landing pages, page-specific sections and FAQ answers).
  *
  * @param string $file File name without .json.

@@ -65,6 +65,7 @@ echo $abf_accounting_submenu( // phpcs:ignore WordPress.Security.EscapeOutput
     home_url('/resources/'),
     array(
         array('name' => __('Articles & guides', 'abf-accounting'), 'url' => home_url('/resources/')),
+        array('name' => __('Tax calculator', 'abf-accounting'), 'url' => home_url('/tax-calculator/')),
         array('name' => __('About', 'abf-accounting'), 'url' => home_url('/about/')),
     )
 );

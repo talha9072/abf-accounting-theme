@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Resources — Tax calculator
+ * Title: Tax calculator page — Calculator
  * Slug: abf-accounting/resources-tax-calculator
  * Categories: abf-sections
- * Description: Free take-home pay calculator: salary, tax year, region, pension and student loan, with the results panel.
+ * Description: The /tax-calculator/ page (templates/page-tax-calculator.html). Free take-home pay calculator: salary, tax year, region, pension and student loan, with the results panel.
  *
  * Rates live in assets/js/tax-calculator.js (one entry per tax year).
  *
@@ -65,7 +65,7 @@ $abf_accounting_calc = '<div class="abf-calc" data-abf-taxcalc>'
 $abf_accounting_inner = abf_accounting_block_group(
     'abf-taxcalc__message',
     abf_accounting_block_p('abf-pill abf-pill--mint', __('Free tool', 'abf-accounting'))
-    . abf_accounting_block_h(2, 'abf-taxcalc__title', __('Tax calculator', 'abf-accounting'))
+    . abf_accounting_block_h(1, 'abf-taxcalc__title', __('Tax calculator', 'abf-accounting'))
     . abf_accounting_block_p('abf-taxcalc__text', __('Enter your salary to see your take-home pay after Income Tax, National Insurance, pension and student loan.', 'abf-accounting'))
     . abf_accounting_block_html('<ul class="abf-taxcalc__points">' . $abf_accounting_points . '</ul>')
 )

@@ -29,7 +29,7 @@
      "Typically 2–5 business days",
      "Dedicated accountant"
     ],
-    "button": "Speak to our team",
+    "button": "Buy now",
     "small": "Timescale starts once we have all required information, subject to complexity and review."
    }
   },
@@ -1294,7 +1294,7 @@
    "current": "Limited companies",
    "title": "Limited company accounting, <br>without the admin drag.",
    "price": "Company accounts and tax return from £299",
-   "lead": "Bookkeeping, year-end accounts, Corporation Tax, Companies House filings and directors’ returns, handled by one dedicated accountant.",
+   "lead": "Bookkeeping, year-end accounts, Corporation Tax and Companies House filings, handled by one dedicated accountant.",
    "buttons": [
     "Buy now",
     "Request a callback"
@@ -1365,7 +1365,7 @@
     ],
     [
      "Optional add-ons",
-     "Add VAT filing, payroll and pension, or extra directors’ returns."
+     "Add VAT filing or payroll and pension."
     ]
    ]
   },

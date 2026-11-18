@@ -301,6 +301,11 @@ function abf_accounting_open_graph(): void
     if (is_singular()) {
         $post        = get_queried_object();
         $excerpt     = function_exists('abf_accounting_post_seo_description') && abf_accounting_post_seo_description($post->ID) ? abf_accounting_post_seo_description($post->ID) : (has_excerpt($post) ? get_the_excerpt($post) : '');
+        // Service and audience pages: the hero lead from the page data, so the copy has one source.
+        if (is_singular(array('abf_service', 'abf_audience')) && function_exists('abf_accounting_data')) {
+            $lead    = abf_accounting_data('landing-pages')[$post->post_name]['hero']['lead'] ?? '';
+            $excerpt = $lead ?: $excerpt;
+        }
         $description = $excerpt ?: $description;
         $url         = get_permalink($post);
         if (is_singular('post')) {
