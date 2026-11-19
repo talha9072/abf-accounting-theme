@@ -357,6 +357,17 @@ nav.abf-header__nav .wp-block-navigation__submenu-container {
 	left: -16px !important;
 }
 
+/* "Who we help": 7 audiences in two columns, filled top to bottom (Figma dropdown). */
+@media (min-width: 1200px) {
+	nav.abf-header__nav .abf-nav-two-col > .wp-block-navigation__submenu-container {
+		display: grid !important;
+		grid-template-rows: repeat(4, auto);
+		grid-auto-flow: column;
+		grid-auto-columns: minmax(240px, max-content);
+		column-gap: 4px;
+	}
+}
+
 nav.abf-header__nav .wp-block-navigation__submenu-container::before {
 	content: "";
 	position: absolute;

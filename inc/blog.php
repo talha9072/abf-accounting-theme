@@ -699,7 +699,7 @@ function abf_accounting_nav_current(string $html, array $block): string
 
     $home  = $path(home_url('/'));
     $match = ($link === $current && ($link !== $home || is_front_page()))
-        ||($blog && $link === $path(abf_accounting_blog_url()))
+        ||(($blog || is_page('faq')) && $link === $path(abf_accounting_blog_url()))
         || ('core/navigation-submenu' === $block['blockName'] && is_singular(array('abf_service', 'abf_audience')) && '' !== $link && str_starts_with($current, $link));
 
     if (! $match || str_contains($html, 'current-menu-item')) {

@@ -30,6 +30,10 @@ function abf_accounting_package_for(string $key): string
         'self-employed-freelancers'  => 'self-assessment',
         'landlords'                  => 'self-assessment',
         'dormant-company-accounts'   => 'dormant',
+        // Charity & CIC: CICs and companies limited by guarantee (client, 19 Nov 2026).
+        'charities-cics'             => 'charity-cic',
+        // Ordinary partnerships aren't on Companies House: no company search.
+        'partnerships'               => 'partnership-tax-return',
     );
 
     return $map[$key] ?? $key;

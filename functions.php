@@ -11,6 +11,7 @@ if (! defined('ABSPATH')) {
 
 require_once get_theme_file_path('inc/blocks.php');
 require_once get_theme_file_path('inc/settings.php');
+require_once get_theme_file_path('inc/trustpilot.php');
 require_once get_theme_file_path('inc/sections.php');
 require_once get_theme_file_path('inc/contact-form.php');
 require_once get_theme_file_path('inc/landing.php');
@@ -174,16 +175,19 @@ function abf_accounting_services(): array
 }
 
 /**
- * The 5 "Who we help" audiences (Figma page 01, row 3).
+ * The 7 "Who we help" audiences (Figma page 01, row 3, plus Charities & CICs and Partnerships,
+ * Nov 2026). Footer order; the header dropdown uses abf_accounting_audience_menu_order().
  */
 function abf_accounting_audiences(): array
 {
     $list = array(
         'limited-companies'          => __('Limited companies', 'abf-accounting'),
         'sole-traders'               => __('Sole traders', 'abf-accounting'),
-        'contractors'                => __('Contractors', 'abf-accounting'),
         'self-employed-freelancers'  => __('Self-employed & freelancers', 'abf-accounting'),
+        'contractors'                => __('Contractors', 'abf-accounting'),
         'landlords'                  => __('Landlords', 'abf-accounting'),
+        'charities-cics'             => __('Charities & CICs', 'abf-accounting'),
+        'partnerships'               => __('Partnerships', 'abf-accounting'),
     );
     $out  = array();
     foreach ($list as $slug => $name) {

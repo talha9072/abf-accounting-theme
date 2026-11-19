@@ -24,7 +24,7 @@ $abf_accounting_link    = static function (string $label, string $url, string $c
 
     return '<!-- wp:navigation-link ' . wp_json_encode($attrs, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ' /-->';
 };
-$abf_accounting_submenu = static function (string $label, string $url, array $items): string {
+$abf_accounting_submenu = static function (string $label, string $url, array $items, string $class = ''): string {
     $inner = '';
     foreach ($items as $item) {
         $inner .= '<!-- wp:navigation-link ' . wp_json_encode(
@@ -38,10 +38,13 @@ $abf_accounting_submenu = static function (string $label, string $url, array $it
     }
 
     return '<!-- wp:navigation-submenu ' . wp_json_encode(
-        array(
-            'label' => $label,
-            'url'   => $url,
-            'kind'  => 'custom',
+        array_filter(
+            array(
+                'label'     => $label,
+                'url'       => $url,
+                'kind'      => 'custom',
+                'className' => $class,
+            )
         ),
         JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
     ) . ' -->' . $inner . '<!-- /wp:navigation-submenu -->';
@@ -56,7 +59,11 @@ $abf_accounting_submenu = static function (string $label, string $url, array $it
 <!-- wp:navigation {"overlayBackgroundColor":"white","overlayTextColor":"ink","className":"abf-header__nav","layout":{"type":"flex","justifyContent":"left","flexWrap":"nowrap"}} -->
 <?php
 echo $abf_accounting_link(__('Home', 'abf-accounting'), home_url('/')); // phpcs:ignore WordPress.Security.EscapeOutput
-echo $abf_accounting_submenu(__('Who we help', 'abf-accounting'), home_url('/who-we-help/limited-companies/'), abf_accounting_audiences()); // phpcs:ignore WordPress.Security.EscapeOutput
+// Two columns in the dropdown (Figma "Header / Dropdown States"): Limited companies, Sole traders,
+// Partnerships, Charities & CICs | Self-employed & freelancers, Contractors, Landlords.
+$abf_accounting_who = abf_accounting_audiences();
+$abf_accounting_who = array_merge(array_flip(array('limited-companies', 'sole-traders', 'partnerships', 'charities-cics', 'self-employed-freelancers', 'contractors', 'landlords')), $abf_accounting_who);
+echo $abf_accounting_submenu(__('Who we help', 'abf-accounting'), home_url('/who-we-help/limited-companies/'), $abf_accounting_who, 'abf-nav-two-col'); // phpcs:ignore WordPress.Security.EscapeOutput
 echo $abf_accounting_submenu(__('Services', 'abf-accounting'), home_url('/services/annual-accounts-tax-return/'), abf_accounting_services()); // phpcs:ignore WordPress.Security.EscapeOutput
 echo $abf_accounting_link(__('Pricing', 'abf-accounting'), home_url('/pricing/')); // phpcs:ignore WordPress.Security.EscapeOutput
 echo $abf_accounting_link(__('First-Year Accounts & Tax Return FREE', 'abf-accounting'), home_url('/first-year-accounts-free/')); // phpcs:ignore WordPress.Security.EscapeOutput

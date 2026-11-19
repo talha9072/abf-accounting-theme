@@ -2101,5 +2101,331 @@
    ]
   },
   "unique": "Section / Audience / Landlords / Rent To Return"
+ },
+ "charities-cics": {
+  "kind": "who",
+  "hero": {
+   "crumb": "Who we help",
+   "current": "Charities & CICs",
+   "title": "Accounts for charities and CICs, <br>filed right and on time.",
+   "price": "Charity and CIC accounts from £299",
+   "lead": "Year-end accounts, Companies House filings and the CIC community interest report, handled by one dedicated accountant.",
+   "buttons": [
+    "Buy now",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Support by phone and email"
+   ],
+   "card": {
+    "label": "Charity & CIC accounts",
+    "from": "from",
+    "amount": "£299",
+    "cadence": "",
+    "who": "For charitable companies and community interest companies.",
+    "items": [
+     "Year-end accounts prepared",
+     "Filed with Companies House",
+     "CIC34 report included for CICs",
+     "Typically 2–5 business days",
+     "Dedicated accountant"
+    ],
+    "button": "Get started",
+    "small": "Additional fees may apply for larger or more complex organisations."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Your organisation’s year",
+   "cardSub": "Handled by one team",
+   "chip": "Handled by ABF",
+   "rows": [
+    "Bookkeeping",
+    "Year-end accounts",
+    "Companies House filing",
+    "CIC34 report, for CICs"
+   ],
+   "eyebrow": "What you need to stay on top of",
+   "title": "What a charity or CIC <br>needs each year.",
+   "body": [
+    "Charitable companies and CICs file year-end accounts with Companies House. CICs also file a community interest report (CIC34) with their accounts.",
+    "We keep your books in order, prepare your accounts and file them on time, so your trustees and directors can focus on your cause."
+   ]
+  },
+  "included": {
+   "eyebrow": "What ABF handles",
+   "title": "What ABF handles <br>for charities and CICs.",
+   "intro": "Each service is priced up front on our pricing page.",
+   "cards": [
+    [
+     "Bookkeeping",
+     "Income, grants and spending kept organised through the year."
+    ],
+    [
+     "Year-end accounts",
+     "Accounts prepared from your records and filed with Companies House."
+    ],
+    [
+     "CIC community interest report",
+     "Your CIC34 report prepared alongside your accounts, for CICs."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant, with support by phone and email."
+    ],
+    [
+     "Deadline reminders",
+     "We let you know what is needed and when, so nothing is left to the last minute."
+    ],
+    [
+     "Optional add-ons",
+     "Add VAT filing or payroll and pension when you need them."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "Getting started",
+   "title": "From first call to fully set up in four steps.",
+   "steps": [
+    [
+     "Choose your service",
+     "Pick the service you need, or request a quote."
+    ],
+    [
+     "Meet your accountant",
+     "Your dedicated accountant gets to know your business and deadlines."
+    ],
+    [
+     "Share your records online",
+     "Send your documents securely online."
+    ],
+    [
+     "We keep you on track",
+     "Your filings are prepared, approved by you and submitted on time."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Related services",
+   "title": "Services charities and CICs use most.",
+   "cards": [
+    {
+     "title": "Annual Accounts & Tax Return",
+     "text": "Year-end accounts prepared and filed for your organisation.",
+     "link": "View Annual Accounts & Tax Return"
+    },
+    {
+     "title": "Bookkeeping Services",
+     "text": "Records kept current all year round.",
+     "link": "View Bookkeeping Services"
+    },
+    {
+     "title": "VAT Return",
+     "text": "VAT returns filed under Making Tax Digital.",
+     "link": "View VAT Return"
+    },
+    {
+     "title": "Payroll and Pension",
+     "text": "Staff paid correctly, with pensions handled.",
+     "link": "View Payroll and Pension"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Charity and CIC questions, answered.",
+   "intro": "Straight answers on accounts, filings and choosing the right support.",
+   "items": [
+    [
+     "What records should we keep through the year?",
+     "Keep records of all income, including grants and donations, your spending, and supporting documents such as invoices, receipts and bank statements. Organised records make your year-end accounts quicker and more accurate."
+    ],
+    [
+     "How much do charity and CIC accounts cost?",
+     ""
+    ],
+    [
+     "Do you prepare the CIC34 community interest report?",
+     ""
+    ],
+    [
+     "Does a charity or CIC need to register for VAT?",
+     ""
+    ],
+    [
+     "What is the difference between a CIC and a charity?",
+     ""
+    ],
+    [
+     "Can you speak to our trustees or directors?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Audience / Sole Traders / Three Habits"
+ },
+ "partnerships": {
+  "kind": "who",
+  "hero": {
+   "crumb": "Who we help",
+   "current": "Partnerships",
+   "title": "Partnership accounts and tax returns, <br>handled for every partner.",
+   "price": "Partnership tax return from £299",
+   "lead": "Your partnership accounts and Partnership Tax Return (SA800) prepared and filed, with help for each partner’s Self Assessment.",
+   "buttons": [
+    "Buy now",
+    "Request a callback"
+   ],
+   "assurances": [
+    "Dedicated accountant",
+    "Deadline reminders",
+    "Support by phone and email"
+   ],
+   "card": {
+    "label": "Partnership Tax Return (SA800)",
+    "from": "from",
+    "amount": "£299",
+    "cadence": "",
+    "who": "For business partnerships and their partners.",
+    "items": [
+     "Partnership accounts prepared",
+     "Partnership Tax Return filed with HMRC",
+     "Each partner’s share of profit shown",
+     "Typically 2–5 business days",
+     "Dedicated accountant"
+    ],
+    "button": "Get started",
+    "small": "Additional fees may apply for larger or more complex partnerships."
+   }
+  },
+  "explainer": {
+   "cardTitle": "Your partnership’s year",
+   "cardSub": "Handled by one team",
+   "chip": "Handled by ABF",
+   "rows": [
+    "Bookkeeping",
+    "Year-end accounts",
+    "Partnership Tax Return",
+    "Partners’ Self Assessment"
+   ],
+   "eyebrow": "What you need to stay on top of",
+   "title": "What a partnership <br>needs each year.",
+   "body": [
+    "A partnership files a Partnership Tax Return with HMRC. Each partner then reports their share of the profit on their own Self Assessment return.",
+    "We keep the books in order, prepare the partnership accounts and return, and can file each partner’s Self Assessment too."
+   ]
+  },
+  "included": {
+   "eyebrow": "What ABF handles",
+   "title": "What ABF handles <br>for partnerships.",
+   "intro": "Each service is priced up front on our pricing page.",
+   "cards": [
+    [
+     "Bookkeeping",
+     "Income and expenses kept organised through the year."
+    ],
+    [
+     "Year-end accounts",
+     "Partnership accounts prepared from your records."
+    ],
+    [
+     "Partnership Tax Return",
+     "Your SA800 prepared and filed with HMRC once you approve it."
+    ],
+    [
+     "A dedicated accountant",
+     "One accountant, with support by phone and email."
+    ],
+    [
+     "Deadline reminders",
+     "We let you know what is needed and when, so nothing is left to the last minute."
+    ],
+    [
+     "Optional add-ons",
+     "Add partners’ Self Assessment, VAT filing or payroll when you need them."
+    ]
+   ]
+  },
+  "steps": {
+   "eyebrow": "Getting started",
+   "title": "From first call to fully set up in four steps.",
+   "steps": [
+    [
+     "Choose your service",
+     "Pick the service you need, or request a quote."
+    ],
+    [
+     "Meet your accountant",
+     "Your dedicated accountant gets to know your business and deadlines."
+    ],
+    [
+     "Share your records online",
+     "Send your documents securely online."
+    ],
+    [
+     "We keep you on track",
+     "Your filings are prepared, approved by you and submitted on time."
+    ]
+   ]
+  },
+  "audience": {
+   "eyebrow": "Related services",
+   "title": "Services partnerships use most.",
+   "cards": [
+    {
+     "title": "Self Assessment Tax Return",
+     "text": "Each partner’s return prepared, checked and filed.",
+     "link": "View Self Assessment Tax Return"
+    },
+    {
+     "title": "Bookkeeping Services",
+     "text": "Records kept current without the evening admin.",
+     "link": "View Bookkeeping Services"
+    },
+    {
+     "title": "VAT Return",
+     "text": "VAT returns filed under Making Tax Digital.",
+     "link": "View VAT Return"
+    },
+    {
+     "title": "Tax Planning Advice",
+     "text": "Plan ahead and make the most of allowances.",
+     "link": "View Tax Planning Advice"
+    }
+   ]
+  },
+  "faq": {
+   "eyebrow": "Common questions",
+   "title": "Partnership questions, answered.",
+   "intro": "Straight answers on partnership returns, partners’ tax and choosing the right support.",
+   "items": [
+    [
+     "What records should we keep through the year?",
+     "Keep clear records of the partnership’s income and expenses, and supporting documents such as invoices, receipts and bank statements. Organised records make the accounts and returns quicker and more accurate."
+    ],
+    [
+     "How much does a partnership tax return cost?",
+     ""
+    ],
+    [
+     "Can you do each partner’s Self Assessment?",
+     ""
+    ],
+    [
+     "Does our partnership need to register for VAT?",
+     ""
+    ],
+    [
+     "Should we become an LLP or a limited company?",
+     ""
+    ],
+    [
+     "What is a Partnership Tax Return (SA800)?",
+     ""
+    ]
+   ]
+  },
+  "unique": "Section / Audience / Sole Traders / Three Habits"
  }
 }

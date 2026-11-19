@@ -3860,3 +3860,210 @@
 		display: none;
 	}
 }
+
+/* ---------- Trustpilot without copied reviews (client, 19 Nov 2026) ----------
+   Reviews aren't copied into the site any more. Both review sections show the rating and a
+   "Read our reviews on Trustpilot" link (--link), or Trustpilot's carousel TrustBox once a
+   template ID is saved in ABF settings (--widget). See inc/trustpilot.php. */
+
+.abf-tp-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 14px 24px;
+	border-radius: 14px;
+	background: var(--abf-green);
+	box-shadow: 0 4px 10px rgba(13, 47, 56, 0.05);
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 22px;
+	text-decoration: none;
+	transition: background-color var(--abf-transition);
+}
+
+.abf-tp-link::after {
+	content: "";
+	flex: none;
+	width: 18px;
+	height: 18px;
+	background: currentColor;
+	-webkit-mask: var(--abf-mask-arrow) center / contain no-repeat;
+	mask: var(--abf-mask-arrow) center / contain no-repeat;
+}
+
+.abf-tp-link:hover,
+.abf-tp-link:focus-visible {
+	background: var(--abf-green-dark);
+	color: #fff;
+}
+
+.abf-trustbox {
+	min-height: 24px;
+}
+
+/* Home: the panel beside the TrustScore card. */
+.abf-reviews__carousel--link {
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 18px;
+	padding: 24px 28px 28px;
+}
+
+.abf-reviews__carousel--link .abf-reviews__bar {
+	margin-bottom: 8px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #e6efeb;
+}
+
+.abf-reviews__panel-title {
+	color: var(--abf-teal);
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 30px;
+}
+
+.abf-reviews__panel-text {
+	max-width: 620px;
+	color: var(--abf-muted);
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.abf-reviews__panel-link {
+	margin-top: auto !important;
+	padding-top: 8px;
+}
+
+.abf-reviews__carousel--widget {
+	margin-top: 18px;
+}
+
+/* Pricing, About, service and audience pages: one centred block, no scrolling columns. */
+.abf-stream--link > .abf-container {
+	display: block;
+	height: auto;
+	padding-block: 96px;
+}
+
+.abf-stream--link .abf-stream__intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	max-width: 760px;
+	margin-inline: auto;
+	padding: 0;
+	text-align: center;
+}
+
+.abf-stream--link .abf-stream__title br {
+	display: none;
+}
+
+.abf-stream--link .abf-stream__badge,
+.abf-stream--link .abf-stream__count {
+	margin: 0 !important;
+}
+
+.abf-stream--link .abf-stream__badge {
+	margin-top: 8px !important;
+}
+
+.abf-stream__text {
+	max-width: 520px;
+	color: rgba(13, 51, 63, 0.72);
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.abf-stream__link {
+	margin-top: 8px !important;
+}
+
+.abf-stream--widget > .abf-container {
+	align-items: center;
+	height: auto;
+	padding-block: 96px;
+}
+
+.abf-stream--widget .abf-stream__intro {
+	padding-top: 0;
+}
+
+.abf-stream__widget {
+	min-width: 0;
+}
+
+.abf-stream--widget .abf-stream__link,
+.abf-stream--widget .abf-stream__text {
+	margin-top: 16px !important;
+}
+
+@media (max-width: 1199px) {
+	.abf-reviews__carousel--link {
+		gap: 12px;
+		margin-top: 0;
+		padding: 0;
+	}
+
+	.abf-reviews__carousel--link .abf-reviews__bar {
+		display: none;
+	}
+
+	.abf-reviews__panel-link {
+		padding-top: 4px;
+	}
+
+	.abf-stream--link > .abf-container {
+		padding-block: 72px;
+	}
+
+	.abf-stream--link .abf-stream__intro {
+		flex-wrap: nowrap;
+		gap: 16px;
+	}
+
+	.abf-stream--widget > .abf-container {
+		padding-block: 72px;
+	}
+
+	.abf-stream--widget .abf-stream__intro {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+	}
+
+	.abf-stream--widget .abf-stream__intro > * {
+		margin: 0 !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-reviews__panel-title {
+		font-size: 20px;
+		line-height: 27px;
+	}
+
+	.abf-stream--link > .abf-container {
+		padding-block: 56px;
+	}
+
+	.abf-stream__text {
+		font-size: 15px;
+		line-height: 22px;
+	}
+
+	.abf-tp-link {
+		box-sizing: border-box;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.abf-stream__link,
+	.abf-reviews__panel-link {
+		align-self: stretch;
+	}
+}

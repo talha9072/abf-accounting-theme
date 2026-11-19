@@ -102,6 +102,71 @@ function abf_accounting_ensure_tax_calculator_page(): void
 add_action('init', 'abf_accounting_ensure_tax_calculator_page', 30);
 
 /**
+ * "Who we help" pages added after launch (Charities & CICs, Partnerships): created once on any
+ * site that doesn't have them, showing their landing pattern, so a theme update is enough.
+ */
+function abf_accounting_ensure_audience_pages(): void
+{
+    $done = (array) get_option('abf_audience_pages', array());
+    $todo = array_diff(array('charities-cics', 'partnerships'), $done);
+    if (! $todo || wp_installing() || ! post_type_exists('abf_audience')) {
+        return;
+    }
+    $audiences = abf_accounting_audiences();
+    foreach ($todo as $slug) {
+        if (! get_page_by_path($slug, OBJECT, 'abf_audience')) {
+            $id = wp_insert_post(
+                array(
+                    'post_type'    => 'abf_audience',
+                    'post_status'  => 'publish',
+                    'post_title'   => $audiences[$slug]['name'] ?? $slug,
+                    'post_name'    => $slug,
+                    'post_excerpt' => abf_accounting_data('landing-pages')[$slug]['hero']['lead'] ?? '',
+                    'post_content' => '<!-- wp:pattern {"slug":"abf-accounting/landing-' . $slug . '"} /-->',
+                ),
+                true
+            );
+            if (is_wp_error($id)) {
+                continue;
+            }
+        }
+        $done[] = $slug;
+    }
+    update_option('abf_audience_pages', array_values(array_unique($done)), true);
+}
+add_action('init', 'abf_accounting_ensure_audience_pages', 30);
+
+/**
+ * The /faq/ page (layout in templates/page-faq.html), created once like the tax calculator page.
+ */
+function abf_accounting_ensure_faq_page(): void
+{
+    if (get_option('abf_faq_page') || wp_installing()) {
+        return;
+    }
+    if (! get_page_by_path('faq', OBJECT, 'page')) {
+        $id = wp_insert_post(
+            array(
+                'post_type'      => 'page',
+                'post_status'    => 'publish',
+                'post_title'     => __('FAQ', 'abf-accounting'),
+                'post_name'      => 'faq',
+                'post_excerpt'   => __('Answers on switching to ABF, prices and paying online, limited companies, Self Assessment, VAT, payroll, charities, CICs and partnerships.', 'abf-accounting'),
+                'post_content'   => '',
+                'comment_status' => 'closed',
+                'ping_status'    => 'closed',
+            ),
+            true
+        );
+        if (is_wp_error($id)) {
+            return;
+        }
+    }
+    update_option('abf_faq_page', 1, true);
+}
+add_action('init', 'abf_accounting_ensure_faq_page', 30);
+
+/**
  * Page data from inc/data (landing pages, page-specific sections and FAQ answers).
  *
  * @param string $file File name without .json.
@@ -384,7 +449,7 @@ function abf_accounting_feature_section(array $f): string
             break;
     }
 
-    return abf_accounting_block_section('abf-feature-section abf-feature-section--' . $f['type'] . ($dark ? ' abf-section--dark is-dark' : ''), $head . $body);
+    return abf_accounting_block_section('abf-feature-section abf-feature-section--' . $f['type'] . (! empty($f['numbered']) ? ' abf-feature-section--numbered' : '') . ($dark ? ' abf-section--dark is-dark' : ''), $head . $body);
 }
 
 /**

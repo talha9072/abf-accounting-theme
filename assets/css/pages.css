@@ -2466,6 +2466,23 @@
 	max-width: 1100px;
 }
 
+/* "Three habits" (Sole traders, Charities & CICs, Partnerships): one-line 48 px title over a
+   760 px intro, as in Figma. */
+@media (min-width: 1440px) {
+	.abf-feature-section--numbered .abf-heading {
+		max-width: none;
+	}
+
+	.abf-feature-section--numbered .abf-title {
+		font-size: 48px;
+		line-height: 54px;
+	}
+
+	.abf-feature-section--numbered .abf-intro {
+		max-width: 760px;
+	}
+}
+
 /* ---------- How it works timeline, tablet + mobile (Figma "Section / Service / How It Works") ----------
    Number pill (44x29) on the left, the card fills the rest; no spine. Odd cards have the green edge on the right,
    even cards on the left. */
@@ -4089,5 +4106,30 @@
 	.abf-qualify__actions .wp-block-button__link {
 		justify-content: space-between;
 		text-align: left;
+	}
+}
+
+/* ---------- FAQ page (Figma "FAQ"): topic sections sit closer together ---------- */
+.abf-faq--topic + .abf-faq--topic {
+	padding-top: 40px;
+}
+
+@media (max-width: 1199px) {
+	.abf-faq--topic {
+		padding-block: 72px;
+	}
+
+	.abf-faq--topic + .abf-faq--topic {
+		padding-top: 40px;
+	}
+}
+
+@media (max-width: 767px) {
+	.abf-faq--topic {
+		padding-block: 56px;
+	}
+
+	.abf-faq--topic + .abf-faq--topic {
+		padding-top: 24px;
 	}
 }

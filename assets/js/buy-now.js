@@ -130,7 +130,8 @@
 	const invalid = (key) => (state.errors[key] ? ` aria-invalid="true" aria-describedby="abf-buy-${key}-error"` : '');
 
 	function serviceField() {
-		const options = cfg.services.map((s) => `<option value="${esc(s.key)}"${s.key === state.service ? ' selected' : ''}>${esc(s.label)}</option>`).join('');
+		// Unlisted services (Charity & CIC) only appear while they are the chosen one.
+		const options = cfg.services.filter((s) => s.listed || s.key === state.service).map((s) => `<option value="${esc(s.key)}"${s.key === state.service ? ' selected' : ''}>${esc(s.label)}</option>`).join('');
 		// The visible label wraps on phones (Figma); the native select sits on top, invisible.
 		return `<div class="abf-buy__field"><label for="abf-buy-service">Service</label><div class="abf-buy__input abf-buy__input--select"><span class="abf-buy__select-label" aria-hidden="true">${esc(service().label)}</span><select id="abf-buy-service" data-bind="service">${options}</select>${icons.chevron}</div></div>`;
 	}
@@ -239,7 +240,7 @@
 					<div class="abf-buy__summary-line"><span>${esc(s.name)} — ${esc(s.summary)}</span><strong>${money(s.price)}</strong></div>
 					<div class="abf-buy__summary-total"><span>Total</span><strong>${money(s.price)}</strong></div>
 				</div>
-				${s.flow === 'personal' ? '<p class="abf-buy__note">Additional fees may apply for complex returns, foreign income, capital gains and other specialist requirements.</p>' : ''}
+				${s.key === 'partnership-tax-return' ? '<p class="abf-buy__note">Covers the partnership’s SA800 return. Each partner’s own Self Assessment can be added, and additional fees may apply for complex returns.</p>' : s.flow === 'personal' ? '<p class="abf-buy__note">Additional fees may apply for complex returns, foreign income, capital gains and other specialist requirements.</p>' : ''}
 				${actions(loggedIn ? 'back-details' : 'back-verify', 'to-payment', 'Pay by bank')}`;
 		},
 
@@ -364,8 +365,8 @@
 		state.token = '';
 		state.summary = null;
 		if (before.flow !== after.flow || before.key !== after.key) {
-			// LLP / CIC / limited companies are searched separately.
-			if (after.flow === 'company' && (before.flow !== 'company' || before.key === 'llp' || after.key === 'llp' || before.key === 'cic' || after.key === 'cic')) {
+			// LLP / CIC / Charity & CIC / limited companies are searched separately.
+			if (after.flow === 'company' && (before.flow !== 'company' || before.group !== after.group)) {
 				state.company = null;
 				state.results = null;
 			}

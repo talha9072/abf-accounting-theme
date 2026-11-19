@@ -6,6 +6,7 @@
  *  - tawk.to property ID and widget ID (the "Chat with us" button)
  *  - Social profile URLs (footer icons)
  *  - Buy now pop-up: Companies House API key, Twilio (text codes), GoCardless (Pay by bank)
+ *  - Trustpilot: business unit and TrustBox template IDs (inc/trustpilot.php)
  *
  * Every feature stays switched off, with no broken output, until its value is saved.
  *
@@ -39,6 +40,9 @@ function abf_accounting_setting_fields(): array
         'twilio_token'     => array(__('Twilio auth token', 'abf-accounting'), 'secret', 'buy', ''),
         'twilio_from'      => array(__('Twilio sender', 'abf-accounting'), 'phone', 'buy', __('The Twilio phone number (+44…) or an alphanumeric sender ID such as ABF.', 'abf-accounting')),
         'gc_token'         => array(__('GoCardless access token', 'abf-accounting'), 'secret', 'buy', __('GoCardless → Developers → Create access token (read-write). A sandbox_ token uses the GoCardless sandbox; a live_ token takes real payments.', 'abf-accounting')),
+        'tp_business_unit' => array(__('Business unit ID', 'abf-accounting'), 'text', 'trustpilot', __('ABF’s Trustpilot ID (already filled in). In a TrustBox code from Trustpilot Business → Integrations → TrustBoxes it is data-businessunit-id.', 'abf-accounting')),
+        'tp_rating_template' => array(__('Rating TrustBox template ID', 'abf-accounting'), 'text', 'trustpilot', __('Optional. data-template-id of a rating TrustBox (e.g. Micro Combo), shown next to the Trustpilot logo in the review sections. The free plan doesn’t include one, so leave empty to show the rating as text.', 'abf-accounting')),
+        'tp_carousel_template' => array(__('Review carousel TrustBox template ID', 'abf-accounting'), 'text', 'trustpilot', __('Optional. data-template-id of a review carousel TrustBox (paid Trustpilot plan), shown in the review sections. Leave empty to show the “Read our reviews on Trustpilot” link instead.', 'abf-accounting')),
         'gc_webhook'       => array(__('GoCardless webhook secret', 'abf-accounting'), 'secret', 'buy', sprintf(/* translators: %s: webhook URL. */ __('GoCardless → Developers → Create webhook endpoint with the URL %s, then paste its secret here.', 'abf-accounting'), rest_url('abf/v1/gocardless/webhook'))),
     );
 }
@@ -66,6 +70,7 @@ function abf_accounting_setting_defaults(): array
         'social_youtube'   => 'https://www.youtube.com/@ABFAccounting',
         'social_x'         => 'https://x.com/ABFAccounting',
         'social_tiktok'    => 'https://www.tiktok.com/@abfaccounting',
+        'tp_business_unit' => '67ae62d3d88afca670dd92b6',
     );
 }
 
@@ -114,6 +119,7 @@ function abf_accounting_register_settings(): void
         'chat'      => __('Live chat (tawk.to)', 'abf-accounting'),
         'social'    => __('Social profiles (footer icons)', 'abf-accounting'),
         'buy'       => __('Buy now pop-up', 'abf-accounting'),
+        'trustpilot' => __('Trustpilot (review sections)', 'abf-accounting'),
     );
     foreach ($sections as $id => $title) {
         add_settings_section('abf_accounting_' . $id, $title, '__return_false', 'abf-accounting-settings');

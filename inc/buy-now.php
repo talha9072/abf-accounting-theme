@@ -30,24 +30,71 @@ const ABF_BUY_GATEWAY       = 'abf_gocardless';
 /* ================================================================== */
 
 /**
- * The six packages sold online, in the pop-up's order. "company" services start with the
- * Companies House search; Self Assessment goes straight to Your details.
+ * The packages sold online, in the pop-up's order. "company" services start with the
+ * Companies House search; Self Assessment and the Partnership Tax Return go straight to
+ * Your details (ordinary partnerships aren't on Companies House).
  *
- * types / subtype: which Companies House companies can be picked for the service.
+ * types / subtype: which Companies House companies can be picked for the service — a company
+ * fits when its type is in `types` OR it has the `subtype` (Charity & CIC uses both).
+ * listed: shown in the pop-up's Service list. Charity & CIC is only opened from its own page
+ * (Buy now on /who-we-help/charities-cics/), so it stays out of the list next to CIC.
  */
 function abf_buy_services(): array
 {
-    $limited = array('ltd', 'private-limited-guarant-nsc', 'private-limited-guarant-nsc-limited-exemption');
+    $guarantee = array('private-limited-guarant-nsc', 'private-limited-guarant-nsc-limited-exemption');
+    $limited   = array_merge(array('ltd'), $guarantee);
+    $cic       = 'community-interest-company';
 
-    return array(
-        'company-accounts'       => array('flow' => 'company', 'types' => $limited, 'subtype' => '', 'short' => __('Company Accounts & CT', 'abf-accounting'), 'summary' => __('year-end accounts and CT600, filed with Companies House and HMRC', 'abf-accounting')),
-        'llp'                    => array('flow' => 'company', 'types' => array('llp'), 'subtype' => '', 'short' => __('LLP', 'abf-accounting'), 'summary' => __('LLP accounts and the SA800 partnership tax return', 'abf-accounting')),
-        'cic'                    => array('flow' => 'company', 'types' => array(), 'subtype' => 'community-interest-company', 'short' => __('CIC', 'abf-accounting'), 'summary' => __('annual accounts and CT600 filing, with support on CIC reporting', 'abf-accounting')),
-        'self-assessment'        => array('flow' => 'personal', 'types' => array(), 'subtype' => '', 'short' => __('Self Assessment', 'abf-accounting'), 'summary' => __('SA100 return prepared and submitted to HMRC', 'abf-accounting')),
-        'dormant'                => array('flow' => 'company', 'types' => $limited, 'subtype' => '', 'short' => __('Dormant', 'abf-accounting'), 'summary' => __('dormant accounts prepared and filed with Companies House', 'abf-accounting')),
-        'confirmation-statement' => array('flow' => 'company', 'types' => $limited, 'subtype' => '', 'short' => __('Confirmation Statement', 'abf-accounting'), 'summary' => __('CS01 prepared and filed with Companies House', 'abf-accounting')),
+    $services = array(
+        'company-accounts'       => array('flow' => 'company', 'types' => $limited, 'short' => __('Company Accounts & CT', 'abf-accounting'), 'summary' => __('year-end accounts and CT600, filed with Companies House and HMRC', 'abf-accounting')),
+        'llp'                    => array('flow' => 'company', 'types' => array('llp'), 'short' => __('LLP', 'abf-accounting'), 'summary' => __('LLP accounts and the SA800 partnership tax return', 'abf-accounting')),
+        'cic'                    => array('flow' => 'company', 'subtype' => $cic, 'short' => __('CIC', 'abf-accounting'), 'summary' => __('annual accounts and CT600 filing, with support on CIC reporting', 'abf-accounting')),
+        'charity-cic'            => array('flow' => 'company', 'types' => $guarantee, 'subtype' => $cic, 'listed' => false, 'short' => __('Charity & CIC', 'abf-accounting'), 'summary' => __('year-end accounts and CT600, plus the CIC34 report for CICs', 'abf-accounting')),
+        'self-assessment'        => array('flow' => 'personal', 'short' => __('Self Assessment', 'abf-accounting'), 'summary' => __('SA100 return prepared and submitted to HMRC', 'abf-accounting')),
+        'partnership-tax-return' => array('flow' => 'personal', 'short' => __('Partnership Tax Return', 'abf-accounting'), 'summary' => __('SA800 partnership tax return prepared and submitted to HMRC', 'abf-accounting')),
+        'dormant'                => array('flow' => 'company', 'types' => $limited, 'short' => __('Dormant', 'abf-accounting'), 'summary' => __('dormant accounts prepared and filed with Companies House', 'abf-accounting')),
+        'confirmation-statement' => array('flow' => 'company', 'types' => $limited, 'short' => __('Confirmation Statement', 'abf-accounting'), 'summary' => __('CS01 prepared and filed with Companies House', 'abf-accounting')),
     );
+
+    return array_map(static fn (array $s): array => $s + array('types' => array(), 'subtype' => '', 'listed' => true), $services);
 }
+
+/**
+ * Packages added after launch, created once (by SKU) so a theme upload is enough. Same
+ * settings as the original six: virtual, one per order, no VAT, hidden from the catalogue.
+ * Never touches a product that already exists; deleting one in WooCommerce keeps it deleted.
+ */
+function abf_buy_ensure_products(): void
+{
+    $products = array(
+        'charity-cic'            => array(__('Charity & CIC accounts', 'abf-accounting'), 299, 6),
+        'partnership-tax-return' => array(__('Partnership Tax Return (SA800)', 'abf-accounting'), 299, 7),
+    );
+    $done = (array) get_option('abf_buy_products', array());
+    $todo = array_diff(array_keys($products), $done);
+    if (! $todo || ! class_exists('WC_Product_Simple')) {
+        return;
+    }
+    foreach ($todo as $sku) {
+        if (! wc_get_product_id_by_sku($sku)) {
+            [$name, $price, $order] = $products[$sku];
+            $product = new WC_Product_Simple();
+            $product->set_name($name);
+            $product->set_sku($sku);
+            $product->set_regular_price((string) $price);
+            $product->set_virtual(true);
+            $product->set_sold_individually(true);
+            $product->set_tax_status('none');
+            $product->set_catalog_visibility('hidden');
+            $product->set_status('publish');
+            $product->set_menu_order($order);
+            $product->save();
+        }
+        $done[] = $sku;
+    }
+    update_option('abf_buy_products', array_values(array_unique($done)), false);
+}
+add_action('init', 'abf_buy_ensure_products', 20);
 
 /**
  * Service details for the pop-up (name and price straight from WooCommerce), or null.
@@ -130,14 +177,15 @@ function abf_buy_subtypes($value): array
     return array_values(array_filter($out));
 }
 
-/** Active, and the right kind of company for the service (LLP, CIC or limited company). */
+/** Active, and the right kind of company for the service: its type is listed, or it has the subtype (CIC). */
 function abf_buy_fits(string $status, string $type, array $subtypes, array $service): bool
 {
     if ('active' !== $status) {
         return false;
     }
 
-    return $service['subtype'] ? in_array($service['subtype'], $subtypes, true) : in_array($type, $service['types'], true);
+    return in_array($type, $service['types'], true)
+        || ('' !== $service['subtype'] && in_array($service['subtype'], $subtypes, true));
 }
 
 /**
@@ -361,23 +409,35 @@ function abf_buy_rest_companies(WP_REST_Request $r)
     }
 
     if (! $results) {
-        $query = array(
+        // One search per filter (Companies House ANDs type and subtype): by type, and by
+        // subtype — Charity & CIC runs both and merges them.
+        $base    = array(
             'company_name_includes' => $q,
             'company_status'        => 'active',
             'size'                  => 20,
         );
+        $queries = array();
+        if ($service['types']) {
+            $queries[] = $base + array('company_type' => implode(',', $service['types']));
+        }
         if ($service['subtype']) {
-            $query['company_subtype'] = $service['subtype'];
-        } else {
-            $query['company_type'] = implode(',', $service['types']);
+            $queries[] = $base + array('company_subtype' => $service['subtype']);
         }
-        $data = abf_buy_ch_get('/advanced-search/companies', $query);
-        if (is_wp_error($data)) {
-            return abf_buy_error($data->get_error_message(), 502);
-        }
-        foreach ((array) ($data['items'] ?? array()) as $item) {
-            if (abf_buy_fits((string) ($item['company_status'] ?? ''), (string) ($item['company_type'] ?? ''), abf_buy_subtypes($item['company_subtype'] ?? ($query['company_subtype'] ?? array())), $service)) {
-                $results[] = array('name' => $item['company_name'], 'number' => $item['company_number']);
+        $seen = array();
+        foreach ($queries as $query) {
+            $data = abf_buy_ch_get('/advanced-search/companies', $query);
+            if (is_wp_error($data)) {
+                return abf_buy_error($data->get_error_message(), 502);
+            }
+            foreach ((array) ($data['items'] ?? array()) as $item) {
+                $number = (string) ($item['company_number'] ?? '');
+                if (isset($seen[$number])) {
+                    continue;
+                }
+                if (abf_buy_fits((string) ($item['company_status'] ?? ''), (string) ($item['company_type'] ?? ''), abf_buy_subtypes($item['company_subtype'] ?? ($query['company_subtype'] ?? array())), $service)) {
+                    $seen[$number] = true;
+                    $results[]     = array('name' => $item['company_name'], 'number' => $number);
+                }
             }
         }
         // Closest names first: exact, then starts-with, then the rest (Companies House order).
@@ -1154,6 +1214,10 @@ function abf_buy_config(): array
                 'label'   => $s['name'] . ' — ' . abf_buy_money($s['price']),
                 'price'   => $s['price'],
                 'summary' => $s['summary'],
+                'listed'  => $s['listed'],
+                // Services with the same group search the same companies, so a picked company
+                // can stay when switching between them.
+                'group'   => $s['subtype'] . '|' . implode(',', $s['types']),
             );
         }
     }

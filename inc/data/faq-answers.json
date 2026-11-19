@@ -90,5 +90,19 @@
   "Yes. You can choose a one-off Self Assessment return or ongoing support through the year.",
   "Costs such as letting agent fees, repairs and maintenance, insurance and some finance costs. We check them when we prepare your return.",
   "Yes. If you need to file a return for your rental income, register for Self Assessment by 5 October after the end of the tax year."
+ ],
+ "charities-cics": [
+  "From £299, priced up front. Larger or more complex organisations may need a quote.",
+  "Yes. For CICs, we prepare the CIC34 report alongside your year-end accounts.",
+  "The same VAT registration rules apply to income from trading. Your accountant can check whether you need to register.",
+  "A CIC is a company set up to benefit the community and is regulated by the CIC Regulator. A charity has charitable purposes and may also be registered with the Charity Commission.",
+  "Yes. Your dedicated accountant can talk your trustees or directors through the accounts before anything is filed."
+ ],
+ "partnerships": [
+  "From £299, priced up front. Each partner’s Self Assessment can be added.",
+  "Yes. We can prepare and file each partner’s return, using their share of the partnership profit.",
+  "A partnership must register for VAT if its taxable turnover goes over the VAT threshold. Your accountant can check this for you.",
+  "It depends on your plans, risk and tax position. Your accountant can talk you through the options.",
+  "It reports the partnership’s income and each partner’s share of the profit to HMRC. Each partner then includes their share on their own Self Assessment return."
  ]
 }

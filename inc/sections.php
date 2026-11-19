@@ -32,7 +32,8 @@ function abf_accounting_heading(string $eyebrow, string $title, string $intro = 
  * "Still deciding?" card, and an accordion of native <details> blocks (first one open).
  *
  * @param array $items array(question, answer) pairs.
- * @param array $args  eyebrow, title, intro.
+ * @param array $args  eyebrow, title, intro; optional: card (false hides "Still deciding?"),
+ *                     contact_link (false hides "Still have a question?"), anchor (default "faq").
  */
 function abf_accounting_faq(array $items, array $args): string
 {
@@ -63,7 +64,7 @@ function abf_accounting_faq(array $items, array $args): string
     $inner = abf_accounting_block_group(
         'abf-faq__intro',
         abf_accounting_heading($args['eyebrow'], $args['title'], $args['intro'], 'abf-heading--caps')
-        . $card
+        . (false === ($args['card'] ?? true) ? '' : $card)
     )
         . abf_accounting_block_group(
             'abf-faq__list',
@@ -71,7 +72,7 @@ function abf_accounting_faq(array $items, array $args): string
             . (false === ($args['contact_link'] ?? true) ? '' : abf_accounting_block_p('abf-faq__more', '<a href="' . esc_url(home_url('/contact/')) . '">' . esc_html__('Still have a question? Contact us', 'abf-accounting') . '</a>'))
         );
 
-    return abf_accounting_block_section('abf-faq', $inner, array('anchor' => 'faq'));
+    return abf_accounting_block_section('abf-faq' . (! empty($args['class']) ? ' ' . $args['class'] : ''), $inner, array('anchor' => $args['anchor'] ?? 'faq'));
 }
 
 /**
@@ -277,3 +278,117 @@ function abf_accounting_status_page(string $kicker, string $title, string $text,
 
     return abf_accounting_block_cover('abf-status' . ($is_404 ? ' abf-status--404' : ''), get_theme_file_uri('assets/img/status-office-backdrop.webp'), $inner, 988);
 }
+
+/**
+ * The /faq/ page topics (Figma "FAQ" and its developer note "FAQ page + new pages — all questions
+ * and answers"). Used by patterns/faq-page.php and the FAQPage structured data.
+ */
+function abf_accounting_faq_topics(): array
+{
+    return array(
+        array(
+            'anchor'  => 'getting-started',
+            'eyebrow' => __('Getting started', 'abf-accounting'),
+            'title'   => __('Getting started with ABF.', 'abf-accounting'),
+            'intro'   => __('How switching, onboarding and your accountant work.', 'abf-accounting'),
+            'items'   => array(
+                array(__('Can I switch to ABF from my current accountant?', 'abf-accounting'), __('Yes. We explain what we need from you and your previous accountant, confirm the scope and price, and handle the handover with you so nothing gets missed.', 'abf-accounting')),
+                array(__('Will I have a dedicated accountant?', 'abf-accounting'), __('Yes. Every client has one dedicated accountant, with support by phone and email.', 'abf-accounting')),
+                array(__('What do I need to send you to get started?', 'abf-accounting'), __('Your business details, your records for the period (such as bank statements, invoices and receipts) and any letters from HMRC or Companies House. Your accountant will send you a simple checklist.', 'abf-accounting')),
+                array(__('Do you work with businesses outside Luton?', 'abf-accounting'), __('Yes. We work with businesses across the UK. Everything can be done online, by phone and by email.', 'abf-accounting')),
+            ),
+        ),
+        array(
+            'anchor'  => 'pricing-payments',
+            'eyebrow' => __('Pricing & payments', 'abf-accounting'),
+            'title'   => __('Prices and paying online.', 'abf-accounting'),
+            'intro'   => __('Fixed prices, shown up front.', 'abf-accounting'),
+            'items'   => array(
+                array(__('How much do your services cost?', 'abf-accounting'), __('Company accounts and tax return £299, LLP and CIC accounts £299, Self Assessment £150, dormant company accounts £80 and Confirmation Statement £75. VAT returns start from £50 and payroll from £30 a month. Bookkeeping and tax planning are quoted.', 'abf-accounting')),
+                array(__('Are there any extra charges on top of these prices?', 'abf-accounting'), __('No. The prices shown are what you pay. Additional fees may only apply for complex returns, such as foreign income or capital gains.', 'abf-accounting')),
+                array(__('How do I pay?', 'abf-accounting'), __('Online, by bank payment through GoCardless. You approve the payment in your banking app. No card needed.', 'abf-accounting')),
+                array(__('What happens after I click Buy now?', 'abf-accounting'), __('You find your company, confirm your details with a code sent by email, check your order and pay by bank. Your accountant then contacts you to get started.', 'abf-accounting')),
+            ),
+        ),
+        array(
+            'anchor'  => 'limited-companies',
+            'eyebrow' => __('Limited companies', 'abf-accounting'),
+            'title'   => __('Limited company questions.', 'abf-accounting'),
+            'intro'   => __('Accounts, Corporation Tax and Companies House filings.', 'abf-accounting'),
+            'items'   => array(
+                array(__('What is included in the £299 service?', 'abf-accounting'), __('Preparation of your year-end accounts and CT600 Corporation Tax return, with filing at Companies House and HMRC, typically within 2–5 business days of receiving all your information.', 'abf-accounting')),
+                array(__('What is a dormant company?', 'abf-accounting'), __('A company is usually dormant when it has not traded and has had no significant transactions in its financial year. Dormant companies still need to file annual accounts with Companies House.', 'abf-accounting')),
+                array(__('How much does Confirmation Statement filing cost?', 'abf-accounting'), __('Confirmation Statement filing is £75, typically completed within 1–3 business days of receiving all the information we need.', 'abf-accounting')),
+                array(__('Who qualifies for the first-year offer?', 'abf-accounting'), __('UK limited companies that subscribe to ABF Accounting’s annual accounts and Corporation Tax return service within 30 days of their incorporation date.', 'abf-accounting')),
+            ),
+        ),
+        array(
+            'anchor'  => 'self-assessment',
+            'eyebrow' => __('Self Assessment', 'abf-accounting'),
+            'title'   => __('Self Assessment questions.', 'abf-accounting'),
+            'intro'   => __('Tax returns for the self-employed, landlords and directors.', 'abf-accounting'),
+            'items'   => array(
+                array(__('Do I need to file a Self Assessment tax return?', 'abf-accounting'), __('You usually need to file if you have income that is not taxed through PAYE, such as self-employment, rental or partnership income. If you are not sure, we will check your situation with you before you sign up.', 'abf-accounting')),
+                array(__('How much does a Self Assessment return cost?', 'abf-accounting'), __('A Self Assessment tax return is £150. Additional fees may apply for complex returns, foreign income or capital gains.', 'abf-accounting')),
+                array(__('When is the Self Assessment deadline?', 'abf-accounting'), __('The online deadline is 31 January after the end of the tax year on 5 April. Any tax you owe is usually due on the same day.', 'abf-accounting')),
+                array(__('Can you help with rental income?', 'abf-accounting'), __('Yes. We organise your rental figures, prepare your rental accounts and complete the property pages of your Self Assessment return.', 'abf-accounting')),
+            ),
+        ),
+        array(
+            'anchor'  => 'vat',
+            'eyebrow' => __('VAT', 'abf-accounting'),
+            'title'   => __('VAT questions.', 'abf-accounting'),
+            'intro'   => __('Registration, returns and Making Tax Digital.', 'abf-accounting'),
+            'items'   => array(
+                array(__('How much does a VAT return cost?', 'abf-accounting'), __('VAT returns start from £50 per return. Your accountant will confirm the price based on your VAT scheme and transaction volume.', 'abf-accounting')),
+                array(__('Do I need to register for VAT?', 'abf-accounting'), __('You must register if your VAT taxable turnover goes over the VAT threshold. You can also register voluntarily. Your accountant can check this for you.', 'abf-accounting')),
+                array(__('What is Making Tax Digital?', 'abf-accounting'), __('Making Tax Digital means VAT records are kept digitally and returns are sent to HMRC using compatible software. We file your VAT returns this way.', 'abf-accounting')),
+            ),
+        ),
+        array(
+            'anchor'  => 'payroll',
+            'eyebrow' => __('Payroll', 'abf-accounting'),
+            'title'   => __('Payroll questions.', 'abf-accounting'),
+            'intro'   => __('Paying your team and workplace pensions.', 'abf-accounting'),
+            'items'   => array(
+                array(__('How much does payroll cost?', 'abf-accounting'), __('Payroll starts from £30/month. The final price depends on the number of employees and how often you run payroll.', 'abf-accounting')),
+                array(__('Do you handle workplace pensions?', 'abf-accounting'), __('Yes. We can handle auto-enrolment and pension contributions alongside your payroll.', 'abf-accounting')),
+                array(__('Can you run payroll for just one director?', 'abf-accounting'), __('Yes. We can run a simple payroll for a single director.', 'abf-accounting')),
+            ),
+        ),
+        array(
+            'anchor'  => 'charities-cics-partnerships',
+            'eyebrow' => __('Charities, CICs & partnerships', 'abf-accounting'),
+            'title'   => __('Charities, CICs and partnerships.', 'abf-accounting'),
+            'intro'   => __('Accounts and returns for not-for-profits and partnerships.', 'abf-accounting'),
+            'items'   => array(
+                array(__('How much do charity and CIC accounts cost?', 'abf-accounting'), __('From £299, priced up front. Larger or more complex organisations may need a quote.', 'abf-accounting')),
+                array(__('Do you prepare the CIC34 community interest report?', 'abf-accounting'), __('Yes. For CICs, we prepare the CIC34 report alongside your year-end accounts.', 'abf-accounting')),
+                array(__('How much does a partnership tax return cost?', 'abf-accounting'), __('From £299, priced up front. Each partner’s Self Assessment can be added.', 'abf-accounting')),
+                array(__('What is a Partnership Tax Return (SA800)?', 'abf-accounting'), __('It reports the partnership’s income and each partner’s share of the profit to HMRC. Each partner then includes their share on their own Self Assessment return.', 'abf-accounting')),
+            ),
+        ),
+    );
+}
+
+/**
+ * FAQPage structured data on /faq/ (search engines can show the answers).
+ */
+function abf_accounting_faq_schema(): void
+{
+    if (! is_page('faq')) {
+        return;
+    }
+    $questions = array();
+    foreach (abf_accounting_faq_topics() as $topic) {
+        foreach ($topic['items'] as [$q, $a]) {
+            $questions[] = array(
+                '@type'          => 'Question',
+                'name'           => $q,
+                'acceptedAnswer' => array('@type' => 'Answer', 'text' => $a),
+            );
+        }
+    }
+    echo '<script type="application/ld+json">' . wp_json_encode(array('@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => $questions), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "</script>\n";
+}
+add_action('wp_head', 'abf_accounting_faq_schema');

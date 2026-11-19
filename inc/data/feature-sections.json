@@ -116,5 +116,27 @@
   "items": [["Are self-employed", "A sole trader or individual whose gross self-employment income exceeds £1,000 in a tax year, before expenses, or a business partner."], ["Receive rental income", "Earn income from letting property or land."], ["Work as a CIS subcontractor", "Receive income from construction work as a self-employed subcontractor."], ["Earn a high income", "Your income is above the level where HMRC requires a return."], ["Receive Child Benefit", "You or your partner’s adjusted net income exceeds £60,000 and the High Income Child Benefit Charge applies."], ["Receive investment income", "Have taxable savings interest, dividends or other investment income."], ["Have income from overseas", "Receive foreign income that is taxable in the UK."], ["Claim tax reliefs", "Need to claim eligible tax reliefs through Self Assessment."], ["Report capital gains", "Have taxable gains from selling assets, such as property or shares, that must be reported to HMRC."], ["Receive a notice from HMRC", "HMRC has instructed you to submit a tax return."]],
   "cta": { "title": "Not sure whether you need to file?", "text": "Not everyone in these categories automatically needs to file; it depends on your circumstances and the tax rules. ABF can help you understand your obligations and next steps.", "buttons": ["File now – £150", "Speak to our team"] }
  },
- "limited-companies": { "type": "pattern", "pattern": "home-company-year" }
+ "limited-companies": { "type": "pattern", "pattern": "home-company-year" },
+ "charities-cics": {
+  "type": "cards", "numbered": true,
+  "eyebrow": "Built for not-for-profit organisations",
+  "title": "You focus on your cause. We keep the accounting in the background.",
+  "intro": "Whether you run a community project, a social enterprise or a registered charity, three simple habits keep your accounts under control.",
+  "items": [
+   {"icon": "charities-cics-u-1", "title": "Track your income", "text": "Record grants, donations and trading income separately as they come in."},
+   {"icon": "charities-cics-u-2", "title": "Keep the evidence", "text": "Save receipts and invoices for every cost, especially those paid from grants."},
+   {"icon": "charities-cics-u-3", "title": "File with confidence", "text": "Use organised records to support your accounts, filings and reports."}
+  ]
+ },
+ "partnerships": {
+  "type": "cards", "numbered": true,
+  "eyebrow": "Built around how you work",
+  "title": "You run the partnership. We keep the accounting in the background.",
+  "intro": "Whether there are two partners or ten, three simple habits keep your accounting under control.",
+  "items": [
+   {"icon": "partnerships-u-1", "title": "Get paid", "text": "Keep partnership income in one business bank account, separate from personal money."},
+   {"icon": "partnerships-u-2", "title": "Keep the evidence", "text": "Capture expenses and receipts while they are still easy to find."},
+   {"icon": "partnerships-u-3", "title": "Agree the profit split", "text": "Agree how profits are shared, so each partner’s return is right."}
+  ]
+ }
 }
