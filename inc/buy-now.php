@@ -1039,14 +1039,55 @@ function abf_buy_gc_order_for_payment(string $payment, array $event): ?WC_Order
     return $found;
 }
 
+/**
+ * A short per-order lock, so two requests at the same moment (the customer's return from
+ * GoCardless arriving twice, or a webhook alongside it) can't both change the order and both
+ * send WooCommerce's emails — seen on staging as two "Failed order" emails. An INSERT IGNORE
+ * on the unique option name is atomic; a lock older than a minute is treated as stale.
+ */
+function abf_buy_lock(int $order_id, string $what): bool
+{
+    global $wpdb;
+    $name = '_abf_lock_' . $what . '_' . $order_id;
+    $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->options} WHERE option_name = %s AND option_value < %d", $name, time() - MINUTE_IN_SECONDS)); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+
+    return 1 === (int) $wpdb->query($wpdb->prepare("INSERT IGNORE INTO {$wpdb->options} (option_name, option_value, autoload) VALUES (%s, %s, 'off')", $name, (string) time())); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+}
+
+function abf_buy_unlock(int $order_id, string $what): void
+{
+    global $wpdb;
+    $wpdb->delete($wpdb->options, array('option_name' => '_abf_lock_' . $what . '_' . $order_id)); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+}
+
 function abf_buy_gc_mark_failed(WC_Order $order, string $why): void
 {
-    if ($order->is_paid() || $order->has_status('failed')) {
+    if ($order->is_paid() || $order->has_status('failed') || ! abf_buy_lock($order->get_id(), 'status')) {
         return;
     }
-    $order->update_meta_data('_abf_gc_state', 'failed');
-    $order->set_status('failed', $why);
-    $order->save();
+    // Read it again under the lock: another request may have just changed it.
+    $fresh = wc_get_order($order->get_id());
+    if ($fresh && ! $fresh->is_paid() && ! $fresh->has_status('failed')) {
+        $fresh->update_meta_data('_abf_gc_state', 'failed');
+        $fresh->set_status('failed', $why);
+        $fresh->save();
+    }
+    abf_buy_unlock($order->get_id(), 'status');
+}
+
+/** GoCardless confirmed the payment: Processing (and its emails) once, even if two webhooks race. */
+function abf_buy_gc_mark_paid(WC_Order $order, string $payment): void
+{
+    if ($order->is_paid() || ! abf_buy_lock($order->get_id(), 'status')) {
+        return;
+    }
+    $fresh = wc_get_order($order->get_id());
+    if ($fresh && ! $fresh->is_paid()) {
+        $fresh->update_meta_data('_abf_gc_state', 'paid');
+        $fresh->add_order_note(__('GoCardless confirmed the payment.', 'abf-accounting'));
+        $fresh->payment_complete($payment); // → Processing: customer and admin emails go out.
+    }
+    abf_buy_unlock($order->get_id(), 'status');
 }
 
 /** Payment ID created by a fulfilled billing request (asks GoCardless when not in the event). */
@@ -1157,10 +1198,8 @@ function abf_buy_gc_webhook(WP_REST_Request $r): WP_REST_Response
             if (! $order) {
                 continue;
             }
-            if (in_array($action, array('confirmed', 'paid_out'), true) && ! $order->is_paid()) {
-                $order->update_meta_data('_abf_gc_state', 'paid');
-                $order->add_order_note(__('GoCardless confirmed the payment.', 'abf-accounting'));
-                $order->payment_complete($payment); // → Processing: customer and admin emails go out.
+            if (in_array($action, array('confirmed', 'paid_out'), true)) {
+                abf_buy_gc_mark_paid($order, $payment);
             } elseif (in_array($action, array('failed', 'cancelled', 'charged_back'), true)) {
                 abf_buy_gc_mark_failed($order, sprintf(/* translators: %s: GoCardless action. */ __('GoCardless payment %s.', 'abf-accounting'), $action));
             }
