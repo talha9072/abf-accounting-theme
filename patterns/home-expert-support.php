@@ -50,7 +50,7 @@ $abf_accounting_inner = abf_accounting_block_group(
         'abf-expert__media',
         abf_accounting_block_image('abf-expert__photo', abf_accounting_img('home-expert-support-woman-on-phone-bright-office.webp'), __('Smiling woman on the phone in a bright office', 'abf-accounting'))
         . $abf_accounting_float('accountant', __('Your dedicated accountant', 'abf-accounting'), __('One consistent point of contact', 'abf-accounting'))
-        . $abf_accounting_float('trustpilot', __('Excellent · 4.7 out of 5', 'abf-accounting'), __('27 reviews on Trustpilot', 'abf-accounting'))
+        . $abf_accounting_float('trustpilot abf-float-card--support', __('Support by phone and email', 'abf-accounting'), __('Speak to your own accountant', 'abf-accounting'))
     );
 
 echo abf_accounting_block_section('abf-expert', $abf_accounting_inner); // phpcs:ignore WordPress.Security.EscapeOutput

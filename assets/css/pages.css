@@ -399,7 +399,7 @@
 	background: center / contain no-repeat;
 }
 
-.abf-strip__item--strip-1::before { background-image: url("../icons/strip-1.svg"); }
+.abf-strip__item--strip-1::before { background-image: url("../icons/strip-2.svg"); } /* was the Trustpilot star */
 .abf-strip__item--strip-2::before { background-image: url("../icons/strip-2.svg"); }
 .abf-strip__item--strip-3::before { background-image: url("../icons/strip-3.svg"); }
 

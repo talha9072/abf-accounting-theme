@@ -101,7 +101,7 @@ function abf_accounting_final_cta(): string
 
     $stage = abf_accounting_block_group(
         'abf-cta__message',
-        abf_accounting_block_p('abf-cta__chip', '<strong>' . esc_html__('Excellent', 'abf-accounting') . '</strong> <span>' . esc_html__('4.7 out of 5 · 27 reviews on Trustpilot', 'abf-accounting') . '</span>')
+        abf_accounting_block_p('abf-cta__chip', '<strong>' . esc_html__('Fixed prices', 'abf-accounting') . '</strong> <span>' . esc_html__('· Support by phone and email', 'abf-accounting') . '</span>')
         . abf_accounting_block_h(2, 'abf-cta__title', __('Make accounting one less <br>thing to worry about.', 'abf-accounting'))
         . abf_accounting_block_p('abf-cta__text', __('Tell us about your business and we will recommend the right service. Prefer to talk it through first? Book a call with the team.', 'abf-accounting'))
         . abf_accounting_block_buttons(
@@ -161,7 +161,7 @@ function abf_accounting_mid_cta(array $args = array()): string
 function abf_accounting_trust_strip(): string
 {
     $items = array(
-        array('strip-1', __('Excellent · 4.7 out of 5 on Trustpilot', 'abf-accounting')),
+        array('strip-1', __('Support by phone and email', 'abf-accounting')),
         array('strip-2', __('A dedicated accountant for every client', 'abf-accounting')),
         array('strip-3', __('Clear pricing with no hidden fees', 'abf-accounting')),
     );

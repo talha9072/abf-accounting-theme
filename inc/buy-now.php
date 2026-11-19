@@ -68,9 +68,25 @@ function abf_buy_services(): array
 function abf_buy_ensure_products(): void
 {
     $products = array(
-        'charity-cic'            => array(__('Charity & CIC accounts', 'abf-accounting'), 299, 6),
+        'charity-cic'            => array(__('Charity & CIC Accounts', 'abf-accounting'), 299, 6),
         'partnership-tax-return' => array(__('Partnership Tax Return (SA800)', 'abf-accounting'), 299, 7),
     );
+
+    // Renames, once: only a product still carrying the old default name (an edit made in
+    // WooCommerce is kept). Client, 19 Nov 2026: "Charity & CIC Accounts" with a capital A.
+    $renames = array('charity-cic' => array('Charity & CIC accounts', 'Charity & CIC Accounts'));
+    if ('1' !== get_option('abf_buy_renames') && function_exists('wc_get_product_id_by_sku')) {
+        foreach ($renames as $sku => [$old, $new]) {
+            $id      = wc_get_product_id_by_sku($sku);
+            $product = $id ? wc_get_product($id) : null;
+            if ($product && $old === $product->get_name()) {
+                $product->set_name($new);
+                $product->save();
+            }
+        }
+        update_option('abf_buy_renames', '1', false);
+    }
+
     $done = (array) get_option('abf_buy_products', array());
     $todo = array_diff(array_keys($products), $done);
     if (! $todo || ! class_exists('WC_Product_Simple')) {

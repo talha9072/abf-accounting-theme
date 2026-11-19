@@ -180,7 +180,7 @@
 				</div>
 				<div class="abf-buy__field"><label for="abf-cb-message">Message (optional)</label>${wrap('message', `<textarea id="abf-cb-message" data-bind="message" rows="3" maxlength="${cfg.maxChars}" placeholder="Tell us briefly what you need help with"${invalid('message')}>${esc(state.message)}</textarea>`, ' abf-callback__area')}${fieldError('message')}</div>
 				<div class="abf-callback__hp" aria-hidden="true"><label for="abf-cb-website">Leave this empty</label><input id="abf-cb-website" type="text" data-bind="website" tabindex="-1" autocomplete="off"></div>
-				<p class="abf-callback__consent">By continuing, you agree to our <a href="${esc(cfg.privacy)}" target="_blank" rel="noopener">Privacy Policy</a> and <a href="${esc(cfg.terms)}" target="_blank" rel="noopener">Terms of Use</a>. We only use your details to arrange your call.${cfg.recaptcha ? ' This form is protected by reCAPTCHA; Google’s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms</a> apply.' : ''}</p>
+				<p class="abf-callback__consent">By continuing, you agree to our <a href="${esc(cfg.privacy)}" target="_blank" rel="noopener">Privacy Policy</a> and <a href="${esc(cfg.terms)}" target="_blank" rel="noopener">Terms of Service</a>. We only use your details to arrange your call.${cfg.recaptcha ? ' This form is protected by reCAPTCHA; Google’s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms</a> apply.' : ''}</p>
 				<div class="abf-buy__actions abf-callback__actions">${button(loggedIn ? 'Request callback' : 'Next', { submit: true })}</div>
 			</form>`,
 
@@ -215,7 +215,6 @@
 	const side = () => `
 		<aside class="abf-callback__side" aria-hidden="true">
 			<img class="abf-callback__logo" src="${esc(cfg.logo)}" alt="" width="136" height="40">
-			<p class="abf-callback__badge"><strong>Excellent</strong> 4.7 out of 5 <span class="abf-callback__star">★</span> <span class="abf-callback__brand">Trustpilot</span></p>
 			<p class="abf-callback__side-title">Speak to an accountant, not a call centre.</p>
 			<ul class="abf-callback__points">
 				<li>A qualified accountant calls you</li>

@@ -6,8 +6,9 @@
  *
  * Every link to the Contact page's form (abf_accounting_callback_url() = /contact/#callback-form)
  * opens the pop-up; without JavaScript it still goes to the form on Contact.
- * After the code is checked ABF gets the request by email (filter
- * `abf_accounting_contact_recipient`, as the Contact form) and the visitor gets a confirmation.
+ * After the code is checked ABF support gets the request by email (support@abfaccounting.com,
+ * as the Contact form; see abf_accounting_callback_recipient()) and the visitor gets a
+ * confirmation.
  * Logged-in customers skip Verify, as in Buy now. reCAPTCHA v3 joins in when its keys are
  * saved in ABF settings. JS: assets/js/callback.js.
  *
@@ -24,6 +25,15 @@ const ABF_CALLBACK_LAST      = '17:00';             // last slot
 const ABF_CALLBACK_STEP      = 30;                  // minutes between slots
 const ABF_CALLBACK_MAX_DAYS  = 60;                  // how far ahead a date can be
 const ABF_CALLBACK_MAX_CHARS = 1000;                // message length
+
+/**
+ * Who gets callback requests, from the pop-up and the Contact page form: ABF support
+ * (client, 19 Nov 2026), changeable with the `abf_accounting_contact_recipient` filter.
+ */
+function abf_accounting_callback_recipient(): string
+{
+    return (string) apply_filters('abf_accounting_contact_recipient', abf_accounting_contact()['email']);
+}
 
 /** Where every "Request a callback" button points (the pop-up opens instead when JS runs). */
 function abf_accounting_callback_url(): string
@@ -152,7 +162,7 @@ function abf_callback_send(array $s): bool
     $when    = abf_callback_when($s);
     $contact = abf_accounting_contact();
 
-    $to      = apply_filters('abf_accounting_contact_recipient', get_option('admin_email'));
+    $to      = abf_accounting_callback_recipient();
     /* translators: 1: full name, 2: when to call. */
     $subject = sprintf(__('Callback request: %1$s, %2$s', 'abf-accounting'), $s['name'], $when);
     $lines   = array(

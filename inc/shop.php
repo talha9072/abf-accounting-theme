@@ -357,6 +357,8 @@ add_filter('woocommerce_pay_order_button_text', static fn () => __('Pay for orde
  */
 add_filter('woocommerce_return_to_shop_redirect', static fn () => home_url('/pricing/'));
 add_filter('woocommerce_return_to_shop_text', static fn () => __('View pricing', 'abf-accounting'));
+// My Account → Orders / Downloads with nothing yet: "Browse products" → "View pricing" (same link).
+add_filter('gettext_woocommerce', static fn ($translation, $text) => 'Browse products' === $text ? __('View pricing', 'abf-accounting') : $translation, 10, 2);
 
 /**
  * The checkout terms box would load the whole terms page inline; link to it instead.
@@ -527,11 +529,12 @@ function abf_accounting_shop_hero(): string
 }
 
 /**
- * Trustpilot line under the cart and order summaries.
+ * Trustpilot line under the cart and order summaries — removed (client, 19 Nov 2026: no typed
+ * rating; hidden in Figma "Shop / Cart"). Kept as a function so the templates stay unchanged.
  */
 function abf_accounting_shop_trust(): string
 {
-    return '<div class="abf-shop-trust"><span class="abf-shop-trust__stars" aria-hidden="true"></span><span class="abf-shop-trust__rating">' . esc_html__('4.7 Trustpilot', 'abf-accounting') . '</span><span class="abf-shop-trust__note">' . esc_html__('Rated by ABF customers', 'abf-accounting') . '</span></div>';
+    return '';
 }
 
 /* ---------- Order received (Figma "Shop / Order Received") ---------- */

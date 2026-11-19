@@ -45,8 +45,9 @@ $abf_accounting_rail = abf_accounting_block_group(
     'abf-hero__rail',
     abf_accounting_block_group(
         'abf-hero__rail-col abf-hero__rail-col--rating',
-        abf_accounting_block_p('abf-hero__rail-rating', '<span class="abf-hero__rail-stars" aria-hidden="true"></span>' . __('4.7 Trustpilot', 'abf-accounting'))
-        . abf_accounting_block_p('abf-hero__rail-sub', __('Rated by ABF customers', 'abf-accounting'))
+        // No typed Trustpilot rating (client, 19 Nov 2026; Figma "Hero / Trust Rail").
+        abf_accounting_block_p('abf-hero__rail-rating', __('Fixed prices', 'abf-accounting'))
+        . abf_accounting_block_p('abf-hero__rail-sub', __('No hidden fees', 'abf-accounting'))
     )
     . abf_accounting_block_group(
         'abf-hero__rail-col',

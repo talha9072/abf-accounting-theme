@@ -2,8 +2,9 @@
 /**
  * Callback request form (Contact page): [abf_callback_form].
  *
- * Posts to admin-post.php, is checked against a nonce and a honeypot, emailed to the site
- * admin (filter `abf_accounting_contact_recipient`), then the visitor goes to the Thank You page.
+ * Posts to admin-post.php, is checked against a nonce and a honeypot, emailed to ABF support
+ * (support@abfaccounting.com, see abf_accounting_callback_recipient()), then the visitor goes
+ * to the Thank You page.
  * reCAPTCHA v3 switches on once its keys are saved in Appearance → ABF settings (inc/settings.php).
  *
  * @package ABF_Accounting
@@ -135,7 +136,7 @@ function abf_accounting_handle_callback_form(): void
         exit;
     }
 
-    $to      = apply_filters('abf_accounting_contact_recipient', get_option('admin_email'));
+    $to      = abf_accounting_callback_recipient();
     $subject = sprintf(
         /* translators: %s: sender's full name */
         __('Callback request from %s', 'abf-accounting'),
