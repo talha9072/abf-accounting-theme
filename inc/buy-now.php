@@ -625,12 +625,16 @@ function abf_buy_repeat_date(string $company, int $product_id): string
         array(
             'limit'      => 20,
             'status'     => array('processing', 'completed', 'on-hold'),
-            'meta_query' => array(array('key' => '_abf_company_number', 'value' => $company)), // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+            'meta_key'   => '_abf_company_number', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+            'meta_value' => $company, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
             'orderby'    => 'date',
             'order'      => 'DESC',
         )
     );
     foreach ($orders as $order) {
+        if ($company !== (string) $order->get_meta('_abf_company_number')) {
+            continue;
+        }
         foreach ($order->get_items() as $item) {
             if ((int) $item->get_product_id() === $product_id) {
                 return wc_format_datetime($order->get_date_created(), 'j F Y');
@@ -882,6 +886,8 @@ function abf_buy_gc_start(WC_Order $order)
                     'amount'      => (int) round((float) $order->get_total() * 100),
                     'currency'    => 'GBP',
                     'scheme'      => 'faster_payments',
+                    // Carried onto the payment, so its webhooks name the order directly.
+                    'metadata'    => array('order_id' => (string) $order->get_id()),
                 ),
                 'metadata'        => array('order_id' => (string) $order->get_id()),
             ),
@@ -928,16 +934,80 @@ function abf_buy_gc_start(WC_Order $order)
 /** Billing request fulfilled: the bank approved, GoCardless is confirming the payment. */
 function abf_buy_gc_mark_processing(WC_Order $order, string $payment_id = ''): void
 {
-    if ($order->is_paid() || 'processing' === $order->get_meta('_abf_gc_state')) {
+    if ($order->is_paid()) {
         return;
     }
-    $order->update_meta_data('_abf_gc_state', 'processing');
-    if ($payment_id) {
+    // The customer often gets back before the "fulfilled" webhook: the order is already
+    // "processing" then, but the payment ID still has to be saved for the payment webhooks.
+    if ($payment_id && $payment_id !== $order->get_meta('_abf_gc_payment')) {
         $order->update_meta_data('_abf_gc_payment', $payment_id);
         $order->set_transaction_id($payment_id);
     }
-    $order->add_order_note(__('Bank approved the payment. Waiting for GoCardless to confirm it.', 'abf-accounting'));
+    if ('processing' !== $order->get_meta('_abf_gc_state')) {
+        $order->update_meta_data('_abf_gc_state', 'processing');
+        $order->add_order_note(__('Bank approved the payment. Waiting for GoCardless to confirm it.', 'abf-accounting'));
+    }
     $order->save();
+}
+
+/**
+ * The order a GoCardless payment belongs to: by the saved payment ID; else by the order ID in
+ * the payment's metadata (checked against that order's billing request); else, for orders
+ * that never got the payment ID saved, by asking GoCardless which payment each recent
+ * Pay-by-bank order's billing request created. Saves the payment ID on the order it finds.
+ */
+function abf_buy_gc_order_for_payment(string $payment, array $event): ?WC_Order
+{
+    if ('' === $payment) {
+        return null;
+    }
+    $order = abf_buy_order_by_meta('_abf_gc_payment', $payment);
+    if ($order) {
+        return $order;
+    }
+
+    $matches = static function (WC_Order $o) use ($payment): bool {
+        $br = (string) $o->get_meta('_abf_gc_billing_request');
+
+        return '' !== $br && abf_buy_gc_payment_for($br) === $payment;
+    };
+
+    $order_id = (int) ($event['resource_metadata']['order_id'] ?? 0);
+    if (! $order_id) {
+        $p        = abf_buy_gc('GET', '/payments/' . rawurlencode($payment));
+        $order_id = is_array($p) ? (int) ($p['payments']['metadata']['order_id'] ?? 0) : 0;
+    }
+    $found = $order_id ? wc_get_order($order_id) : null;
+    if ($found && ! $matches($found)) {
+        $found = null;
+    }
+
+    if (! $found) {
+        $recent = wc_get_orders(
+            array(
+                'limit'          => 20,
+                'payment_method' => ABF_BUY_GATEWAY,
+                'status'         => array('pending', 'on-hold', 'failed'),
+                'date_created'   => '>' . (time() - 14 * DAY_IN_SECONDS),
+                'orderby'        => 'date',
+                'order'          => 'DESC',
+            )
+        );
+        foreach ($recent as $o) {
+            if ('' === (string) $o->get_meta('_abf_gc_payment') && $matches($o)) {
+                $found = $o;
+                break;
+            }
+        }
+    }
+
+    if ($found) {
+        $found->update_meta_data('_abf_gc_payment', $payment);
+        $found->set_transaction_id($payment);
+        $found->save();
+    }
+
+    return $found;
 }
 
 function abf_buy_gc_mark_failed(WC_Order $order, string $why): void
@@ -963,15 +1033,24 @@ function abf_buy_order_by_meta(string $key, string $value): ?WC_Order
     if ('' === $value) {
         return null;
     }
+    // meta_key/meta_value works with both order storages (posts and HPOS); wc_get_orders()
+    // ignores 'meta_query' on posts storage and would return any order. The result is
+    // checked again so a wrong match can never be marked paid.
     $orders = wc_get_orders(
         array(
-            'limit'      => 1,
+            'limit'      => 5,
             'status'     => array_keys(wc_get_order_statuses()),
-            'meta_query' => array(array('key' => $key, 'value' => $value)), // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+            'meta_key'   => $key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+            'meta_value' => $value, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
         )
     );
+    foreach ($orders as $order) {
+        if ($value === (string) $order->get_meta($key)) {
+            return $order;
+        }
+    }
 
-    return $orders ? $orders[0] : null;
+    return null;
 }
 
 /**
@@ -1045,17 +1124,7 @@ function abf_buy_gc_webhook(WP_REST_Request $r): WP_REST_Response
             }
         } elseif ('payments' === $type) {
             $payment = (string) ($links['payment'] ?? '');
-            $order   = abf_buy_order_by_meta('_abf_gc_payment', $payment);
-            if (! $order) {
-                // The payment event can arrive before "fulfilled" was saved: ask GoCardless.
-                $p     = abf_buy_gc('GET', '/payments/' . rawurlencode($payment));
-                $br_id = is_array($p) ? (string) ($p['payments']['links']['billing_request'] ?? '') : '';
-                $order = abf_buy_order_by_meta('_abf_gc_billing_request', $br_id);
-                if ($order) {
-                    $order->update_meta_data('_abf_gc_payment', $payment);
-                    $order->save();
-                }
-            }
+            $order   = abf_buy_gc_order_for_payment($payment, $event);
             if (! $order) {
                 continue;
             }
