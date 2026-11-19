@@ -280,6 +280,27 @@ function abf_accounting_live_chat(): void
         window.Tawk_LoadStart = new Date();
         Tawk_API.onLoad = function () { ready = true; Tawk_API.hideWidget(); };
         Tawk_API.onChatMinimized = function () { Tawk_API.hideWidget(); button.hidden = false; };
+
+        // Buy now / Request a callback pop-ups (html.abf-buy-open): tawk.to's bubble or a
+        // greeting can't sit on top of them. Whatever was showing comes back when they close.
+        var html = document.documentElement;
+        var popupOpen = function () { return html.classList.contains('abf-buy-open'); };
+        var shownBefore = false;
+        var keepHidden = function () {
+            if (ready && popupOpen() && !Tawk_API.isChatHidden()) { Tawk_API.hideWidget(); }
+        };
+        Tawk_API.onUnreadCountChanged = keepHidden;
+        Tawk_API.onChatMessageAgent = keepHidden;
+        Tawk_API.onChatMaximized = keepHidden;
+        new MutationObserver(function () {
+            if (!ready) { return; }
+            if (popupOpen()) {
+                if (!Tawk_API.isChatHidden()) { shownBefore = true; Tawk_API.hideWidget(); }
+            } else if (shownBefore) {
+                shownBefore = false;
+                Tawk_API.showWidget();
+            }
+        }).observe(html, { attributes: true, attributeFilter: ['class'] });
         button.addEventListener('click', function (event) {
             if (!ready) { return; } // chat not loaded yet: the link opens the callback form
             event.preventDefault();
