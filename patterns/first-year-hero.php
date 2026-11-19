@@ -20,7 +20,7 @@ $abf_accounting_message = abf_accounting_block_p('abf-breadcrumb', '<a href="' .
         'abf-offer-hero__actions',
         array(
             array(__('Claim your free first-year accounts', 'abf-accounting'), $abf_accounting_claim, 'abf-button--lg abf-button--arrow'),
-            array(__('Request a callback', 'abf-accounting'), home_url('/contact/'), 'abf-button--phone abf-button--outline-green'),
+            array(__('Request a callback', 'abf-accounting'), abf_accounting_callback_url(), 'abf-button--phone abf-button--outline-green'),
         )
     )
     . abf_accounting_block_list('abf-assurances', array(__('Subscribe within 30 days', 'abf-accounting'), __('£120 set-up fee', 'abf-accounting'), __('UK limited companies', 'abf-accounting')));

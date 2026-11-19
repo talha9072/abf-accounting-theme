@@ -18,6 +18,7 @@ require_once get_theme_file_path('inc/landing.php');
 require_once get_theme_file_path('inc/blog.php');
 require_once get_theme_file_path('inc/shop.php');
 require_once get_theme_file_path('inc/buy-now.php');
+require_once get_theme_file_path('inc/callback.php');
 
 function abf_accounting_setup(): void
 {

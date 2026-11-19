@@ -47,7 +47,7 @@ $abf_accounting_brand = abf_accounting_block_image('abf-footer__logo', abf_accou
             . abf_accounting_block_p('abf-callback-card__title', __('Request a callback', 'abf-accounting'))
             . abf_accounting_block_p('abf-callback-card__text', __('Leave your number and we’ll call you back.', 'abf-accounting'))
         )
-        . abf_accounting_block_buttons('abf-callback-card__actions', array(array(__('Callback', 'abf-accounting'), home_url('/contact/'), 'abf-button--callback-card')))
+        . abf_accounting_block_buttons('abf-callback-card__actions', array(array(__('Callback', 'abf-accounting'), abf_accounting_callback_url(), 'abf-button--callback-card')))
     );
 
 $abf_accounting_nav = $abf_accounting_links(

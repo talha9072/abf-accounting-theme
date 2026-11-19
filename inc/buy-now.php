@@ -607,7 +607,8 @@ function abf_buy_rest_check(WP_REST_Request $r)
 function abf_buy_verified(WP_REST_Request $r)
 {
     $s = abf_buy_session((string) $r->get_param('token'));
-    if (! $s || empty($s['verified'])) {
+    // A callback request's code (inc/callback.php) can't be used to place an order.
+    if (! $s || empty($s['verified']) || 'callback' === ($s['kind'] ?? '')) {
         return abf_buy_error(__('Please verify your details again.', 'abf-accounting'), 401, array('restart' => true));
     }
 

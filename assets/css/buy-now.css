@@ -767,3 +767,232 @@ html.abf-buy-open .abf-chat {
 		animation-duration: 2s;
 	}
 }
+
+/* ================================================================== */
+/* Request a callback pop-up — Figma "Request a callback / Step 1–3"   */
+/* Desktop: 960 px (600 px form + 360 px mint side panel); tablet: the */
+/* 600 px form only; phones: full screen. JS: callback.js              */
+/* ================================================================== */
+
+.abf-callback__modal {
+	padding: 0;
+}
+
+.abf-callback__layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+}
+
+.abf-callback__side {
+	display: none;
+}
+
+@media (min-width: 1100px) {
+	.abf-callback__modal {
+		width: 960px;
+	}
+
+	.abf-callback__layout {
+		grid-template-columns: 600px 360px;
+		min-height: 100%;
+	}
+
+	.abf-callback__side {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 40px 32px;
+		background: #f3fbf5;
+	}
+}
+
+.abf-callback__side > * {
+	margin: 0;
+}
+
+.abf-callback__logo {
+	width: 136px;
+	height: 40px;
+	object-fit: contain;
+	object-position: left center;
+}
+
+.abf-callback__badge {
+	align-self: flex-start;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 12px 22px;
+	border-radius: 7px;
+	background: #fff;
+	box-shadow: 0 4px 13px rgb(13 51 63 / 0.04);
+	color: #0d333f;
+	font-size: 13px;
+	line-height: 19px;
+}
+
+.abf-callback__badge strong {
+	font-size: 15px;
+	line-height: 21px;
+}
+
+.abf-callback__star {
+	color: #00b67a;
+	font-size: 19px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.abf-callback__brand {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.abf-callback__side-title {
+	color: #09242d;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 33px;
+	letter-spacing: -0.01em;
+}
+
+.abf-callback__points {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.abf-callback__points li {
+	display: flex;
+	gap: 10px;
+	color: #09242d;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 22px;
+}
+
+.abf-callback__points li::before {
+	content: "✓";
+	flex: none;
+	color: #03a84e;
+	font-weight: 700;
+}
+
+/* Fields */
+.abf-callback__row {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.abf-callback__select select {
+	appearance: none;
+	-webkit-appearance: none;
+	padding-right: 24px;
+	cursor: pointer;
+}
+
+.abf-callback__select > svg {
+	position: absolute;
+	right: 18px;
+	color: #0d333f;
+	pointer-events: none;
+}
+
+.abf-callback__date input {
+	cursor: pointer;
+}
+
+.abf-callback__date input.is-empty {
+	color: #94a3b8;
+	font-weight: 400;
+}
+
+.abf-callback__date input::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+.abf-callback__area {
+	align-items: stretch;
+}
+
+.abf-callback__area textarea {
+	flex: 1;
+	min-width: 0;
+	min-height: 102px;
+	margin: 0;
+	padding: 16px 0 15px;
+	border: 0;
+	background: transparent;
+	color: #09242d;
+	font: inherit;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 25px;
+	letter-spacing: -0.01em;
+	resize: vertical;
+	outline: none;
+	box-shadow: none;
+}
+
+.abf-callback__area textarea::placeholder {
+	color: #94a3b8;
+	font-weight: 400;
+	opacity: 1;
+}
+
+.abf-callback__hp {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.abf-callback__consent {
+	color: #64748b;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+.abf-callback__consent a,
+.abf-callback__note a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.abf-callback__actions {
+	justify-content: flex-end;
+}
+
+/* Thank you */
+.abf-callback__confirm {
+	color: #09242d;
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 23px;
+}
+
+.abf-callback__note {
+	color: #64748b;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+@media (max-width: 767px) {
+	.abf-callback__modal {
+		width: 100%;
+	}
+
+	.abf-callback__row {
+		grid-template-columns: 1fr;
+	}
+
+	.abf-callback.is-done .abf-callback__actions .abf-buy__btn {
+		flex: none;
+	}
+}

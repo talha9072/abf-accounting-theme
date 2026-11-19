@@ -34,6 +34,6 @@ $abf_accounting_inner = abf_accounting_block_group(
     . abf_accounting_block_p('abf-how__lead', __('We keep your accounts and returns moving, so deadlines don’t turn into a last-minute panic. Choose the service you need and talk to your accountant whenever you need.', 'abf-accounting'))
 )
     . abf_accounting_block_group('abf-how__cards', $abf_accounting_cards)
-    . abf_accounting_block_buttons('abf-how__actions', array(array(__('Request a callback', 'abf-accounting'), home_url('/contact/'), 'abf-button--phone')));
+    . abf_accounting_block_buttons('abf-how__actions', array(array(__('Request a callback', 'abf-accounting'), abf_accounting_callback_url(), 'abf-button--phone')));
 
 echo abf_accounting_block_section('abf-how', $abf_accounting_inner); // phpcs:ignore WordPress.Security.EscapeOutput

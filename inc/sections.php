@@ -58,7 +58,7 @@ function abf_accounting_faq(array $items, array $args): string
             'abf-decide__phone',
             '<a href="' . esc_attr($contact['phone_uri']) . '">' . esc_html(str_replace(' 141 ', ' 141', $contact['phone'])) . '</a> <br><span>' . esc_html__('Or request a callback below', 'abf-accounting') . '</span>'
         )
-        . abf_accounting_block_buttons('abf-decide__actions', array(array(__('Request a callback', 'abf-accounting'), home_url('/contact/'), 'abf-button--phone abf-button--block')))
+        . abf_accounting_block_buttons('abf-decide__actions', array(array(__('Request a callback', 'abf-accounting'), abf_accounting_callback_url(), 'abf-button--phone abf-button--block')))
     );
 
     $inner = abf_accounting_block_group(
@@ -108,7 +108,7 @@ function abf_accounting_final_cta(): string
             'abf-cta__actions',
             array(
                 array(__('Buy now', 'abf-accounting'), home_url('/pricing/'), 'abf-button--arrow abf-button--glow'),
-                array(__('Request a callback', 'abf-accounting'), home_url('/contact/'), 'abf-button--phone abf-button--ghost'),
+                array(__('Request a callback', 'abf-accounting'), abf_accounting_callback_url(), 'abf-button--phone abf-button--ghost'),
             )
         )
         . abf_accounting_block_p('abf-cta__phone', esc_html__('Or call the team on', 'abf-accounting') . ' <a href="' . esc_attr($contact['phone_uri']) . '">' . esc_html(str_replace(' 141 ', ' 141', $contact['phone'])) . '</a>')

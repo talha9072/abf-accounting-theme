@@ -255,7 +255,7 @@ function abf_accounting_offer_hero(array $d, string $slug, string $crumb_url): s
             'abf-offer-hero__actions',
             array(
                 array(esc_html($d['buttons'][0]), abf_accounting_button_url($d['buttons'][0], $slug), 'abf-button--lg abf-button--arrow'),
-                array(esc_html($d['buttons'][1]), home_url('/contact/'), 'abf-button--phone abf-button--outline-green'),
+                array(esc_html($d['buttons'][1]), abf_accounting_callback_url(), 'abf-button--phone abf-button--outline-green'),
             )
         )
         . abf_accounting_block_list('abf-assurances', array_map('esc_html', $d['assurances']));
