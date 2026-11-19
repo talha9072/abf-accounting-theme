@@ -36,8 +36,9 @@ const ABF_BUY_GATEWAY       = 'abf_gocardless';
  *
  * types / subtype: which Companies House companies can be picked for the service — a company
  * fits when its type is in `types` OR it has the `subtype` (Charity & CIC uses both).
- * listed: shown in the pop-up's Service list. Charity & CIC is only opened from its own page
- * (Buy now on /who-we-help/charities-cics/), so it stays out of the list next to CIC.
+ * listed: shown in the pop-up's Service list. Charity & CIC replaced the CIC card on Pricing
+ * (client, 19 Nov 2026), so the old CIC-only package is kept for existing orders but no
+ * longer offered in the list.
  */
 function abf_buy_services(): array
 {
@@ -48,8 +49,8 @@ function abf_buy_services(): array
     $services = array(
         'company-accounts'       => array('flow' => 'company', 'types' => $limited, 'short' => __('Company Accounts & CT', 'abf-accounting'), 'summary' => __('year-end accounts and CT600, filed with Companies House and HMRC', 'abf-accounting')),
         'llp'                    => array('flow' => 'company', 'types' => array('llp'), 'short' => __('LLP', 'abf-accounting'), 'summary' => __('LLP accounts and the SA800 partnership tax return', 'abf-accounting')),
-        'cic'                    => array('flow' => 'company', 'subtype' => $cic, 'short' => __('CIC', 'abf-accounting'), 'summary' => __('annual accounts and CT600 filing, with support on CIC reporting', 'abf-accounting')),
-        'charity-cic'            => array('flow' => 'company', 'types' => $guarantee, 'subtype' => $cic, 'listed' => false, 'short' => __('Charity & CIC', 'abf-accounting'), 'summary' => __('year-end accounts and CT600, plus the CIC34 report for CICs', 'abf-accounting')),
+        'cic'                    => array('flow' => 'company', 'subtype' => $cic, 'listed' => false, 'short' => __('CIC', 'abf-accounting'), 'summary' => __('annual accounts and CT600 filing, with support on CIC reporting', 'abf-accounting')),
+        'charity-cic'            => array('flow' => 'company', 'types' => $guarantee, 'subtype' => $cic, 'short' => __('Charity & CIC', 'abf-accounting'), 'summary' => __('year-end accounts and CT600, plus the CIC34 report for CICs', 'abf-accounting')),
         'self-assessment'        => array('flow' => 'personal', 'short' => __('Self Assessment', 'abf-accounting'), 'summary' => __('SA100 return prepared and submitted to HMRC', 'abf-accounting')),
         'partnership-tax-return' => array('flow' => 'personal', 'short' => __('Partnership Tax Return', 'abf-accounting'), 'summary' => __('SA800 partnership tax return prepared and submitted to HMRC', 'abf-accounting')),
         'dormant'                => array('flow' => 'company', 'types' => $limited, 'short' => __('Dormant', 'abf-accounting'), 'summary' => __('dormant accounts prepared and filed with Companies House', 'abf-accounting')),

@@ -51,7 +51,7 @@ defined('ABSPATH') || exit;
 		<?php do_action('woocommerce_proceed_to_checkout'); ?>
 	</div>
 
-	<p class="abf-shop-summary__secure"><?php esc_html_e('Secure payments by Stripe', 'abf-accounting'); ?></p>
+	<p class="abf-shop-summary__secure"><?php esc_html_e('Secure bank payments by GoCardless', 'abf-accounting'); ?></p>
 	<?php echo abf_accounting_shop_trust(); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 
 	<?php do_action('woocommerce_after_cart_totals'); ?>

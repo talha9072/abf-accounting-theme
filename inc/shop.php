@@ -367,13 +367,14 @@ remove_action('woocommerce_checkout_terms_and_conditions', 'wc_terms_and_conditi
 
 function abf_accounting_account_menu(array $items): array
 {
-    unset($items['downloads']);
+    // No Payment methods tab: Pay by bank (GoCardless instant bank payments) is a one-off
+    // payment and saves nothing to reuse (client, 19 Nov 2026).
+    unset($items['downloads'], $items['payment-methods']);
     $labels = array(
         'dashboard'       => __('Dashboard', 'abf-accounting'),
         'orders'          => __('Orders', 'abf-accounting'),
         'edit-address'    => __('Addresses', 'abf-accounting'),
         'edit-account'    => __('Account details', 'abf-accounting'),
-        'payment-methods' => __('Payment methods', 'abf-accounting'),
         'customer-logout' => __('Log out', 'abf-accounting'),
     );
     $out    = array();
@@ -395,6 +396,18 @@ function abf_accounting_account_menu(array $items): array
     return $out;
 }
 add_filter('woocommerce_account_menu_items', 'abf_accounting_account_menu', 20);
+
+/**
+ * The Payment methods pages are hidden too: an old link or bookmark lands on the dashboard.
+ */
+function abf_accounting_no_payment_methods(): void
+{
+    if (is_user_logged_in() && function_exists('is_wc_endpoint_url') && (is_wc_endpoint_url('payment-methods') || is_wc_endpoint_url('add-payment-method'))) {
+        wp_safe_redirect(wc_get_page_permalink('myaccount'));
+        exit;
+    }
+}
+add_action('template_redirect', 'abf_accounting_no_payment_methods');
 
 /**
  * Log out goes straight to the Log in page (no "Are you sure?" screen).
@@ -483,8 +496,6 @@ function abf_accounting_shop_hero_copy(): array
         'orders'             => array(__('Orders', 'abf-accounting'), __('All your ABF orders in one place.', 'abf-accounting')),
         'edit-address'       => array(__('Addresses', 'abf-accounting'), __('The billing address used on your receipts.', 'abf-accounting')),
         'edit-account'       => array(__('Account details', 'abf-accounting'), __('Update your name, email and password.', 'abf-accounting')),
-        'payment-methods'    => array(__('Payment methods', 'abf-accounting'), __('Cards saved securely with Stripe.', 'abf-accounting')),
-        'add-payment-method' => array(__('Add payment method', 'abf-accounting'), __('Cards saved securely with Stripe.', 'abf-accounting')),
     );
     foreach ($screens as $endpoint => [$title, $line]) {
         if (is_wc_endpoint_url($endpoint)) {
@@ -644,11 +655,11 @@ add_action('wp_enqueue_scripts', 'abf_accounting_shop_assets', 20);
 /* ---------- Small template hooks ---------- */
 
 /**
- * "Secure payments by Stripe" above the terms checkbox (checkout and order pay).
+ * "Secure bank payments by GoCardless" above the terms checkbox (checkout and order pay).
  */
 function abf_accounting_secure_note(): void
 {
-    echo '<p class="abf-secure-note">' . esc_html__('Secure payments by Stripe', 'abf-accounting') . '</p>';
+    echo '<p class="abf-secure-note">' . esc_html__('Secure bank payments by GoCardless', 'abf-accounting') . '</p>';
 }
 add_action('woocommerce_checkout_before_terms_and_conditions', 'abf_accounting_secure_note');
 

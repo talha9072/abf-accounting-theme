@@ -148,6 +148,13 @@
 	width: 100%;
 }
 
+/* A last card alone on its row sits in the middle column (Figma: Partnership Tax Return). */
+@media (min-width: 1200px) {
+	.abf-package:nth-child(3n + 1):last-child {
+		grid-column: 2;
+	}
+}
+
 /* Each card spans two rows of the packages grid (summary, details) through subgrid, so the
  * buttons and the detail panels line up across a row. */
 .abf-package {

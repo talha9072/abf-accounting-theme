@@ -3,7 +3,7 @@
  * Title: Pricing — Packages
  * Slug: abf-accounting/pricing-packages
  * Categories: abf-sections
- * Description: "Transparent accountant fees" intro and the six fixed-price packages with their details.
+ * Description: "Transparent accountant fees" intro and the seven fixed-price packages with their details (Charity & CIC and Partnership Tax Return added 19 Nov 2026).
  *
  * @package ABF_Accounting
  */
@@ -24,9 +24,9 @@ $abf_accounting_packages = array(
         __('Preparation of LLP accounts and the relevant SA800 partnership tax return.', 'abf-accounting'),
         __('Timescale confirmed after reviewing your records and requirements.', 'abf-accounting'),
     )),
-    array('cic', 'light-bookkeeping-records', __('Community Interest Company (CIC) Accounts', 'abf-accounting'), __('Year-end accounts and Corporation Tax compliance for CICs.', 'abf-accounting'), '£299', $abf_accounting_25, $abf_accounting_go, false, array(
-        __('CICs needing annual accounts and tax compliance support.', 'abf-accounting'),
-        __('Preparation of annual accounts and CT600 filing, where required, plus support with CIC reporting obligations.', 'abf-accounting'),
+    array('charity-cic', 'light-bookkeeping-records', __('Charity &amp; CIC Accounts', 'abf-accounting'), __('Year-end accounts and filings for charitable companies and CICs.', 'abf-accounting'), '£299', $abf_accounting_25, $abf_accounting_go, false, array(
+        __('Charitable companies and CICs needing annual accounts and reporting support.', 'abf-accounting'),
+        __('Year-end accounts prepared and filed with Companies House, plus the CIC34 report for CICs and CT600 where required.', 'abf-accounting'),
         __('Timescale confirmed once your records and reporting requirements have been reviewed.', 'abf-accounting'),
     )),
     array('self-assessment', 'light-self-assessment', __('Self Assessment Tax Return', 'abf-accounting'), __('Personal tax return preparation and filing with HMRC.', 'abf-accounting'), '£150*', $abf_accounting_25, $abf_accounting_go, false, array(
@@ -43,6 +43,11 @@ $abf_accounting_packages = array(
         __('UK limited companies that need to submit their annual Confirmation Statement (CS01), whether or not their company details have changed.', 'abf-accounting'),
         __('Review of your company information, guidance on any necessary updates, and preparation and submission of your Confirmation Statement.', 'abf-accounting'),
         __('Typically 1–3 business days after receiving all required information, subject to complexity and review.', 'abf-accounting'),
+    )),
+    array('partnership-tax-return', 'light-payroll-cis', __('Partnership Tax Return (SA800)', 'abf-accounting'), __('Partnership tax return for ordinary business partnerships.', 'abf-accounting'), '£299', $abf_accounting_25, $abf_accounting_go, false, array(
+        __('Partnerships with two or more partners that are not LLPs.', 'abf-accounting'),
+        __('Preparation and filing of the SA800 Partnership Tax Return, showing each partner’s share of the profit.', 'abf-accounting'),
+        __('Timescale confirmed after reviewing your partnership records.', 'abf-accounting'),
     )),
 );
 
