@@ -72,26 +72,33 @@ function abf_buy_ensure_products(): void
         'partnership-tax-return' => array(__('Partnership Tax Return (SA800)', 'abf-accounting'), 299, 7),
     );
 
+    // These run on a visitor's request, where WordPress's kses filter would save "&" in a
+    // product name as "&amp;" (that is what happened on staging). Names are ours, so it is
+    // switched off while saving and put back after.
+    $kses = false !== has_filter('title_save_pre', 'wp_filter_kses');
+    if ($kses) {
+        kses_remove_filters();
+    }
+
     // Renames, once: only a product still carrying the old default name (an edit made in
     // WooCommerce is kept). Client, 19 Nov 2026: "Charity & CIC Accounts" with a capital A.
+    // v2 also repairs a name saved as "&amp;".
     $renames = array('charity-cic' => array('Charity & CIC accounts', 'Charity & CIC Accounts'));
-    if ('1' !== get_option('abf_buy_renames') && function_exists('wc_get_product_id_by_sku')) {
+    if ('2' !== get_option('abf_buy_renames') && function_exists('wc_get_product_id_by_sku')) {
         foreach ($renames as $sku => [$old, $new]) {
             $id      = wc_get_product_id_by_sku($sku);
             $product = $id ? wc_get_product($id) : null;
-            if ($product && $old === $product->get_name()) {
+            $current = $product ? html_entity_decode($product->get_name(), ENT_QUOTES, 'UTF-8') : '';
+            if ($product && in_array($current, array($old, $new), true) && $new !== $product->get_name()) {
                 $product->set_name($new);
                 $product->save();
             }
         }
-        update_option('abf_buy_renames', '1', false);
+        update_option('abf_buy_renames', '2', false);
     }
 
     $done = (array) get_option('abf_buy_products', array());
-    $todo = array_diff(array_keys($products), $done);
-    if (! $todo || ! class_exists('WC_Product_Simple')) {
-        return;
-    }
+    $todo = class_exists('WC_Product_Simple') ? array_diff(array_keys($products), $done) : array();
     foreach ($todo as $sku) {
         if (! wc_get_product_id_by_sku($sku)) {
             [$name, $price, $order] = $products[$sku];
@@ -109,7 +116,13 @@ function abf_buy_ensure_products(): void
         }
         $done[] = $sku;
     }
-    update_option('abf_buy_products', array_values(array_unique($done)), false);
+    if ($todo) {
+        update_option('abf_buy_products', array_values(array_unique($done)), false);
+    }
+
+    if ($kses) {
+        kses_init_filters();
+    }
 }
 add_action('init', 'abf_buy_ensure_products', 20);
 
