@@ -204,7 +204,7 @@ function abf_callback_finish(string $token, array $s)
 {
     if (empty($s['sent'])) {
         if (! abf_callback_send($s)) {
-            return abf_buy_error(__('Sorry, we couldn’t send your request. Please try again, or call us on 07405 141694.', 'abf-accounting'), 502);
+            return abf_buy_error(__('Sorry, we couldn’t send your request. Please try again, or call us on 020 3968 9444.', 'abf-accounting'), 502);
         }
         $s['sent'] = true;
         abf_buy_save_session($token, $s, HOUR_IN_SECONDS);
@@ -239,10 +239,10 @@ function abf_callback_rest_start(WP_REST_Request $r)
         return $details;
     }
     if (! abf_buy_rate_ok('callback', 8, HOUR_IN_SECONDS)) {
-        return abf_buy_error(__('Too many requests. Please try again in an hour, or call us on 07405 141694.', 'abf-accounting'), 429);
+        return abf_buy_error(__('Too many requests. Please try again in an hour, or call us on 020 3968 9444.', 'abf-accounting'), 429);
     }
     if (! abf_accounting_recaptcha_passes((string) $r->get_param('recaptcha'))) {
-        return abf_buy_error(__('We couldn’t check that you’re not a robot. Please try again, or call us on 07405 141694.', 'abf-accounting'), 403);
+        return abf_buy_error(__('We couldn’t check that you’re not a robot. Please try again, or call us on 020 3968 9444.', 'abf-accounting'), 403);
     }
 
     $token = wp_generate_password(32, false, false);
@@ -265,7 +265,7 @@ function abf_callback_rest_start(WP_REST_Request $r)
     );
     $sent = abf_buy_send_code($session, $code);
     if (! $sent['email'] && ! $sent['sms']) {
-        return abf_buy_error(__('We couldn’t send your code. Please check your email address, or call us on 07405 141694.', 'abf-accounting'), 502);
+        return abf_buy_error(__('We couldn’t send your code. Please check your email address, or call us on 020 3968 9444.', 'abf-accounting'), 502);
     }
     abf_buy_save_session($token, $session, ABF_BUY_CODE_TTL + 5 * MINUTE_IN_SECONDS);
 
@@ -316,8 +316,8 @@ function abf_callback_config(): array
         'maxChars'  => ABF_CALLBACK_MAX_CHARS,
         'privacy'   => home_url('/privacy-policy/'),
         'terms'     => $terms ? get_permalink($terms) : home_url('/terms-and-conditions-of-engagement/'),
-        'phone'     => '07405 141694',
-        'phoneUri'  => 'tel:+447405141694',
+        'phone'     => abf_accounting_contact()['phone'],
+        'phoneUri'  => abf_accounting_contact()['phone_uri'],
         'sms'       => abf_buy_sms_ready(),
         'recaptcha' => abf_accounting_recaptcha_enabled() ? abf_accounting_setting('recaptcha_site') : '',
         'logo'      => abf_accounting_img('abf-logo.svg'),

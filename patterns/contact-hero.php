@@ -25,7 +25,7 @@ $abf_accounting_details = abf_accounting_block_p('abf-eyebrow abf-eyebrow--caps'
     . abf_accounting_block_p('abf-page-lead', __('Tell us what you need help with and when you would like us to call. We will point you to the right support for your business.', 'abf-accounting'))
     . abf_accounting_block_group(
         'abf-contact-details',
-        $abf_accounting_detail(1, __('Phone', 'abf-accounting'), '<a href="' . esc_attr($abf_accounting_c['phone_uri']) . '">' . esc_html(str_replace(' 141 ', ' 141', $abf_accounting_c['phone'])) . '</a>')
+        $abf_accounting_detail(1, __('Phone', 'abf-accounting'), '<a href="' . esc_attr($abf_accounting_c['phone_uri']) . '">' . esc_html($abf_accounting_c['phone']) . '</a>')
         . $abf_accounting_detail(2, __('Email', 'abf-accounting'), '<a href="mailto:' . esc_attr($abf_accounting_c['email']) . '">' . esc_html($abf_accounting_c['email']) . '</a>')
     );
 

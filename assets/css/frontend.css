@@ -362,10 +362,18 @@ nav.abf-header__nav .wp-block-navigation__submenu-container {
 	nav.abf-header__nav .abf-nav-two-col > .wp-block-navigation__submenu-container {
 		display: grid !important;
 		grid-template-rows: repeat(4, auto);
-		grid-auto-flow: column;
-		grid-auto-columns: minmax(240px, max-content);
+		grid-template-columns: repeat(2, minmax(240px, max-content));
 		column-gap: 4px;
 	}
+
+	/* The list is in the mobile menu's order; place each item in its desktop column. */
+	nav.abf-header__nav .abf-nav-two-col > .wp-block-navigation__submenu-container > :nth-child(1) { grid-area: 1 / 1; } /* Limited companies */
+	nav.abf-header__nav .abf-nav-two-col > .wp-block-navigation__submenu-container > :nth-child(2) { grid-area: 2 / 1; } /* Sole traders */
+	nav.abf-header__nav .abf-nav-two-col > .wp-block-navigation__submenu-container > :nth-child(3) { grid-area: 2 / 2; } /* Contractors */
+	nav.abf-header__nav .abf-nav-two-col > .wp-block-navigation__submenu-container > :nth-child(4) { grid-area: 1 / 2; } /* Self-employed & freelancers */
+	nav.abf-header__nav .abf-nav-two-col > .wp-block-navigation__submenu-container > :nth-child(5) { grid-area: 3 / 2; } /* Landlords */
+	nav.abf-header__nav .abf-nav-two-col > .wp-block-navigation__submenu-container > :nth-child(6) { grid-area: 4 / 1; } /* Charities & CICs */
+	nav.abf-header__nav .abf-nav-two-col > .wp-block-navigation__submenu-container > :nth-child(7) { grid-area: 3 / 1; } /* Partnerships */
 }
 
 nav.abf-header__nav .wp-block-navigation__submenu-container::before {
@@ -531,35 +539,331 @@ nav.abf-header__nav .wp-block-navigation__submenu-container .wp-block-navigation
 		margin-left: auto;
 	}
 
+}
+
+/* ---------- Mobile / tablet menu (Figma "Header / Mobile|Tablet / Menu open"; inc/menu.php, assets/js/menu.js) ---------- */
+
+/* The bar and footer live inside the core overlay; they only show while it is open. */
+.abf-menu-bar,
+.abf-menu-footer {
+	display: none;
+}
+
+@media (max-width: 1439px) {
 	.abf-header .wp-block-navigation__responsive-container.is-menu-open {
-		padding: 24px var(--abf-gutter);
+		--abf-menu-pad: 20px;
+		--abf-menu-bar: 68px;
+		padding: 0 !important;
+		border-top: 2px solid var(--abf-green);
+		background: #fff !important;
+		color: var(--abf-ink) !important;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: -0.01em;
 	}
 
-	.abf-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
-		gap: 4px;
-		align-items: stretch;
+	.abf-header .is-menu-open .wp-block-navigation__responsive-close,
+	.abf-header .is-menu-open .wp-block-navigation__responsive-dialog {
+		max-width: none;
+		width: 100%;
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__responsive-container-content {
+		padding: 0 !important;
+		align-items: stretch !important;
+	}
+
+	/* Bar: logo left; the core close button is placed over its right end. */
+	.abf-header .is-menu-open .abf-menu-bar {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		height: var(--abf-menu-bar);
+		padding: 0 calc(var(--abf-menu-pad) + 52px) 0 var(--abf-menu-pad);
+		border-bottom: 1px solid rgba(9, 36, 45, 0.1);
+	}
+
+	.abf-menu-bar__logo {
+		display: flex;
+		flex: none;
+	}
+
+	.abf-menu-bar__logo img {
+		width: 136px;
+		height: 40px;
+	}
+
+	.abf-menu-bar__actions {
+		display: none;
+		align-items: center;
+		gap: 8px;
+		margin-left: auto;
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__responsive-container-close {
+		top: calc((var(--abf-menu-bar) - 44px) / 2);
+		right: var(--abf-menu-pad);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background: var(--abf-ice);
+		color: var(--abf-ink);
+		transition: background-color var(--abf-transition);
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__responsive-container-close:hover {
+		background: var(--abf-mint);
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__responsive-container-close svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	/* Links: 18px bold rows with a hairline under each. */
+	.abf-header .is-menu-open .wp-block-navigation__container {
+		gap: 0 !important;
+		align-items: stretch !important;
+		padding: 8px var(--abf-menu-pad) 0;
 		font-size: 18px;
 	}
 
-	.abf-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item + .wp-block-navigation-item::before {
+	.abf-header .is-menu-open .wp-block-navigation__container > .wp-block-navigation-item + .wp-block-navigation-item::before {
 		display: none;
 	}
 
-	.abf-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
-		border-bottom: 1px solid var(--abf-line);
-		padding-block: 8px;
+	.abf-header .is-menu-open .wp-block-navigation__container > .wp-block-navigation-item {
+		display: grid !important;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: center !important;
+		border-bottom: 1px solid rgba(9, 36, 45, 0.1);
 	}
 
-	.abf-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+	.abf-header .is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+		padding: 16px 0 !important;
+		color: var(--abf-ink);
+		font-weight: 700;
+		white-space: normal;
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__container > .current-menu-item > .wp-block-navigation-item__content,
+	.abf-header .is-menu-open .wp-block-navigation__container > .abf-sub-open > .wp-block-navigation-item__content {
+		color: var(--abf-green);
+	}
+
+	/* Chevron (the core sub-menu toggle): down when closed, up and green when open. */
+	.abf-header .is-menu-open .wp-block-navigation__container > .has-child > .wp-block-navigation__submenu-icon {
+		display: inline-flex !important;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		margin: 0 -15px 0 0;
+		padding: 0;
+		color: var(--abf-ink);
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__container > .has-child > .wp-block-navigation__submenu-icon svg {
+		width: 14px;
+		height: 14px;
+		stroke: currentColor;
+		stroke-width: 2px;
+		/* Core marks every sub-menu expanded in the overlay; only an open row turns its chevron. */
+		transform: none;
+		transition: transform var(--abf-transition);
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__container > .abf-sub-open > .wp-block-navigation__submenu-icon {
+		color: var(--abf-green);
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__container > .abf-sub-open > .wp-block-navigation__submenu-icon svg {
+		transform: rotate(180deg);
+	}
+
+	/* Sub-menus: closed unless their row is open; an ice panel with 16px medium links. */
+	.abf-header .is-menu-open .wp-block-navigation__container > .has-child > .wp-block-navigation__submenu-container {
+		display: none !important;
+	}
+
+	/* Open row: a hairline under the row itself, then the panel (no line under the panel). */
+	.abf-header .is-menu-open .wp-block-navigation__container > .abf-sub-open {
+		border-bottom: 0;
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__container > .abf-sub-open::after {
+		content: "";
+		grid-row: 2;
+		grid-column: 1 / -1;
+		height: 1px;
+		background: rgba(9, 36, 45, 0.1);
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__container > .abf-sub-open > .wp-block-navigation__submenu-container {
+		grid-row: 3;
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__container > .abf-sub-open > .wp-block-navigation__submenu-container {
+		display: flex !important;
+		flex-direction: column;
+		grid-column: 1 / -1;
+		gap: 0 !important;
+		min-width: 0 !important;
+		margin: 0;
+		padding: 6px 16px !important;
 		border: 0 !important;
+		border-radius: 12px;
 		box-shadow: none;
-		padding: 4px 0 4px 16px !important;
+		background: var(--abf-ice) !important;
 		font-size: 16px;
 	}
 
-	.abf-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item {
+	.abf-header .is-menu-open .wp-block-navigation__submenu-container::before {
+		display: none;
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item {
 		border: 0;
-		padding-block: 0;
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+		display: block;
+		padding: 12px 0 !important;
+		border-radius: 0;
+		background: none !important;
+		color: var(--abf-ink);
+		font-weight: 500;
+		white-space: normal;
+	}
+
+	.abf-header .is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
+	.abf-header .is-menu-open .wp-block-navigation__submenu-container .current-menu-item > .wp-block-navigation-item__content {
+		color: var(--abf-green);
+	}
+
+	/* Footer: phone, Callback + Buy now, My account. */
+	.abf-header .is-menu-open .abf-menu-footer {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+		padding: 24px var(--abf-menu-pad) 32px;
+	}
+
+	.abf-menu-footer__phone {
+		color: var(--abf-ink);
+		font-size: 20px;
+		font-weight: 700;
+		line-height: normal;
+		white-space: nowrap;
+	}
+
+	.abf-menu-footer__buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		width: 100%;
+	}
+
+	.abf-menu-footer__btn,
+	.abf-menu-bar__buy {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		box-sizing: border-box;
+		height: 52px;
+		border: 1px solid var(--abf-green);
+		border-radius: 14px;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 22px;
+		letter-spacing: normal;
+		transition: background-color var(--abf-transition), color var(--abf-transition), border-color var(--abf-transition);
+	}
+
+	.abf-menu-footer__btn--callback {
+		background: #fff;
+		color: var(--abf-green);
+		box-shadow: 0 4px 10px rgba(13, 47, 56, 0.02);
+	}
+
+	.abf-menu-footer__btn--callback::before {
+		content: "";
+		width: 16px;
+		height: 16px;
+		background: currentColor;
+		/* Outline phone from the menu design (Figma "Icon / Phone"). */
+		-webkit-mask: url("../icons/phone-outline.svg") center / contain no-repeat;
+		mask: url("../icons/phone-outline.svg") center / contain no-repeat;
+	}
+
+	.abf-menu-footer__btn--callback:hover {
+		background: var(--abf-ice);
+	}
+
+	.abf-menu-footer__btn--buy,
+	.abf-menu-bar__buy {
+		background: var(--abf-green);
+		color: #fff;
+		box-shadow: 0 4px 10px rgba(13, 47, 56, 0.05);
+	}
+
+	.abf-menu-footer__btn--buy:hover,
+	.abf-menu-bar__buy:hover {
+		border-color: var(--abf-green-dark);
+		background: var(--abf-green-dark);
+		color: #fff;
+	}
+
+	.abf-menu-footer__account {
+		padding-top: 8px;
+		color: var(--abf-green);
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+	}
+
+	.abf-menu-footer__account:hover {
+		text-decoration: underline;
+	}
+}
+
+/* Tablet: taller bar with Buy now and My account, 32px sides, buttons side by side. */
+@media (min-width: 768px) and (max-width: 1439px) {
+	.abf-header .wp-block-navigation__responsive-container.is-menu-open {
+		--abf-menu-pad: 32px;
+		--abf-menu-bar: 80px;
+	}
+
+	.abf-menu-bar__logo img {
+		width: 156px;
+		height: 46px;
+	}
+
+	.abf-header .is-menu-open .abf-menu-bar__actions {
+		display: flex;
+	}
+
+	.abf-menu-bar__buy {
+		width: 133px;
+		height: 45px;
+		border-radius: 12.6px;
+		font-size: 12.6px;
+		line-height: 19.8px;
+	}
+
+	.abf-menu-footer__buttons {
+		flex-direction: row;
+	}
+
+	.abf-menu-footer__btn {
+		flex: 1 1 0;
+		min-width: 0;
 	}
 }
 
@@ -1956,4 +2260,9 @@ a.abf-footer__social-icon:focus-visible {
 	nav.abf-header__nav .wp-block-navigation-item.abf-nav-menu-only {
 		display: none;
 	}
+}
+
+/* The chat button would cover the menu's footer; it comes back when the menu closes. */
+html.abf-menu-open .abf-chat {
+	display: none;
 }

@@ -279,10 +279,11 @@ function abf_accounting_live_chat(): void
         Tawk_API.onLoad = function () { ready = true; Tawk_API.hideWidget(); };
         Tawk_API.onChatMinimized = function () { Tawk_API.hideWidget(); button.hidden = false; };
 
-        // Buy now / Request a callback pop-ups (html.abf-buy-open): tawk.to's bubble or a
+        // Buy now / Request a callback pop-ups (html.abf-buy-open) and the mobile menu
+        // (html.abf-menu-open): tawk.to's bubble or a
         // greeting can't sit on top of them. Whatever was showing comes back when they close.
         var html = document.documentElement;
-        var popupOpen = function () { return html.classList.contains('abf-buy-open'); };
+        var popupOpen = function () { return html.classList.contains('abf-buy-open') || html.classList.contains('abf-menu-open'); };
         var shownBefore = false;
         var keepHidden = function () {
             if (ready && popupOpen() && !Tawk_API.isChatHidden()) { Tawk_API.hideWidget(); }

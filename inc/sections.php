@@ -56,7 +56,7 @@ function abf_accounting_faq(array $items, array $args): string
         . abf_accounting_block_p('abf-decide__title', __('Talk it through with the ABF team before you choose.', 'abf-accounting'))
         . abf_accounting_block_p(
             'abf-decide__phone',
-            '<a href="' . esc_attr($contact['phone_uri']) . '">' . esc_html(str_replace(' 141 ', ' 141', $contact['phone'])) . '</a> <br><span>' . esc_html__('Or request a callback below', 'abf-accounting') . '</span>'
+            '<a href="' . esc_attr($contact['phone_uri']) . '">' . esc_html($contact['phone']) . '</a> <br><span>' . esc_html__('Or request a callback below', 'abf-accounting') . '</span>'
         )
         . abf_accounting_block_buttons('abf-decide__actions', array(array(__('Request a callback', 'abf-accounting'), abf_accounting_callback_url(), 'abf-button--phone abf-button--block')))
     );
@@ -111,7 +111,7 @@ function abf_accounting_final_cta(): string
                 array(__('Request a callback', 'abf-accounting'), abf_accounting_callback_url(), 'abf-button--phone abf-button--ghost'),
             )
         )
-        . abf_accounting_block_p('abf-cta__phone', esc_html__('Or call the team on', 'abf-accounting') . ' <a href="' . esc_attr($contact['phone_uri']) . '">' . esc_html(str_replace(' 141 ', ' 141', $contact['phone'])) . '</a>')
+        . abf_accounting_block_p('abf-cta__phone', esc_html__('Or call the team on', 'abf-accounting') . ' <a href="' . esc_attr($contact['phone_uri']) . '">' . esc_html($contact['phone']) . '</a>')
     )
         . abf_accounting_block_group(
             'abf-next',
@@ -149,7 +149,7 @@ function abf_accounting_mid_cta(array $args = array()): string
         . abf_accounting_block_group(
             'abf-mid-cta__actions',
             abf_accounting_block_buttons('abf-mid-cta__buttons', array(array(__('Contact us', 'abf-accounting'), home_url('/contact/'), 'abf-button--white')))
-            . abf_accounting_block_p('abf-mid-cta__phone', '<a href="' . esc_attr($contact['phone_uri']) . '">' . esc_html__('Or call', 'abf-accounting') . ' ' . esc_html(str_replace(' 141 ', ' 141', $contact['phone'])) . '</a>')
+            . abf_accounting_block_p('abf-mid-cta__phone', '<a href="' . esc_attr($contact['phone_uri']) . '">' . esc_html__('Or call', 'abf-accounting') . ' ' . esc_html($contact['phone']) . '</a>')
         );
 
     return abf_accounting_block_cover('abf-mid-cta', get_theme_file_uri('assets/img/home-hero-office-wide.webp'), abf_accounting_block_group('abf-container', $inner), 388);

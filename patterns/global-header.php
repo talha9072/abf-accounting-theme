@@ -59,10 +59,12 @@ $abf_accounting_submenu = static function (string $label, string $url, array $it
 <!-- wp:navigation {"overlayBackgroundColor":"white","overlayTextColor":"ink","className":"abf-header__nav","layout":{"type":"flex","justifyContent":"left","flexWrap":"nowrap"}} -->
 <?php
 echo $abf_accounting_link(__('Home', 'abf-accounting'), home_url('/')); // phpcs:ignore WordPress.Security.EscapeOutput
-// Two columns in the dropdown (Figma "Header / Dropdown States"): Limited companies, Sole traders,
-// Partnerships, Charities & CICs | Self-employed & freelancers, Contractors, Landlords.
+// List order = the phone/tablet menu (Figma "Header / Mobile / Menu open"), so keyboard and screen
+// readers follow what is on screen there. The desktop dropdown places the same items in two columns
+// (Figma "Header / Dropdown States"): Limited companies, Sole traders, Partnerships, Charities & CICs |
+// Self-employed & freelancers, Contractors, Landlords — see frontend.css.
 $abf_accounting_who = abf_accounting_audiences();
-$abf_accounting_who = array_merge(array_flip(array('limited-companies', 'sole-traders', 'partnerships', 'charities-cics', 'self-employed-freelancers', 'contractors', 'landlords')), $abf_accounting_who);
+$abf_accounting_who = array_merge(array_flip(array('limited-companies', 'sole-traders', 'contractors', 'self-employed-freelancers', 'landlords', 'charities-cics', 'partnerships')), $abf_accounting_who);
 echo $abf_accounting_submenu(__('Who we help', 'abf-accounting'), home_url('/who-we-help/limited-companies/'), $abf_accounting_who, 'abf-nav-two-col'); // phpcs:ignore WordPress.Security.EscapeOutput
 echo $abf_accounting_submenu(__('Services', 'abf-accounting'), home_url('/services/annual-accounts-tax-return/'), abf_accounting_services()); // phpcs:ignore WordPress.Security.EscapeOutput
 echo $abf_accounting_link(__('Pricing', 'abf-accounting'), home_url('/pricing/')); // phpcs:ignore WordPress.Security.EscapeOutput

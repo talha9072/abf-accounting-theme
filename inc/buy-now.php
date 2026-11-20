@@ -559,7 +559,7 @@ function abf_buy_rest_code(WP_REST_Request $r)
     );
     $sent = abf_buy_send_code($session, $code);
     if (! $sent['email'] && ! $sent['sms']) {
-        return abf_buy_error(__('We couldn’t send your code. Please check your details or call us on 07405 141694.', 'abf-accounting'), 502);
+        return abf_buy_error(__('We couldn’t send your code. Please check your details or call us on 020 3968 9444.', 'abf-accounting'), 502);
     }
     abf_buy_save_session($token, $session, ABF_BUY_CODE_TTL + 5 * MINUTE_IN_SECONDS);
 
@@ -736,7 +736,7 @@ function abf_buy_rest_order(WP_REST_Request $r)
         return abf_buy_error(__('Please agree to the Terms & Conditions to continue.', 'abf-accounting'), 400, array('fields' => array('terms' => true)));
     }
     if (! abf_buy_gc_ready()) {
-        return abf_buy_error(__('Online payment isn’t switched on yet. Please call us on 07405 141694 and we will take your order.', 'abf-accounting'), 503);
+        return abf_buy_error(__('Online payment isn’t switched on yet. Please call us on 020 3968 9444 and we will take your order.', 'abf-accounting'), 503);
     }
     $service = abf_buy_service($s['service']);
     $company = $s['company'] ? abf_buy_company($s['company']) : null;
@@ -839,7 +839,7 @@ function abf_buy_rest_retry(WP_REST_Request $r)
         return abf_buy_error(__('Please agree to the Terms & Conditions to continue.', 'abf-accounting'), 400, array('fields' => array('terms' => true)));
     }
     if (! abf_buy_gc_ready()) {
-        return abf_buy_error(__('Online payment isn’t switched on yet. Please call us on 07405 141694 and we will take your order.', 'abf-accounting'), 503);
+        return abf_buy_error(__('Online payment isn’t switched on yet. Please call us on 020 3968 9444 and we will take your order.', 'abf-accounting'), 503);
     }
     if (! abf_buy_rate_ok('retry', 10, HOUR_IN_SECONDS)) {
         return abf_buy_error(__('Too many attempts. Please try again later or call us.', 'abf-accounting'), 429);
@@ -886,7 +886,7 @@ function abf_buy_gc(string $method, string $path, ?array $body = null)
     if ($code < 200 || $code >= 300) {
         error_log('[abf-buy] GoCardless ' . $method . ' ' . $path . ' → ' . $code . ' ' . wp_json_encode($data['error'] ?? $data)); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 
-        return new WP_Error('abf_gc', __('GoCardless couldn’t start the payment. Please try again, or call us on 07405 141694.', 'abf-accounting'));
+        return new WP_Error('abf_gc', __('GoCardless couldn’t start the payment. Please try again, or call us on 020 3968 9444.', 'abf-accounting'));
     }
 
     return $data;
@@ -1380,8 +1380,8 @@ function abf_buy_config(): array
         'user'     => $user,
         'contact'  => home_url('/contact/'),
         'terms'    => $terms ? get_permalink($terms) : home_url('/terms-and-conditions-for-one-off-services/'),
-        'phone'    => '07405 141694',
-        'phoneUri' => 'tel:+447405141694',
+        'phone'    => abf_accounting_contact()['phone'],
+        'phoneUri' => abf_accounting_contact()['phone_uri'],
         // Codes go by email only; text messages join in once a Twilio account is added in settings.
         'sms'      => abf_buy_sms_ready(),
     );

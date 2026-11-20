@@ -66,7 +66,7 @@ $abf_accounting_inner = abf_accounting_block_group(
     abf_accounting_block_p('abf-hero__eyebrow', __('Online accounting for UK businesses', 'abf-accounting'))
     . abf_accounting_block_h(1, 'abf-hero__title', '<span class="abf-hero__title-line1">' . __('File online company accounts', 'abf-accounting') . '</span> <span class="abf-hero__title-line2">' . __('and tax return for', 'abf-accounting') . ' <mark class="abf-hero__price">£299</mark></span>')
     . abf_accounting_block_p('abf-hero__lead', __('Whether you are a limited company, sole trader, freelancer or e-commerce seller, we have a solution to fit your needs.', 'abf-accounting'))
-    . abf_accounting_block_buttons('abf-hero__actions', array(array(__('Buy now', 'abf-accounting'), home_url('/pricing/'), 'abf-button--wide')))
+    . abf_accounting_block_buttons('abf-hero__actions', array(array(__('Buy now', 'abf-accounting'), abf_accounting_buy_url('company-accounts'), 'abf-button--wide')))
 )
     . $abf_accounting_visual
     . abf_accounting_block_p('abf-hero__reassurance', __('From freelancers to limited companies, ABF Accounting simplifies your finances so you can focus on growth.', 'abf-accounting'))

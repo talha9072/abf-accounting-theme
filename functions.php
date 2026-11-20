@@ -19,6 +19,7 @@ require_once get_theme_file_path('inc/blog.php');
 require_once get_theme_file_path('inc/shop.php');
 require_once get_theme_file_path('inc/buy-now.php');
 require_once get_theme_file_path('inc/callback.php');
+require_once get_theme_file_path('inc/menu.php');
 
 function abf_accounting_setup(): void
 {
@@ -138,9 +139,9 @@ function abf_accounting_icon(string $name): string
 function abf_accounting_contact(): array
 {
     return array(
-        'phone'       => '07405 141 694',
-        'phone_intl'  => '+44 7405 141694',
-        'phone_uri'   => 'tel:+447405141694',
+        'phone'       => '020 3968 9444',
+        'phone_intl'  => '+44 20 3968 9444',
+        'phone_uri'   => 'tel:+442039689444',
         'email'       => 'support@abfaccounting.com',
         'address'     => array('18 Thricknells Close', 'Luton, LU3 3RP'),
         'company'     => 'ABF Accounting Services Ltd',
