@@ -38,6 +38,8 @@ html.abf-buy-open .abf-chat {
 	width: 600px;
 	max-width: 100%;
 	max-height: calc(100dvh - 48px);
+	/* Up and down only: a vertical scrollbar must never push content sideways. */
+	overflow-x: hidden;
 	overflow-y: auto;
 	overscroll-behavior: contain;
 	background: #fff;
@@ -793,7 +795,9 @@ html.abf-buy-open .abf-chat {
 	}
 
 	.abf-callback__layout {
-		grid-template-columns: 600px 360px;
+		/* The form column gives up the width of the vertical scrollbar when the pop-up
+		   is taller than the window (a fixed 600 + 360 caused a sideways scrollbar). */
+		grid-template-columns: minmax(0, 1fr) 360px;
 		min-height: 100%;
 	}
 
