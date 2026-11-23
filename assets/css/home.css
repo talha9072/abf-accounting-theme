@@ -1868,6 +1868,31 @@
 	line-height: 22px;
 }
 
+/* ---------- Hero on laptop screens ---------- */
+/* The whole hero (heading → Buy now → picture → bottom row) fits on the first screen: on a short
+   window it is zoomed down evenly — same layout, just smaller (never below 60%). --abf-vh is the
+   window height (functions.php); --abf-hero-h is the hero's height below the 92 px header at full
+   size; 104 = header + a 12 px gap. Tablets and phones keep their own layout; 1900 px and wider
+   screens stay exactly as they are. */
+@media (min-width: 1200px) and (max-width: 1899px) {
+	.abf-hero {
+		--abf-hero-h: 883;
+		zoom: clamp(0.6, calc((var(--abf-vh, 100000) - 104) / var(--abf-hero-h)), 1);
+	}
+}
+
+@media (min-width: 1400px) and (max-width: 1899px) {
+	.abf-hero {
+		--abf-hero-h: 930;
+	}
+}
+
+@media (min-width: 1600px) and (max-width: 1899px) {
+	.abf-hero {
+		--abf-hero-h: 996;
+	}
+}
+
 /* ---------- Tablet ---------- */
 
 @media (max-width: 1599px) {

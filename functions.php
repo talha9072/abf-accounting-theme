@@ -59,6 +59,20 @@ function abf_accounting_enqueue_assets(): void
 add_action('wp_enqueue_scripts', 'abf_accounting_enqueue_assets');
 
 /**
+ * Home hero on laptops (ClickUp, 22 Nov): the whole hero has to fit on the first screen.
+ * The visible window height goes into --abf-vh before anything is drawn (no jump), and home.css
+ * shrinks the hero just enough. Only the front page needs it.
+ */
+function abf_accounting_viewport_height(): void
+{
+    if (! is_front_page()) {
+        return;
+    }
+    echo "<script>(function(){var d=document.documentElement,s=function(){d.style.setProperty('--abf-vh',String(window.innerHeight));};s();window.addEventListener('resize',s);})();</script>\n";
+}
+add_action('wp_head', 'abf_accounting_viewport_height', 2);
+
+/**
  * Cache-bust theme images and icons with the theme version.
  *
  * @param string $url  Resolved file URL.
