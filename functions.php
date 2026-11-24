@@ -148,6 +148,18 @@ function abf_accounting_icon(string $name): string
 }
 
 /**
+ * The 11-character YouTube video ID from a youtu.be / youtube.com link ('' if it isn't one).
+ *
+ * @param string $url Link from ABF settings.
+ */
+function abf_accounting_youtube_id(string $url): string
+{
+    $pattern = '~^https?://(?:www\.|m\.)?(?:youtu\.be/|youtube(?:-nocookie)?\.com/(?:watch\?(?:.*&)?v=|embed/|shorts/|live/))([A-Za-z0-9_-]{11})(?:[?&#/]|$)~';
+
+    return preg_match($pattern, trim($url), $m) ? $m[1] : '';
+}
+
+/**
  * Public contact details (footer, header, Contact page). Client will confirm the final ones.
  */
 function abf_accounting_contact(): array

@@ -7,6 +7,7 @@
  *  - Social profile URLs (footer icons)
  *  - Buy now pop-up: Companies House API key, Twilio (text codes), GoCardless (Pay by bank)
  *  - Trustpilot: business unit ID for the "Review us on Trustpilot" TrustBox (inc/trustpilot.php)
+ *  - Home page video (YouTube link)
  *
  * Every feature stays switched off, with no broken output, until its value is saved.
  *
@@ -29,6 +30,7 @@ function abf_accounting_setting_fields(): array
         'recaptcha_secret' => array(__('Secret key', 'abf-accounting'), 'secret', 'recaptcha', ''),
         'tawk_property'    => array(__('Property ID', 'abf-accounting'), 'text', 'chat', __('From tawk.to → Administration → Chat Widget: the direct chat link ends in /PROPERTY_ID/WIDGET_ID.', 'abf-accounting')),
         'tawk_widget'      => array(__('Widget ID', 'abf-accounting'), 'text', 'chat', __('Usually "default" or a short code.', 'abf-accounting')),
+        'home_video'       => array(__('YouTube video', 'abf-accounting'), 'url', 'video', __('The video in the “Real accountants. Real support” section on the Home page (a youtu.be or youtube.com link). It only loads from YouTube when a visitor presses play.', 'abf-accounting')),
         'social_instagram' => array(__('Instagram', 'abf-accounting'), 'url', 'social', ''),
         'social_linkedin'  => array(__('LinkedIn', 'abf-accounting'), 'url', 'social', ''),
         'social_facebook'  => array(__('Facebook', 'abf-accounting'), 'url', 'social', ''),
@@ -69,6 +71,7 @@ function abf_accounting_setting_defaults(): array
         'social_x'         => 'https://x.com/ABFAccounting',
         'social_tiktok'    => 'https://www.tiktok.com/@abfaccounting',
         'tp_business_unit' => '67ae62d3d88afca670dd92b6',
+        'home_video'       => 'https://youtu.be/CK_xD3Q4as8',
     );
 }
 
@@ -115,6 +118,7 @@ function abf_accounting_register_settings(): void
     $sections = array(
         'recaptcha' => __('reCAPTCHA (callback form)', 'abf-accounting'),
         'chat'      => __('Live chat (tawk.to)', 'abf-accounting'),
+        'video'     => __('Home page video', 'abf-accounting'),
         'social'    => __('Social profiles (footer icons)', 'abf-accounting'),
         'buy'       => __('Buy now pop-up', 'abf-accounting'),
         'trustpilot' => __('Trustpilot (review sections)', 'abf-accounting'),
